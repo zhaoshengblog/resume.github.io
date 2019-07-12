@@ -1,5 +1,5 @@
 ﻿.ax_default {
-  font-family:'Arial Normal', 'Arial';
+  font-family:'微软雅黑';
   font-weight:400;
   font-style:normal;
   font-size:13px;
@@ -41,41 +41,41 @@
   color:#169BD5;
 }
 ._一级标题 {
-  font-family:'Arial Normal', 'Arial';
+  font-family:'微软雅黑';
   font-weight:bold;
   font-style:normal;
   font-size:32px;
   text-align:left;
 }
 ._二级标题 {
-  font-family:'Arial Normal', 'Arial';
+  font-family:'微软雅黑';
   font-weight:bold;
   font-style:normal;
   font-size:24px;
   text-align:left;
 }
 ._三级标题 {
-  font-family:'Arial Normal', 'Arial';
+  font-family:'微软雅黑';
   font-weight:bold;
   font-style:normal;
   font-size:18px;
   text-align:left;
 }
 ._四级标题 {
-  font-family:'Arial Normal', 'Arial';
+  font-family:'微软雅黑';
   font-weight:bold;
   font-style:normal;
   font-size:14px;
   text-align:left;
 }
 ._五级标题 {
-  font-family:'Arial Normal', 'Arial';
+  font-family:'微软雅黑';
   font-weight:bold;
   font-style:normal;
   text-align:left;
 }
 ._六级标题 {
-  font-family:'Arial Normal', 'Arial';
+  font-family:'微软雅黑';
   font-weight:bold;
   font-style:normal;
   font-size:10px;
@@ -86,7 +86,7 @@
   text-align:left;
 }
 ._文本段落 {
-  font-family:'Microsoft YaHei UI';
+  font-family:'微软雅黑';
   font-weight:400;
   font-style:normal;
   color:#CCCCCC;
@@ -150,7 +150,7 @@
   text-align:left;
 }
 ._一级标题1 {
-  font-family:'Arial Negreta', 'Arial Normal', 'Arial';
+  font-family:'微软雅黑 Bold', '微软雅黑';
   font-weight:700;
   font-style:normal;
   font-size:32px;
@@ -160,5 +160,41 @@
   color:#000000;
 }
 .fontawesome {
+}
+.box_11 {
+}
+._形状1 {
+}
+._形状2 {
+}
+.text_field {
+  color:#000000;
+  text-align:left;
+}
+.form_hint {
+  color:#999999;
+}
+.form_disabled {
+}
+._图片2 {
+}
+.icon1 {
+}
+._默认样式2 {
+}
+._形状3 {
+}
+.font_awesome_5_free_solid {
+  font-family:'Font Awesome 5 Free Solid', 'Font Awesome 5 Free';
+  font-weight:900;
+  font-style:normal;
+}
+.box_12 {
+}
+.button {
+}
+.label1 {
+  font-size:14px;
+  text-align:left;
 }
 textarea, select, input, button { outline: none; }

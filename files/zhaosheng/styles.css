@@ -2324,7 +2324,7 @@
   width:1100px;
   height:200px;
   display:flex;
-  font-family:'FontAwesome Bold', 'FontAwesome';
+  font-family:'FontAwesome Bold', 'FontAwesome Regular', 'FontAwesome';
   font-style:normal;
   text-align:left;
   line-height:36px;

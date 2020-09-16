@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>数据分析思维与业务流程</title>
+<title>阶段一模块一讲义</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
 @charset "UTF-8";
@@ -1846,895 +1846,502 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
 </head>
 <body>
 <p><a href="https://resume.zhaoshengblog.cn/">返回上一页</a></p>
-<h1 id="-">第一章 数据分析思维与业务流程</h1>
-<h2 id="-">课程主要内容</h2>
-<blockquote>
-<p>第⼀节：数据分析概述</p>
-<p>第⼆节：数据分析⽅法论和分析模型</p>
-<p>第三节：实战案例讲解</p>
-<p>第四节：本章⼩结</p>
-</blockquote>
-<h2 id="-">第⼀部分：数据分析概述</h2>
-<h2 id="-">数据分析是什么</h2>
-<blockquote>
-<p>数据分析是在⽴⾜于业务的基础上，通过数据收集、清洗、处理、分析、建模、展示等⽅式，⽤于监控业务状态，分析⽅案效果，定位业务问题，最终实现优化业务，辅助决策制定的⾏为。</p>
-</blockquote>
-<h2 id="-">数据分析师做什么</h2>
-<blockquote>
-<p>实时疫情数据展示</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page2-Image1.jpg" alt=""></p>
-<p>电商⽤户画像</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page3-Image1.jpg" alt=""></p>
-<p>⾦融⻛险评估</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page4-Image1.jpg" alt=""></p>
-<p>那说了这么多，数据分析师到底在做什么呢？，总结起来有以下三个⽅⾯：</p>
-<p>描述现状。发现规律。推动改进。</p>
-</blockquote>
-<h2 id="-">数据分析主要流程</h2>
-<blockquote>
-<p>数据分析的主要流程可以总结为以下六个步骤：</p>
-</blockquote>
+<h1 id="-">第一阶段 数据分析思维与业务流程</h1>
+<p>课程主要内容</p>
+<ul>
+<li><p>第〇章：Excel基础入门</p>
+</li><li><p>第一章：爱数据爱科学——数据分析入门</p>
+</li><li><p>第二章：某线下连锁水果店销售数据分析</p>
+</li><li><p>第三章：某在线教育机构经营分析</p>
+</li></ul>
+<hr>
+<h2 id="-">第一章 爱数据爱科学-数据分析入门</h2>
+<h3 id="1-1-">1.1 预测未来-总统大选</h3>
+<h3 id="1-2-">1.2 优化现状-化妆品销售</h3>
+<h3 id="1-3-">1.3 总结规律-招聘市场</h3>
+<h3 id="1-4-">1.4 课程体系</h3>
+<h3 id="1-5-">1.5 职业规划</h3>
+<h2 id="-">第二章 某线下连锁水果店销售数据分析</h2>
+<h3 id="2-1-">2.1 案例背景</h3>
+<p>果多吃水果连锁超市是华北地区的热门线下水果超市。该超市覆盖华北5个省份，且在京津冀地区门店超过90家；与其他动辄SKU过百的水果连锁超市相比，公司专供60种热门水果，其中由果多吃自建供应链的具有自主商标的高品质产品在数量上逐年增加，为企业提供了丰厚利润。自2015至2018年，其年净利润涨幅保持在10%以上，其中2018年的净利润额达7835万。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi006.jpg" alt="image"></p>
+<p>作为一家线下连锁水果超市，果多吃通过直营+加盟的模式铺开连锁网络。通过标准化的储存方式、仓库的创新设计、高效能的设备以及与供应商的同步数据来确保物美价廉。</p>
+<p>其长期的稳定盈利，一方面得益于有针对性的店面规划和商品规划，另一方面得益于完备的会员制度和有效的会员激励方案。公司设计了一套商品分配系统，能够依据各个地区的商品销售特点自动划分该地区的水果供应配比，而总公司一般只需要按照整体需求安排水果采购即可；</p>
+<p>2019年，公司发现季度利润有下降趋势，下图是近年来的企业季度利润表现。从图中可以看出，2019年Q1和Q2的利润同比都为负数。连续两个季度无法维持利润增长，如果保持现有利润增幅，将无法满足公司董事会设定的利润目标，企业领导十分着急。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi007.jpg" alt="image"></p>
+<p>作为一个才入职的商业分析师，我们通过与老板沟通，得知个现有的目标有1个：</p>
+<p>对比去年达到5%的年净利润增长</p>
+<p>按照前几年的Q1Q2季度利润占比和近年的实际利润情况，估计全年利润为7600万左右，如果需要对去年保持5%的利润增长，则需要达到约8200万利润（7835万 * （1+5%）），还需要填补600万的利润缺口。按去年的季度利润占比，第三季度的利润平均占全年的28%，第四季度占全年的18%，我们预估第四季度的利润提高难度要大于第三季度。所以我们给第三季度分配400万利润提高额，给第四季度分配200万利润提高额。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi008.jpg" alt="image"></p>
+<h3 id="2-2-">2.2 问题确认与指标拆解（业务逻辑图）</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi009.jpg" alt="image"></p>
+<h3 id="2-3-">2.3 问题解决思路（流程图）</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi010.jpg" alt="image"></p>
+<p><strong>方案1：未盈利店铺Q3承担100万毛利额增长额</strong></p>
+<p>我们通过店铺的盈利状况，发现接近有23家店铺未盈利（约占92家店面的25%）。我们将25%的毛利额增长任务分配至这25%的未盈利店铺，利用部分商品打折促销的营销推广方式，让店铺增加客流量，提高打折水果销量，同时也提高非打折水果的销售概率。以这个方式来达到店铺毛利额增长的目标；</p>
+<p>通过25%的毛利额增长任务拆解单店的日均毛利额增长任务：</p>
+<ul>
+<li>亏损店铺本季度承担毛利额增长总额为：400万 * 25% = 100万</li><li></li><li>每店铺平均每日承担的毛利额增长额为：100万 / 90天 / 23店铺数 = 483元</li><li></li><li>为了将目标设置得稍微高一些，我们将目标从483元 提高到了 500元</li></ul>
+<p><strong>方案2：利用高销量高利润商品带来300万毛利额增长额</strong></p>
+<p>我们将75%的毛利额增长任务分配至所有店铺，分析热销水果，预测水果的销量变动趋势，改变不同水果的进货配比，从而达到增加毛利额的目标；</p>
+<p>通过75%的毛利额增长任务拆解单店的日均毛利额增长任务：</p>
+<ul>
+<li><p>所有店铺本季度承担毛利额增长总额为：400万 * 75% = 300万</p>
+</li><li><p>每店铺平均每日承担的毛利额增长额为：300万 / 90天 / 92店铺数 = 360元</p>
+</li></ul>
+<h3 id="2-4-">2.4 案例实操</h3>
+<p>整体知识点</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi016.jpg" alt="image"></p>
+<h4 id="2-4-1-">2.4.1 利用分组分析找到亏损店铺做营销优化，实验验证结论</h4>
+<p>我们在本阶段完成以下几个任务：</p>
+<p><strong>1.拆分出亏损店铺</strong></p>
+<p>其中亏损店铺的划分为：日毛利额小于4000的店铺；关于我们日毛利额4000的标准，我们的计算标准如下：</p>
+<ul>
+<li>租金成本：我们水果店铺单店的面积在80㎡左右，按每平米8元的日租金，每日租金为：640元</li><li>人员成本：水果店单店的员工数平均8人，每人每月平均工资4000元，折合每日工资为：1067元</li><li>税：水果店的单店税收平均到每天约为：1000元</li><li>水电及其他成本，每日约为：300元</li><li>装修及设备分摊成本，每日约为：1000元</li></ul>
+<p><strong>2.从亏损店铺中抽取部分店铺做精细化销售方案实验</strong></p>
+<ul>
+<li>其中精细化销售方案指线下店铺常用的部分商品打折促销的活动</li></ul>
+<p><strong>3.分析实验效果，前后对比，确定是否将该方案推广到其他亏损店铺</strong></p>
+<ul>
+<li>数据介绍</li></ul>
+<p>92家店铺 店铺ID 日均销量等4个维度（每个字段的介绍）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi023.jpg" alt="image"></p>
+<ul>
+<li>分组分析介绍</li></ul>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi025.jpg" alt="image"></p>
+<ul>
+<li>分析结果</li></ul>
+<p>三店平均日均净利润增长额：1176元</p>
+<p>23号店铺：净利润增额205元（未达目标）</p>
+<p>39号店铺：净利润增额2262元</p>
+<p>64号店铺：净利润增额1061元</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi027.jpg" alt="image"></p>
+<ul>
+<li><p>数据处理： 统计（excel 工具实现）</p>
+<ul>
+<li>对店铺亏损程度排序，查看大致亏损情况—按日均毛利升序排序</li></ul>
+</li></ul>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi029.jpg" alt="image"></p>
+<ul>
+<li>找出日均毛利小于4000元（亏损店铺）—筛选出日均毛利小于4000的店铺</li></ul>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi030.jpg" alt="image"></p>
+<ul>
+<li>抽取3个样例店铺（id 为23 ，39， 64） 进行推广实验并与之对比，数据如下<ul>
+<li>营销方案（运营人员）\降价营销（运营人员）</li></ul>
+</li></ul>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi033.jpg" alt="image"></p>
+<ul>
+<li><p>计算推广前后的利润对比</p>
+<ul>
+<li>对比日均毛利额是否增长</li><li>每日每斤平均利润 = 日均毛利额度/日均销量</li></ul>
+</li></ul>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi034.jpg" alt="image"></p>
+<ul>
+<li><p>23号店是否关店决策</p>
+<ul>
+<li>按现有日均毛利额增长速度，23号店预计未来3个月都无法达成盈利的状态，可以考虑关店；</li><li>3个月后预估的毛利 = 日均毛利*(1 + 增长幅度)^3</li></ul>
+</li></ul>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi035.jpg" alt="image"></p>
+<h4 id="2-4-2-">2.4.2 运用对比分析法解决哪类产品销售好的问题？</h4>
+<p>拆分出不同销量的水果，尝试对水果做销量对比</p>
+<p>使用对比分析方法完成任务</p>
+<ul>
+<li>数据介绍</li></ul>
+<p>数据为一具体店铺17天抽样的507条销售记录，数据维度包括销售日期 产品ID 折扣 数量等10个维度。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi039.jpg" alt="image"></p>
+<ul>
+<li>对比分析介绍</li></ul>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi041.jpg" alt="image"></p>
+<ul>
+<li>分析结果</li></ul>
+<p>通过对比销量分析，发现葡萄和荔枝的销量明显高于其他品类；</p>
+<p>为了进一步分析销量和利润的综合效果，需要结合利润维度做矩阵关联分析；</p>
+<p>同时为了决策进货量，需要进一步进行趋势分析。</p>
+<ul>
+<li>数据处理：统计（excel 工具实现）</li></ul>
+<p><strong>知识点：excel 去重筛选</strong></p>
+<p>1.【数据】—&gt;【高级筛选】—&gt;选择“将筛选结果复制到其他位置”，列表区域选中D列，指定复制到的位置，勾选“选择不重复记录”。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi044.jpg" alt="image"></p>
+<p>2.统计各品类的总销售量（sumif(范围，条件，求和项）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi045.jpg" alt="image"></p>
+<p>3.设施统计表格格式（字体，背景色等）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi046.jpg" alt="image"></p>
+<ul>
+<li>数据分析： 对比分析（图表更直接——可视化）</li></ul>
+<p><strong>知识点：为各品类绘制对比图（柱形图）</strong></p>
+<p>1.选中左侧所有数据 —&gt;【插入】—&gt; 图表区域选择柱形图。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi049.jpg" alt="image"></p>
+<p>2.选中图表右键添加数据标签（Excel 右侧可以设置图标样式）。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi050.jpg" alt="image"></p>
+<p>3.问题扩展：计算每天的总销售额，每单的总销售额。</p>
+<h4 id="2-4-3-">2.4.3 利用矩阵关联法找到销量好和利润高的品类</h4>
+<ul>
+<li><p>拆分出不同销量和利润的水果，为接下来的进货量调整做准备</p>
+<ul>
+<li>使用矩阵关联分析方法完成任务</li></ul>
+</li></ul>
+<ul>
+<li><p>找到利润高，销量高的水果</p>
+<ul>
+<li><p>利润高 ：平均利润高（因为水果每次进价不一样，售价也不一样）</p>
+</li><li><p>平均利润 = 总利润/总销量</p>
+</li><li><p>总销量 = 数量的总和</p>
+</li><li><p>总利润 = 利润的总和</p>
+</li><li><p>求利润 = 销售额 - 成本 * 数量</p>
+</li><li><p>销售额 = 单价 <em> 数量 </em> 折扣</p>
+</li></ul>
+</li></ul>
+<ul>
+<li>矩阵分析法</li></ul>
+<p>是指将事物的两个重要指标作为分析的依据，进行分类关联分析，找出解决问题的一种分析方法，也称为矩阵关联分析法，简称矩阵分析法。</p>
+<p>只要两个指标之间线性无关且放在一起有意义都可以用象限分析 。如：转化率和客单价， 售罄率和单款产出 ， 单款库存深度(数量）和 上新款数</p>
+<p>1.每次营销活动的点击率和转化率</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi054.jpg" alt="image"></p>
+<p>2.各类服装库存与销量</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi055.jpg" alt="image"></p>
+<p>3.用户对产品重要性与满意度</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi056.jpg" alt="image"></p>
+<ul>
+<li><p>作用：</p>
+<ul>
+<li><p>将有相同特征的事件进行归因分析，总结其中的共性原因</p>
+</li><li><p>建立分组优化策略</p>
+</li></ul>
+</li></ul>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi057.jpg" alt="image"></p>
+<p>销量高和平均利润都高：重点对待</p>
+<p>销量高但是平均利润少：一般保持</p>
+<p>销量低但是平均利润高：重点发展</p>
+<p>销量和平均利润双低：需要查明原因或减少进货量的品类</p>
+<ul>
+<li>分析结果</li></ul>
+<p>处在重点对待象限的品类是荔枝，可以增加进货量</p>
+<p>处于需要查明原因或减少进货量的品类是芒果，可以减少进货量</p>
+<ul>
+<li>数据处理： 统计（excel 工具实现）</li></ul>
+<p>1.excel 去重筛选所有品类 数据菜单—高级筛选</p>
+<p>2.统计销量（sumif)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi060.jpg" alt="image"></p>
+<p>3.统计总利润(sumif)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi061.jpg" alt="image"></p>
+<p>4.统计总销量（sumif)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi062.jpg" alt="image"></p>
+<p>5.计算平均利润</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi063.jpg" alt="image"></p>
+<ul>
+<li>数据分析： 象限分析（图表更直接——可视化）</li></ul>
+<p><strong>知识点：象限图（散点图改进）</strong></p>
+<p>1.选中销量和平均利润数据绘制散点图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi065.jpg" alt="image"></p>
+<p>2.计算销量与平均利润的平均值</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi066.jpg" alt="image"></p>
+<p>3.调整散点图的X,Y轴交叉点为销量和利润的均值，之变为矩阵图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi067.jpg" alt="image"></p>
+<p>4.去掉散点图的X,Y轴刻度</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi068.jpg" alt="image"></p>
+<p>5.选中横纵网格线，按下“del”键删除网格</p>
+<p>6.添加坐标轴的标题，便于区分各象限的含义</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi069.jpg" alt="image"></p>
+<p>7.设置数据标签</p>
+<p>a.选中图表右键”添加数据标签”</p>
+<p>b.选中标签右键“数据标签选项”—选中单元格的值并框选所有产品类目，去掉Y值</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi070.jpg" alt="image"></p>
+<p>8.最终展现结果如下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi071.jpg" alt="image"></p>
+<p>9.可以看出芒果的销量、利润都不高，可以将精力放到其他水果的销量上</p>
+<h4 id="2-4-4-">2.4.4 运用趋势分析法分析水果总需求如何？</h4>
+<ul>
+<li><p>挑选出毛利额较高的品类和毛利额较低的品类，预测两者的后续销量趋势</p>
+<ul>
+<li>使用趋势分析法预测销量趋势</li></ul>
+</li><li><p>根据预测的销量趋势判断是否需要增加进货量或者减少进货量，并判断为了完成利润目标需要增加多少进货量</p>
+</li><li><p>趋势分析法</p>
+<ul>
+<li>趋势是市场表现的方向，趋势分析可以帮助我们把握市场大方向，不犯原则性错误。</li><li>趋势有三种方式：上升，下降和平稳</li><li>纵向分析:不同时间的段指标进行比较</li></ul>
+</li></ul>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi073.jpg" alt="image"></p>
+<ul>
+<li>分析结果</li></ul>
+<p>荔枝的趋势预测小幅上升，说明顾客对于荔枝的需求正在增长，可以提高荔枝进货量。</p>
+<p>同样，利润较低的芒果趋势预测小幅下降，说明顾客对于芒果需求正在降低，可以减少芒果进货量。</p>
+<ul>
+<li>数据处理</li></ul>
+<p>1.数据量少的情况下，我们选择时间粒度为日。excel 去重筛选所有时间段</p>
+<p>【数据】—&gt;【高级筛选】—&gt; 列表区域选择日期列</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi074.jpg" alt="image"></p>
+<p>2.统计每天荔枝的销售量并设置表格式 （sumifs(求和项,范围1，条件1，,范围2，条件2，…)）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi075.jpg" alt="image"></p>
+<ul>
+<li>数据分析： 趋势分析（图表更直接——可视化）-时间段趋势用折线图表示</li></ul>
+<p>1.【插入】—&gt;【图表区】—&gt; 选择“带数据标记折线图”（时间段少时用）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi077.jpg" alt="image"></p>
+<p>2.选中图表对象，增加趋势线并对图表进行美化</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi077.jpg" alt="image"></p>
+<p>3.设置标记点</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi078.jpg" alt="image"></p>
+<p>4.以同样的方式绘制芒果销量趋势图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi079.jpg" alt="image"></p>
+<ul>
+<li><p>问题扩展</p>
+<ul>
+<li><p>分析4月第一周各类水果的需求情况</p>
+</li><li><p>计算每日的客单价 客单价 = 总销售额/订单数</p>
+</li></ul>
+</li></ul>
+<h3 id="2-5-">2.5 结论分析报告</h3>
+<p>1.各店的精细化销售方案能将亏损店铺日均毛利额提高1176元</p>
+<ul>
+<li>通过三店的精细化销售推广，23号店日均毛利额提升205元，提升幅度达23.85%；39号店铺日均毛利额提升2262元，提升幅度68.17%；64号店铺日均毛利额提升1061元，提升幅度30.07%；三店铺日均毛利额提高1176元</li><li>按三店的最低提升幅度23.85%估计23家亏损店铺的整体日均利润提升额为1.6万，平均每个店铺712元，大于目标500元</li><li>后续可以对24个亏损店铺推广，按每个店铺712元的毛利提升，预计整体一个季度可以提升143万利润。可完成36.8%毛利额增长目标</li></ul>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi080.jpg" alt="image"></p>
+<p>2.调整水果进货后能将店铺的日均毛利额提高</p>
+<ul>
+<li>通过矩阵关联法，分析出荔枝属于高销量高利润商品、芒果属于低销量低利润商品；</li><li>通过预测两者销量趋势，可以预测到荔枝销量呈上升趋势，芒果销量呈下降趋势。我们决定增加荔枝进货量，减少芒果进货量。结合矩阵关联法，可以看出，这种调整组合可以有效提高店面整体毛利额；</li><li><p>假设我们的进货调整方案为：荔枝调整进货量=(目标利润+(芒果利润*芒果下降销量))/荔枝利润</p>
+<ul>
+<li>可以计算得出需要增加荔枝量在230斤到330斤之间</li></ul>
+</li><li><p>后续可按相同方式预测其他水果销量，可以综合地提高其他品类的进货量，而非单一提高一个品类的进货量，从而使我们达到目标的策略更加稳妥可行</p>
+</li></ul>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi087.png" alt="image"></p>
+<h2 id="-">第三章 某在线教育机构经营分析</h2>
+<h3 id="3-1-">3.1 案例背景</h3>
+<p>某教育公司成立于1999年，早年发展线下职业教育，已做到一定规模，有一定的群众基础。近年，互联网教育火热，公司积极互联网转型。如今，已开设9个方向的大专业，覆盖如今互联网企业的多个热门职业。其主打的大数据开发教育、Java教育、数据分析教育课程销售数量逐年上升，已经开始转亏为盈。</p>
+<p>该公司的优秀增长效果得益于其完备的用户平台和高效的用户变现体系。该公司在转型初期，并不是简单的线上教育模式，而是教育社区+线上课程平台的模式。通过教育社区吸引用户讨论职业问题，在有一定的职业知识信息积累之后。通过SEO、用户分享讨论帖将对职业知识有需求的网民转化成社区的用户；之后，通过社区内广告位、公众号推广、外投广告推广、外呼等方式来收集对课程有需求的潜在学员线索；统一使用电话销售团队转化线索，让学员通过购买会员的方式开通课程平台的小课体验功能，实现第一步转化；之后对有大课需求的会员，再做进一步的转化，让其购买平台内的综合大课，成为平台学员；在学员学习过程中，其教研团队，产品开发团队也在不断打磨课程，优化产品。通过多年的积累，平台已经积累了较高的口碑，转化的学员中，有近60%的学员表示愿意继续上该公司的其他课程或者进阶课程，有70%的学员愿意为他的同学或者朋友推荐公司的课程；同时，营销团队还通过设计营销活动，让学员在各种节假日分享课程活动信息或者名师讲座来达到裂变传播的效果，整个自传播的学员已具一定规模，为公司的推广节省了很多费用。</p>
+<ul>
+<li>教育行业营收转化模型</li></ul>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi088.jpg" alt="image"></p>
+<p>该教育公司比较关心线上教育业务线的盈利能力，主要考核毛利额；毛利额是利润额的一种计算方式，一般以<br><code>毛利额 = 营业收入 - 商品成本</code>来计算（相对的净利润则是以（收入-所有成本）来计算的）；而对于细化到具体商品，毛利额也可以以<code>毛利额 = Σ(单品售价 - 单品成本) * 单品销量</code>来计算。这时，单品的售价、单品成本、单品销量就是影响毛利额的主要影响因素。</p>
+<p>附：该公司利润构成：</p>
+<p><code>利润 = 营业收入 - 商品成本 - 其他成本 （由于本机构使用自建办公楼，所以没有房租成本）</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi089.jpg" alt="image"></p>
+<p>线上教育产品有互联网产品都有的特点：即一次生产，可以无限次售卖。而售卖次数越多，每份产品分摊的成本也就越少。这时，即使保持单品售价不变，也能有效提高毛利额；所以，一般来说，提升课程的销量就能有效提高毛利额；</p>
+<p>今年的盈利目标为1000万元毛利额，从一月至八月的毛利额完成情况看，完成情况远不理想，仅完成378.9万，占全年任务的38%；之后经过领导层商议，将原有的1000万毛利额目标调整为现有的700万元，预计9月至12月需完成320万左右的毛利额目标。由于9月10月是换工作的热门月份，这段时间的培训课程需求也会比其他月更高，所以9/10月份会承担毛利额目标的70%，也就是224万，平均一个月112万元。之后的两个月承担剩余30%毛利，平均一个月48万元。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi090.jpg" alt="image"></p>
+<p>而近期该公司遇到了一个问题，近期课程销售额上升，但是计算出的毛利额却在下降。作为数据分析师的你，需要分析出这个问题的原因，并给出解决方案。</p>
 <ol>
-<li>需求分析</li></ol>
-<blockquote>
-<p>问题定位需求拆解；</p>
-</blockquote>
-<ol>
-<li>数据收集</li></ol>
-<blockquote>
-<p>Mysql数据查询</p>
-<p>Hive的数据查询爬⾍ （Python)；</p>
-</blockquote>
-<ol>
-<li>数据处理</li></ol>
-<blockquote>
-<p>EXTRACT(提取)</p>
-<p>Transform(转换)</p>
-<p>LOAD(加载)；</p>
-</blockquote>
-<ol>
-<li>数据分析</li></ol>
-<blockquote>
-<p>业务指标体系数据分析模型</p>
-<p>数据分析、统计分析⽅法；</p>
-</blockquote>
-<ol>
-<li>数据可视化</li></ol>
-<blockquote>
-<p>tableau</p>
-<p>神策数据平台</p>
-<p>quick bi；</p>
-</blockquote>
-<ol>
-<li>数据分析报告</li></ol>
-<h1 id="-">第⼆部分：数据分析⽅法论和分析模型</h1>
-<h2 id="-">数据分析⽅法论</h2>
-<blockquote>
-<p>做好数据分析是有⽅法的，⼤家要学会在平时的⼯作过程中，针对不同的业务场景套⽤合适的⽅法和模型去解决。</p>
-</blockquote>
-<h3 id="-5w2h">明确问题⽅法论———5W2H</h3>
-<blockquote>
-<p>梳理业务流程是⼀个挺复杂的过程，这个过程主要是以实际的业务场景为基础获取业务信息，然后抽象出⼀个以参与对象为节点的业务流程。⽤<strong>5W2H</strong>通过图等⼯具可以很⽅便的把业务梳理出来， 从⽽把问题明确。</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page5-Image1.jpg" alt=""></p>
-<h4 id="-">“如何分析⽤户是否是⼩学⽣？”</h4>
-<ol>
-<li><p>WHY ——— 为什么会有这样的问题？为什么需要分析⼩学⽣⽽不是⼤学⽣或者⼩学⽣的⽗⺟？</p>
-</li><li><p>WHO ——— 这个产品的⼩学⽣和普通理解的⼩学⽣有没有差别？什么样的⼩学⽣才会使⽤这个产品？</p>
-</li><li><p>WHERE ——— 每个地⽅的⼩学⽣是不是都有⼀样的特点？什么地⽅的⼩学⽣特点⽐较突出？⼩学⽣的位置信息是否会有特点？</p>
-</li><li><p>WHEN ——— ⼩学⽣⼀般什么时候⽤这个产品？频率如何？和其他⽤户有什么差异？</p>
-</li><li><p>WHAT ——— ⼩学⽣有什么与其他⽤户不同的特点？</p>
-</li><li><p>HOW ——— 可能会有什么解决⽅案？</p>
-</li><li><p>HOW MUCH ——— 这些解决⽅案影响有多⼤？什么⽅案最好？</p>
-<ol>
-<li><h3 id="-">拆解问题⽅法论———逻辑树</h3>
+<li><h3 id="3-2-">3.2 问题确认与指标拆解（业务逻辑图）</h3>
 </li></ol>
+<p>1.确认毛利额数据异常的问题</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi091.jpg" alt="image"></p>
+<p>2.提升毛利额的方案</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi092.jpg" alt="image"></p>
+<ol>
+<li><h3 id="3-3-">3.3 问题解决思路</h3>
 </li></ol>
-<blockquote>
-<p>按照业务逻辑或者商业逻辑，把复杂问题拆解成若⼲个简单的⼦问题，像树枝⼀样逐步展开。</p>
-<p>把已知的问题⽐作树⼲，然后考虑哪些问题或任务与已知问题有关，将这些问题或⼦任务⽐作逻辑树的树枝，⼀个⼤的树枝上还可以继续延伸出更⼩的树枝，逐步列出所有与已知问题相关联的问题。</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page6-Image1.jpg" alt=""></p>
-<h4 id="-">如何分析⼀家互联⽹知名的某贵⾦属电商平台⽹站利润？</h4>
-<blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/D:/Big Data/数据分析实战训练营/1第一阶段 数据分析思维方法与行业案例实战/1.数据分析思维与业务流程/image/Page6-Image2.jpg" alt=""></p>
-</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi093.jpg" alt="image"></p>
 <ol>
-<li><strong>定位问题原因⽅法论</strong></li></ol>
-<blockquote>
-<p>当我们明确到某个具体指标出现问题后，通常我们需要定位问题的具体原因。</p>
-</blockquote>
-<h4 id="-app-dau-">如何分析某APP DAU逐渐下跌的原因</h4>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page7-Image2.jpg" alt=""></p>
-<ol>
-<li><strong>业务指标体系</strong></li></ol>
-<blockquote>
-<p>业务指标的定义：</p>
-<p>对业务有参考价值的的统计数据。业务指标的作⽤：</p>
-<p>当企业确定发展⽬标时，就需要使⽤业务指标来量化发展⽬标。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page8-Image1.jpg" alt=""></p>
-</blockquote>
-<h3 id="-">产品运营指标</h3>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page8-Image2.jpg" alt=""></p>
-<blockquote>
-<p>北极星指标</p>
-</blockquote>
-<h3 id="-">商业分析指标</h3>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page9-Image1.jpg" alt=""></p>
-<ol>
-<li><p><strong>数据分析模型</strong></p>
-<ol>
-<li><strong>如何进⾏⽤户分析</strong></li></ol>
+<li><h3 id="3-4-">3.4 实际方法应用</h3>
+</li><li><h4 id="3-4-1-">3.4.1 数据涨跌异动分析-问题拆解(逻辑树)</h4>
 </li></ol>
-<h4 id="-">⽤户结构分析</h4>
-<blockquote>
-<p>⽤户结构⼀般包含以下⼏个⽅⾯的信息：</p>
-<p>⾃然属性：年龄，性别，地域，</p>
-<p>社会属性：学历，家庭状况，婚姻，⼦⼥等；</p>
-<p>商业属性：财富等级，消费档次，信⽤等；</p>
-<p>⼼理属性：价格敏感性、偏好属性等；</p>
-<p>⾏为属性：浏览频次，浏览品类、浏览价格带、下单频次、下单品类、下单价格带等；价值属性：ADR贡献等。</p>
-</blockquote>
-<h4 id="-">⽤户⾏为分析</h4>
-<blockquote>
-<p>⽇常⼯作中，可以通过⽤户⾏为⽇志，将每⼀个⽤户的⾏为都标记出来，并且根据业务需要对⾏为进⾏标记。</p>
-</blockquote>
-<h4 id="-">⽤户价值分析</h4>
-<blockquote>
-<p>⽤户价值体现在两个⽅⾯，当平台是售卖物品或售卖服务的平台，⽤户发⽣的交易数据可以体现⽤户价值；如果平台是以⼴告变现的平台，那么⽤户的⼴告价值则体现⽤户价值。</p>
-<p>针对不同价值的⽤户进⾏分析，⼀般考虑如下⽅⾯：</p>
-<p>购买⾦额：指在⼀段时间内累计的消费⾦额；</p>
-<p>购买频次：指在⼀段时间内，购买的次数；</p>
-<p>购买平均⾦额：指在⼀段时间内，平均每次消费的⾦额；购买内容：指在⼀段时间内，购买商品或服务的属性；复购频次：指在⼀段时间内，反复消费的次数；</p>
-<p>复购间隔：指在⼀段时间内，每次复购⾏为之间的时间间隔；</p>
-<p>复购内容：指在⼀段时间内，每次复购时购买的商品或服务的属性。这⾥分享⼀些经验：</p>
-<p>⽤户的交易数据经常会被忽略</p>
-<p>⾏为+结果=⼼理。</p>
-<p>不要单纯的把⽤户交易数据当作结果数据使⽤。⽐如，⼀个⽤户在第⼀次发⽣交易后，每隔⼀段时间就会继续发⽣交易，那么该⽤户就不能被简单的定义为普通⽤户，⽽应视为忠实⽤户。</p>
-</blockquote>
-<h3 id="-">⽤户⽣命周期模型</h3>
-<blockquote>
-<p>⽤户⽣命周期，源⾃于传统营销学⾥⾯的客户⽣命周期⼀说，特别是在政治、经济、环境、社会等诸多领域经常出现，其基本涵义可以通俗地理解为”从摇篮到坟墓”（Cradle-to-Grave）的整个过程，在互联⽹⾏业中，⽤户的⽣命周期指的是：<strong>⽤户接触你的产品到最后流失的整个过程。</strong></p>
-<p>⼀般互联⽹⽣命周期包括：<strong>引⼊期</strong>、<strong>成⻓期</strong>、<strong>成熟期</strong>、<strong>休眠期</strong>和<strong>流失期</strong>5个周期。</p>
-<p>1.引⼊期：指⽤户从下载到进⼊我们产品的时期。</p>
-<p>2.成⻓期：⼀般⽤户成功使⽤产品或多次购买产品之后，便进⼊了成⻓期。</p>
-<p>3.成熟期：指⽤户通过多次购买，成为了忠实⽤户，产品占领⽤户⼼智。</p>
-<p>4.休眠期：⽤户在⼀定时间内，没有再次购买过平台产品。</p>
-<p>5.流失期：⽤户超出设定的休眠期时间，没有购买过产品。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page11-Image1.jpg" alt=""></p>
-</blockquote>
-<h4 id="-">⽤户⽣命周期模型作⽤</h4>
-<blockquote>
-<p>随着移动互联⽹的⽤户增⻓趋近饱和，获客成本越来越⾼，留住⼀个⽼⽤户的成本远⽐获取⼀个新⽤户的成本低，这使⽤户的留存就显得⾄关重要。⽽按照⽤户⽣命周期来划分⽤户，能够帮助我们了解不同⽣命周期的⽤户需求，开展运营策略，从⽽减少⽤户流失。</p>
-<p>针对不同阶段的⽤户，采取针对性运营策略，从⽽<strong>延⻓⽤户的⽣命周期</strong>，<strong>尽可能让⽤户产⽣商业价值</strong>。在运营愈发精细化的当下，通过搭建⽤户⽣命周期体系，让运营⼯作更加精细化、效率化、产品化，对于提⾼平台运营的效果和效率⾄关重要。</p>
-<p>在⽤户⽣命周期中有两个阶段要注意：要缩短成⻓期</p>
-<p>延⻓成熟期</p>
-</blockquote>
-<h4 id="-">⽤户⽣命周期运营策略</h4>
-<blockquote>
-<p>五类⽤户⽣命周期</p>
-</blockquote>
-<h4 id="-">新客</h4>
-<blockquote>
-<p><strong>⾸次成交⽤户忠实⽤户</strong></p>
-<p><strong>潜在流失⽤户流失⽤户</strong></p>
-<p><strong>引⼊期 -- 新客</strong></p>
-<p>⽬标：促成其完成⾸次成交。</p>
-<p>⼿段：</p>
-</blockquote>
+<p>1.统计各月销售额与毛利额并绘制折线图</p>
+<p>从图示中查看是否为销售额上升但利润额下降</p>
+<p>2.计算各月毛利率与毛利率环比并绘制图形</p>
+<p>从图示中查看是否为非正常波动</p>
+<p>3.从渠道促销开始验证，统计各类型渠道的销售额与毛利率并绘制象限图</p>
+<p>从图示找到销售额高但毛利率低的类型渠道</p>
+<p>4.从渠道类型细化到具体渠道，同样统计各渠道的销售额与毛利率并绘制象限图</p>
+<p>从图示找到销售额高但毛利率低或者毛利率极地的渠道</p>
+<p><strong>逻辑树拆解分析介绍</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi094.jpg" alt="image"></p>
+<p><strong>逻辑树结果</strong></p>
+<p>通过月环比数据计算得知本月的毛利额下降并非数据波动，下降幅度为32%</p>
+<p>通过逻辑树，我们将订单数据按照渠道类型和具体渠道细拆，使用关联矩阵分析找出销售额和毛利率均低于平均值的渠道类型：免费渠道；并在免费渠道中细拆出销售额和毛利率都低于平均值的渠道名称：站内广告位</p>
+<p>之后我们仔细观察站内广告位的8月数据，发现异常问题是由于8月17日的大课促销引起的</p>
+<p>1.插入数据透视表为统计各月的销售额与利润做准备</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi095.jpg" alt="image"></p>
+<p>2.统计各月的销售额与利润</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi096.jpg" alt="image"></p>
+<p>3.统计各月的总销售额和总利润（ 对毛利额也做同样设置）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi097.jpg" alt="image"></p>
+<p>4.选中透视表任意位置插入图表并调整样式</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi098.jpg" alt="image"></p>
+<p>5.2020年8月份销售额上升，但总毛利在下降，要继续通过毛利率与毛利率环比查看是否为正常波动（excel中设置自定义单元格格式为”万“：0!.0,万）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi099.jpg" alt="image"></p>
+<p>6.数据透视表的内容不能进行相对引用，所以要复制到其他位置并计算毛利率，与毛利率环比</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi100.jpg" alt="image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi101.jpg" alt="image"></p>
+<p>7.绘制毛利润率与毛利率环比图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi102.jpg" alt="image"></p>
+<p>8.各月毛利率与毛利率环比图示如下（8月毛利润出现异常，确认问题不属于正常波动）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi103.jpg" alt="image"></p>
+<p>9.产品较多我们从渠道类型出发（发现8月数据免费渠道是销售额高但毛利率低）象限图的绘制请参照案例一的矩阵关联分析</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi104.jpg" alt="image"></p>
+<p>10.下钻免费渠道内的明细渠道</p>
+<p>发现8月数据站内广告位是销售额很高、毛利率极低，说明很可能是站内广告位的相关活动影响了整体的毛利额；</p>
+<p>象限图的绘制请参照案例一的矩阵关联分析</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi105.jpg" alt="image"></p>
+<p>11.通过对比分析确定站内广告位的问题</p>
+<p>通过7、8月份的渠道毛利率和渠道销售额对比，发现毛利率主要下降的渠道为站内广告位、EDM短信、0元体验课。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi106.jpg" alt="image"></p>
+<p>其中，由于站内广告位渠道在8月17日做了促销活动，当日出现20单毛利额为负的产品。导致该渠道本月毛利率为负值。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi107.jpg" alt="image"></p>
+<p>而渠道销售额上升的渠道主要有：站内广告位、外呼、社群（站内）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi108.jpg" alt="image"></p>
+<p>而考察不同明细渠道对免费渠道的销售额涨幅贡献率（即免费渠道的销售额上升中有多少额度是出自这个具体的渠道。）可以看出由于EDM短信的渠道销售额有下降，站内广告位的销售额贡献率超过 100%，达到100.69%；</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi109.jpg" alt="image"></p>
+<p>说明8月的销售额上升、利润额下降的问题，主要是由于站内广告位的渠道销售额大量上升而毛利率大量下降引起的。</p>
 <ol>
-<li>MGM，⽼带新；</li></ol>
-<blockquote>
-<p>2.产品⼀定要下功夫打磨，做好⽤户留存。</p>
-</blockquote>
-<h4 id="-">成⻓期 -- ⾸次成交⽤户</h4>
-<blockquote>
-<p>⽬标：提⾼⽤户的更多成交。</p>
-<p>⼿段：</p>
-<p>投⼊产品层⾯新客户专享的福利</p>
-</blockquote>
-<h4 id="-">成熟期 -- 忠实⽤户</h4>
-<blockquote>
-<p>⽬标：让这部分⽤户持续购买。</p>
-<p>⼿段：</p>
-<p>1.⼤⼒度的营销活动；</p>
-<p>2.有趣的⼩游戏</p>
-</blockquote>
-<h4 id="-">休眠期 -- 潜在流失⽤户</h4>
-<blockquote>
-<p>⽬标：促活，注意：</p>
-<p>1.建⽴VIP专线及专⼈服务措施；</p>
-<p>2.加强舆情监控、及时发现异动。</p>
-</blockquote>
-<h4 id="-">流失期 -- 流失⽤户</h4>
-<blockquote>
-<p>⽤户流失是很容易被运营⼈员忽视的⼀个环节，⽽且也不能短时间内出效果，需要平时多研究，多尝试，多复盘。不仅要进⾏⽇常监测，还要对其采取运营措施，⽐如活动召回、push、短信、外呼等，不断复盘优化，形成体系。在重⼤营销时，可以尝试加⼤召回⼒度，效果好的也许会出乎意料。</p>
-</blockquote>
-<h3 id="aarrr-">AARRR⽤户增⻓模型</h3>
-<h4 id="aarrr-">AARRR模型概念及作⽤</h4>
-<blockquote>
-<p>获取（Acquisition）激活 （Activation）留存（Retention）收⼊（Revenue）推荐（Referral）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page13-Image1.jpg" alt=""></p>
-</blockquote>
-<h4 id="aarrr-">AARRR模型各环节说明</h4>
-<blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page14-Image1.jpg" alt=""></p>
-<p><strong>1.获取⽤户(Acquisition) -- ⽤户如何找到我们</strong></p>
-<p>什么是渠道？</p>
-<p>⼀是⼝碑渠道，适合病毒营销；</p>
-<p>⼆是有机渠道，适合搜索引擎优化、内容营销；三是付费渠道，⽐如电视⼴告、赞助。</p>
-<p>另外，获取⽤户需要重点关注的指标：</p>
-</blockquote>
-<ol>
-<li><p>渠道曝光量：有多少⼈看到产品推⼴的线索</p>
-</li><li><p>渠道转换率：有多少⽤户因为曝光转化成⽤户</p>
-</li><li><p>⽇新增⽤户数：每天新增⽤户数</p>
-</li><li><p>⽇应⽤下载量：每天有多少⽤户下载该应⽤</p>
-</li><li><p>获客成本(CAC):获取⼀个⽤户所消耗的成本</p>
+<li><h4 id="3-4-2-">3.4.2 渠道排名-综合分析</h4>
 </li></ol>
-<h4 id="2-activation-">2.激活⽤户(Activation) -- ⽤户的⾸次体验如何</h4>
-<blockquote>
-<p>什么是活跃？</p>
-</blockquote>
-<h4 id="dau-">DAU = 当⽇新增 + 累计历史⽇留存</h4>
-<blockquote>
-<p>分析⻆度：</p>
-<p>1.活跃⽤户构成</p>
-<p>新⽤户数、⽼⽤户数、新⽼⽤户占⽐、新⽼⽤户活跃率、忠诚⽤户数、回流⽤户数、流失⽤户数、1次/1⽇登录⽤户占⽐等指标，根据不同产品运营时期，有不同的参考数值。</p>
-<p>2.产品粘度。</p>
-</blockquote>
-<h4 id="mau-dau">MAU/DAU</h4>
-<blockquote>
-<p>其他指标</p>
-<p>1.⽇活跃⽤户数（简称⽇活）：⼀天之内，登录或使⽤某个产品的⽤户数。类似的还有周活跃⽤户数，⽉活跃⽤户数</p>
-<p>2.活跃率（活跃⽤户占⽐）：某⼀时间段内活跃⽤户在总⽤户的占⽐。根据时间可分为⽇活跃率</p>
-<p>（DAU）、周活跃率（WAU）、⽉活跃率（MAU）等</p>
-<p>3.⽤户流失率：⽤户流失率和留存率恰好相反，如果某产品新⽤户的次⽇留存为20%，那么反过来说明有80%的⽤户流失了</p>
-</blockquote>
+<p>1.对渠道4个关键指标通过优化矩阵进行权重划分</p>
+<p>确定各指标的权重值</p>
+<p>2.对渠道各指标进行0-1 标准化</p>
+<p>消除量纲差异的影响</p>
+<p>3.利用标准化后的指标与指标进行乘积求和计算各渠道的综合得分</p>
+<p>利用综合得分对渠道进行排名</p>
+<p><strong>综合分析法：</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi110.jpg" alt="image"></p>
+<p><strong>结论:</strong></p>
+<p>现有渠道最好的为站内广告位，最次的渠道位知乎KOL。</p>
+<p>但是由于投放广告涉及很多因素，如广告复投问题、文案更新问题、转化周期长短问题。后续的改进策略还需要进一步与营销部门商议。</p>
+<p>后续作业我们会亲身参与这个问题的后续解决过程。</p>
+<p>数据介绍:9个渠道ROI，报名转化率等4个渠道关键指标</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi111.jpg" alt="image"></p>
+<p>1.目标优化矩阵方式确认指标权重</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi112.jpg" alt="image"></p>
+<p>2.数据标准化（去除量纲影响）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi113.jpg" alt="image"></p>
+<p>3.利用指标权重和标准化后数据计算综合得分（ MMULT(数据范围1，数据范围2)）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi114.jpg" alt="image"></p>
+<p>4.对各渠道进行排名（rank(数据，数据范围)）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi115.jpg" alt="image"></p>
 <ol>
-<li><p>PV(PageView)是⻚⾯浏览量，⽤户每打开⼀个⽹⻚可以看作⼀个PV，⽤户看了⼗个⽹⻚PV为⼗。</p>
-</li><li><p>UV（Unique Visitor,独⽴访客数）是⼀定时间内访问⽹⻚的⼈数，不管⽤户访问多少⽹⻚，他都只算⼀个独⽴访客，怎么确认⽤户是不是同⼀个⼈呢？技术上通过⽹⻚缓存cookie或者IP判断，如果这两者改变了，则⽤户算作全新的访客。</p>
+<li><h4 id="3-4-3-">3.4.3 分析培训班的各环节转化情况-产品用户行为分析(漏斗分析)</h4>
 </li></ol>
-<h4 id="3-retention-">3.⽤户留存(Retention) -- ⽤户会回来吗</h4>
-<blockquote>
-<p>主要指标：</p>
-<p><strong>次⽇留存率</strong>：（当天新增的⽤户中，在第⼆天使⽤过产品的⽤户数）/第⼀天新增的总⽤户数<strong>第3⽇留存率</strong>：(第⼀天新增的⽤户中，在第3天使⽤过产品的⽤户数)/第⼀天新增的总⽤户数<strong>第7留存率：</strong>（第⼀天新增的⽤户中，在第7天使⽤过产品的⽤户数）/第⼀天新增的总⽤户数</p>
-<p><strong>第30天留存率：</strong>（第⼀天新增的⽤户中，在第30天使⽤过产品的⽤户数）/第⼀天新增的总⽤户数</p>
-<p>提升活跃与留存4种⽅式：</p>
-</blockquote>
-<h4 id="-">有效触达，唤醒⽤户：</h4>
-<blockquote>
-<p>⼿机PUSH、短信和微信公众号推送</p>
-</blockquote>
-<h4 id="-">搭建激励体系，留存⽤户：</h4>
-<blockquote>
-<p>成⻓值会员体系、签到体系、积分任务体系等。</p>
-</blockquote>
-<ol>
-<li><h4 id="-">丰富内容，增加⽤户在线时⻓</h4>
-</li><li><p><strong>数据反推，找到关键点</strong></p>
-</li></ol>
-<blockquote>
-<p><strong>4.变现(Revenue) -- 如何赚到钱</strong></p>
-<p>媒体类平台依靠⼴告变现游戏类依靠⽤户付费</p>
-<p>电商类通过收取佣⾦或卖家付费的⽅式。</p>
-<p>指标：</p>
-<p><strong>客单价：</strong>每位⽤户平均购买商品的⾦额，客单价=销售总额/顾客总数。</p>
-<p><strong>PUR：</strong>（pay user rate） 付费⽤户占⽐。</p>
-<p><strong>复购率：</strong>⼀定时间内，消费两次以上的⽤户/总购买⽤户数，如果10个客户购买了商品，5个⽤户产⽣了重复购买，则复购率为50%。</p>
-<p>还有ARPU、ARPPU、付费率（区分新⽼）、回购率等。</p>
-</blockquote>
-<h4 id="5-refer-">5.产品推荐(Refer) -- ⽤户会告诉其他⼈吗</h4>
-<blockquote>
-<p>指标：</p>
-<p><strong>转发率</strong>：转发的⽤户数/看到该功能的⽤户数。</p>
-<p><strong>转化率</strong>：⽐如淘宝转化率=某段时间产⽣购买⾏为的⽤户数/所有到达店铺的访客⼈数，⽐如双⼗⼀，看到店铺某个产品的客户有100个，最后下单的⼈数有10个，则转化率为10%。</p>
-<p><strong>K因⼦</strong>：⽤来衡量推荐的效果。K因⼦=（每个⽤户向他的朋友发出请求的数量）*接收到邀请的⼈转化为新⽤户的转化率。K>1 ⽤户像滚雪球⼀样的增⼤；K\&lt;1 ⽤户群到某个规模时就会停⽌通过⾃传播的增</p>
-<p>⻓。</p>
-</blockquote>
-<h4 id="6-">6.⼩结</h4>
-<blockquote>
-<p>通过AARRR模型，我们看到产品运营每个环节都⾄关重要，获取⽤户关系到我们的产品多⼤程度进⼊市场，活跃与留存关系到产品⽣命周期，收⼊的重要⾃是不必多说，⾃传播则是我们尽可能争取的资源，降低成本扩⼤影响的环节，每个环节都需要⼤量的数据分析和迭代，从⽽不断改进产品。</p>
-</blockquote>
-<ol>
-<li><h3 id="rfm-">RFM模型</h3>
-<ol>
-<li><h4 id="rfm-">RFM模型概念及原理</h4>
-</li></ol>
-</li></ol>
-<blockquote>
-<p><strong>R</strong>值：Rencency（最近⼀次消费）</p>
-<p>指的是⽤户在店铺消费最近⼀次和上⼀次的时间间隔；</p>
-<p><strong>F</strong>值：Frequency（消费频率）</p>
-<p>指的是是⽤户在固定时间内的购买次数；</p>
-<p><strong>M</strong>值：Monetary（消费⾦额）</p>
-<p>指的是⼀段时间（通常是1年）内的消费⾦额；主要⽅法：⼆分法</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page17-Image1.jpg" alt=""></p>
-<p>RFM这3个值对应的价值是⾼还是低，对应到下⾯这张表⾥就得到了⽤户分类的规则。</p>
-</blockquote>
+<p>1.做出漏斗分析</p>
+<p>2.找到问题环节</p>
+<p>3.分析问题环节原因</p>
+<p>4.实验设计的环节</p>
+<p>5.目标提升度的分析，改进后的结果估计可以提升多少毛利额。这部分需要写出具体的估算算法。</p>
+<p>上个分析有具体到各个渠道的分析，但是这个分析里没有渠道数据；是整体数据的分析；</p>
+<p><strong>漏斗分析法：</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi116.jpg" alt="image"></p>
+<p><strong>漏斗分析结论：</strong></p>
+<p>通过漏斗分析，发现转化漏斗中的留电环节转化率明显低于其他环节</p>
+<p>数据介绍：几个相同路径渠道8月的报名路径及人数如下，不同路径的要分别分析。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi117.jpg" alt="image"></p>
+<p>1.计算各环节及总环节的转化率</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi118.jpg" alt="image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi119.jpg" alt="image"></p>
+<p>从总体最终转化来看低于行业转化水平3%-5%，并且咨询到预留电话环节转化明显较低，考虑是从客服响应时间或话术方面进行优化。</p>
+<p>2.数据可视化（漏斗图）</p>
+<p>由于漏斗图不能选择绘图数据外的数据作为数据标签，所以选择堆积条形图。</p>
+<p>1）在数前计算占位数 = （第一环节人数 - 当前环节人数）/ 2</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi120.jpg" alt="image"></p>
+<p>2）选中各环节，占位符， 真实人数三组数值后“插入”菜单—图表—“堆积条形图”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi121.jpg" alt="image"></p>
+<p>3）选中Y轴右键“设置坐标轴格式”—-勾选“逆序类别” 让橙色图成漏斗形式</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi122.jpg" alt="image"></p>
+<p>4）选中人数（橙色）条形图右键“添加数据标签”，数据标签右键”设置数据标签格式”—-勾选“单元格中的值”—-选中“各环节转化率”的数据</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi123.jpg" alt="image"></p>
+<p>5）选中蓝色条图右键“填充”—选择无填充.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi124.jpg" alt="image"></p>
+<p>之后，我们分析了预留联系方式环节的日志数据，发现用户等待时间过长问题。</p>
+<p>1.人工客服的平均用户等待时间过长</p>
+<p>从人工客服响应时长分析，用户平均响应时长为187秒，约为3分钟。事后通过用户访谈，发现人工等待时间较长的问题也出现在较多反馈问题的区域中（该问题排名为30个中的第四个）。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi125.jpg" alt="image"></p>
+<p>2.需要后续ABtest得出相应结论</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center"><strong>⽤户分类规则</strong></th>
+<th><strong>可能需要改进的元素</strong></th>
+<th><strong>改进设计方案</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">⽤户分类</td>
-<td style="text-align:center">R值(最近⼀次消费)</td>
-<td style="text-align:center">F值(消费频率)</td>
-<td style="text-align:center">M值(消费⾦额)</td>
+<td>落地页功能</td>
+<td>检验落地页的打开是否正常；检验落地页的留电弹窗是否正常打开；通过速度优化和不同端的优化对页面功能做改进</td>
 </tr>
 <tr>
-<td style="text-align:center">1.重要价值⽤户</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">⾼</td>
+<td>落地页样式</td>
+<td>通过调查问卷调查落地页样式的满意度；设计不同落地页样式来实验，找到能够提高转化的落地页样式</td>
 </tr>
 <tr>
-<td style="text-align:center">2.重要发展⽤户</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">⾼</td>
+<td>落地页页面布局</td>
+<td>通过调查问卷调查落地页页面布局的满意度；设计不同落地页页面布局，找到能够提高转化率的落地页页面布局</td>
 </tr>
 <tr>
-<td style="text-align:center">3.重要保持⽤户</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">⾼</td>
+<td>课程介绍方式</td>
+<td>通过调查问卷调查落地页课程介绍方式的满意度；通过不同关键词组合和不同课程内容组合的方式优化课程介绍方式，通过实验验证不同组合的优化效果</td>
 </tr>
 <tr>
-<td style="text-align:center">4.重要挽留⽤户</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">⾼</td>
+<td>小助手(客服)弹窗体验</td>
+<td>通过问卷调查小助手弹窗的满意度；通过实验验证主动弹窗和用户点击弹窗的转化提升情况；设计不同的弹窗方式，验证不同方式的优化效果</td>
 </tr>
 <tr>
-<td style="text-align:center">5.⼀般价值⽤户</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">低</td>
+<td>机器人客服体验</td>
+<td>通过问卷调查机器人客服的满意度；优化机器人问答算法，通过实验对比优化前的</td>
 </tr>
 <tr>
-<td style="text-align:center">6.⼀般发展⽤户</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">低</td>
+<td>算法和优化后的算法对转化率的提升效果</td>
 </tr>
 <tr>
-<td style="text-align:center">7.⼀般保持⽤户</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">低</td>
+<td>资料下载页</td>
+<td>通过问卷调查资料下载页的满意度；按用户反馈改进资料下载页</td>
 </tr>
 <tr>
-<td style="text-align:center">8.⼀般挽留⽤户</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">低</td>
+<td>留电页体验</td>
+<td>通过问卷调查留电页的满意度；按用户反馈改进留电页</td>
 </tr>
 </tbody>
 </table>
-<h4 id="-rfm-">如何使⽤RFM模型进⾏⽤户价值分类</h4>
-<blockquote>
-<p><strong>确定RFM三个指标的分段和每个分段的分值</strong></p>
-<p>R值：最近⼀次消费越近，得分越⾼，最⾼5分，最低1分</p>
-<p>F值：消费频率越⾼，得分越⾼，最⾼5分，最低1分</p>
-<p>M值：消费⾦额越⾼，得分越⾼，最⾼5分，最低1分</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"><strong>指标</strong></th>
-<th style="text-align:center"><strong>分值</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">5</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">R值(最近⼀次消费)</td>
-<td style="text-align:center">3天以内</td>
-<td style="text-align:center">3-5天</td>
-<td style="text-align:center">5-10天</td>
-<td style="text-align:center">10-20天</td>
-<td>20天以上</td>
-</tr>
-<tr>
-<td style="text-align:center">F值(消费频率)</td>
-<td style="text-align:center">20次以上</td>
-<td style="text-align:center">10-20次</td>
-<td style="text-align:center">6-8次</td>
-<td style="text-align:center">2-6次</td>
-<td>2次以下</td>
-</tr>
-<tr>
-<td style="text-align:center">M值(消费⾦额)</td>
-<td style="text-align:center">5000元以上</td>
-<td style="text-align:center">3000-5000元</td>
-<td style="text-align:center">1500-3000元</td>
-<td style="text-align:center">1000-1500元</td>
-<td>1000元以内</td>
-</tr>
-</tbody>
-</table>
-<h4 id="-rfm-">计算每个客户RFM三个指标的得分</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"><strong>⽤户ID</strong></th>
-<th style="text-align:center"><strong>R值(最近⼀次消费)</strong></th>
-<th style="text-align:center"><strong>F值(消费频率)</strong></th>
-<th style="text-align:center"><strong>M值(消费⾦额)</strong></th>
-<th><strong>R值得分</strong></th>
-<th style="text-align:center"><strong>F值得分</strong></th>
-<th style="text-align:center"><strong>M值得分</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2天</td>
-<td style="text-align:center">5次</td>
-<td style="text-align:center">2000元</td>
-<td>5</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">3</td>
-</tr>
-<tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">4天</td>
-<td style="text-align:center">7次</td>
-<td style="text-align:center">4000元</td>
-<td>4</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">4</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>分别计算出R值、F值、M值的平均值</strong></p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"><strong>⽤户ID</strong></th>
-<th style="text-align:center"><strong>R值(最近⼀次消费)</strong></th>
-<th style="text-align:center"><strong>F值(消费频率)</strong></th>
-<th style="text-align:center"><strong>M值(消费⾦额)</strong></th>
-<th style="text-align:center"><strong>R值得分</strong></th>
-<th style="text-align:center"><strong>F值得分</strong></th>
-<th style="text-align:center"><strong>M值得分</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2天</td>
-<td style="text-align:center">5次</td>
-<td style="text-align:center">2000元</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">3</td>
-</tr>
-<tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">4天</td>
-<td style="text-align:center">7次</td>
-<td style="text-align:center">4000元</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">4</td>
-</tr>
-<tr>
-<td style="text-align:center">平均分</td>
-<td style="text-align:center">4.5</td>
-<td style="text-align:center">2.5</td>
-<td style="text-align:center">3.5</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>⽤户分类</strong></p>
-<p>如果⼀⾏⾥的R值得分⼤于平均值，就在R值⾼低列⾥记录为”⾼”，否则记录为”低”，同理，F值、M值也这样⽐较。</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"><strong>⽤户ID</strong></th>
-<th style="text-align:center"><strong>R值得分</strong></th>
-<th style="text-align:center"><strong>F值得分</strong></th>
-<th style="text-align:center"><strong>M值得分</strong></th>
-<th style="text-align:center"><strong>R值⾼低</strong></th>
-<th style="text-align:center"><strong>F值⾼低</strong></th>
-<th style="text-align:center"><strong>M值⾼低</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">低</td>
-</tr>
-<tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">⾼</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>然后和⽤户分类表格⾥定义的规则进⾏⽐较，就可以得出⽤户属于哪种类别。</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"><strong>⽤户ID</strong></th>
-<th style="text-align:center"><strong>R值得分</strong></th>
-<th style="text-align:center"><strong>F值得分</strong></th>
-<th style="text-align:center"><strong>M值得分</strong></th>
-<th style="text-align:center"><strong>R值⾼低</strong></th>
-<th style="text-align:center"><strong>F值⾼低</strong></th>
-<th style="text-align:center"><strong>M值⾼低</strong></th>
-<th style="text-align:center"><strong>⽤户分类</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">⼀般发展⽤户</td>
-</tr>
-<tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">重要挽留⽤户</td>
-</tr>
-</tbody>
-</table>
-<h4 id="-">精细化运营</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"><strong>⽤户分类</strong></th>
-<th style="text-align:center"><strong>R值(最近⼀次消费)</strong></th>
-<th style="text-align:center"><strong>F值(消费频率)</strong></th>
-<th style="text-align:center"><strong>M值(消费⾦额)</strong></th>
-<th style="text-align:center"><strong>精细化运营</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1.重要价值客户</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">VIP服务</td>
-</tr>
-<tr>
-<td style="text-align:center">2.重要发展客户</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">提⾼消费频率</td>
-</tr>
-<tr>
-<td style="text-align:center">3.重要保持客户</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">主动联系，提⾼复购率</td>
-</tr>
-<tr>
-<td style="text-align:center">4.重要挽留客户</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">分析原因并挽回</td>
-</tr>
-<tr>
-<td style="text-align:center">5.⼀般价值客户</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">低</td>
-</tr>
-<tr>
-<td style="text-align:center">6.⼀般发展客户</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">低</td>
-</tr>
-<tr>
-<td style="text-align:center">7.⼀般保持客户</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">低</td>
-</tr>
-<tr>
-<td style="text-align:center">8.⼀般挽留客户</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">低</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>⼩结</strong></p>
-</blockquote>
-<ol>
-<li><p>R、F、M指标定义，不同业务定义不同。要根据具体业务灵活应⽤。</p>
-</li><li><p>R、F、M按价值如确定打分规则，⼀般分为1-5分，也可以根据具体业务灵活来调整。或者使⽤聚类的⽅法对R、F、M的值进⾏分类，然后给每个类别打分。</p>
-</li></ol>
-<blockquote>
-<p>这样通过RFM模型来分析⽤户，对⽤户进⾏精细化运营，不断将⽤户转化为重要价值⽤户。</p>
-</blockquote>
-<h2 id="-">数据分析⽅法</h2>
-<table>
-<thead>
-<tr>
-<th><strong>数据分析作⽤</strong></th>
-<th><strong>基本⽅法</strong></th>
-<th><strong>数据分析⽅法*</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>现状分析</td>
-<td>对⽐</td>
-<td>对⽐分析</td>
-</tr>
-<tr>
-<td>原因分析</td>
-<td>细分</td>
-<td>分组分析</td>
-</tr>
-<tr>
-<td>漏⽃图分析</td>
-<td>漏⽃图分析</td>
-</tr>
-<tr>
-<td>矩阵关联分析</td>
-<td>矩阵关联分析</td>
-</tr>
-<tr>
-<td>预测分析</td>
-<td>预测</td>
-<td>回归分析</td>
-</tr>
-<tr>
-<td>时间序列</td>
-<td>时间序列</td>
-</tr>
-<tr>
-<td>决策树</td>
-<td>决策树</td>
-</tr>
-</tbody>
-</table>
-<h3 id="-">对⽐分析</h3>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page20-Image1.jpg" alt=""></p>
-<ol>
-<li><p>⼀个数值，摆出来孤零零的，肯定很难理解，通过与⽬标的对⽐，与时间的对⽐，与空间的对⽐，与特定值的对⽐，在差异中找到问题，或者找到变化。</p>
-</li><li><p>要求</p>
-</li></ol>
-<blockquote>
-<p>所选择的对⽐对象具备可⽐性，越相似的对象越具备可⽐性。对⽐的指标定义、范围、计算⽅法是⼀致的。</p>
-<p><strong>举例</strong>：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page21-Image1.jpg" alt=""></p>
-<p>数据分析如下：</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page21-Image2.jpg" alt=""></p>
-<blockquote>
-<p>按照空间对⽐可以进⾏同级团队所属区域，上级区域，⼤盘进⾏对⽐，与特定范围对⽐，历史经验值、⾏业竞对数据等进⾏分析。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page22-Image1.jpg" alt=""></p>
-<p>结论如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page22-Image2.jpg" alt=""></p>
-</blockquote>
-<h3 id="-">趋势分析法</h3>
-<blockquote>
-<p>根据企业连续⼏年或⼏个时期的分析资料，运⽤指数或完成率的计算，确定分析期各有关项⽬的变动情况和趋势的⼀种财务分析⽅法。</p>
-</blockquote>
-<h4 id="-">趋势分析法的⼀般步骤是：</h4>
-<ol>
-<li><p><strong>计算趋势⽐率或指数</strong></p>
-</li><li><p><strong>根据指数计算结果，评价和判断企业各项指标的变动趋势及其合理性</strong></p>
-</li><li><p><strong>预测未来的发展趋势</strong></p>
-</li></ol>
-<blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page23-Image1.jpg" alt=""></p>
-</blockquote>
-<h3 id="-">矩阵关联分析法</h3>
-<blockquote>
-<p>根据事务的两个关键属性作为分析依据，进⾏分类关联分析，找到解决问题的⽅法。</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page23-Image2.jpg" alt=""></p>
-<blockquote>
-<p>举例：</p>
-<p>根据增速和交易规模，我们应该看重第⼀优先关注规模⼤，增速快，保证这些地区的稳定增⻓，以及规模量级不⾜，但是以及体现出快速增速的区域，可能未来会成为规模⼤的区域。</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page24-Image1.jpg" alt=""></p>
-<h3 id="-">分组分析</h3>
-<blockquote>
-<p>根据数据分析对象的特征，按照⼀定的标志（指标），把数据分析对象划分为不同的部分和类型来进⾏研究，以揭示其内在的联系和规律性。</p>
-</blockquote>
-<h4 id="-">举例：</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"><strong>统计指标</strong></th>
-<th style="text-align:center"><strong>年龄、性别、地域</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">付费状态</td>
-<td style="text-align:center">免费、使⽤、付费</td>
-</tr>
-<tr>
-<td style="text-align:center">购买历史</td>
-<td style="text-align:center">未付费、⼀次付费、多次付费</td>
-</tr>
-<tr>
-<td style="text-align:center">访问位置</td>
-<td style="text-align:center">使⽤产品的区域位置</td>
-</tr>
-<tr>
-<td style="text-align:center">使⽤频道</td>
-<td style="text-align:center">使⽤产品的频道</td>
-</tr>
-<tr>
-<td style="text-align:center">使⽤深度</td>
-<td style="text-align:center">轻度、中度、重度</td>
-</tr>
-<tr>
-<td style="text-align:center">⼴告点击</td>
-<td style="text-align:center">点击⼴告、未点击⼴告</td>
-</tr>
-</tbody>
-</table>
-<ol>
-<li><strong>漏⽃分析</strong></li></ol>
-<blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page25-Image1.jpg" alt=""></p>
-<p>适合业务流程⽐较规范、周期⽐较⻓、各流程环节涉及复杂业务流程过程⽐较多的管理⼯具。因为漏⽃图是对业务流程最直观的⼀种表现形式，并且最能说明问题的所在，通过漏⽃图可以很快发现业务流程中存在问题的环节。</p>
-<p>它能告诉⽤户在业务中懂得转换率和流失率，在业务⽹站中的受欢迎程度或重要程度。通过对不同业务的漏⽃图进⾏对⽐，可以找出何种业务在⽹站中更受⽤户的欢迎或更吸引⽤户。</p>
-</blockquote>
-<h3 id="-">细分分析</h3>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page25-Image2.jpg" alt=""></p>
-<blockquote>
-<p>在经营分析中，对单⼀指标的判定是远远不够的，需要通过细分来了解影响指标的真正因素是什么。才能最终达成解决问题这个⽬标。</p>
-<p>拆组成：根据分析对象的特征，按照⼀定的标准拆分，讲性质相同的对象合并在⼀起，保持组内对象的⼀致性，组与组之间属性的差异性。</p>
-<p>拆步骤：针对业务流程判断的⼀种分析⽅法，通过对某些关键指标路径转化率的分析，发现业务流程中存在的问题。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page26-Image1.jpg" alt=""></p>
-<p>拆要素：针对指标的构成要素向下分拆，拆到最末级要素时，就可以定位到末级指标对应的影响因素。从⽽能够做到指导具体的业务动作。</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page26-Image2.jpg" alt=""></p>
-<h4 id="-">杜邦分析法</h4>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page26-Image3.jpg" alt=""></p>
-<blockquote>
-<p>由美国杜邦公司创造并最先采⽤的⼀种综合分析⽅法，⼜称杜邦财务分析体系，简称杜邦体系，利</p>
-<p>⽤各主要财务指标间的内在联系，对企业财务状况及经济效益进⾏分析评价的⽅法。该体系以净资产率为⻰头，以总资产收益率和权益乘数为核⼼，重点揭示企业盈利能⼒及权益乘数对净资产的影响，以及各相关指标间的互相影响，为各级管理层优化经营理财状况、提⾼公司经营提供了思路。</p>
-</blockquote>
-<h1 id="-">第三部分： 实战案例讲解</h1>
-<blockquote>
-<p>背景：</p>
-<p>某在线教育公司近期DAU出现异常波动</p>
-</blockquote>
-<h2 id="-">确保数据正确</h2>
-<blockquote>
-<p>⾸先，我们需要从⽣产数据的流程开始梳理，确保各流程数据未出现异常；阶段结果：</p>
-<p>与产品、前端⼯程师、后端⼯程师等沟通，得知各流程数据正常；</p>
-</blockquote>
-<h2 id="-">确认数据是否异常</h2>
-<blockquote>
-<p>1.确定是否为周期变化</p>
-<p>2.确定波动是否在可接受区间阶段结果：</p>
-<p>数据不是周期性变化，7⽉15号开始突然下降，并且下降三天，未来还可能会持续性的下降，需要警惕；</p>
-</blockquote>
-<h2 id="-">指标维度拆分</h2>
-<blockquote>
-<p>在确定各流程数据正确后，我们需要细拆指标相关内容，进⼀步定位问题；这⾥我们将构成DAU指标的⽤户进⾏拆解：</p>
-</blockquote>
-<h2 id="-">  <strong>常⻅⽤户细拆维度</strong></h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">常⻅⽤户细拆维度</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">按新⽼⽤户细拆</td>
-</tr>
-<tr>
-<td style="text-align:left">按⽤户年龄细拆</td>
-</tr>
-<tr>
-<td style="text-align:left">⽤户性别</td>
-</tr>
-<tr>
-<td style="text-align:left">⽤户地域</td>
-</tr>
-<tr>
-<td style="text-align:left">按⽤户渠道细拆（PC、APP、⼩程序）</td>
-</tr>
-<tr>
-<td style="text-align:left">按APP版本细拆</td>
-</tr>
-<tr>
-<td style="text-align:left">按登录平台细拆（IOS、安卓）</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>计算影响系数。</p>
-<p>影响系数=（今⽇量 — 昨⽇量）/（今⽇总量 — 昨⽇总量）</p>
-</blockquote>
-<h4 id="-">系数越⼤，表示影响越⼤</h4>
-<blockquote>
-<p>阶段结果：</p>
-<p><strong>⽼⽤户影响系数</strong> = (77.89-78)/(78.8-79.5)=0.16</p>
-<p><strong>新⽤户影响系数</strong> = (0.98-1.5)/(78.8-79.5)=0.84</p>
-<p>说明是新⽤户影响较多；</p>
-</blockquote>
-<h2 id="-">定位具体原因</h2>
-<blockquote>
-<p>对于DAU下降问题，具体情况具体分析。具体分析可以采⽤”内部-外部”因素考虑。内部因素</p>
-<p>渠道问题版本问题活动问题；</p>
-<p>外部因素采⽤PEST分析（宏观经济环境分析）政治</p>
-<p>经济</p>
-<p>社会技术。</p>
-</blockquote>
-<h4 id="pest-">PEST分析法</h4>
-<blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page29-Image1.jpg" alt=""></p>
-<p>阶段结论：</p>
-<p>针对新⽤户，⼀般通过拆分⽤户渠道分析问题。通过拆分渠道，定位到某⼀个渠道⽤户下降明显⾼于其他渠道；</p>
-</blockquote>
-<h2 id="-">提出解决⽅案</h2>
-<blockquote>
-<p>具体的解决⽅案是需要根据上⼀步定位到的原因，⽐如我们在上⼀步定位到某⼀个渠道⽤户下降明显⾼于其他渠道，通过和该渠道负责⼈沟通了解到，该渠道拉新活动在7⽉15号结束了，从⽽导致该渠道</p>
-<p>DAU下降，针对这个原因，我们可以再策划其他的⼀些运营活动来提⾼该渠道⽤户活跃度。</p>
-</blockquote>
-<h1 id="-">第四部分：本章⼩结</h1>
-<blockquote>
-<p>接下来我来带⼤家⼀起回顾⼀下本章的知识点</p>
-<p>1.数据分析师的主要⼯作</p>
-<p>描述现状、发现规律、推动改进，</p>
-<p>2.数据分析的主要⼯作流程</p>
-<p>需求分析、数据收集、数据处理、数据分析、数据可视化、数据分析报告</p>
-<p>3.常⽤的业务指标</p>
-<p>产品运营指标、商业分析指标</p>
-<p>4.数据分析⽅法论</p>
-<p>明确问题、拆解问题、定位问题</p>
-<p>5.常⽤的分析模型</p>
-<p>⽤户⽣命周期模型、2A3R模型、RFM模型</p>
-<p>6.分析⽅法</p>
-<p>对⽐分析、趋势分析、矩阵关联分析、分组分析、漏⽃分析、细分分析⽅法</p>
-</blockquote>
+<h4 id="3-4-4-rfm-">3.4.4 学员价值分析-RFM建模</h4>
+<p>1.我们在日活10万的小课人群中随机抽取0.3%的用户，通过RFM区分学员的等级</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi126-1.jpg" alt="image"></p>
+<p>RFM分析法结果：</p>
+<p>户人数并绘制饼图</p>
+<p>统计各类型用户人数并绘制饼图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi127-1.jpg" alt="image"></p>
+<p>拓展到10万小课学员中，计划给重要价值客户推送</p>
+<p>1.筛选出去重的customer_id【数据】—&gt; 【高级筛选】</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi128.jpg" alt="image"></p>
+<p>2.计算用户最后一次购买距离2019-12-31号有多少天(date,minifs)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi129.jpg" alt="image"></p>
+<p>3.计算各用户购买的频次（countif）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi130.jpg" alt="image"></p>
+<p>4.计算各用户购买的总金额（sumif）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi131.jpg" alt="image"></p>
+<p>5.RFM模型3各指标，每个指标分为两个阶段，以均值作为分割点，计算均值（average）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi132.jpg" alt="image"></p>
+<p>6.把各用户的R，F，M指标分别分为 R(远近） F(高低） M(高低）以均值为界限（if）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi133.jpg" alt="image"></p>
+<p>7.便于查找，在各用户后加上辅助列(用&amp;符连接RS ,FS,MS）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi134.jpg" alt="image"></p>
+<p>8.为用户获得用户类型（vlookup）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi135.jpg" alt="image"></p>
+<p>从上图可以看出每个用户的类型就划分好了，2 <em> 2 </em> 2 八类用户，可以根据需求划分更多类型</p>
+<h4 id="-">结果产出：</h4>
+<p>统计各类型用户人数并绘制饼图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi136.jpg" alt="image"></p>
+<ul>
+<li>后续计划：</li></ul>
+<p>为学员设计精细化运营方案，首先利用推荐算法计算出客户的兴趣领域。</p>
+<ul>
+<li>对于重要价值客户</li></ul>
+<p>可以采用直接推荐大课购买的方案来吸引客户转化</p>
+<ul>
+<li>对于重要保持客户</li></ul>
+<p>可用小课促销的方案吸引客户复购，之后再逐步推荐大课来促进用户转化</p>
+<ul>
+<li>对于重要发展客户</li></ul>
+<p>可用买大课送会员的方式吸引客户转化对于重要挽留客户</p>
+<p>可用小课促销的方案吸引客户复购，之后再逐步用买大课送会员的方式吸引客户转化</p>
+<ul>
+<li><p>对不同层级的学员做运营方案实验</p>
+</li><li><p>对本次用户设计营销模型并拓展到10万小课活跃用户中</p>
+</li></ul>
+<h3 id="3-5-">3.5 结论分析报告</h3>
+<p>1.8月站内广告位虽然出现亏损活动，但1-8月数据评估仍然是优质渠道，后续需要重点打磨</p>
+<p>通过分析我们发现8月销售额上升而毛利额异常下降，是由于站内广告渠道做打折促销引发的。由于折价设置失误导致出现账面亏损，从而引发毛利额下降的问题。该问题已经反馈营销团队，后续会设计价格预警系统，如果有类似价格设置失误情况，会及时预警；</p>
+<p>通过综合分析，对各渠道的ROI、报名人数转化率、跳出率、线索量做综合指数，计算出19年前8月的最优渠道为站内广告位渠道。后续会与营销团队依据各渠道特点进一步商议渠道改进方案。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi137.jpg" alt="image"></p>
+<p>2.留电环节为重点优化环节，优化完成后对整体转化率有1.52pp的提高</p>
+<p>通过漏斗分析，发现用户转化环节中，留电环节的转化率较低；</p>
+<p>我们与客服、产品团队制定改进方案。经过一个月改进后，留电环节转化率从22.57%提高至44.16%，整体转化率有1.52pp的提高。大课转化人数较8月增加330人，按每人人均1600元毛利额计算，预计能提升52.8万毛利额（注：实际毛利额需要在会计核算后才能得知）；预计该改进能完成93.76万元的毛利额任务；</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi138.jpg" alt="image"></p>
+<p>3.用户精细化运营模型推广后，已转化大课501人，小课3377人</p>
+<p>将模型推广至10万日活小课用户群体中，得到完整的客户分层分布，见下图。</p>
+<p>经过用户精细化运营模型推广后，已转化大课501人，小课3377人由于大课完成毛利额任务已经包含在之前的分析中。按照小课人均毛利额17元来推算，小课预计能完成5.7万元毛利额任务；</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuaiyi139.jpg" alt="image"></p>
 
 </body>
 </html>

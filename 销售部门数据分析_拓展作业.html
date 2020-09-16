@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>数据分析实战训练营【简版大纲】</title>
+<title>销售部门数据分析_拓展作业</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
 @charset "UTF-8";
@@ -883,25 +883,11 @@ vertical-align:1px;
 <script src="https://unpkg.com/umoji@2.0.0/dist/umoji.umd.js"></script>
 <!-- 表情包 -->
 
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/96x96.ico" type="image/x-icon">
-<script src="https://hm.baidu.com/hm.js?44b6fcd69c6e2f3250c2ade16f5b4622"></script>
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?44b6fcd69c6e2f3250c2ade16f5b4622";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
 <link href="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/vs.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/highlight.min.js"></script>  
 <script >hljs.initHighlightingOnLoad();</script> 
 
 
-
-
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/96x96.ico" type="image/x-icon">
 <script src="https://hm.baidu.com/hm.js?44b6fcd69c6e2f3250c2ade16f5b4622"></script>
 <script>
@@ -913,6 +899,7 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
+
 
 
 <link href="https://cdn.bootcss.com/jquery.tocify/1.9.0/stylesheets/jquery.tocify.min.css" rel="stylesheet">
@@ -987,7 +974,421 @@ for (var i = 0; i < _tag.length; i++) {
 }
 </script>
 
-<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+<script type="text/javascript">
+    function wrapOldContentByDiv() {
+        var oldContentDiv = document.createElement("div");
+        oldContentDiv.style.cssText = "float:right; width:72%; padding-left: 3%; padding-right:3%;border: 2px solid #CACACA;";
+        oldContentDiv.innerHTML = document.body.innerHTML;
+        document.body.style["max-width"] = "100%";
+        document.body.style["margin"] = "20px";
+        document.body.style["padding"] = "0";
+        document.body.innerHTML = '';
+        document.body.appendChild(oldContentDiv);
+    };
+
+    function addDirectorySwitch(directoryDiv) {
+        var directorySwitchP = document.createElement("p");
+        directorySwitchP.style.cssText = "text-align: left; margin: 0;";
+        directoryDiv.appendChild(directorySwitchP);
+
+        var ele_span = document.createElement("span");
+        ele_span.style.cssText = "font-weight: 1000;";
+        var ele_text = document.createTextNode("目录");
+        ele_span.appendChild(ele_text);
+
+        var ele_a = document.createElement("a");
+        ele_a.appendChild(document.createTextNode("[-]"));
+        ele_a.setAttribute("href", "#");
+        ele_a.setAttribute("onclick", "javascript:return switchAllDirectory(this);");
+        ele_a.setAttribute("title", "Click to Open TOC");
+
+        ele_span.appendChild(ele_a);
+        directorySwitchP.appendChild(ele_span);
+    }
+
+    function createTree(parentNode, tags, index, maxLevel) {
+        if (index >= tags.length) {
+            return -1;
+        }
+
+        var lastLevel = -1;
+        for (var i = index; i < tags.length; i++) {
+            var header = tags[i];
+            var level = parseInt(header.tagName.substr(1), 10);
+
+            var childNode = {'tag': header, 'childNodes': [], 'level': level};
+            if (level > parentNode.level) {
+                if (lastLevel > 0 && level > lastLevel) {
+                    // 子子类
+                    index = createTree(parentNode.childNodes[parentNode.childNodes.length - 1], tags, i);
+                    if (index < 0) {
+                        return -1;
+                    } else {
+                        i = index - 1;
+                    }
+                } else {
+                    parentNode.childNodes.push(childNode);
+                    lastLevel = level;
+                }
+            } else if (level <= maxLevel && parentNode.level > maxLevel) {
+                parentNode.childNodes.push(childNode);
+                lastLevel = level;
+            } else {
+                return i;
+            }
+        }
+    }
+
+    function createAElement(tag, index) {
+        var a = document.createElement("a");
+        a.style.cssText = "";
+        a.setAttribute("href", "#" + tag.textContent);
+        a.innerHTML = index.toString() + tag.textContent;
+        return a;
+    }
+
+    function createOlElement() {
+        var ol_el = document.createElement("ol");
+        ol_el.style["line-height"] = "180%";
+        ol_el.style["list-style-type"] = "none";
+        ol_el.style["margin-left"] = "0";
+        return ol_el
+    }
+
+    function createEmptyLiElement() {
+        var emptyLiEle = document.createElement("li");
+        return emptyLiEle
+    }
+
+    function getIndex(parentDirectory, directoryLevel, index) {
+        if (directoryLevel === 0) {
+            return parentDirectory + (index + 1).toString() + "."
+        } else {
+            return parentDirectory + (index + 1).toString() + ".";
+        }
+    }
+
+    function createLeafElement(node, curDirectory) {
+        var liEle = createEmptyLiElement();
+        var aEle = createAElement(node.tag, curDirectory);
+        liEle.appendChild(aEle);
+        return liEle
+    }
+
+    function getArrowDownStyle() {
+        return " width: 0;" +
+            "    height: 0;" +
+            "    position: relative;" +
+            "    margin-right: 8px;" +
+            "    top: 3px;" +
+            "    display: inline-block;" +
+            "    border: 6px outset;" +
+            "    border-color: black transparent transparent transparent;"
+    }
+
+    function getArrowRightStyle() {
+        return " width: 0;" +
+            "    height: 0;" +
+            "    left: 5px;" +
+            "    position: relative;" +
+            "    margin-right: 8px;" +
+            "    display: inline-block;" +
+            "    border: 6px solid;" +
+            "    border-color: transparent transparent transparent black;"
+    }
+
+    /*
+    <ol>
+        <li><a>根节点1</a></li>
+        <li><a>根节点2</a></li>
+        <li>
+            <div>
+                <a><span>[-]</span>根节点3</a>
+                <ol>
+                    <li><a>子节点1</a></li>
+                    <li><a>子节点2</a></li>
+                    <li><a>子节点3</a></li>
+                </ol>
+            </div>
+        </li>
+        <li><a>根节点4</a></li>
+     </ol>
+    * */
+    // node, 1.2.3 4 0
+    function renderTree(node, parentDirectory, directoryLevel, index) {
+        var childNodes = node.childNodes;
+        var tagContent = node.tag.textContent;
+
+        node.tag.setAttribute("id", tagContent);
+
+        var curDirectory = getIndex(parentDirectory, directoryLevel, index);
+        var directoryName = curDirectory + "&nbsp;" + tagContent;
+
+        // 叶子节点
+        if (childNodes.length === 0) {
+            return "<li style='padding-left: 24px;'><a href='#" + tagContent + "'>" + directoryName + "</a></li>"
+    //                return createLeafElement(node, curDirectory)
+        }
+
+        // 非叶子节点
+        var childContent = "";
+        for (var j = 0; j < node.childNodes.length; j++) {
+            childContent += renderTree(node.childNodes[j], curDirectory, directoryLevel + 1, j);
+        }
+
+        return "<li>" +
+            "   <div>" +
+            "      <div>" +
+            "         <div id='" + directoryName + "' class='open' style='" + getArrowDownStyle() + "' onclick='return switchDirectory(this);'></div>" +
+            "         <a href='#" + tagContent + "' ondblclick='return switchByDbClick(this);'>" + directoryName + "</a>" +
+            "      </div>" +
+            "      <ol id='ol-" + directoryName + "' style='line-height: 180%;list-style-type: none; padding-left: 20px;'>" + childContent + "</ol>" +
+            "   </div>" +
+            "</li>";
+
+        /*var liEle = createEmptyLiElement();
+        var aEle = createAElement(node.tag, curDirectory);
+
+        var parentElement = document.createElement("div");
+        parentElement.appendChild(aEle);
+
+        var olElement = createOlElement();
+
+        var tempNode;
+        for (var j = 0; j < node.childNodes.length; j++) {
+            tempNode = node.childNodes[j];
+            var element = renderTree(tempNode, curDirectory, directoryLevel + 1, j);
+            olElement.appendChild(element);
+        }
+        parentElement.appendChild(olElement);
+
+        liEle.appendChild(parentElement);
+        return liEle;*/
+    }
+
+    function switchByDbClick(aEle) {
+        switchDirectory(aEle.parentElement().firstChild)
+    }
+
+    // 开关目录
+    function switchDirectory(ele) {
+        var divEle = ele.parentNode.parentNode;
+        var olEle = divEle.lastElementChild;
+        if (ele.className === "open") {
+            // 关闭
+            olEle.style.cssText = "display:none;line-height: 180%;list-style-type: none; padding-left: 20px";
+            ele.setAttribute("class", "close");
+            ele.style.cssText = getArrowRightStyle();
+        } else if (ele.className === "close") {
+            // 打开
+            olEle.style.cssText = "line-height: 180%;list-style-type: none; padding-left: 20px";
+            ele.setAttribute("class", "open");
+            ele.style.cssText = getArrowDownStyle();
+        }
+    }
+
+    function switchAllDirectory(e) {
+        var rootOlElement = document.getElementById("outline_ol");
+        var ols = rootOlElement.getElementsByTagName("ol");
+        var isOpen = false;
+
+        if (e.innerHTML === '[+]') {
+            e.setAttribute('title', 'collapse');
+            e.innerHTML = '[-]';
+            isOpen = true;
+        } else {
+            e.setAttribute('title', 'expand');
+            e.innerHTML = '[+]';
+        }
+
+
+        for (var i = 0; i < ols.length; i++) {
+            var olEle = ols[i];
+            if (isOpen) {
+                olEle.style.display = "block";
+                olEle.parentNode.firstElementChild.firstElementChild.style.cssText = getArrowDownStyle();
+            } else {
+                olEle.style.display = "none";
+                olEle.parentNode.firstElementChild.firstElementChild.style.cssText = getArrowRightStyle();
+            }
+        }
+
+        e.blur();
+        return false;
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // 1, 将body内容提取到div标签中
+        wrapOldContentByDiv();
+
+        // 2, 创建左边目录列表Div
+        var directoryDiv = document.createElement("div");
+        directoryDiv.setAttribute("id", "outline-list");
+        directoryDiv.style.cssText = "width:20%;height:100%; float:left;font-size:16px,z-index:1;position: fixed;overflow: hidden;";
+
+        // 3, 目录展开折叠开关
+        addDirectorySwitch(directoryDiv);
+
+        // 4, 创建目录列表
+        var directoryOl = document.createElement("ol");
+        directoryOl.style.cssText = "padding-left:14px;line-height:180%;list-style-type:none;height: 85%;padding-bottom: 30px; overflow: auto;";
+        directoryOl.setAttribute("id", "outline_ol");
+        directoryDiv.appendChild(directoryOl);
+        var div1 = document.createElement("div");
+        div1.style.cssText = "clear:both";
+
+        // 插入目录
+        document.body.insertBefore(directoryDiv, document.body.childNodes[0]);
+
+        // 5, 获取所有的H标签
+        var hTags = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
+        if (hTags.length < 2)
+            return;
+
+        var rootNode = {'tag': directoryOl, 'childNodes': [], 'level': 0};
+        var maxLevel = parseInt(hTags[0].tagName.substr(1), 10);
+        // 6, 创建树形结构
+        createTree(rootNode, hTags, 0, maxLevel);
+
+        // 7, 绘制树结构
+        var htmlContent = "";
+        for (var j = 0; j < rootNode.childNodes.length; j++) {
+    //                var element = renderTree(rootNode.childNodes[j], '', 1, j);
+    //                directoryOl.appendChild(element);
+
+            htmlContent += renderTree(rootNode.childNodes[j], '', 1, j);
+        }
+        directoryOl.innerHTML = htmlContent;
+    });
+</script>
+
+<script>
+var wx ,wy;	
+$(document).mousemove(function(e){ 
+	wx  = e.clientX;
+	wy = e.clientY; 
+});
+
+$(window).scroll(function() {	
+
+	var _height=$("#toc").height()/3;
+	
+	var _hh=$("#toc").scrollTop() + $("#toc").find(".active").offset().top - $("#toc").offset().top;		
+	
+	var d_left = document.getElementById("toc").offsetLeft;
+    var d_top = document.getElementById("toc").offsetTop;
+    var d_width = document.getElementById("toc").clientWidth;
+    var d_height = document.getElementById("toc").clientHeight;
+
+    if(wx < d_left || wy<d_top || wx > (d_left + d_width) || wy > (d_top + d_height)){
+		$("#toc").scrollTop(_hh-_height);			
+	}
+	
+});
+</script>
+
+
+<script>
+(function(){window.onload = function(){
+    console.log('DOM already loaded.');
+    if(window.top == window.self){ 
+        var aNode = document.createElement('a');
+        aNode.href = 'javascript:;';
+        aNode.id = 'click-to-top';
+        aNode.title = 'Click it to go to the top';
+        var availHeight = window.screen.availHeight; // 获取可用高度
+        var css = '#click-to-top{ display:none; position: fixed; right: 5%; bottom: 20%; opacity: 0.2; z-index: 9999; } #click-to-top:hover{ position: fixed; right: 5%; bottom: 20%; opacity: 1; z-index: 9999; }';
+        //滚出一屏以后才显示返回顶部按钮
+        window.onscroll = function(){
+            var curPos = (document.documentElement.scrollTop == 0) ? document.body.scrollTop : document.documentElement.scrollTop; //document.documentElement.scrollTop; //preparation for hack (document.documentElement.scrollTop == 0) ? document.body.scrollTop : document.documentElement.scrollTop; 
+            if(curPos > availHeight){
+                aNode.style.display = 'block';
+            }else {
+                aNode.style.display = 'none';
+            }
+        };
+        //图片相关
+        var img = document.createElement('img');
+        img.src = 'https://ooo.0o0.ooo/2017/05/23/59245c636b321.png';
+        img.style = 'width: 30px; height: 30px;';
+        //样式相关
+        var style = document.createElement('style');
+        if (style.styleSheet) {
+            style.styleSheet.cssText = css;
+        } else {
+            style.appendChild(document.createTextNode(css));
+        }
+        document.getElementsByTagName('head')[0].appendChild(style);
+        aNode.append(img);
+        aNode.addEventListener('click', function(){
+            document.body.scrollIntoView();
+            /*var timer = setInterval(function(){
+            document.documentElement.scrollTop -= 500;
+                if(document.documentElement.scrollTop < 100){
+                    clearInterval(timer);
+                }
+            }, 50);
+        }, true);*/
+        });
+        var eBody = document.querySelector('body');
+        eBody.append(aNode);
+    }
+};})();
+</script>
+
+<script>
+	!function(e, t, a) {
+		function r() {
+			for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+			requestAnimationFrame(r)
+		}
+		function n() {
+			var t = "function" == typeof e.onclick && e.onclick;
+			e.onclick = function(e) {
+				t && t(),
+					o(e)
+			}
+		}
+		function o(e) {
+			var a = t.createElement("div");
+			a.className = "heart",
+				s.push({
+					el: a,
+					x: e.clientX - 5,
+					y: e.clientY - 5,
+					scale: 1,
+					alpha: 1,
+					color: c()
+				}),
+				t.body.appendChild(a)
+		}
+		function i(e) {
+			var a = t.createElement("style");
+			a.type = "text/css";
+			try {
+				a.appendChild(t.createTextNode(e))
+			} catch(t) {
+				a.styleSheet.cssText = e
+			}
+			t.getElementsByTagName("head")[0].appendChild(a)
+		}
+		function c() {
+			return "rgb(" + ~~ (255 * Math.random()) + "," + ~~ (255 * Math.random()) + "," + ~~ (255 * Math.random()) + ")"
+		}
+		var s = [];
+		e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame ||
+			function(e) {
+				setTimeout(e, 1e3 / 60)
+			},
+			i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),
+			n(),
+			r()
+	} (window, document);
+</script>
+
+<style type='text/css'>
+html {overflow-x: initial !important;}
+:root { /*--bg-color:#ffffff; --text-color:#333333;*/ --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
 iframe { margin: auto; }
@@ -1440,293 +1841,211 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
   border-left: 1px solid rgb(239, 112, 96);
   z-index: 3;
 }
-
 </style>
 
-<script>
-(function(){window.onload = function(){
-    console.log('DOM already loaded.');
-    if(window.top == window.self){ 
-        var aNode = document.createElement('a');
-        aNode.href = 'javascript:;';
-        aNode.id = 'click-to-top';
-        aNode.title = 'Click it to go to the top';
-        var availHeight = window.screen.availHeight; // 获取可用高度
-        var css = '#click-to-top{ display:none; position: fixed; right: 5%; bottom: 20%; opacity: 0.2; z-index: 9999; } #click-to-top:hover{ position: fixed; right: 5%; bottom: 20%; opacity: 1; z-index: 9999; }';
-        //滚出一屏以后才显示返回顶部按钮
-        window.onscroll = function(){
-            var curPos = (document.documentElement.scrollTop == 0) ? document.body.scrollTop : document.documentElement.scrollTop; //document.documentElement.scrollTop; //preparation for hack (document.documentElement.scrollTop == 0) ? document.body.scrollTop : document.documentElement.scrollTop; 
-            if(curPos > availHeight){
-                aNode.style.display = 'block';
-            }else {
-                aNode.style.display = 'none';
-            }
-        };
-        //图片相关
-        var img = document.createElement('img');
-        img.src = 'https://ooo.0o0.ooo/2017/05/23/59245c636b321.png';
-        img.style = 'width: 30px; height: 30px;';
-        //样式相关
-        var style = document.createElement('style');
-        if (style.styleSheet) {
-            style.styleSheet.cssText = css;
-        } else {
-            style.appendChild(document.createTextNode(css));
-        }
-        document.getElementsByTagName('head')[0].appendChild(style);
-        aNode.append(img);
-        aNode.addEventListener('click', function(){
-            document.body.scrollIntoView();
-            /*var timer = setInterval(function(){
-            document.documentElement.scrollTop -= 500;
-                if(document.documentElement.scrollTop < 100){
-                    clearInterval(timer);
-                }
-            }, 50);
-        }, true);*/
-        });
-        var eBody = document.querySelector('body');
-        eBody.append(aNode);
-    }
-};})();
-</script>
-
-<script>
-	!function(e, t, a) {
-		function r() {
-			for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
-			requestAnimationFrame(r)
-		}
-		function n() {
-			var t = "function" == typeof e.onclick && e.onclick;
-			e.onclick = function(e) {
-				t && t(),
-					o(e)
-			}
-		}
-		function o(e) {
-			var a = t.createElement("div");
-			a.className = "heart",
-				s.push({
-					el: a,
-					x: e.clientX - 5,
-					y: e.clientY - 5,
-					scale: 1,
-					alpha: 1,
-					color: c()
-				}),
-				t.body.appendChild(a)
-		}
-		function i(e) {
-			var a = t.createElement("style");
-			a.type = "text/css";
-			try {
-				a.appendChild(t.createTextNode(e))
-			} catch(t) {
-				a.styleSheet.cssText = e
-			}
-			t.getElementsByTagName("head")[0].appendChild(a)
-		}
-		function c() {
-			return "rgb(" + ~~ (255 * Math.random()) + "," + ~~ (255 * Math.random()) + "," + ~~ (255 * Math.random()) + ")"
-		}
-		var s = [];
-		e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame ||
-			function(e) {
-				setTimeout(e, 1e3 / 60)
-			},
-			i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),
-			n(),
-			r()
-	} (window, document);
-</script>
 </head>
 <body>
-<h1 id="-love-html-"><a href="Love.html">数据分析实战训练营【简版大纲】</a></h1>
-<table>
-<thead>
-<tr>
-<th><strong>数据分析实战训练营</strong></th>
-<th><a href="https://kaiwu.lagou.com/">课程主页</a> / <a href="https://docs.qq.com/sheet/DS2hoVXJzS1BDWFVQ">数据分析实战训练营【简版大纲】</a> / <a href="https://www.yuque.com/docs/share/93e5efe2-f2f7-4f3c-a001-d6293a076e9d?# 《数据分析规范总结》">数据分析规范总结</a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong><em>第一阶段 数据分析思维/方法与行业案例实战</em></strong></td>
-<td>讲解数据分析发展趋势，掌握数据分析的流程和方法论，快速搭建数据分析结构和业务指标</td>
-</tr>
-<tr>
-<td>· <code>模块一</code><a href="数据分析思维与业务流程.html">数据分析思维与业务流程</a></td>
-<td>通过该模块的学习，可以掌握数据分析微观方法论和常用业务分析模型，面对复杂的业务问题，能够熟练的进行相应的分析</td>
-</tr>
-<tr>
-<td>· <code>模块二</code><a href="数据分析行业案例_Excel实战.html">数据分析行业案例(Excel实战)</a></td>
-<td>通过该模块的学习，可以掌握数据分析微观方法论和常用业务分析模型，面对复杂的业务问题，能够熟练的进行相应的分析</td>
-</tr>
-<tr>
-<td>· <code>模块一_新</code><a href="阶段一模块一讲义.html">数据分析思维与业务流程</a></td>
-<td>通过该模块的学习，你将掌握数据分析微观方法论和常用业务分析模型，建立数据分析思维。通过实战案例的讲解，掌握如何利用Excel解决真实业务实战问题。</td>
-</tr>
-<tr>
-<td>· <code>模块二_新</code><a href="阶段一模块一讲义.html">Excel基础&amp;实战</a> / <a href="https://docs.qq.com/sheet/DS214RGRsQXJUdFJi">Excel函数学习</a></td>
-<td><a href="https://docs.qq.com/sheet/DS1JPcHVmWmREWXVP">Excel函数集</a> / <a href="https://docs.qq.com/sheet/DS2tibHlGZ2JRYkd0">Excel快捷键</a> 通过该模块的学习，快速掌握常用Excel技能，并熟练操作Excel解决工作中出现的问题。</td>
-</tr>
-<tr>
-<td><strong><em>第二阶段 MySQL数据分析实战</em></strong></td>
-<td><a href="MySql要点.html">MySql要点</a> / <a href="销售部门数据分析_拓展作业.html">销售部门数据分析_拓展作业</a></td>
-</tr>
-<tr>
-<td>· <code>模块一</code><a href="MySQL数据分析实战笔记_第一、二、三部分.html">MySQL基础与核心查询</a></td>
-<td>通过该模块了解MySQL及数据库、数据表的创建与维护，并对表数据进行基本的增删改查。</td>
-</tr>
-<tr>
-<td>· <code>模块二</code><a href="MySQL数据分析实战笔记_第一、二、三部分.html">MySQL高级应用</a></td>
-<td>通过该模块学习，使用窗口函数可以更方便实现分析和统计的功能，使用索引提升查询速度，通过视图减少工作量，通过数据约束保证数据的完整性一致性，并掌握一定的优化技巧。</td>
-</tr>
-<tr>
-<td>· <code>模块三</code><a href="Mysql项目案例讲义.html">MySQL项目实战</a></td>
-<td>利用所学理论知识，解决电商行业实际项目中的问题，如探索用户行为规律，寻找高价值用户；分析商品特征，寻找高贡献商品；分析产品功能，优化产品路径等，深入理解电商行业的相关业务场景。</td>
-</tr>
-<tr>
-<td><strong><em>第三阶段 互联网公司必备-BI可视化工具</em></strong></td>
-<td><a href="https://www.yuque.com/docs/share/51f89f62-d047-433d-bf28-cdc5086835b1?# 《BI与数据可视化》">BI与数据可视化</a> / <a href="大数据工具导航.html">大数据工具导航</a> / <a href="rgb色表.html">rgb色表</a></td>
-</tr>
-<tr>
-<td>· <code>模块一</code><a href="拖拽式数据分析工具Tableau Desktop.html">Tableau 数据可视化</a></td>
-<td><a href="https://www.yuque.com/docs/share/b77f0e3a-f8e6-462d-bdd1-14c3cd2dea55?# 《tableau 连接mysql的操作步骤》">tableau 连接mysql的操作步骤</a> 本模块通过Tableau链接数据源对其进行手动和实时数据获取，利用函数对数据进行处理，并在工作表、仪表板、故事中进行展示。</td>
-</tr>
-<tr>
-<td>· <code>模块二</code>Quick BI 数据可视化</td>
-<td>通过学习Quick BI智能服务平台，快速掌握海量数据实时在线分析服务，通过拖拽式操作和丰富的可视化效果，轻松完成数据分析、业务数据探查、报表制作等工作</td>
-</tr>
-<tr>
-<td>· <code>模块三</code>神策数据平台</td>
-<td>通过学习神策分析平台，快速了解私有化部署，客户端、服务器、业务数据、第三方数据的全端采集和建模，以及用户精细化运营改进、产品功能及用户体验优化等应用场景。并通过 BI、大数据平台 等内部 IT 系统，构建用户数据体系，让用户行为数据发挥深远的价值。</td>
-</tr>
-<tr>
-<td><strong><em>第四阶段 大数据查询利器Hive</em></strong></td>
-<td>未开始</td>
-</tr>
-<tr>
-<td>· <code>模块一</code>数仓&amp;Hadoop生态圈介绍</td>
-<td>通过该模块学习，了解大数据、数仓的发展历程以及Hadoop生态圈构成</td>
-</tr>
-<tr>
-<td>· <code>模块二</code>Hive基础、函数与查询</td>
-<td>通过该模块了解Hive数据库、数据表的创建与维护，Hive基础函数和开窗函数，并学会对复杂表数据进行基本的增删改查。</td>
-</tr>
-<tr>
-<td>· <code>模块三</code>Hive项目实战</td>
-<td>通过电商、在线教育两个实战案例实操，检验前面所学Hive理论知识，真正做到学以致用</td>
-</tr>
-<tr>
-<td><strong><em>第五阶段 数据分析必备理论基础-统计学知识</em></strong></td>
-<td>未开始</td>
-</tr>
-<tr>
-<td>· <code>模块一</code>统计学基本原理：描述统计、总体推断</td>
-<td>掌握了解数据现状的方法，学会用样本去推断总体并检验数据的是否有显著差异。</td>
-</tr>
-<tr>
-<td>· <code>模块二</code>统计学分析方法</td>
-<td>通过该模块学习，掌握方差分析、相关分析等常用统计学原理，并会应用这些原理解决实际问题</td>
-</tr>
-<tr>
-<td>· <code>模块三</code>统计学项目实战</td>
-<td>对在线教育，电商系统的不同需求进行统计分析，夯实所学内容。</td>
-</tr>
-<tr>
-<td><strong><em>第六阶段 数据分析必学编程语言-Python</em></strong></td>
-<td>未开始</td>
-</tr>
-<tr>
-<td>· <code>模块一</code>Python基础</td>
-<td>本模块全面系统地讲授Python语法基础，面向对象，高阶函数，模块化运用。为后面的数据分析编程打下基础，同时具备自动化处理数据的基础。</td>
-</tr>
-<tr>
-<td>· <code>模块二</code>Python爬虫&amp;自动化办公</td>
-<td>本模块为Python语言的实战训练，通过爬虫采集数据，并进行清洗处理。使用Python第三方库对word, excel, pdf文件进行自动化处理，提取有效数据。</td>
-</tr>
-<tr>
-<td>· <code>模块三</code>数值高效计算（Numpy科学计算库）</td>
-<td>本模块基于Numpy实现科学计算，通过Numpy生成ndarray、索引和切片，对数组进行面向数组编程。</td>
-</tr>
-<tr>
-<td>· <code>模块四</code>数据获取与处理分析（Pandas数据分析库）</td>
-<td>本模块基于Pandas科学计算库实现数据预处理和数据分析，创建Series和DataFrame用于多种格式的读写以及数据转换。</td>
-</tr>
-<tr>
-<td>· <code>模块五</code>数据展现绘图模块（Matplotlib数据绘图）</td>
-<td>本模块基于绘图库(Matplotlib)实现数据可视化，通过matplotlib绘图设置颜色、标记，对图例进行刻度、标签和图例设置。</td>
-</tr>
-<tr>
-<td>· <code>模块六</code>Python数据分析项目实战</td>
-<td>综合运用前五个模块的知识，使用Python从互联网公开数据中抓取数据，并使用Numpy, Pandas进行分析，最后用Matplotlib展示丰富的报表。</td>
-</tr>
-<tr>
-<td><strong><em>第七阶段 数据分析项目与实战</em></strong></td>
-<td>未开始</td>
-</tr>
-<tr>
-<td>· <code>模块一</code>在线教育数据分析项目实战</td>
-<td>以在线教育行业真实案例项目为切入点，带你快速了解在线教育行业业务及指标，并利用前面所学的微观方法论和业务模型分析解决行业问题</td>
-</tr>
-<tr>
-<td>· <code>模块二</code>电商数据分析项目实战</td>
-<td>通过对电商行业某个真实案例项目为切入点，学习了解电商行业常用的分析方法、业务模型和业务指标</td>
-</tr>
-<tr>
-<td>· <code>模块三</code>社交零售数据分析项目实战</td>
-<td>以社交零售行业真实案例项目为切入点，运用零售行业业务模型和分析方法真正解决社交零售行业复杂问题</td>
-</tr>
-<tr>
-<td><strong><em>第八阶段 数据挖掘算法与实战</em></strong></td>
-<td>未开始</td>
-</tr>
-<tr>
-<td>· <code>模块一</code>数据挖掘监督学习算法</td>
-<td>该模块主要介绍KNN/K近邻算法、朴素贝叶斯算法、决策树算法等常用监督学习算法，通过实际案例对各种算法进行实操演练</td>
-</tr>
-<tr>
-<td>· <code>模块二</code>数据挖掘无监督学习算法</td>
-<td>该模块主要介绍聚类算法等常用无监督学习算法，并通过实际案例对各种算法进行实操演练</td>
-</tr>
-<tr>
-<td>· <code>模块三</code>数据挖掘项目综合实战</td>
-<td>本模块解决企业生产环境中数据挖掘实战项目的问题，以及如何将数据挖掘技术做到学以致用，实现技术的深度赋能</td>
-</tr>
-<tr>
-<td><strong><em>第九阶段 SPSS数据建模方法与业务实现</em></strong></td>
-<td>未开始</td>
-</tr>
-<tr>
-<td>· <code>模块一</code>SPSS 基础&amp;数据处理</td>
-<td>安装spss, 熟悉spss环境，掌握其数据定义方式，并进行描述统计。</td>
-</tr>
-<tr>
-<td>· <code>模块二</code>SPSS数据分析及可视化</td>
-<td>利用菜单项各功能进行数据清洗处理，对处理好的数据进行检验分析，得出结论，并对结果进行可视化。为建模分析作准备。</td>
-</tr>
-<tr>
-<td>· <code>模块三</code>SPSS项目实战</td>
-<td>模型原理的基础上，通过对话框进行参数设置建立模型及模型调优，减少代码编写和Debug时间并提高模型质量。</td>
-</tr>
-<tr>
-<td><strong><em>第十阶段 就业指导 + 简历指导</em></strong></td>
-<td>未开始</td>
-</tr>
-<tr>
-<td>· <code>模块一</code>进大厂必备-面试求职深度辅导</td>
-<td>针对大厂面试真题进行深度专项辅导，并针对个人实际情况打造优质简历</td>
-</tr>
-</tbody>
-</table>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/1599122232985-c6ffc03d-5eb3-4120-af85-813d174dd1de.png" alt="阶段一"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/1599122280016-9a0b3f93-71b9-4872-91d9-23a81a20b083.png" alt="阶段二"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/1599122040208-fc2c03ea-d5c8-4df7-b0aa-e9df5b6f58f4.png" alt="阶段三"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E8%AE%AD%E7%BB%83%E8%90%A5.png" alt="总体大纲"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E8%AE%AD%E7%BB%83%E8%90%A5%E8%AF%BE%E7%A8%8B%E5%A4%A7%E7%BA%B20904%E6%96%B0.png" alt="总体大纲（新）"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/1596442246485-52a81fc9-3666-443b-b46f-87172540fad3.png" alt="公众号&#39;Assistants&#39;"></p>
+<p><a href="https://resume.zhaoshengblog.cn/">返回上一页</a></p>
+<h1 id="-">销售部门数据分析（拓展作业）</h1>
+<h1 id="1-">1 业务逻辑介绍</h1>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/recommend_Page1_Image1.jpg" alt=""></p>
+<h2 id="1-1-">1.1 表与表的关系</h2>
+<ul>
+<li>每个销售人员（salesstaff）有且必须被分配到一个销售小组(sgroup)</li><li>每个客户必须（customer）所属于一个用户画像（cateogry）</li><li>销售人员（salesstaff）与客户沟通（customer），形成历史任务表（mission），mission中包含沟通的结果（status）  </li></ul>
+<h2 id="1-2-">1.2 沟通规则</h2>
+<p>1.每天每个销售人员接收25个顾客新量并进行沟通，沟通的结果有3：</p>
+<ul>
+<li>【直接签单成功】</li><li>【非意向用户】，不再跟进</li><li>【继续跟单】，顾客有购买意向，但此销售未与客户签单成功，移交给其他销售再做跟进</li></ul>
+<p>2.销售人员可以跟进意向用户的最大时长是2天，2天后需给出的结果如下：</p>
+<ul>
+<li>未成单，但仍有购买倾向，移交给其他销售，记为【继续跟单】</li><li>客户失去了购买商品的可能，记为【跟踪失败】，无需移交其他销售跟踪</li><li>【跟单成功】</li><li>【跟踪超时】</li></ul>
+<p>3.每个意向客户最多只能被3个销售人员沟通，如果之后仍未成单，则记为【跟踪超时】，不再跟进该客户  </p>
+<h1 id="2-">2 需要的数据结果</h1>
+<ul>
+<li>统计当月每位销售直接成单数、直接成单率，跟踪成单数，跟踪成单率</li><li>每位销售人员组内贡献度及其排名</li><li>生成销售人员的基本工资（直接成单：100元，间接成单：80元，底薪2000元）</li><li>销售小组业绩排名</li><li>统计当月流水与净收入（用户成本：250元，商品单价：8000元，商品成本：1000元  </li></ul>
+<h1 id="3-">3 代码实现</h1>
+<h2 id="3-1-">3.1 案例数据导入</h2>
+<h3 id="3-1-1-">3.1.1 创建数据库</h3>
+<p>终端中：  </p>
+<pre><code class="lang-mysql">mysql -uroot -p
+&gt;输入密码
+create datebase recommend2;
+exit;
+</code></pre>
+<h3 id="3-1-2-sql">3.1.2 导入SQL</h3>
+<p>终端中：  </p>
+<pre><code class="lang-mysql">mysql -uroot -p recommend2 &lt; recommend2.sql
+</code></pre>
+<p>注：</p>
+<ul>
+<li>&lt; 后面的recommend2.sql是SQL文件的相对位置</li><li>如果提示找不到指定文件，可以在cmd中cd到保存recommend2.sql的父级文件夹，然后再执行导入命令</li><li>或者用recommend2.sql的绝对地址，例如：mysql -uroot -p recommend2 &lt;d:/recommend2.sql</li></ul>
+<h2 id="3-2-">3.2 统计当月每位销售直接成单数、直接成单率，跟踪成单数，跟踪成单率</h2>
+<p>1.多表连接，显示任务编号、销售小组、销售姓名，顾客编号，沟通结果与沟通日期  </p>
+<pre><code class="lang-mysql">use recommend2;
+create view v1 asselect
+m.id as id, /* 任务编号 */
+s3.name as group_name,/* 销售小组 */
+s.name as salesstaff_name, /* 销售姓名 */
+m.customer_id, /* 顾客编号*/
+s2.content as result, /* 沟通结果 */
+m.createDate as createDate /*沟通日期*/
+from mission m /* 查询任务表 */
+inner join salesstaff s on m.salesstaff_id = s.id /* 连接销售表，为了显
+示销售人员的名字 */
+inner join status s2 on m.status_id = s2.id /* 连接结果表，为了显示沟通结
+果状态 */
+inner join sgroup s3 on s.group_id= s3.id /* 连接销售组，显示每个销售所属
+于的组名 */
+where createDate&gt;=&#39;2020-06-01&#39; and createDate &lt; &#39;2020-07-01&#39; /* 统计2
+020年6月的所有销售任务清单 */
+;
+select * from v1;
+</code></pre>
+<p>得到v1视图，结果如下：  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/recommend_Page3_Image1.jpg" alt=""></p>
+<p>2.统计每个销售的沟通客户总数、直接签单成功数、跟单成功数  </p>
+<pre><code class="lang-mysql">create view v2 as
+select
+group_name, /* 销售小组 */
+salesstaff_name, /* 销售姓名*/
+count(distinct customer_id) as total_customer, /* 共同过多少个客户*/
+count(distinct if(result=&#39;直接签单成功&#39;,customer_id,null)) as suc_
+1, /*直接签单成功数*/
+count(distinct if(result=&#39;跟单成功&#39;,customer_id,null)) as suc_2 /*
+跟单成功*/
+from v1
+group by group_name,salesstaff_name /*根据销售小组与销售人员分组*/
+;
+select * from v2;
+</code></pre>
+<p>得到v2视图，结果如下：  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/recommend_Page4_Image1.jpg" alt=""></p>
+<p>3.得到每个销售人员的直接成单率与跟单成单率  </p>
+<pre><code class="lang-mysql">create view v3 as
+select
+*,
+suc_1 / total_customer as rate1,/*直接成单率*/
+suc_2 / total_customer as rate2/*跟单成单率*/
+from v2;
+select * from v3;
+</code></pre>
+<p>得到v3视图，结果如下：  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/recommend_Page5_Image1.jpg" alt=""></p>
+<p>4.展示最终结果  </p>
+<pre><code class="lang-mysql">create view ret1 as
+select
+group_name as &#39;销售小组&#39;,
+salesstaff_name as &#39;销售人员&#39;,
+total_customer as &#39;本月沟通客户总数&#39;,
+suc_1 as &#39;直接成单数&#39;,
+suc_2 as &#39;跟单成功数&#39;,
+rate1 as &#39;直接成单率&#39;,
+rate2 as &#39;跟单成功率&#39;
+from v3;
+select * from ret1;
+</code></pre>
+<p>得到ret1视图，结果如下：  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/recommend_Page5_Image2.jpg" alt=""></p>
+<h2 id="3-3-">3.3 每位销售人员组内贡献度及其排名</h2>
+<p>1.通过窗口函数，统计每个销售人员的组内贡献度  </p>
+<pre><code class="lang-mysql">create view v4 as
+select*,
+/* 组内贡献率 = (个人直接签单成功数 + 个人跟踪成功数) / (本组成单总数) */
+(suc_1 + suc_2)/
+(sum(suc_1) over (partition by group_name) + sum(suc_2) over (par
+tition by group_name))
+as group_contribute_rate
+from v2;
+select * from v4;
+</code></pre>
+<p>得到v4视图，结果如下：  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/recommend_Page6_Image1.jpg" alt=""></p>
+<p>2.对每组的组内贡献度进行排名，并用中文输出结果  </p>
+<pre><code class="lang-mysql">create view ret2 as
+select
+group_name as &#39;销售小组&#39;,
+salesstaff_name as &#39;销售人员&#39;,
+total_customer as &#39;本月沟通客户总数&#39;,
+suc_1 as &#39;直接成单数&#39;,
+suc_2 as &#39;跟单成功数&#39;,
+group_contribute_rate as &#39;组内贡献度&#39;,
+rank() over (partition by group_name order by group_contribute_ra
+te desc) as &#39;组内贡献排名&#39;
+from v4;
+select * from ret2;
+</code></pre>
+<p>得到ret2视图，结果如下：  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/recommend_Page7_Image1.jpg" alt=""></p>
+<h2 id="3-4-">3.4 生成销售人员的基本工资</h2>
+<p>工资规则：</p>
+<ul>
+<li>直接成单提成：100元</li><li>间接成单提成：80元</li><li>底薪2000元  </li></ul>
+<pre><code class="lang-mysql">create view salary_view as
+select
+group_name as &#39;销售小组&#39;,
+salesstaff_name as &#39;销售人员&#39;,
+total_customer as &#39;本月沟通客户总数&#39;,
+suc_1 as &#39;直接成单数&#39;,
+suc_2 as &#39;跟单成功数&#39;,
+suc_1 * 100 + suc_2 * 80 + 2000 as &#39;本月薪资&#39;
+from v2;
+select * from salary_view;
+</code></pre>
+<p>得到salary_view视图，结果如下：  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/recommend_Page7_Image2.jpg" alt=""></p>
+<h2 id="3-5-">3.5 销售小组业绩排名</h2>
+<pre><code class="lang-mysql">create view ret4 as
+select
+group_name as &#39;组名&#39;,
+total_suc as &#39;当月成单总数&#39;,
+rank() over (order by total_suc desc ) as &#39;排名&#39;
+from
+(select
+group_name,
+sum(suc_1) + sum(suc_2) as total_suc /* 每组当月的总成单数 */
+from v2
+group by group_name) f1
+;
+select * from ret4;
+</code></pre>
+<p>得到ret4视图，结果如下：  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/recommend_Page8_Image1.jpg" alt=""></p>
+<h2 id="3-6-">3.6 统计当月流水与净收入</h2>
+<p>初步的计算规则：</p>
+<ul>
+<li>用户成本：250元</li><li>商品单价：8000元</li><li>商品成本：1000元</li><li>流水 = 月成交用户数 * （商品单价 - 商品成本）</li><li>净收入 = 流水 - 薪资成本 - 流量成本</li><li>薪资成本 = 销售员工的工资累加</li><li>流量成本 = 月沟通用户数 * 用户成本，注：用户成本就是流量的价格，即：获取一个意向客联系方式的花销</li></ul>
+<h3 id="1-">1.计算薪资成本与月流水</h3>
+<pre><code class="lang-mysql">create view b1 as
+select
+sum(本月薪资) as &#39;薪资成本&#39;,
+(sum(直接成单数) + sum(跟单成功数)) * (8000-1000) as &#39;月流水&#39;
+from
+salary_view
+;
+select * from b1;
+</code></pre>
+<p>得到b1视图，结果如下：  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/recommend_Page9_Image1.jpg" alt=""></p>
+<h3 id="2-">2.计算流量成本</h3>
+<pre><code class="lang-mysql">create view b2 as
+select
+count(distinct customer_id) * 250 as &#39;当月流量成本&#39;
+from mission
+where createDate &gt;= &#39;2020-06-01&#39; and createDate &lt; &#39;2020-07-01&#39;;
+select * from b2;
+</code></pre>
+<p>得到b2视图，结果如下：  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/recommend_Page9_Image2.jpg" alt=""></p>
+<h3 id="3-">3.统计收入最终结果</h3>
+<pre><code class="lang-mysql">select
+*,(月流水 - 薪资成本 - 当月流量成本) as &#39;本月部门净收入&#39;
+from b1,b2;
+</code></pre>
+<p>结果如下：  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/recommend_Page10_Image1.jpg" alt=""></p>
+<h3 id="4-">4.补充部分</h3>
+<p>公司净收入核算，成本不仅仅只有员工的工资，流量的费用，与其他公司的费用支出，每个员工的管理成本（人均场地费用，五险一金等），纳税都应该纳入成本范畴</p>
+<hr>
 
 </body>
 </html>

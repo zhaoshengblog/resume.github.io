@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>数据分析思维与业务流程</title>
+<title>Mysql项目案例讲义</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
 @charset "UTF-8";
@@ -1846,895 +1846,1278 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
 </head>
 <body>
 <p><a href="https://resume.zhaoshengblog.cn/">返回上一页</a></p>
-<h1 id="-">第一章 数据分析思维与业务流程</h1>
-<h2 id="-">课程主要内容</h2>
+<h1 id="-"><strong>案例</strong></h1>
+<p><strong>基于MySQL的电商⽤户、商品、平台价值分析</strong></p>
+<h1 id="1-">1.项目背景</h1>
 <blockquote>
-<p>第⼀节：数据分析概述</p>
-<p>第⼆节：数据分析⽅法论和分析模型</p>
-<p>第三节：实战案例讲解</p>
-<p>第四节：本章⼩结</p>
+<p>随着电商⾏业近⼏年的迅猛发展，电⼦商务从早些年的粗放式经营，逐步转化为精细化运营。<br>随着平台数据量的不断积累，通过数据分析挖掘消费者的潜在需求，消费偏好成为平台运营过程中的重要环节。<br>本项⽬基于某电商平台⽤户⾏为数据，在MYSQL关系型数据库，<br>探索⽤户⾏为规律，寻找⾼价值⽤户；<br>分析商品特征，寻找⾼贡献商品；<br>分析产品功能，优化产品路径。</p>
 </blockquote>
-<h2 id="-">第⼀部分：数据分析概述</h2>
-<h2 id="-">数据分析是什么</h2>
+<h2 id="-1-1-"><strong>1.1 分析流程</strong></h2>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/%E4%BA%BA%E8%B4%A7%E5%9C%BA%E6%8C%87%E6%A0%87%E4%BD%93%E7%B3%BB.bmp" alt=""></p>
+<h1 id="2-">2.使用“人货场”拆解方式建立指标体系</h1>
+<p>最终结果：评价‘’⽤户，商品，平台“三者质量</p>
+<ul>
+<li><strong>⼈货场</strong></li></ul>
 <blockquote>
-<p>数据分析是在⽴⾜于业务的基础上，通过数据收集、清洗、处理、分析、建模、展示等⽅式，⽤于监控业务状态，分析⽅案效果，定位业务问题，最终实现优化业务，辅助决策制定的⾏为。</p>
-</blockquote>
-<h2 id="-">数据分析师做什么</h2>
-<blockquote>
-<p>实时疫情数据展示</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page2-Image1.jpg" alt=""></p>
-<p>电商⽤户画像</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page3-Image1.jpg" alt=""></p>
-<p>⾦融⻛险评估</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page4-Image1.jpg" alt=""></p>
-<p>那说了这么多，数据分析师到底在做什么呢？，总结起来有以下三个⽅⾯：</p>
-<p>描述现状。发现规律。推动改进。</p>
-</blockquote>
-<h2 id="-">数据分析主要流程</h2>
-<blockquote>
-<p>数据分析的主要流程可以总结为以下六个步骤：</p>
-</blockquote>
-<ol>
-<li>需求分析</li></ol>
-<blockquote>
-<p>问题定位需求拆解；</p>
-</blockquote>
-<ol>
-<li>数据收集</li></ol>
-<blockquote>
-<p>Mysql数据查询</p>
-<p>Hive的数据查询爬⾍ （Python)；</p>
-</blockquote>
-<ol>
-<li>数据处理</li></ol>
-<blockquote>
-<p>EXTRACT(提取)</p>
-<p>Transform(转换)</p>
-<p>LOAD(加载)；</p>
-</blockquote>
-<ol>
-<li>数据分析</li></ol>
-<blockquote>
-<p>业务指标体系数据分析模型</p>
-<p>数据分析、统计分析⽅法；</p>
-</blockquote>
-<ol>
-<li>数据可视化</li></ol>
-<blockquote>
-<p>tableau</p>
-<p>神策数据平台</p>
-<p>quick bi；</p>
-</blockquote>
-<ol>
-<li>数据分析报告</li></ol>
-<h1 id="-">第⼆部分：数据分析⽅法论和分析模型</h1>
-<h2 id="-">数据分析⽅法论</h2>
-<blockquote>
-<p>做好数据分析是有⽅法的，⼤家要学会在平时的⼯作过程中，针对不同的业务场景套⽤合适的⽅法和模型去解决。</p>
-</blockquote>
-<h3 id="-5w2h">明确问题⽅法论———5W2H</h3>
-<blockquote>
-<p>梳理业务流程是⼀个挺复杂的过程，这个过程主要是以实际的业务场景为基础获取业务信息，然后抽象出⼀个以参与对象为节点的业务流程。⽤<strong>5W2H</strong>通过图等⼯具可以很⽅便的把业务梳理出来， 从⽽把问题明确。</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page5-Image1.jpg" alt=""></p>
-<h4 id="-">“如何分析⽤户是否是⼩学⽣？”</h4>
-<ol>
-<li><p>WHY ——— 为什么会有这样的问题？为什么需要分析⼩学⽣⽽不是⼤学⽣或者⼩学⽣的⽗⺟？</p>
-</li><li><p>WHO ——— 这个产品的⼩学⽣和普通理解的⼩学⽣有没有差别？什么样的⼩学⽣才会使⽤这个产品？</p>
-</li><li><p>WHERE ——— 每个地⽅的⼩学⽣是不是都有⼀样的特点？什么地⽅的⼩学⽣特点⽐较突出？⼩学⽣的位置信息是否会有特点？</p>
-</li><li><p>WHEN ——— ⼩学⽣⼀般什么时候⽤这个产品？频率如何？和其他⽤户有什么差异？</p>
-</li><li><p>WHAT ——— ⼩学⽣有什么与其他⽤户不同的特点？</p>
-</li><li><p>HOW ——— 可能会有什么解决⽅案？</p>
-</li><li><p>HOW MUCH ——— 这些解决⽅案影响有多⼤？什么⽅案最好？</p>
-<ol>
-<li><h3 id="-">拆解问题⽅法论———逻辑树</h3>
-</li></ol>
-</li></ol>
-<blockquote>
-<p>按照业务逻辑或者商业逻辑，把复杂问题拆解成若⼲个简单的⼦问题，像树枝⼀样逐步展开。</p>
-<p>把已知的问题⽐作树⼲，然后考虑哪些问题或任务与已知问题有关，将这些问题或⼦任务⽐作逻辑树的树枝，⼀个⼤的树枝上还可以继续延伸出更⼩的树枝，逐步列出所有与已知问题相关联的问题。</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page6-Image1.jpg" alt=""></p>
-<h4 id="-">如何分析⼀家互联⽹知名的某贵⾦属电商平台⽹站利润？</h4>
-<blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/D:/Big Data/数据分析实战训练营/1第一阶段 数据分析思维方法与行业案例实战/1.数据分析思维与业务流程/image/Page6-Image2.jpg" alt=""></p>
-</blockquote>
-<ol>
-<li><strong>定位问题原因⽅法论</strong></li></ol>
-<blockquote>
-<p>当我们明确到某个具体指标出现问题后，通常我们需要定位问题的具体原因。</p>
-</blockquote>
-<h4 id="-app-dau-">如何分析某APP DAU逐渐下跌的原因</h4>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page7-Image2.jpg" alt=""></p>
-<ol>
-<li><strong>业务指标体系</strong></li></ol>
-<blockquote>
-<p>业务指标的定义：</p>
-<p>对业务有参考价值的的统计数据。业务指标的作⽤：</p>
-<p>当企业确定发展⽬标时，就需要使⽤业务指标来量化发展⽬标。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page8-Image1.jpg" alt=""></p>
-</blockquote>
-<h3 id="-">产品运营指标</h3>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page8-Image2.jpg" alt=""></p>
-<blockquote>
-<p>北极星指标</p>
-</blockquote>
-<h3 id="-">商业分析指标</h3>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page9-Image1.jpg" alt=""></p>
-<ol>
-<li><p><strong>数据分析模型</strong></p>
-<ol>
-<li><strong>如何进⾏⽤户分析</strong></li></ol>
-</li></ol>
-<h4 id="-">⽤户结构分析</h4>
-<blockquote>
-<p>⽤户结构⼀般包含以下⼏个⽅⾯的信息：</p>
-<p>⾃然属性：年龄，性别，地域，</p>
-<p>社会属性：学历，家庭状况，婚姻，⼦⼥等；</p>
-<p>商业属性：财富等级，消费档次，信⽤等；</p>
-<p>⼼理属性：价格敏感性、偏好属性等；</p>
-<p>⾏为属性：浏览频次，浏览品类、浏览价格带、下单频次、下单品类、下单价格带等；价值属性：ADR贡献等。</p>
-</blockquote>
-<h4 id="-">⽤户⾏为分析</h4>
-<blockquote>
-<p>⽇常⼯作中，可以通过⽤户⾏为⽇志，将每⼀个⽤户的⾏为都标记出来，并且根据业务需要对⾏为进⾏标记。</p>
-</blockquote>
-<h4 id="-">⽤户价值分析</h4>
-<blockquote>
-<p>⽤户价值体现在两个⽅⾯，当平台是售卖物品或售卖服务的平台，⽤户发⽣的交易数据可以体现⽤户价值；如果平台是以⼴告变现的平台，那么⽤户的⼴告价值则体现⽤户价值。</p>
-<p>针对不同价值的⽤户进⾏分析，⼀般考虑如下⽅⾯：</p>
-<p>购买⾦额：指在⼀段时间内累计的消费⾦额；</p>
-<p>购买频次：指在⼀段时间内，购买的次数；</p>
-<p>购买平均⾦额：指在⼀段时间内，平均每次消费的⾦额；购买内容：指在⼀段时间内，购买商品或服务的属性；复购频次：指在⼀段时间内，反复消费的次数；</p>
-<p>复购间隔：指在⼀段时间内，每次复购⾏为之间的时间间隔；</p>
-<p>复购内容：指在⼀段时间内，每次复购时购买的商品或服务的属性。这⾥分享⼀些经验：</p>
-<p>⽤户的交易数据经常会被忽略</p>
-<p>⾏为+结果=⼼理。</p>
-<p>不要单纯的把⽤户交易数据当作结果数据使⽤。⽐如，⼀个⽤户在第⼀次发⽣交易后，每隔⼀段时间就会继续发⽣交易，那么该⽤户就不能被简单的定义为普通⽤户，⽽应视为忠实⽤户。</p>
-</blockquote>
-<h3 id="-">⽤户⽣命周期模型</h3>
-<blockquote>
-<p>⽤户⽣命周期，源⾃于传统营销学⾥⾯的客户⽣命周期⼀说，特别是在政治、经济、环境、社会等诸多领域经常出现，其基本涵义可以通俗地理解为”从摇篮到坟墓”（Cradle-to-Grave）的整个过程，在互联⽹⾏业中，⽤户的⽣命周期指的是：<strong>⽤户接触你的产品到最后流失的整个过程。</strong></p>
-<p>⼀般互联⽹⽣命周期包括：<strong>引⼊期</strong>、<strong>成⻓期</strong>、<strong>成熟期</strong>、<strong>休眠期</strong>和<strong>流失期</strong>5个周期。</p>
-<p>1.引⼊期：指⽤户从下载到进⼊我们产品的时期。</p>
-<p>2.成⻓期：⼀般⽤户成功使⽤产品或多次购买产品之后，便进⼊了成⻓期。</p>
-<p>3.成熟期：指⽤户通过多次购买，成为了忠实⽤户，产品占领⽤户⼼智。</p>
-<p>4.休眠期：⽤户在⼀定时间内，没有再次购买过平台产品。</p>
-<p>5.流失期：⽤户超出设定的休眠期时间，没有购买过产品。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page11-Image1.jpg" alt=""></p>
-</blockquote>
-<h4 id="-">⽤户⽣命周期模型作⽤</h4>
-<blockquote>
-<p>随着移动互联⽹的⽤户增⻓趋近饱和，获客成本越来越⾼，留住⼀个⽼⽤户的成本远⽐获取⼀个新⽤户的成本低，这使⽤户的留存就显得⾄关重要。⽽按照⽤户⽣命周期来划分⽤户，能够帮助我们了解不同⽣命周期的⽤户需求，开展运营策略，从⽽减少⽤户流失。</p>
-<p>针对不同阶段的⽤户，采取针对性运营策略，从⽽<strong>延⻓⽤户的⽣命周期</strong>，<strong>尽可能让⽤户产⽣商业价值</strong>。在运营愈发精细化的当下，通过搭建⽤户⽣命周期体系，让运营⼯作更加精细化、效率化、产品化，对于提⾼平台运营的效果和效率⾄关重要。</p>
-<p>在⽤户⽣命周期中有两个阶段要注意：要缩短成⻓期</p>
-<p>延⻓成熟期</p>
-</blockquote>
-<h4 id="-">⽤户⽣命周期运营策略</h4>
-<blockquote>
-<p>五类⽤户⽣命周期</p>
-</blockquote>
-<h4 id="-">新客</h4>
-<blockquote>
-<p><strong>⾸次成交⽤户忠实⽤户</strong></p>
-<p><strong>潜在流失⽤户流失⽤户</strong></p>
-<p><strong>引⼊期 -- 新客</strong></p>
-<p>⽬标：促成其完成⾸次成交。</p>
-<p>⼿段：</p>
-</blockquote>
-<ol>
-<li>MGM，⽼带新；</li></ol>
-<blockquote>
-<p>2.产品⼀定要下功夫打磨，做好⽤户留存。</p>
-</blockquote>
-<h4 id="-">成⻓期 -- ⾸次成交⽤户</h4>
-<blockquote>
-<p>⽬标：提⾼⽤户的更多成交。</p>
-<p>⼿段：</p>
-<p>投⼊产品层⾯新客户专享的福利</p>
-</blockquote>
-<h4 id="-">成熟期 -- 忠实⽤户</h4>
-<blockquote>
-<p>⽬标：让这部分⽤户持续购买。</p>
-<p>⼿段：</p>
-<p>1.⼤⼒度的营销活动；</p>
-<p>2.有趣的⼩游戏</p>
-</blockquote>
-<h4 id="-">休眠期 -- 潜在流失⽤户</h4>
-<blockquote>
-<p>⽬标：促活，注意：</p>
-<p>1.建⽴VIP专线及专⼈服务措施；</p>
-<p>2.加强舆情监控、及时发现异动。</p>
-</blockquote>
-<h4 id="-">流失期 -- 流失⽤户</h4>
-<blockquote>
-<p>⽤户流失是很容易被运营⼈员忽视的⼀个环节，⽽且也不能短时间内出效果，需要平时多研究，多尝试，多复盘。不仅要进⾏⽇常监测，还要对其采取运营措施，⽐如活动召回、push、短信、外呼等，不断复盘优化，形成体系。在重⼤营销时，可以尝试加⼤召回⼒度，效果好的也许会出乎意料。</p>
-</blockquote>
-<h3 id="aarrr-">AARRR⽤户增⻓模型</h3>
-<h4 id="aarrr-">AARRR模型概念及作⽤</h4>
-<blockquote>
-<p>获取（Acquisition）激活 （Activation）留存（Retention）收⼊（Revenue）推荐（Referral）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page13-Image1.jpg" alt=""></p>
-</blockquote>
-<h4 id="aarrr-">AARRR模型各环节说明</h4>
-<blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page14-Image1.jpg" alt=""></p>
-<p><strong>1.获取⽤户(Acquisition) -- ⽤户如何找到我们</strong></p>
-<p>什么是渠道？</p>
-<p>⼀是⼝碑渠道，适合病毒营销；</p>
-<p>⼆是有机渠道，适合搜索引擎优化、内容营销；三是付费渠道，⽐如电视⼴告、赞助。</p>
-<p>另外，获取⽤户需要重点关注的指标：</p>
-</blockquote>
-<ol>
-<li><p>渠道曝光量：有多少⼈看到产品推⼴的线索</p>
-</li><li><p>渠道转换率：有多少⽤户因为曝光转化成⽤户</p>
-</li><li><p>⽇新增⽤户数：每天新增⽤户数</p>
-</li><li><p>⽇应⽤下载量：每天有多少⽤户下载该应⽤</p>
-</li><li><p>获客成本(CAC):获取⼀个⽤户所消耗的成本</p>
-</li></ol>
-<h4 id="2-activation-">2.激活⽤户(Activation) -- ⽤户的⾸次体验如何</h4>
-<blockquote>
-<p>什么是活跃？</p>
-</blockquote>
-<h4 id="dau-">DAU = 当⽇新增 + 累计历史⽇留存</h4>
-<blockquote>
-<p>分析⻆度：</p>
-<p>1.活跃⽤户构成</p>
-<p>新⽤户数、⽼⽤户数、新⽼⽤户占⽐、新⽼⽤户活跃率、忠诚⽤户数、回流⽤户数、流失⽤户数、1次/1⽇登录⽤户占⽐等指标，根据不同产品运营时期，有不同的参考数值。</p>
-<p>2.产品粘度。</p>
-</blockquote>
-<h4 id="mau-dau">MAU/DAU</h4>
-<blockquote>
-<p>其他指标</p>
-<p>1.⽇活跃⽤户数（简称⽇活）：⼀天之内，登录或使⽤某个产品的⽤户数。类似的还有周活跃⽤户数，⽉活跃⽤户数</p>
-<p>2.活跃率（活跃⽤户占⽐）：某⼀时间段内活跃⽤户在总⽤户的占⽐。根据时间可分为⽇活跃率</p>
-<p>（DAU）、周活跃率（WAU）、⽉活跃率（MAU）等</p>
-<p>3.⽤户流失率：⽤户流失率和留存率恰好相反，如果某产品新⽤户的次⽇留存为20%，那么反过来说明有80%的⽤户流失了</p>
-</blockquote>
-<ol>
-<li><p>PV(PageView)是⻚⾯浏览量，⽤户每打开⼀个⽹⻚可以看作⼀个PV，⽤户看了⼗个⽹⻚PV为⼗。</p>
-</li><li><p>UV（Unique Visitor,独⽴访客数）是⼀定时间内访问⽹⻚的⼈数，不管⽤户访问多少⽹⻚，他都只算⼀个独⽴访客，怎么确认⽤户是不是同⼀个⼈呢？技术上通过⽹⻚缓存cookie或者IP判断，如果这两者改变了，则⽤户算作全新的访客。</p>
-</li></ol>
-<h4 id="3-retention-">3.⽤户留存(Retention) -- ⽤户会回来吗</h4>
-<blockquote>
-<p>主要指标：</p>
-<p><strong>次⽇留存率</strong>：（当天新增的⽤户中，在第⼆天使⽤过产品的⽤户数）/第⼀天新增的总⽤户数<strong>第3⽇留存率</strong>：(第⼀天新增的⽤户中，在第3天使⽤过产品的⽤户数)/第⼀天新增的总⽤户数<strong>第7留存率：</strong>（第⼀天新增的⽤户中，在第7天使⽤过产品的⽤户数）/第⼀天新增的总⽤户数</p>
-<p><strong>第30天留存率：</strong>（第⼀天新增的⽤户中，在第30天使⽤过产品的⽤户数）/第⼀天新增的总⽤户数</p>
-<p>提升活跃与留存4种⽅式：</p>
-</blockquote>
-<h4 id="-">有效触达，唤醒⽤户：</h4>
-<blockquote>
-<p>⼿机PUSH、短信和微信公众号推送</p>
-</blockquote>
-<h4 id="-">搭建激励体系，留存⽤户：</h4>
-<blockquote>
-<p>成⻓值会员体系、签到体系、积分任务体系等。</p>
-</blockquote>
-<ol>
-<li><h4 id="-">丰富内容，增加⽤户在线时⻓</h4>
-</li><li><p><strong>数据反推，找到关键点</strong></p>
-</li></ol>
-<blockquote>
-<p><strong>4.变现(Revenue) -- 如何赚到钱</strong></p>
-<p>媒体类平台依靠⼴告变现游戏类依靠⽤户付费</p>
-<p>电商类通过收取佣⾦或卖家付费的⽅式。</p>
-<p>指标：</p>
-<p><strong>客单价：</strong>每位⽤户平均购买商品的⾦额，客单价=销售总额/顾客总数。</p>
-<p><strong>PUR：</strong>（pay user rate） 付费⽤户占⽐。</p>
-<p><strong>复购率：</strong>⼀定时间内，消费两次以上的⽤户/总购买⽤户数，如果10个客户购买了商品，5个⽤户产⽣了重复购买，则复购率为50%。</p>
-<p>还有ARPU、ARPPU、付费率（区分新⽼）、回购率等。</p>
-</blockquote>
-<h4 id="5-refer-">5.产品推荐(Refer) -- ⽤户会告诉其他⼈吗</h4>
-<blockquote>
-<p>指标：</p>
-<p><strong>转发率</strong>：转发的⽤户数/看到该功能的⽤户数。</p>
-<p><strong>转化率</strong>：⽐如淘宝转化率=某段时间产⽣购买⾏为的⽤户数/所有到达店铺的访客⼈数，⽐如双⼗⼀，看到店铺某个产品的客户有100个，最后下单的⼈数有10个，则转化率为10%。</p>
-<p><strong>K因⼦</strong>：⽤来衡量推荐的效果。K因⼦=（每个⽤户向他的朋友发出请求的数量）*接收到邀请的⼈转化为新⽤户的转化率。K>1 ⽤户像滚雪球⼀样的增⼤；K\&lt;1 ⽤户群到某个规模时就会停⽌通过⾃传播的增</p>
-<p>⻓。</p>
-</blockquote>
-<h4 id="6-">6.⼩结</h4>
-<blockquote>
-<p>通过AARRR模型，我们看到产品运营每个环节都⾄关重要，获取⽤户关系到我们的产品多⼤程度进⼊市场，活跃与留存关系到产品⽣命周期，收⼊的重要⾃是不必多说，⾃传播则是我们尽可能争取的资源，降低成本扩⼤影响的环节，每个环节都需要⼤量的数据分析和迭代，从⽽不断改进产品。</p>
-</blockquote>
-<ol>
-<li><h3 id="rfm-">RFM模型</h3>
-<ol>
-<li><h4 id="rfm-">RFM模型概念及原理</h4>
-</li></ol>
-</li></ol>
-<blockquote>
-<p><strong>R</strong>值：Rencency（最近⼀次消费）</p>
-<p>指的是⽤户在店铺消费最近⼀次和上⼀次的时间间隔；</p>
-<p><strong>F</strong>值：Frequency（消费频率）</p>
-<p>指的是是⽤户在固定时间内的购买次数；</p>
-<p><strong>M</strong>值：Monetary（消费⾦额）</p>
-<p>指的是⼀段时间（通常是1年）内的消费⾦额；主要⽅法：⼆分法</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page17-Image1.jpg" alt=""></p>
-<p>RFM这3个值对应的价值是⾼还是低，对应到下⾯这张表⾥就得到了⽤户分类的规则。</p>
+<p>「⼈」（⽤户)是整个运营的核⼼。<br>所有举动都围绕着，如何让更多的⼈有购买⾏为，让他们买的更多，买的更贵。<br>所以对⼈的洞察是⼀切⾏为的基础。<br>⽬前平台上的主⼒消费⼈群有哪些特征，他们对货品有哪些需求，他们活跃在哪些场，还有哪些有消费⼒的⼈⽬前不在平台上，对这些问题的回答指向了接下来的⾏动。</p>
 </blockquote>
 <table>
 <thead>
 <tr>
-<th style="text-align:center"><strong>⽤户分类规则</strong></th>
+<th><strong>指标</strong></th>
+<th><strong>细化指标</strong></th>
+<th><strong>说明</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">⽤户分类</td>
-<td style="text-align:center">R值(最近⼀次消费)</td>
-<td style="text-align:center">F值(消费频率)</td>
-<td style="text-align:center">M值(消费⾦额)</td>
+<td>浏览</td>
+<td>PV</td>
+<td>（PageView）是⻚⾯浏览量</td>
 </tr>
 <tr>
-<td style="text-align:center">1.重要价值⽤户</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">⾼</td>
+<td>/</td>
+<td>UV</td>
+<td>（Unique Visitor）是⼀定时间内访问⽹⻚的⼈数，正式名称独⽴访客数（⼀个⽹站或者⼀个⻚⾯）</td>
 </tr>
 <tr>
-<td style="text-align:center">2.重要发展⽤户</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">⾼</td>
+<td>流量质量</td>
+<td>PV/UV</td>
+<td>浏览深度</td>
 </tr>
 <tr>
-<td style="text-align:center">3.重要保持⽤户</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">⾼</td>
+<td>/</td>
+<td>ROI</td>
+<td>投资回报率（ROI）=年利润或年均利润/投资总额×100%</td>
 </tr>
 <tr>
-<td style="text-align:center">4.重要挽留⽤户</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">⾼</td>
+<td>成交⽤户</td>
+<td>新客数</td>
+<td>（⼀般当天的算新⽤户，当⽇激活或者/新增）</td>
 </tr>
 <tr>
-<td style="text-align:center">5.⼀般价值⽤户</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">低</td>
+<td>/</td>
+<td>⽼客数</td>
+<td>/</td>
 </tr>
 <tr>
-<td style="text-align:center">6.⼀般发展⽤户</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">低</td>
+<td>/</td>
+<td>客单价</td>
+<td>当⽇消费总价/顾客数（新+⽼）—-客单价应该是稳的，突然多/少，购买⼒特别强的，疫情影响客单价下降</td>
 </tr>
 <tr>
-<td style="text-align:center">7.⼀般保持⽤户</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">低</td>
+<td>/</td>
+<td>DAU</td>
+<td>⽇活跃⽤户</td>
 </tr>
 <tr>
-<td style="text-align:center">8.⼀般挽留⽤户</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">低</td>
+<td>/</td>
+<td>MAU</td>
+<td>⽉活跃⽤户</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+<td>…</td>
 </tr>
 </tbody>
 </table>
-<h4 id="-rfm-">如何使⽤RFM模型进⾏⽤户价值分类</h4>
 <blockquote>
-<p><strong>确定RFM三个指标的分段和每个分段的分值</strong></p>
-<p>R值：最近⼀次消费越近，得分越⾼，最⾼5分，最低1分</p>
-<p>F值：消费频率越⾼，得分越⾼，最⾼5分，最低1分</p>
-<p>M值：消费⾦额越⾼，得分越⾼，最⾼5分，最低1分</p>
+<p>「货」就对应供给,涉及到了货品分层，哪些是红海，哪些是蓝海，如何进⾏动态调整，是要做⾃营还是平台，以满⾜消费者的需求。<br>「场」就是消费者在什么场景下，以什么样的⽅式接触到了这个商品。早期的导购做的⽐较简单，⽬前的场就⽐较丰富，但也暴露了淘宝和京东在导购⽅⾯的⼀些问题。<br>⽐如内容营销，⽬前最好的可能是微信的KOL⽣态和⼩红书，甚⾄微博，⽽不在电商⾃⼰的场。<br>如何做⼀个全域的打通，和消费者进⾏多触点的接触，⽐如社交和电商联动，来完成销售转化，这就是腾讯和阿⾥⼀直都在讲的「全域营销」。</p>
 </blockquote>
+<h1 id="3-">3.确认问题</h1>
+<blockquote>
+<p>  本次分析的⽬的是想通过对⽤户⾏为数据进⾏分析，为以下问题提供解释和改进建议：<br>  1）基于漏⽃模型的⽤户购买流程各环节分析指标，确定各个环节的转换率，便于找到需要改进的环节；<br>  2）商品分析：找出热销商品，研究热销商品特点；<br>  3）基于RFM模型找出核⼼付费⽤户群，对这部分⽤户进⾏精准营销。</p>
+</blockquote>
+<h1 id="4-">4.准备⼯作</h1>
+<h2 id="4-1-">4.1 数据读取(⽤户⾏为数据)</h2>
+<p>表结构</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center"><strong>指标</strong></th>
-<th style="text-align:center"><strong>分值</strong></th>
+<th><strong>列名</strong></th>
+<th><strong>说明</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">5</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">1</td>
+<td>user_id</td>
+<td>⽤户ID</td>
 </tr>
 <tr>
-<td style="text-align:center">R值(最近⼀次消费)</td>
-<td style="text-align:center">3天以内</td>
-<td style="text-align:center">3-5天</td>
-<td style="text-align:center">5-10天</td>
-<td style="text-align:center">10-20天</td>
-<td>20天以上</td>
+<td>item_id</td>
+<td>商品ID</td>
 </tr>
 <tr>
-<td style="text-align:center">F值(消费频率)</td>
-<td style="text-align:center">20次以上</td>
-<td style="text-align:center">10-20次</td>
-<td style="text-align:center">6-8次</td>
-<td style="text-align:center">2-6次</td>
-<td>2次以下</td>
+<td>behavior_type</td>
+<td>⽤户⾏为类型（1-曝光；2-购买；3-加⼊购物⻋；4-加⼊收藏夹。）</td>
 </tr>
 <tr>
-<td style="text-align:center">M值(消费⾦额)</td>
-<td style="text-align:center">5000元以上</td>
-<td style="text-align:center">3000-5000元</td>
-<td style="text-align:center">1500-3000元</td>
-<td style="text-align:center">1000-1500元</td>
-<td>1000元以内</td>
+<td>user_geohash</td>
+<td>地理位置</td>
+</tr>
+<tr>
+<td>item_category</td>
+<td>品类ID</td>
+</tr>
+<tr>
+<td>time</td>
+<td>⽤户⾏为发⽣的时间</td>
 </tr>
 </tbody>
 </table>
-<h4 id="-rfm-">计算每个客户RFM三个指标的得分</h4>
+<pre><code class="lang-mysql">use lagou;
+create table o_retailers_trade_user (
+user_id int (9),
+item_id int (9),
+behavior_type int (1),
+user_geohash    varchar (14),
+item_category int (5),
+time    varchar (13)
+);
+</code></pre>
+<p>注意：样例数据的时间格式如：2019-12-06 02 年-⽉-⽇ ⼩时（24进制）</p>
+<h2 id="4-2-">4.2 <strong>数据预处理</strong></h2>
+<ul>
+<li>增加新列date_time（datetime）,dates（char，年⽉⽇），便于后续时间维度分析；</li></ul>
+<pre><code class="lang-mysql">-- 增加新列date_time、dates
+alter table o_retailers_trade_user add column date_time datetime null; update o_retailers_trade_user
+set date_time =str_to_date(time,&#39;%Y-%m-%d %H&#39;) ;
+
+-- %H可以表示0-23；⽽%h表示0-12
+alter table o_retailers_trade_user add column dates char(10) null;
+update o_retailers_trade_user set dates=date(date_time);
+
+desc o_retailers_trade_user;
+select * from o_retailers_trade_user limit 5;
+</code></pre>
+<ul>
+<li>重复值处理：创建新表a，并插⼊5W条⽆重复数据</li></ul>
+<pre><code class="lang-mysql">-- 创建新表a，并插⼊5W条数据。
+create table temp_trade like o_retailers_trade_user;
+insert into temp_trade select distinct * from o_retailers_trade_user limit 50000;
+</code></pre>
+<h1 id="-5-"><strong>5.指标体系建设</strong></h1>
+<p>⼈ 货 场 体系</p>
+<h2 id="5-1-">5.1 <strong>⽤户指标体系</strong></h2>
+<p>基础指标体系（UV/PV/留存率）+  RFM模型分析</p>
+<h3 id="5-1-1-">5.1.1 <strong>基础指标</strong></h3>
+<p>uv、pv、留存率（按⽇）统计</p>
+<pre><code class="lang-mysql">/*
+需求： uv、 pv、浏览深度（按⽇）统计
+pv：统计behavior_type=1的记录数，需要按⽇统计（分组）
+uv: 统计distinct user_id 的数量，需要按⽇统计（分组）
+浏览深度： pv/uv
+*/
+-- pv 进⾏cout时候，如果behavior_type=1进⾏计算，如果不是，不进⾏计算
+select
+dates,
+count( distinct user_id ) as &#39;uv&#39;,
+count( if(behavior_type=1,user_id,null)) as &#39;pv&#39;,
+count( if(behavior_type=1,user_id,null))/count( distinct user_id ) as
+&#39;pv/uv&#39;
+from
+temp_trade
+group by
+dates;
+</code></pre>
+<pre><code class="lang-mysql">-- ⽤户留存
+with temp_table_trades as
+(select a.dates
+,count(distinct b.user_id) as device_v
+,count(distinct if(datediff(b.dates,a.dates)=0,b.user_id,null)) as device_v_remain0
+,count(distinct if(datediff(b.dates,a.dates)=1,b.user_id,null)) as device_v_remain1
+,count(distinct if(datediff(b.dates,a.dates)=2,b.user_id,null)) as device_v_remain2
+,count(distinct if(datediff(b.dates,a.dates)=3,b.user_id,null)) as device_v_remain3
+,count(distinct if(datediff(b.dates,a.dates)=4,b.user_id,null)) as device_v_remain4
+,count(distinct if(datediff(b.dates,a.dates)=5,b.user_id,null)) as device_v_remain5
+,count(distinct if(datediff(b.dates,a.dates)=6,b.user_id,null)) as device_v_remain6
+,count(distinct if(datediff(b.dates,a.dates)=7,b.user_id,null)) as device_v_remain7
+,count(distinct if(datediff(b.dates,a.dates)=15,b.user_id,null)) as device_v_remain15
+,count(distinct if(datediff(b.dates,a.dates)=30,b.user_id,null)) as device_v_remain30
+from
+(select
+user_id
+,dates
+from
+temp_trade
+group by
+user_id
+,dates ) a
+left join
+(
+select
+dates
+,user_id
+from temp_trade
+GROUP BY dates,user_id
+) b on a.user_id = b.user_id
+where b.dates &gt;= a.dates
+group by a.dates)
+select dates, device_v_remain0,
+concat(cast((device_v_remain1/device_v_remain0)*100 as DECIMAL(18,2)),&#39;%&#39;) as &#39;day_1%&#39;,
+concat(cast((device_v_remain2/device_v_remain0)*100 as DECIMAL(18,2)),&#39;%&#39;) as &#39;day_2%&#39;,
+concat(cast((device_v_remain3/device_v_remain0)*100 as DECIMAL(18,2)),&#39;%&#39;) as &#39;day_3%&#39;,
+concat(cast((device_v_remain4/device_v_remain0)*100 as DECIMAL(18,2)),&#39;%&#39;) as &#39;day_4%&#39;,
+concat(cast((device_v_remain5/device_v_remain0)*100 as DECIMAL(18,2)),&#39;%&#39;) as &#39;day_5%&#39;,
+concat(cast((device_v_remain6/device_v_remain0)*100 as DECIMAL(18,2)),&#39;%&#39;) as &#39;day_6%&#39;,
+concat(cast((device_v_remain7/device_v_remain0)*100 as DECIMAL(18,2)),&#39;%&#39;) as &#39;day_7%&#39;,
+concat(cast((device_v_remain15/device_v_remain0)*100 as DECIMAL(18,2)),&#39;%&#39;) as &#39;day_15%&#39;,
+concat(cast((device_v_remain30/device_v_remain0)*100 as DECIMAL(18,2)),&#39;%&#39;) as &#39;day_30%&#39;
+from temp_table_trades;
+</code></pre>
+<h3 id="5-1-2-rfm-">5.1.2 <strong>RFM模型分析</strong></h3>
+<h4 id="1-rfm-r-">1) RFM模型：R部分</h4>
+<pre><code class="lang-mysql">-- RFM模型
+
+-- 1.建⽴R视图，将近期购买时间提取到R临时表中
+DROP VIEW
+IF
+    EXISTS user_recency;
+CREATE VIEW user_Recency AS SELECT
+user_id,
+max( dates ) AS rec_buy_time 
+FROM
+    temp_trade 
+WHERE
+    behavior_type = &#39;2&#39; 
+GROUP BY
+    user_id 
+ORDER BY
+    rec_buy_time DESC;
+
+-- 2.建⽴R等级划分视图：将客户近期购买时间进⾏等级划分，越接近2019-12-18号R越⼤；
+DROP VIEW
+IF
+    EXISTS r_clevel;
+CREATE VIEW r_clevel AS SELECT
+user_id,
+rec_buy_time,
+datediff( &#39;2019-12-18&#39;, rec_buy_time ) AS recen_num,
+(
+    CASE
+
+            WHEN datediff( &#39;2019-12-18&#39;, rec_buy_time )&lt;= 2 THEN
+            5 
+            WHEN datediff( &#39;2019-12-18&#39;, rec_buy_time )&lt;= 4 THEN
+            4 
+            WHEN datediff( &#39;2019-12-18&#39;, rec_buy_time )&lt;= 6 THEN
+            3 
+            WHEN datediff( &#39;2019-12-18&#39;, rec_buy_time )&lt;= 8 THEN
+            2 ELSE 1 
+        END 
+        ) AS r_value 
+FROM
+    user_Recency;
+</code></pre>
+<h4 id="2-rfm-f-">2) RFM模型：F部分（⼀定时间内的消费频率）</h4>
+<pre><code class="lang-mysql">-- 1.建⽴F视图
+create view frenq_value
+as
+select user_id ,count(user_id) as buy_frenq
+from temp_trade
+where behavior_type=&#39;2&#39;
+group by user_id;
+
+-- 2.建⽴F等级划分
+create view f_clevel
+as
+select user_id,buy_frenq,
+(case when buy_frenq&lt;=2 then 1
+when buy_frenq&lt;=4 then 2
+when buy_frenq&lt;=6 then 3
+when buy_frenq&lt;=8 then 4
+else 5 end) as &#39;f_values&#39;
+from frenq_value;
+select * from f_level;
+</code></pre>
+<h4 id="3-">3) 整合结果</h4>
+<p>本次数据中通过最近消费（R）和消费频率（F）建⽴RFM模型</p>
+<ul>
+<li>重要⾼价值客户：指最近⼀次消费较近⽽且消费频率较⾼的客户；</li><li>重要唤回客户：指最近⼀次消费较远且消费频率较⾼的客户；</li><li>重要深耕客户：指最近⼀次消费较近且消费频率较低的客户；</li><li>重要挽留客户：指最近⼀次消费较远且消费频率较低的客户；</li></ul>
+<p>我们按照最近⼀次消费的均值和消费频率的均值定⾼低界限。</p>
+<pre><code class="lang-mysql">-- 将⽤户整合
+-- 1.R平均值
+SELECT avg(r_value) as &#39;r_avg&#39; FROM r_clevel; -- 2.7939
+
+-- 2.F平均值
+select avg(f_values) as &#39;f_avg&#39; from f_clevel; -- 2.2606
+
+-- 3.⽤户⼋⼤类等级划分，由于该数据没有M值，故只建⽴了4个分类
+drop view if exists RFM_inall;
+create view RFM_inall
+as
+select a.*,b.f_values,
+(case
+when a.r_value&gt;2.7939 and b.f_values&gt;2.2606 then &#39;重要⾼价值客户&#39;
+when a.r_value&lt;2.7939 and b.f_values&gt;2.2606 then &#39;重要唤回客户&#39;
+when a.r_value&gt;2.7939 and b.f_values&lt;2.2606 then &#39;重要深耕客户&#39;
+when a.r_value&lt;2.7939 and b.f_values&lt;2.2606 then &#39;重要挽留客户&#39;
+END
+) as user_class
+from r_clevel a, f_clevel b
+where a.user_id=b.user_id;
+SELECT count(user_id) as user_v,user_class from RFM_inall GROUP BY user_class;
+</code></pre>
+<h2 id="5-2-">5.2 <strong>商品指标体系</strong></h2>
+<p>商品的点击量 收藏量 加购量 购买次数<br>购买转化（该商品的所有⽤户中有购买转化的⽤户⽐；）按照商品进⾏分组统计</p>
+<pre><code class="lang-mysql">-- 商品的点击量 收藏量 加购量 购买次数 购买转化
+select * from temp_trade;
+select item_id,
+sum(case when behavior_type=1 then 1 else 0 end) as&#39;pv&#39;,
+sum(case when behavior_type=4 then 1 else 0 end) as&#39;fav&#39;,
+sum(case when behavior_type=3 then 1 else 0 end) as&#39;cart&#39;,
+sum(case when behavior_type=2 then 1 else 0 end) as&#39;buy&#39;,
+count(distinct case when behavior_type=2 then user_id else null
+end)/count(distinct user_id) as buy_rate
+from temp_trade
+group by item_id
+order by buy desc;
+</code></pre>
+<p>对应品类的点击量 收藏量 加购量 购买次数 购买转化（该商品品类的所有⽤户中有购买转化的⽤户⽐；）</p>
+<pre><code class="lang-mysql">select item_category,
+sum(case when behavior_type=1 then 1 else 0 end) as&#39;pv&#39;,
+sum(case when behavior_type=4 then 1 else 0 end) as&#39;fav&#39;,
+sum(case when behavior_type=3 then 1 else 0 end) as&#39;cart&#39;,
+sum(case when behavior_type=2 then 1 else 0 end) as&#39;buy&#39;,
+count(distinct case when behavior_type=2 then user_id else null
+end)/count(distinct user_id) as buy_rate
+from temp_trade
+group by item_category
+order by buy desc;
+</code></pre>
+<h2 id="5-3-">5.3<strong>平台指标体系</strong></h2>
+<h3 id="1-">1) ⾏为指标：</h3>
+<p>点击次数 收藏次数 加购物⻋次数 购买次数 购买转化（该平台当⽇的所有⽤户中有购买转化的⽤户⽐）</p>
+<pre><code class="lang-mysql">-- 每⽇的分析(1-4，分别表示点击pv、购买buy、加购物⻋cart、喜欢fav)
+
+select dates,count(1) as &#39;每⽇的总数&#39;,
+sum(case when behavior_type=1 then 1 else 0 end) as&#39;pv&#39;, sum(case when behavior_type=2 then 1 else 0 end) as&#39;buy&#39;, sum(case when behavior_type=3 then 1 else 0 end) as&#39;cart&#39;, sum(case when behavior_type=4 then 1 else 0 end) as&#39;fav&#39;, count(distinct case when behavior_type=2 then user_id else null end)/count(distinct user_id) as buy_rate
+from temp_trade group by dates;
+</code></pre>
+<ul>
+<li><strong>⾏为路径分析</strong></li></ul>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/image-20200908150617909.png" alt="image-20200908150617909"></p>
+<pre><code class="lang-mysql">-- ⾏为路径分析
+
+-- ⾏为路径组建基础视图
+drop view product_user_way;
+create view product_user_way as select
+a.*
+from
+(
+select
+user_id,
+item_id,
+lag ( behavior_type, 4 ) over ( partition by user_id, item_id order bydate_time ) lag_4,
+lag ( behavior_type, 3 ) over ( partition by user_id, item_id order bydate_time ) lag_3,
+lag ( behavior_type, 2 ) over ( partition by user_id, item_id order bydate_time ) lag_2,
+lag ( behavior_type, 1 ) over ( partition by user_id, item_id order bydate_time ) lag_1,
+behavior_type,
+rank ( ) over ( partition by user_id, item_id order by date_time desc ) as
+rank_dn # 倒数第⼏个⾏为
+from
+temp_trade
+) a
+where
+a.rank_dn = 1
+and behavior_type = 2
+
+-- 查询该路径下有多少购买⽤户数
+select
+concat(
+ifnull( lag_4, &#39;空&#39; ),
+&quot;-&quot;,
+ifnull( lag_3, &#39;空&#39; ),
+&quot;-&quot;,
+ifnull( lag_2, &#39;空&#39; ),
+&quot;-&quot;,
+ifnull( lag_1, &#39;空&#39; ),
+&quot;-&quot;,
+behavior_type
+) as user_way,
+count( distinct user_id ) as user_count 
+
+-- 该路径下购买⽤户数
+from
+product_user_way
+group by
+concat(
+ifnull( lag_4, &#39;空&#39; ),
+&quot;-&quot;,
+ifnull( lag_3, &#39;空&#39; ),
+&quot;-&quot;,
+ifnull( lag_2, &#39;空&#39; ),
+&quot;-&quot;,
+ifnull( lag_1, &#39;空&#39; ),
+&quot;-&quot;,
+behavior_type
+);
+</code></pre>
+<ul>
+<li>SQL汇总</li></ul>
+<pre><code class="lang-mysql">CREATE TABLE o_retailers_trade_user (
+    user_id INT ( 9 ),
+    item_id INT ( 9 ),
+    behavior_type INT ( 1 ),
+    user_geohash VARCHAR ( 14 ),
+    item_category INT ( 5 ),
+time VARCHAR ( 13 ) 
+);
+
+
+SELECT
+    * 
+FROM
+    o_retailers_trade_user 
+    LIMIT 5;
+
+
+-- 增加新列date_time、dates
+ALTER TABLE o_retailers_trade_user ADD COLUMN date_time datetime NULL;
+
+-- date_time 字段来自于基础数据中time字段
+UPDATE o_retailers_trade_user 
+SET date_time = str_to_date( time, &#39;%Y-%m-%d %H&#39; );-- 大H代表24进制，小h代表12进制
+
+-- %H可以表示0-23；⽽%h表示0-12
+alter table o_retailers_trade_user add column dates char(10) null;
+
+-- dates 字段来自于基础数据中time字段
+update o_retailers_trade_user set dates=date(date_time);
+
+-- 查看表结构
+desc o_retailers_trade_user;
+
+
+-- 去重预处理
+create table temp_trade like o_retailers_trade_user;
+
+insert into temp_trade select distinct * from o_retailers_trade_user limit 50000;
+
+/*
+需求：UV、PV、按日留存率统计
+
+pv：统计behavior_type=1的记录数，需要按日统计（分组）
+uv: 统计distinct user_id 的数量，需要按日统计（分组）
+浏览深度/浏览质量：pv/uv
+*/
+-- pv 计算count的时候，如果behavior_type=1进行计算，如果不是，不进行计算
+SELECT
+    dates,
+    count( DISTINCT user_id ) AS &#39;uv&#39;,
+    count(
+    IF
+    ( behavior_type = 1, user_id, NULL )) AS &#39;pv&#39;,
+    count(
+    IF
+    ( behavior_type = 1, user_id, NULL ))  / count( DISTINCT user_id )  AS &#39;pv/uv&#39; 
+FROM
+    temp_trade 
+GROUP BY
+    dates;
+
+
+/*
+留存率（按日）统计
+活跃用户留存率（某天189个用户活跃，过了3天后剩下58个人活跃）
+日期/活跃用户/过了1天/过了2天
+2019-12-28 / 100 / 90（98%）/ 80（80%）
+1）获取到类似于上面的一个结果集
+2）基础数据中所有的日都应该进行如上的计算
+*/
+-- 自关联的方式
+SELECT
+    user_id,
+    dates 
+FROM
+    temp_trade 
+GROUP BY
+    user_id,
+    dates;
+
+CREATE VIEW user_remain_view AS
+SELECT
+    a.dates,
+    count( DISTINCT b.user_id ) AS &#39;user_count&#39;,
+    count( DISTINCT IF(datediff( b.dates,a.dates )=1,b.user_id,null)) AS remain1, -- 1日留存数计算
+    count( DISTINCT IF(datediff( b.dates,a.dates )=2,b.user_id,null)) AS remain2, -- 2日留存数计算
+    count( DISTINCT IF(datediff( b.dates,a.dates )=3,b.user_id,null)) AS remain3, -- 3日留存数计算
+    count( DISTINCT IF(datediff( b.dates,a.dates )=4,b.user_id,null)) AS remain4, -- 4日留存数计算
+    count( DISTINCT IF(datediff( b.dates,a.dates )=5,b.user_id,null)) AS remain5, -- 5日留存数计算
+    count( DISTINCT IF(datediff( b.dates,a.dates )=6,b.user_id,null)) AS remain6, -- 6日留存数计算
+    count( DISTINCT IF(datediff( b.dates,a.dates )=7,b.user_id,null)) AS remain7, -- 7日留存数计算
+        count( DISTINCT IF(datediff( b.dates,a.dates )=15,b.user_id,null)) AS remain15, -- 15日留存数计算
+    count( DISTINCT IF(datediff( b.dates,a.dates )=30,b.user_id,null)) AS remain30 -- 30日留存数计算
+FROM
+    ( SELECT user_id, dates FROM temp_trade GROUP BY user_id, dates ) a
+    LEFT JOIN ( SELECT user_id, dates FROM temp_trade GROUP BY user_id, dates ) b ON a.user_id = b.user_id 
+WHERE
+    b.dates &gt;= a.dates 
+GROUP BY
+    a.dates;
+
+-- cast 转换函数  CAST函数语法规则是：Cast(字段名 as 转换的类型 )，其中类型可以为：CHAR[(N)] 字符型 、DATE 日期型、DATETIME 日期和时间型、DECIMAL float型、SIGNED int、TIME 时间型
+-- decimal 数据类型最多可存储 38 个数字,所有数字都能够放到小数点的右边.decimal 数据类型存储了一个准确（精确）的数字表达法；不存储值的近似值.其中10是小数点左边和右边的数字个数之和(不包括小数点),2代表小数点右边的小数位数或数字个数.decimal(10,2)可以存储8位整数2位小数的数字
+SELECT
+    dates,
+    user_count,
+    concat(cast((remain1 / user_count)*100 AS DECIMAL(10,2)),&#39;%&#39;) AS &#39;remain1_rate&#39;,  -- 1日留存率
+    concat(cast((remain2 / user_count)*100 AS DECIMAL(10,2)),&#39;%&#39;) AS &#39;remain2_rate&#39;,  -- 2日留存率
+    concat(cast((remain3 / user_count)*100 AS DECIMAL(10,2)),&#39;%&#39;) AS &#39;remain3_rate&#39;,  -- 3日留存率
+    concat(cast((remain4 / user_count)*100 AS DECIMAL(10,2)),&#39;%&#39;) AS &#39;remain4_rate&#39;,  -- 4日留存率
+    concat(cast((remain5 / user_count)*100 AS DECIMAL(10,2)),&#39;%&#39;) AS &#39;remain5_rate&#39;,  -- 5日留存率
+    concat(cast((remain6 / user_count)*100 AS DECIMAL(10,2)),&#39;%&#39;) AS &#39;remain6_rate&#39;,  -- 6日留存率
+    concat(cast((remain7 / user_count)*100 AS DECIMAL(10,2)),&#39;%&#39;) AS &#39;remain7_rate&#39;,  -- 7日留存率
+    concat(cast((remain15 / user_count)*100 AS DECIMAL(10,2)),&#39;%&#39;) AS &#39;remain15_rate&#39;,  -- 15日留存率
+    concat(cast((remain30 / user_count)*100 AS DECIMAL(10,2)),&#39;%&#39;) AS &#39;remain30_rate&#39;  -- 30日留存率
+FROM
+    user_remain_view
+
+-- R 指标分析：根据每个用户最近一次购买时间，给出相应的分数
+
+-- 每个用户的最近购买时间
+DROP VIEW IF EXISTS user_recency_view;
+CREATE VIEW user_recency_view AS
+SELECT 
+  user_id,
+    max(dates) AS recent_buy_time
+FROM temp_trade
+WHERE behavior_type=2
+GROUP BY user_id;
+
+-- 计算每个用户的最近购买时间距离 2019-12-18相差几天，根据相差天数给予一定的分数
+CREATE VIEW r_level AS
+SELECT
+  user_id,
+    recent_buy_time,
+    DATEDIFF(&#39;2019-12-18&#39;,recent_buy_time),
+    -- &lt;=2 5分、&lt;=4 4分、&lt;=6 3分、&lt;=8 2分、其他 1分
+    (
+    CASE 
+    WHEN DATEDIFF(&#39;2019-12-18&#39;,recent_buy_time)&lt;=2 THEN 5
+    WHEN DATEDIFF(&#39;2019-12-18&#39;,recent_buy_time)&lt;=4 THEN 4
+    WHEN DATEDIFF(&#39;2019-12-18&#39;,recent_buy_time)&lt;=6 THEN 3
+    WHEN DATEDIFF(&#39;2019-12-18&#39;,recent_buy_time)&lt;=8 THEN 2
+    ELSE 1 END
+    ) AS r_value -- 判断具体某个人的分值
+FROM user_recency_view;
+
+
+-- f指标计算：求出每个用户的消费次数或者购买次数，拿到消费次数对消费情况进行评分
+-- 求出每个用户的消费次数或者购买次数
+CREATE VIEW user_buy_fre_view AS
+SELECT
+  user_id,
+    COUNT(user_id) AS buy_frequency -- 哥哥用户购买次数
+FROM temp_trade
+WHERE behavior_type=2
+GROUP BY user_id;
+
+-- 评分：购买次数&lt;=2 1分、&lt;=4 2分、&lt;=6 3分、&lt;=8 4分、其他 5分
+CREATE VIEW f_level AS
+SELECT
+  user_id,
+    buy_frequency,
+    ( case
+    when buy_frequency&lt;=2 then 1
+    when buy_frequency&lt;=4 then 2
+    when buy_frequency&lt;=6 then 3
+    when buy_frequency&lt;=8 then 4
+    else 5 end
+    ) as &#39;f_value&#39;
+FROM user_buy_fre_view;
+
+-- r均值
+SELECT
+  AVG(r_value) AS &#39;r_avg&#39;
+FROM r_level; -- 2.7939
+
+
+-- f均值
+SELECT
+  AVG(f_value) AS &#39;f_avg&#39;
+FROM f_level; -- 2.2606
+
+-- 重要价值客户：指最近⼀次消费较近⽽且消费频率较⾼的客户；
+-- 重要唤回客户：指最近⼀次消费较远且消费频率较⾼的客户；
+-- 重要深耕客户：指最近⼀次消费较近且消费频率较低的客户；
+-- 重要挽留客户：指最近⼀次消费较远且消费频率较低的客户；
+
+-- 拿到每个人的r值和f值(两表关联 r_level\f_level)，与均值对比
+select
+r.user_id,
+r.r_value,
+f.f_value,
+(
+case
+when r.r_value&gt;2.7939 and f.f_value&gt;2.2606 then &#39;重要价值客户&#39;
+when r.r_value&lt;2.7939 and f.f_value&gt;2.2606 then &#39;重要唤回客户&#39;
+when r.r_value&gt;2.7939 and f.f_value&lt;2.2606 then &#39;重要深耕客户&#39;
+when r.r_value&lt;2.7939 and f.f_value&lt;2.2606 then &#39;重要挽留客户&#39;
+end -- 没有其他就别else
+) AS user_type
+from r_level r,f_level f where r.user_id=f.user_id;
+
+-- 商品的点击量 收藏量 加购量 购买次数 购买转化
+select 
+  item_id,
+    sum(case when behavior_type=1 then 1 else 0 end ) as &#39;pv&#39;, -- 点击量
+    sum(case when behavior_type=4 then 1 else 0 end ) as &#39;fav&#39;, -- 收藏量
+    sum(case when behavior_type=3 then 1 else 0 end ) as &#39;cart&#39;, -- 加购量
+    sum(case when behavior_type=2 then 1 else 0 end ) as &#39;buy&#39; -- 购买次数
+from temp_trade group by item_id;
+
+
+-- 对应品类的点击量 收藏量 加购量 购买次数 购买转化,该商品品类的所有用户中有购买转化的用户比
+select 
+  item_category,
+    sum(case when behavior_type=1 then 1 else 0 end ) as &#39;pv&#39;, -- 点击量
+    sum(case when behavior_type=4 then 1 else 0 end ) as &#39;fav&#39;, -- 收藏量
+    sum(case when behavior_type=3 then 1 else 0 end ) as &#39;cart&#39;, -- 加购量
+    sum(case when behavior_type=2 then 1 else 0 end ) as &#39;buy&#39;, -- 购买次数
+    count( distinct case when behavior_type=2 then user_id else null end )/count( distinct user_id ) as &#39;buy_rate&#39;
+from temp_trade group by item_category;
+
+-- 每日的分析(1-4，分别表示点击pv、购买buy、加购物车buy、喜欢fav)
+select 
+  dates,
+    sum(case when behavior_type=1 then 1 else 0 end ) as &#39;pv&#39;, -- 点击量
+    sum(case when behavior_type=4 then 1 else 0 end ) as &#39;fav&#39;, -- 收藏量
+    sum(case when behavior_type=3 then 1 else 0 end ) as &#39;cart&#39;, -- 加购量
+    sum(case when behavior_type=2 then 1 else 0 end ) as &#39;buy&#39;, -- 购买次数
+    count( distinct case when behavior_type=2 then user_id else null end )/count( distinct user_id ) as &#39;buy_rate&#39;
+from temp_trade
+group by dates;
+
+/*
+行为路径分析
+核心：拼接行为路径
+把多个行为并列摆放，才能使用 concat函数进行拼接
+偏移分析函数1 ag over1 ead over---窗口函数，分组（用户+商品），排序（升序）
+*/
+
+-- 用户行为拼接准备
+drop view path_base_view
+create view path_base_view as 
+select a.* from 
+(
+    SELECT
+        user_id, item_id,
+        lag ( behavior_type, 4 ) over ( PARTITION BY user_id, item_id ORDER BY date_time ) lag_4,-- 1
+        lag ( behavior_type, 3 ) over ( PARTITION BY user_id, item_id ORDER BY date_time ) lag_3,-- 1
+        lag ( behavior_type, 2 ) over ( PARTITION BY user_id, item_id ORDER BY date_time ) lag_2,-- 1
+        lag ( behavior_type, 1 ) over ( PARTITION BY user_id, item_id ORDER BY date_time ) lag_1,-- 1
+        behavior_type,
+        rank () over ( PARTITION BY user_id, item_id ORDER BY date_time DESC )  rank_number
+    FROM
+        temp_trade
+) a
+where a.rank_number=1 and a.behavior_type=2;
+
+
+-- 拼接行为路径
+select concat(ifnull(lag_4,&#39;空&#39;),&#39;-&#39;,ifnull(lag_3,&#39;空&#39;),&#39;-&#39;,ifnull(lag_2,&#39;空&#39;),&#39;-&#39;,ifnull(lag_1,&#39;空&#39;),&#39;-&#39;,behavior_type) path_base 
+from path_base_view;
+
+
+-- 针对行为路径进行分组count统计
+select concat(ifnull(lag_4,&#39;空&#39;),&#39;-&#39;,ifnull(lag_3,&#39;空&#39;),&#39;-&#39;,ifnull(lag_2,&#39;空&#39;),&#39;-&#39;,ifnull(lag_1,&#39;空&#39;),&#39;-&#39;,behavior_type) path_base,count(distinct user_id) user_num
+from path_base_view
+group by path_base;
+</code></pre>
+<h1 id="6-">6.结论</h1>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuai35.JPG" alt=""></p>
+<blockquote>
+<p><strong>1.双十二活动效果预热明显</strong>：双十二前（11月18-12月8日）日均活跃用户数237人，日均周环比增长2%，用户稳定增长，说明前期活动预热效果明显；<br><strong>2.已挖掘出部分高价值用户</strong>：已经挖掘出来54个重要深耕用户、34个重要高价值用户、70个重要挽留用户。后续运营活动可以直接使用；<br><strong>3.头部商品品类基本保持正常转化率</strong>：头部商品品类基本保持正常平均转化率10.4%，部分品类’5027‘、’5399‘转化率偏低，需要后续与商品运营团队沟通方案；<br><strong>4.购物车转化率偏低</strong>：在所有的消费路径中，58%的用户有加入购物车的行为；但仅有0.6%的用户在加入购物车之后发生购买；说明加入购物车购买转化率偏低的情况，后续与产品团队协商改进建议。<br><strong>5.留存率保持稳定但没有明显的上升势头</strong>：用户留存率基本稳定在60%-70%之间，活动期间会明显上升至80%左右，因此可通过有针对性的市场营销方式来奖励那些保持每月回访的客户，或者是采用一些激励手段，使得每月访问次数少于一次的客户更频繁地回访。引导新用户快速体验核心功能或内容，提高短期留存；同时找到上瘾回路，培养用户习惯，提高长期留存。</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuai33.JPG" alt=""></p>
+<h3 id="-">指标、数据说明</h3>
+<blockquote>
+<p>1.<strong>统计周期：</strong>2019年11月18日至2019年12月18日。<br>2.<strong>当日UV：</strong>指当日的用户排重计数；</p>
+<p>3.<strong>重要高价值客户：</strong>指最近一次消费较近而且消费频率较高的客户；<br>4.<strong>重要唤回客户：</strong>指最近一次消费较远且消费频率较高的客户；<br>5.<strong>重要深耕客户：</strong>指最近一次消费较近且消费频率较低的客户；<br>6.<strong>重要挽留客户：</strong>指最近一次消费较远且消费频率较低的客户；<br>7.<strong>购买转化率：</strong>商品的被购买次数除以所有对商品的行为数；</p>
+<p>8.<strong>留存用户：</strong>指某个时间段的新增用户，经过一段时期，仍使用程序的用户。该指标可以用来掌握用户的粘性及忠诚度；<br>9.<strong>用户留存率：</strong>留存率=登录用户数/新增用户数*100%；留存用户和留存率体现了应用的质量和保留用户的能力；</p>
+<p>10.<strong>次日留存率：</strong>（第一天新增用户数，第2天还登录的用户数）/第一天总注册用户数；<br>11.<strong>7日留存率：</strong>（第一天新增用户数，第8天还登录的用户数）/第一天总注册用户数；<br>12.<strong>30日留存率：</strong>（第一天新增用户数，第31天还登录的用户数）/第一天总注册用户。</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuai34.JPG" alt=""></p>
+<h2 id="6-1-">6.1 ⽤户分析</h2>
+<p>UV异常分析：每⽇UV数据中，明显异常点为双⼗⼆活动造成，该影响为已知影响。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/image-20200908150824108.png" alt="image-20200908150824108"></p>
+<blockquote>
+<p>  对于UV周环⽐的分析：⽇常周环⽐数据⼤多⼤于0，说明⽤户程⼀定上升趋势，其中如11⽉26⽇、12⽉<br>  2⽇、12⽉7⽇等的数据为下降数据，需要结合其他数据做进⼀步的下降原因分析。双⼗⼆活动后⽤户周环⽐会相应下降，为正常原因。<br>  猜测可能的问题有：<br>  内部问题：产品BUG（⽹站bug）、策略问题（周年庆活动结束了）、营销问题（代⾔⼈换了）等；<br>  外部问题：竞品活动问题（其他平台⼤酬宾），政治环境问题（进⼝商品限制），舆情⼝碑问题（平台商品爆出质量问题）等；</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/image-20200908150845456.png" alt="image-20200908150845456"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuai36.JPG" alt=""></p>
+<h2 id="6-2-">6.2 <strong>用户精细化运营</strong></h2>
+<blockquote>
+<p>  通过RFM模型中的⽤户最近⼀次购买时间、⽤户消费频次分析，分拆得到以下重要⽤户。<br>  可以在后续精细化运营场景中直接使⽤细分⽤户，做差异化运营：<br>  对⾼价值客户做VIP服务设计，增加⽤户粘性同时通过设计优惠券提升客户消费；<br>  对深耕客户做⼴告、推送刺激，提升消费频次；<br>  对挽留客户做优惠券、签到送礼策略，增加挽留⽤户粘性；<br>  对唤回客户做定向⼴告、短信召回策略，尝试召回⽤户。</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/image-20200908150910168.png" alt="image-20200908150910168"></p>
+<h2 id="6-3-">6.3 <strong>商品分析</strong></h2>
+<p>热销商品品类如下所示。</p>
+<p>其中’5027‘、’5399‘品类购买转化率较其余商品品类偏低，需要结合更多数据做进⼀步解读。（可能的原因：品类⾃有特性导致⽤户购买较低，⽐如⾮必需品、奢侈品等等。）</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center"><strong>⽤户ID</strong></th>
-<th style="text-align:center"><strong>R值(最近⼀次消费)</strong></th>
-<th style="text-align:center"><strong>F值(消费频率)</strong></th>
-<th style="text-align:center"><strong>M值(消费⾦额)</strong></th>
-<th><strong>R值得分</strong></th>
-<th style="text-align:center"><strong>F值得分</strong></th>
-<th style="text-align:center"><strong>M值得分</strong></th>
+<th><strong>item_category</strong></th>
+<th><strong>pv</strong></th>
+<th><strong>fav</strong></th>
+<th><strong>cart</strong></th>
+<th><strong>buy</strong></th>
+<th><strong>buy_rate</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2天</td>
-<td style="text-align:center">5次</td>
-<td style="text-align:center">2000元</td>
-<td>5</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">3</td>
+<td>13230</td>
+<td>1481</td>
+<td>2</td>
+<td>35</td>
+<td>43</td>
+<td>12.5%</td>
 </tr>
 <tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">4天</td>
-<td style="text-align:center">7次</td>
-<td style="text-align:center">4000元</td>
+<td>5894</td>
+<td>1336</td>
+<td>2</td>
+<td>20</td>
+<td>36</td>
+<td>12.4%</td>
+</tr>
+<tr>
+<td>1863</td>
+<td>1461</td>
+<td>11</td>
+<td>41</td>
+<td>34</td>
+<td>11.4%</td>
+</tr>
+<tr>
+<td>6513</td>
+<td>1030</td>
+<td>7</td>
+<td>29</td>
+<td>31</td>
+<td>13.4%</td>
+</tr>
+<tr>
+<td>11279</td>
+<td>767</td>
 <td>4</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">4</td>
+<td>22</td>
+<td>25</td>
+<td>12.6%</td>
+</tr>
+<tr>
+<td>10894</td>
+<td>491</td>
+<td>2</td>
+<td>15</td>
+<td>20</td>
+<td>12.6%</td>
+</tr>
+<tr>
+<td>5027</td>
+<td>1498</td>
+<td>2</td>
+<td>27</td>
+<td>19</td>
+<td>7.3%</td>
+</tr>
+<tr>
+<td>2825</td>
+<td>608</td>
+<td>0</td>
+<td>11</td>
+<td>15</td>
+<td>9.3%</td>
+</tr>
+<tr>
+<td>5399</td>
+<td>1131</td>
+<td>4</td>
+<td>18</td>
+<td>15</td>
+<td>4.9%</td>
+</tr>
+<tr>
+<td>3628</td>
+<td>316</td>
+<td>6</td>
+<td>6</td>
+<td>13</td>
+<td>8.0%</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p><strong>分别计算出R值、F值、M值的平均值</strong></p>
-</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuai37.JPG" alt=""><br><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuai38.JPG" alt=""></p>
+<h2 id="6-4-">6.4 <strong>产品功能路径分析</strong></h2>
+<p>以下为主要购买路径。可以发现⽤户多以直接购买为主；添加购物⻋的购买在主要购买路径中数量较少。后续的产品加购功能和产品收藏功能还需要结合更多数据做改进⽅案。</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center"><strong>⽤户ID</strong></th>
-<th style="text-align:center"><strong>R值(最近⼀次消费)</strong></th>
-<th style="text-align:center"><strong>F值(消费频率)</strong></th>
-<th style="text-align:center"><strong>M值(消费⾦额)</strong></th>
-<th style="text-align:center"><strong>R值得分</strong></th>
-<th style="text-align:center"><strong>F值得分</strong></th>
-<th style="text-align:center"><strong>M值得分</strong></th>
+<th><strong>user_way</strong></th>
+<th><strong>uv</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2天</td>
-<td style="text-align:center">5次</td>
-<td style="text-align:center">2000元</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">3</td>
+<td>空-空-空-空-2</td>
+<td>146</td>
 </tr>
 <tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">4天</td>
-<td style="text-align:center">7次</td>
-<td style="text-align:center">4000元</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">4</td>
+<td>空-空-空-1-2</td>
+<td>64</td>
 </tr>
 <tr>
-<td style="text-align:center">平均分</td>
-<td style="text-align:center">4.5</td>
-<td style="text-align:center">2.5</td>
-<td style="text-align:center">3.5</td>
+<td>空-空-1-1-2</td>
+<td>10</td>
+</tr>
+<tr>
+<td>空-空-2-1-2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>空-空-空-3-2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>空-1-1-1-2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>空-空-1-3-2</td>
+<td>1</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p><strong>⽤户分类</strong></p>
-<p>如果⼀⾏⾥的R值得分⼤于平均值，就在R值⾼低列⾥记录为”⾼”，否则记录为”低”，同理，F值、M值也这样⽐较。</p>
-</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuai31.JPG" alt=""></p>
+<h2 id="6-5-">6.5 留存分析</h2>
+<p>以下是按日统计的留存率统计图表。<br>通过留存效果曲线可以发现用户的日留存率集中保持在60%-70%之间，用户留存效果保持较好；<br>双12活动效果明显，用户留存达到最高80%左右，活动结束后，用户留存率突降但仍保持在60%-70%之间；<br>细分发现此阶段除双12当天外用户留存量保持稳定但没有显著上升，也就是说并没有大规模拉新活动。</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center"><strong>⽤户ID</strong></th>
-<th style="text-align:center"><strong>R值得分</strong></th>
-<th style="text-align:center"><strong>F值得分</strong></th>
-<th style="text-align:center"><strong>M值得分</strong></th>
-<th style="text-align:center"><strong>R值⾼低</strong></th>
-<th style="text-align:center"><strong>F值⾼低</strong></th>
-<th style="text-align:center"><strong>M值⾼低</strong></th>
+<th><strong>日期</strong></th>
+<th><strong>1日留存率</strong></th>
+<th><strong>2日留存率</strong></th>
+<th><strong>3日留存率</strong></th>
+<th><strong>4日留存率</strong></th>
+<th><strong>5日留存率</strong></th>
+<th><strong>6日留存率</strong></th>
+<th><strong>7日留存率</strong></th>
+<th><strong>15日留存率</strong></th>
+<th><strong>30日留存率</strong></th>
+<th><strong>留存用户数</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">低</td>
+<td>2019-11-18</td>
+<td>65.04%</td>
+<td>64.60%</td>
+<td>60.18%</td>
+<td>61.95%</td>
+<td>63.27%</td>
+<td>56.19%</td>
+<td>60.18%</td>
+<td>60.18%</td>
+<td>56.64%</td>
+<td>226</td>
 </tr>
 <tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">⾼</td>
+<td>2019-11-19</td>
+<td>69.37%</td>
+<td>63.51%</td>
+<td>61.71%</td>
+<td>63.51%</td>
+<td>65.77%</td>
+<td>65.32%</td>
+<td>57.21%</td>
+<td>60.81%</td>
+<td>0.00%</td>
+<td>222</td>
+</tr>
+<tr>
+<td>2019-11-20</td>
+<td>63.20%</td>
+<td>59.31%</td>
+<td>61.90%</td>
+<td>64.94%</td>
+<td>62.77%</td>
+<td>56.71%</td>
+<td>57.14%</td>
+<td>61.47%</td>
+<td>0.00%</td>
+<td>231</td>
+</tr>
+<tr>
+<td>2019-11-21</td>
+<td>62.07%</td>
+<td>62.93%</td>
+<td>65.09%</td>
+<td>65.52%</td>
+<td>58.19%</td>
+<td>61.21%</td>
+<td>62.50%</td>
+<td>61.64%</td>
+<td>0.00%</td>
+<td>232</td>
+</tr>
+<tr>
+<td>2019-11-22</td>
+<td>69.47%</td>
+<td>64.16%</td>
+<td>65.49%</td>
+<td>60.18%</td>
+<td>64.60%</td>
+<td>61.95%</td>
+<td>63.27%</td>
+<td>60.18%</td>
+<td>0.00%</td>
+<td>226</td>
+</tr>
+<tr>
+<td>2019-11-23</td>
+<td>66.80%</td>
+<td>66.39%</td>
+<td>58.51%</td>
+<td>61.00%</td>
+<td>63.07%</td>
+<td>65.56%</td>
+<td>63.49%</td>
+<td>59.75%</td>
+<td>0.00%</td>
+<td>241</td>
+</tr>
+<tr>
+<td>2019-11-24</td>
+<td>69.07%</td>
+<td>63.98%</td>
+<td>66.53%</td>
+<td>65.25%</td>
+<td>66.53%</td>
+<td>68.22%</td>
+<td>65.25%</td>
+<td>63.14%</td>
+<td>0.00%</td>
+<td>236</td>
+</tr>
+<tr>
+<td>2019-11-25</td>
+<td>64.61%</td>
+<td>63.37%</td>
+<td>66.26%</td>
+<td>63.37%</td>
+<td>68.72%</td>
+<td>62.96%</td>
+<td>61.73%</td>
+<td>64.61%</td>
+<td>0.00%</td>
+<td>243</td>
+</tr>
+<tr>
+<td>2019-11-26</td>
+<td>67.87%</td>
+<td>67.42%</td>
+<td>65.16%</td>
+<td>63.80%</td>
+<td>61.54%</td>
+<td>59.73%</td>
+<td>56.56%</td>
+<td>69.23%</td>
+<td>0.00%</td>
+<td>221</td>
+</tr>
+<tr>
+<td>2019-11-27</td>
+<td>70.69%</td>
+<td>66.38%</td>
+<td>65.52%</td>
+<td>67.24%</td>
+<td>61.64%</td>
+<td>59.48%</td>
+<td>62.07%</td>
+<td>78.88%</td>
+<td>0.00%</td>
+<td>232</td>
+</tr>
+<tr>
+<td>2019-11-28</td>
+<td>67.92%</td>
+<td>63.33%</td>
+<td>64.17%</td>
+<td>59.17%</td>
+<td>61.25%</td>
+<td>58.75%</td>
+<td>57.50%</td>
+<td>62.08%</td>
+<td>0.00%</td>
+<td>240</td>
+</tr>
+<tr>
+<td>2019-11-29</td>
+<td>69.55%</td>
+<td>67.49%</td>
+<td>63.79%</td>
+<td>60.49%</td>
+<td>60.08%</td>
+<td>62.96%</td>
+<td>67.08%</td>
+<td>57.61%</td>
+<td>0.00%</td>
+<td>243</td>
+</tr>
+<tr>
+<td>2019-11-30</td>
+<td>63.52%</td>
+<td>68.03%</td>
+<td>64.75%</td>
+<td>65.98%</td>
+<td>64.34%</td>
+<td>66.39%</td>
+<td>64.75%</td>
+<td>61.07%</td>
+<td>0.00%</td>
+<td>244</td>
+</tr>
+<tr>
+<td>2019-12-1</td>
+<td>66.12%</td>
+<td>60.41%</td>
+<td>66.12%</td>
+<td>67.35%</td>
+<td>64.49%</td>
+<td>62.45%</td>
+<td>63.27%</td>
+<td>61.22%</td>
+<td>0.00%</td>
+<td>245</td>
+</tr>
+<tr>
+<td>2019-12-2</td>
+<td>67.22%</td>
+<td>66.80%</td>
+<td>67.22%</td>
+<td>66.80%</td>
+<td>65.56%</td>
+<td>64.32%</td>
+<td>64.73%</td>
+<td>62.24%</td>
+<td>0.00%</td>
+<td>241</td>
+</tr>
+<tr>
+<td>2019-12-3</td>
+<td>69.79%</td>
+<td>67.23%</td>
+<td>67.23%</td>
+<td>65.11%</td>
+<td>65.11%</td>
+<td>65.96%</td>
+<td>66.38%</td>
+<td>55.32%</td>
+<td>0.00%</td>
+<td>235</td>
+</tr>
+<tr>
+<td>2019-12-4</td>
+<td>68.02%</td>
+<td>68.42%</td>
+<td>65.99%</td>
+<td>65.99%</td>
+<td>62.75%</td>
+<td>65.59%</td>
+<td>66.80%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>247</td>
+</tr>
+<tr>
+<td>2019-12-5</td>
+<td>68.18%</td>
+<td>64.05%</td>
+<td>65.70%</td>
+<td>66.12%</td>
+<td>65.29%</td>
+<td>69.83%</td>
+<td>80.99%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>242</td>
+</tr>
+<tr>
+<td>2019-12-6</td>
+<td>65.20%</td>
+<td>64.40%</td>
+<td>64.40%</td>
+<td>64.80%</td>
+<td>70.00%</td>
+<td>82.00%</td>
+<td>61.60%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>250</td>
+</tr>
+<tr>
+<td>2019-12-7</td>
+<td>69.29%</td>
+<td>68.46%</td>
+<td>69.71%</td>
+<td>71.78%</td>
+<td>81.33%</td>
+<td>62.24%</td>
+<td>62.24%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>241</td>
+</tr>
+<tr>
+<td>2019-12-8</td>
+<td>69.23%</td>
+<td>70.04%</td>
+<td>73.28%</td>
+<td>81.38%</td>
+<td>64.37%</td>
+<td>65.99%</td>
+<td>61.94%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>247</td>
+</tr>
+<tr>
+<td>2019-12-9</td>
+<td>68.92%</td>
+<td>70.52%</td>
+<td>80.48%</td>
+<td>61.75%</td>
+<td>56.97%</td>
+<td>61.75%</td>
+<td>59.36%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>251</td>
+</tr>
+<tr>
+<td>2019-12-10</td>
+<td>74.80%</td>
+<td>81.50%</td>
+<td>65.35%</td>
+<td>57.87%</td>
+<td>62.99%</td>
+<td>61.02%</td>
+<td>64.17%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>254</td>
+</tr>
+<tr>
+<td>2019-12-11</td>
+<td>82.35%</td>
+<td>63.97%</td>
+<td>61.03%</td>
+<td>61.76%</td>
+<td>58.46%</td>
+<td>61.03%</td>
+<td>55.15%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>272</td>
+</tr>
+<tr>
+<td>2019-12-12</td>
+<td>62.65%</td>
+<td>59.57%</td>
+<td>60.19%</td>
+<td>57.72%</td>
+<td>58.64%</td>
+<td>54.94%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>324</td>
+</tr>
+<tr>
+<td>2019-12-13</td>
+<td>63.27%</td>
+<td>66.12%</td>
+<td>59.59%</td>
+<td>65.31%</td>
+<td>59.18%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>245</td>
+</tr>
+<tr>
+<td>2019-12-14</td>
+<td>68.51%</td>
+<td>64.68%</td>
+<td>64.26%</td>
+<td>59.57%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>235</td>
+</tr>
+<tr>
+<td>2019-12-15</td>
+<td>69.14%</td>
+<td>65.02%</td>
+<td>57.61%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>243</td>
+</tr>
+<tr>
+<td>2019-12-16</td>
+<td>67.76%</td>
+<td>58.37%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>245</td>
+</tr>
+<tr>
+<td>2019-12-17</td>
+<td>64.71%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>238</td>
+</tr>
+<tr>
+<td>2019-12-18</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>0.00%</td>
+<td>224</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>然后和⽤户分类表格⾥定义的规则进⾏⽐较，就可以得出⽤户属于哪种类别。</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"><strong>⽤户ID</strong></th>
-<th style="text-align:center"><strong>R值得分</strong></th>
-<th style="text-align:center"><strong>F值得分</strong></th>
-<th style="text-align:center"><strong>M值得分</strong></th>
-<th style="text-align:center"><strong>R值⾼低</strong></th>
-<th style="text-align:center"><strong>F值⾼低</strong></th>
-<th style="text-align:center"><strong>M值⾼低</strong></th>
-<th style="text-align:center"><strong>⽤户分类</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">⼀般发展⽤户</td>
-</tr>
-<tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">重要挽留⽤户</td>
-</tr>
-</tbody>
-</table>
-<h4 id="-">精细化运营</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"><strong>⽤户分类</strong></th>
-<th style="text-align:center"><strong>R值(最近⼀次消费)</strong></th>
-<th style="text-align:center"><strong>F值(消费频率)</strong></th>
-<th style="text-align:center"><strong>M值(消费⾦额)</strong></th>
-<th style="text-align:center"><strong>精细化运营</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1.重要价值客户</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">VIP服务</td>
-</tr>
-<tr>
-<td style="text-align:center">2.重要发展客户</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">提⾼消费频率</td>
-</tr>
-<tr>
-<td style="text-align:center">3.重要保持客户</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">主动联系，提⾼复购率</td>
-</tr>
-<tr>
-<td style="text-align:center">4.重要挽留客户</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">分析原因并挽回</td>
-</tr>
-<tr>
-<td style="text-align:center">5.⼀般价值客户</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">低</td>
-</tr>
-<tr>
-<td style="text-align:center">6.⼀般发展客户</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">低</td>
-</tr>
-<tr>
-<td style="text-align:center">7.⼀般保持客户</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">⾼</td>
-<td style="text-align:center">低</td>
-</tr>
-<tr>
-<td style="text-align:center">8.⼀般挽留客户</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">低</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>⼩结</strong></p>
-</blockquote>
-<ol>
-<li><p>R、F、M指标定义，不同业务定义不同。要根据具体业务灵活应⽤。</p>
-</li><li><p>R、F、M按价值如确定打分规则，⼀般分为1-5分，也可以根据具体业务灵活来调整。或者使⽤聚类的⽅法对R、F、M的值进⾏分类，然后给每个类别打分。</p>
-</li></ol>
-<blockquote>
-<p>这样通过RFM模型来分析⽤户，对⽤户进⾏精细化运营，不断将⽤户转化为重要价值⽤户。</p>
-</blockquote>
-<h2 id="-">数据分析⽅法</h2>
-<table>
-<thead>
-<tr>
-<th><strong>数据分析作⽤</strong></th>
-<th><strong>基本⽅法</strong></th>
-<th><strong>数据分析⽅法*</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>现状分析</td>
-<td>对⽐</td>
-<td>对⽐分析</td>
-</tr>
-<tr>
-<td>原因分析</td>
-<td>细分</td>
-<td>分组分析</td>
-</tr>
-<tr>
-<td>漏⽃图分析</td>
-<td>漏⽃图分析</td>
-</tr>
-<tr>
-<td>矩阵关联分析</td>
-<td>矩阵关联分析</td>
-</tr>
-<tr>
-<td>预测分析</td>
-<td>预测</td>
-<td>回归分析</td>
-</tr>
-<tr>
-<td>时间序列</td>
-<td>时间序列</td>
-</tr>
-<tr>
-<td>决策树</td>
-<td>决策树</td>
-</tr>
-</tbody>
-</table>
-<h3 id="-">对⽐分析</h3>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page20-Image1.jpg" alt=""></p>
-<ol>
-<li><p>⼀个数值，摆出来孤零零的，肯定很难理解，通过与⽬标的对⽐，与时间的对⽐，与空间的对⽐，与特定值的对⽐，在差异中找到问题，或者找到变化。</p>
-</li><li><p>要求</p>
-</li></ol>
-<blockquote>
-<p>所选择的对⽐对象具备可⽐性，越相似的对象越具备可⽐性。对⽐的指标定义、范围、计算⽅法是⼀致的。</p>
-<p><strong>举例</strong>：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page21-Image1.jpg" alt=""></p>
-<p>数据分析如下：</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page21-Image2.jpg" alt=""></p>
-<blockquote>
-<p>按照空间对⽐可以进⾏同级团队所属区域，上级区域，⼤盘进⾏对⽐，与特定范围对⽐，历史经验值、⾏业竞对数据等进⾏分析。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page22-Image1.jpg" alt=""></p>
-<p>结论如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page22-Image2.jpg" alt=""></p>
-</blockquote>
-<h3 id="-">趋势分析法</h3>
-<blockquote>
-<p>根据企业连续⼏年或⼏个时期的分析资料，运⽤指数或完成率的计算，确定分析期各有关项⽬的变动情况和趋势的⼀种财务分析⽅法。</p>
-</blockquote>
-<h4 id="-">趋势分析法的⼀般步骤是：</h4>
-<ol>
-<li><p><strong>计算趋势⽐率或指数</strong></p>
-</li><li><p><strong>根据指数计算结果，评价和判断企业各项指标的变动趋势及其合理性</strong></p>
-</li><li><p><strong>预测未来的发展趋势</strong></p>
-</li></ol>
-<blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page23-Image1.jpg" alt=""></p>
-</blockquote>
-<h3 id="-">矩阵关联分析法</h3>
-<blockquote>
-<p>根据事务的两个关键属性作为分析依据，进⾏分类关联分析，找到解决问题的⽅法。</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page23-Image2.jpg" alt=""></p>
-<blockquote>
-<p>举例：</p>
-<p>根据增速和交易规模，我们应该看重第⼀优先关注规模⼤，增速快，保证这些地区的稳定增⻓，以及规模量级不⾜，但是以及体现出快速增速的区域，可能未来会成为规模⼤的区域。</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page24-Image1.jpg" alt=""></p>
-<h3 id="-">分组分析</h3>
-<blockquote>
-<p>根据数据分析对象的特征，按照⼀定的标志（指标），把数据分析对象划分为不同的部分和类型来进⾏研究，以揭示其内在的联系和规律性。</p>
-</blockquote>
-<h4 id="-">举例：</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"><strong>统计指标</strong></th>
-<th style="text-align:center"><strong>年龄、性别、地域</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">付费状态</td>
-<td style="text-align:center">免费、使⽤、付费</td>
-</tr>
-<tr>
-<td style="text-align:center">购买历史</td>
-<td style="text-align:center">未付费、⼀次付费、多次付费</td>
-</tr>
-<tr>
-<td style="text-align:center">访问位置</td>
-<td style="text-align:center">使⽤产品的区域位置</td>
-</tr>
-<tr>
-<td style="text-align:center">使⽤频道</td>
-<td style="text-align:center">使⽤产品的频道</td>
-</tr>
-<tr>
-<td style="text-align:center">使⽤深度</td>
-<td style="text-align:center">轻度、中度、重度</td>
-</tr>
-<tr>
-<td style="text-align:center">⼴告点击</td>
-<td style="text-align:center">点击⼴告、未点击⼴告</td>
-</tr>
-</tbody>
-</table>
-<ol>
-<li><strong>漏⽃分析</strong></li></ol>
-<blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page25-Image1.jpg" alt=""></p>
-<p>适合业务流程⽐较规范、周期⽐较⻓、各流程环节涉及复杂业务流程过程⽐较多的管理⼯具。因为漏⽃图是对业务流程最直观的⼀种表现形式，并且最能说明问题的所在，通过漏⽃图可以很快发现业务流程中存在问题的环节。</p>
-<p>它能告诉⽤户在业务中懂得转换率和流失率，在业务⽹站中的受欢迎程度或重要程度。通过对不同业务的漏⽃图进⾏对⽐，可以找出何种业务在⽹站中更受⽤户的欢迎或更吸引⽤户。</p>
-</blockquote>
-<h3 id="-">细分分析</h3>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page25-Image2.jpg" alt=""></p>
-<blockquote>
-<p>在经营分析中，对单⼀指标的判定是远远不够的，需要通过细分来了解影响指标的真正因素是什么。才能最终达成解决问题这个⽬标。</p>
-<p>拆组成：根据分析对象的特征，按照⼀定的标准拆分，讲性质相同的对象合并在⼀起，保持组内对象的⼀致性，组与组之间属性的差异性。</p>
-<p>拆步骤：针对业务流程判断的⼀种分析⽅法，通过对某些关键指标路径转化率的分析，发现业务流程中存在的问题。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page26-Image1.jpg" alt=""></p>
-<p>拆要素：针对指标的构成要素向下分拆，拆到最末级要素时，就可以定位到末级指标对应的影响因素。从⽽能够做到指导具体的业务动作。</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page26-Image2.jpg" alt=""></p>
-<h4 id="-">杜邦分析法</h4>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page26-Image3.jpg" alt=""></p>
-<blockquote>
-<p>由美国杜邦公司创造并最先采⽤的⼀种综合分析⽅法，⼜称杜邦财务分析体系，简称杜邦体系，利</p>
-<p>⽤各主要财务指标间的内在联系，对企业财务状况及经济效益进⾏分析评价的⽅法。该体系以净资产率为⻰头，以总资产收益率和权益乘数为核⼼，重点揭示企业盈利能⼒及权益乘数对净资产的影响，以及各相关指标间的互相影响，为各级管理层优化经营理财状况、提⾼公司经营提供了思路。</p>
-</blockquote>
-<h1 id="-">第三部分： 实战案例讲解</h1>
-<blockquote>
-<p>背景：</p>
-<p>某在线教育公司近期DAU出现异常波动</p>
-</blockquote>
-<h2 id="-">确保数据正确</h2>
-<blockquote>
-<p>⾸先，我们需要从⽣产数据的流程开始梳理，确保各流程数据未出现异常；阶段结果：</p>
-<p>与产品、前端⼯程师、后端⼯程师等沟通，得知各流程数据正常；</p>
-</blockquote>
-<h2 id="-">确认数据是否异常</h2>
-<blockquote>
-<p>1.确定是否为周期变化</p>
-<p>2.确定波动是否在可接受区间阶段结果：</p>
-<p>数据不是周期性变化，7⽉15号开始突然下降，并且下降三天，未来还可能会持续性的下降，需要警惕；</p>
-</blockquote>
-<h2 id="-">指标维度拆分</h2>
-<blockquote>
-<p>在确定各流程数据正确后，我们需要细拆指标相关内容，进⼀步定位问题；这⾥我们将构成DAU指标的⽤户进⾏拆解：</p>
-</blockquote>
-<h2 id="-">  <strong>常⻅⽤户细拆维度</strong></h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">常⻅⽤户细拆维度</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">按新⽼⽤户细拆</td>
-</tr>
-<tr>
-<td style="text-align:left">按⽤户年龄细拆</td>
-</tr>
-<tr>
-<td style="text-align:left">⽤户性别</td>
-</tr>
-<tr>
-<td style="text-align:left">⽤户地域</td>
-</tr>
-<tr>
-<td style="text-align:left">按⽤户渠道细拆（PC、APP、⼩程序）</td>
-</tr>
-<tr>
-<td style="text-align:left">按APP版本细拆</td>
-</tr>
-<tr>
-<td style="text-align:left">按登录平台细拆（IOS、安卓）</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>计算影响系数。</p>
-<p>影响系数=（今⽇量 — 昨⽇量）/（今⽇总量 — 昨⽇总量）</p>
-</blockquote>
-<h4 id="-">系数越⼤，表示影响越⼤</h4>
-<blockquote>
-<p>阶段结果：</p>
-<p><strong>⽼⽤户影响系数</strong> = (77.89-78)/(78.8-79.5)=0.16</p>
-<p><strong>新⽤户影响系数</strong> = (0.98-1.5)/(78.8-79.5)=0.84</p>
-<p>说明是新⽤户影响较多；</p>
-</blockquote>
-<h2 id="-">定位具体原因</h2>
-<blockquote>
-<p>对于DAU下降问题，具体情况具体分析。具体分析可以采⽤”内部-外部”因素考虑。内部因素</p>
-<p>渠道问题版本问题活动问题；</p>
-<p>外部因素采⽤PEST分析（宏观经济环境分析）政治</p>
-<p>经济</p>
-<p>社会技术。</p>
-</blockquote>
-<h4 id="pest-">PEST分析法</h4>
-<blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Page29-Image1.jpg" alt=""></p>
-<p>阶段结论：</p>
-<p>针对新⽤户，⼀般通过拆分⽤户渠道分析问题。通过拆分渠道，定位到某⼀个渠道⽤户下降明显⾼于其他渠道；</p>
-</blockquote>
-<h2 id="-">提出解决⽅案</h2>
-<blockquote>
-<p>具体的解决⽅案是需要根据上⼀步定位到的原因，⽐如我们在上⼀步定位到某⼀个渠道⽤户下降明显⾼于其他渠道，通过和该渠道负责⼈沟通了解到，该渠道拉新活动在7⽉15号结束了，从⽽导致该渠道</p>
-<p>DAU下降，针对这个原因，我们可以再策划其他的⼀些运营活动来提⾼该渠道⽤户活跃度。</p>
-</blockquote>
-<h1 id="-">第四部分：本章⼩结</h1>
-<blockquote>
-<p>接下来我来带⼤家⼀起回顾⼀下本章的知识点</p>
-<p>1.数据分析师的主要⼯作</p>
-<p>描述现状、发现规律、推动改进，</p>
-<p>2.数据分析的主要⼯作流程</p>
-<p>需求分析、数据收集、数据处理、数据分析、数据可视化、数据分析报告</p>
-<p>3.常⽤的业务指标</p>
-<p>产品运营指标、商业分析指标</p>
-<p>4.数据分析⽅法论</p>
-<p>明确问题、拆解问题、定位问题</p>
-<p>5.常⽤的分析模型</p>
-<p>⽤户⽣命周期模型、2A3R模型、RFM模型</p>
-<p>6.分析⽅法</p>
-<p>对⽐分析、趋势分析、矩阵关联分析、分组分析、漏⽃分析、细分分析⽅法</p>
-</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuai32.JPG" alt=""></p>
+<hr>
 
 </body>
 </html>

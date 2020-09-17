@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Mysql项目案例讲义</title>
+<title>QuickBI可视化分析工具培训大纲</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
 @charset "UTF-8";
@@ -887,7 +887,6 @@ vertical-align:1px;
 <script src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/highlight.min.js"></script>  
 <script >hljs.initHighlightingOnLoad();</script> 
 
-
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/96x96.ico" type="image/x-icon">
 <script src="https://hm.baidu.com/hm.js?44b6fcd69c6e2f3250c2ade16f5b4622"></script>
 <script>
@@ -1288,107 +1287,7 @@ $(window).scroll(function() {
 </script>
 
 
-<script>
-(function(){window.onload = function(){
-    console.log('DOM already loaded.');
-    if(window.top == window.self){ 
-        var aNode = document.createElement('a');
-        aNode.href = 'javascript:;';
-        aNode.id = 'click-to-top';
-        aNode.title = 'Click it to go to the top';
-        var availHeight = window.screen.availHeight; // 获取可用高度
-        var css = '#click-to-top{ display:none; position: fixed; right: 5%; bottom: 20%; opacity: 0.2; z-index: 9999; } #click-to-top:hover{ position: fixed; right: 5%; bottom: 20%; opacity: 1; z-index: 9999; }';
-        //滚出一屏以后才显示返回顶部按钮
-        window.onscroll = function(){
-            var curPos = (document.documentElement.scrollTop == 0) ? document.body.scrollTop : document.documentElement.scrollTop; //document.documentElement.scrollTop; //preparation for hack (document.documentElement.scrollTop == 0) ? document.body.scrollTop : document.documentElement.scrollTop; 
-            if(curPos > availHeight){
-                aNode.style.display = 'block';
-            }else {
-                aNode.style.display = 'none';
-            }
-        };
-        //图片相关
-        var img = document.createElement('img');
-        img.src = 'https://ooo.0o0.ooo/2017/05/23/59245c636b321.png';
-        img.style = 'width: 30px; height: 30px;';
-        //样式相关
-        var style = document.createElement('style');
-        if (style.styleSheet) {
-            style.styleSheet.cssText = css;
-        } else {
-            style.appendChild(document.createTextNode(css));
-        }
-        document.getElementsByTagName('head')[0].appendChild(style);
-        aNode.append(img);
-        aNode.addEventListener('click', function(){
-            document.body.scrollIntoView();
-            /*var timer = setInterval(function(){
-            document.documentElement.scrollTop -= 500;
-                if(document.documentElement.scrollTop < 100){
-                    clearInterval(timer);
-                }
-            }, 50);
-        }, true);*/
-        });
-        var eBody = document.querySelector('body');
-        eBody.append(aNode);
-    }
-};})();
-</script>
-
-<script>
-	!function(e, t, a) {
-		function r() {
-			for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
-			requestAnimationFrame(r)
-		}
-		function n() {
-			var t = "function" == typeof e.onclick && e.onclick;
-			e.onclick = function(e) {
-				t && t(),
-					o(e)
-			}
-		}
-		function o(e) {
-			var a = t.createElement("div");
-			a.className = "heart",
-				s.push({
-					el: a,
-					x: e.clientX - 5,
-					y: e.clientY - 5,
-					scale: 1,
-					alpha: 1,
-					color: c()
-				}),
-				t.body.appendChild(a)
-		}
-		function i(e) {
-			var a = t.createElement("style");
-			a.type = "text/css";
-			try {
-				a.appendChild(t.createTextNode(e))
-			} catch(t) {
-				a.styleSheet.cssText = e
-			}
-			t.getElementsByTagName("head")[0].appendChild(a)
-		}
-		function c() {
-			return "rgb(" + ~~ (255 * Math.random()) + "," + ~~ (255 * Math.random()) + "," + ~~ (255 * Math.random()) + ")"
-		}
-		var s = [];
-		e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame ||
-			function(e) {
-				setTimeout(e, 1e3 / 60)
-			},
-			i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),
-			n(),
-			r()
-	} (window, document);
-</script>
-
-<style type='text/css'>
-html {overflow-x: initial !important;}
-:root { /*--bg-color:#ffffff; --text-color:#333333;*/ --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
 iframe { margin: auto; }
@@ -1841,1284 +1740,566 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
   border-left: 1px solid rgb(239, 112, 96);
   z-index: 3;
 }
+
 </style>
 
+<script>
+(function(){window.onload = function(){
+    console.log('DOM already loaded.');
+    if(window.top == window.self){ 
+        var aNode = document.createElement('a');
+        aNode.href = 'javascript:;';
+        aNode.id = 'click-to-top';
+        aNode.title = 'Click it to go to the top';
+        var availHeight = window.screen.availHeight; // 获取可用高度
+        var css = '#click-to-top{ display:none; position: fixed; right: 5%; bottom: 20%; opacity: 0.2; z-index: 9999; } #click-to-top:hover{ position: fixed; right: 5%; bottom: 20%; opacity: 1; z-index: 9999; }';
+        //滚出一屏以后才显示返回顶部按钮
+        window.onscroll = function(){
+            var curPos = (document.documentElement.scrollTop == 0) ? document.body.scrollTop : document.documentElement.scrollTop; //document.documentElement.scrollTop; //preparation for hack (document.documentElement.scrollTop == 0) ? document.body.scrollTop : document.documentElement.scrollTop; 
+            if(curPos > availHeight){
+                aNode.style.display = 'block';
+            }else {
+                aNode.style.display = 'none';
+            }
+        };
+        //图片相关
+        var img = document.createElement('img');
+        img.src = 'https://ooo.0o0.ooo/2017/05/23/59245c636b321.png';
+        img.style = 'width: 30px; height: 30px;';
+        //样式相关
+        var style = document.createElement('style');
+        if (style.styleSheet) {
+            style.styleSheet.cssText = css;
+        } else {
+            style.appendChild(document.createTextNode(css));
+        }
+        document.getElementsByTagName('head')[0].appendChild(style);
+        aNode.append(img);
+        aNode.addEventListener('click', function(){
+            document.body.scrollIntoView();
+            /*var timer = setInterval(function(){
+            document.documentElement.scrollTop -= 500;
+                if(document.documentElement.scrollTop < 100){
+                    clearInterval(timer);
+                }
+            }, 50);
+        }, true);*/
+        });
+        var eBody = document.querySelector('body');
+        eBody.append(aNode);
+    }
+};})();
+</script>
+
+<script>
+	!function(e, t, a) {
+		function r() {
+			for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+			requestAnimationFrame(r)
+		}
+		function n() {
+			var t = "function" == typeof e.onclick && e.onclick;
+			e.onclick = function(e) {
+				t && t(),
+					o(e)
+			}
+		}
+		function o(e) {
+			var a = t.createElement("div");
+			a.className = "heart",
+				s.push({
+					el: a,
+					x: e.clientX - 5,
+					y: e.clientY - 5,
+					scale: 1,
+					alpha: 1,
+					color: c()
+				}),
+				t.body.appendChild(a)
+		}
+		function i(e) {
+			var a = t.createElement("style");
+			a.type = "text/css";
+			try {
+				a.appendChild(t.createTextNode(e))
+			} catch(t) {
+				a.styleSheet.cssText = e
+			}
+			t.getElementsByTagName("head")[0].appendChild(a)
+		}
+		function c() {
+			return "rgb(" + ~~ (255 * Math.random()) + "," + ~~ (255 * Math.random()) + "," + ~~ (255 * Math.random()) + ")"
+		}
+		var s = [];
+		e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame ||
+			function(e) {
+				setTimeout(e, 1e3 / 60)
+			},
+			i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),
+			n(),
+			r()
+	} (window, document);
+</script>
 </head>
 <body>
-/*<p><a href="https://resume.zhaoshengblog.cn/">返回上一页</a></p>*/
+/*<p><a href="index.html">返回上一页</a></p>*/
 <p><a href="index.html">返回上一页</a></p>
-<h1 id="-"><strong>案例</strong></h1>
-<p><strong>基于MySQL的电商⽤户、商品、平台价值分析</strong></p>
-<h1 id="1-">1.项目背景</h1>
+<h1 id="0-quickbi-">0. QuickBI快速了解</h1>
+<h2 id="q1-quickbi-">Q1 QuickBI是什么？</h2>
 <blockquote>
-<p>随着电商⾏业近⼏年的迅猛发展，电⼦商务从早些年的粗放式经营，逐步转化为精细化运营。<br>随着平台数据量的不断积累，通过数据分析挖掘消费者的潜在需求，消费偏好成为平台运营过程中的重要环节。<br>本项⽬基于某电商平台⽤户⾏为数据，在MYSQL关系型数据库，<br>探索⽤户⾏为规律，寻找⾼价值⽤户；<br>分析商品特征，寻找⾼贡献商品；<br>分析产品功能，优化产品路径。</p>
+<p>  阿里云的产品！<br>  智能分析套件Quick BI是一个专为云上用户量身打造的新一代智能BI服务平台，也支持线下用户哟~<br>  Quick BI可以提供海量数据实时在线分析服务，支持拖拽式操作和丰富的可视化效果，帮助您轻松自如地完成数据分析、业务数据探查、报表制作等工作。<br>  Quick BI不仅是业务人员查看数据的工具，更是数据化运营的助推器。</p>
 </blockquote>
-<h2 id="-1-1-"><strong>1.1 分析流程</strong></h2>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/%E4%BA%BA%E8%B4%A7%E5%9C%BA%E6%8C%87%E6%A0%87%E4%BD%93%E7%B3%BB.bmp" alt=""></p>
-<h1 id="2-">2.使用“人货场”拆解方式建立指标体系</h1>
-<p>最终结果：评价‘’⽤户，商品，平台“三者质量</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_003.jpg" alt="image"></p>
+<p><img src="2546252239/Module3_2_004.jpg" alt="image"></p>
+<h2 id="q2-quickbi-">Q2 QuickBI 适合谁？</h2>
+<blockquote>
+<p>  适合扁平化公司中非BI部门适合体系化公司中任何部门<br>  适合个人数据分析者</p>
+</blockquote>
+<h2 id="q3-quickbi-">Q3 QuickBI 何优势？</h2>
+<blockquote>
+<p>  大屏可视化效果贼拉好分析可视化图表可劲造在线就操作不需要下载智能数据库管理和创建云，能上云</p>
+</blockquote>
+<h2 id="q4-quickbi-">Q4 QuickBI 咋使用？</h2>
+<blockquote>
+<p>  不用下载，在线使用~</p>
+<p>  阿里云注册账号后购买或试用</p>
+<p>  个人学习、工作的话，建议使用标准版</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_008.jpg" alt="image"></p>
+<h1 id="1-quickbi-">1. QuickBI 简单上手</h1>
+<blockquote>
+<p>  它有一些叛逆，需要按操作逻辑讲给你听</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_010.jpg" alt="image"></p>
+<h1 id="2-">2. 了解我的个人空间</h1>
+<blockquote>
+<p>  它有一些晦涩，不是QQ空间那样的易懂</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_012.jpg" alt="image"></p>
+<blockquote>
+<p>  <strong>数据源：</strong>是万物之源</p>
+<p>  <strong>数据集：</strong>对数据源的操作，可以支持数据表建模和数据字段创建</p>
+<p>  <strong>仪表板</strong>：对数据集字段操作，支持近40种数据图表，操作方便简单，如果您是专业版用户，还可以在群空间下配置监控告警指标对异常做监控。<strong>适用于所有需做可视化分析的用户</strong>。</p>
+<p>  <strong>数据门户</strong>：对仪表板的汇总；各类分析的一个菜单栏，可做专题分析，便于对各种分析做分类汇总，便于用户快速定位到自己需要看到的分析。</p>
+</blockquote>
+<h1 id="3-">3. 添加数据源</h1>
+<h2 id="3-1-">3.1 本地上传</h2>
+<blockquote>
+<p>  <strong>3.1.1 Excel 文件上传</strong></p>
+<p>  <strong>3.1.2 CSV 文件上传</strong></p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_019.jpg" alt="image"></p>
+<p>  <strong>3.1.3 使用限制</strong></p>
+<p>  单个文件表头必须放第一行，Sheet1不能有合并单元格。</p>
+<p>  单个文件列数不超过100列。Excel文件大小建议不超过20M，CSV文件大小建议不超过50M。若文件较大，建议以追加的方式分批次上传。</p>
+<p>  列的类型根据前100行确定：</p>
+<p>  如果前100行均为数字，则系统会识别此列为数值型。</p>
+<p>  如果有1行为字符串系统，则系统会识别此列为字符串型。</p>
+<p>  数值型字段不兼容字符串类型数据，字符串类型可以兼容数值型数据。温馨提示:请使用Chrome浏览器上传文件</p>
+</blockquote>
+<h2 id="3-2-">3.2 自建数据源</h2>
+<blockquote>
+<p>  Mysql患者的福音！</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_026.jpg" alt="image"></p>
+<h2 id="3-3-">3.3 云数据库</h2>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_027.jpg" alt="image"></p>
+<h1 id="4-">4. <strong>管理数据集</strong></h1>
+<p>数据集是承上启下的作用</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_030.jpg" alt="image" style="zoom: 150%;" /></p>
+<h2 id="4-1-">4.1 创建数据集</h2>
+<h3 id="4-1-1-">4.1.1 数据源中的表自动创建</h3>
+<h3 id="4-1-2-sql-">4.1.2 <strong>即席SQL查询创建数据集</strong></h3>
 <ul>
-<li><strong>⼈货场</strong></li></ul>
+<li>普通SQL</li></ul>
+<pre><code class="lang-mysql">SELECT
+FROM `demo_订单信息明细表`
+where `日期(年月日)` between &#39;2019-08-01&#39; and &#39;2019-08-31&#39;
+</code></pre>
+<ul>
+<li>参数SQL</li></ul>
+<pre><code class="lang-mysql">SELECT report_date,
+         order_level, 
+         shipping_type, 
+         area,
+         price, 
+         order_number
+from company_sales_record
+where ${report_date :report_date} 
+and ${order_level :order_level} 
+and ${order_number :order_number}
+</code></pre>
 <blockquote>
-<p>「⼈」（⽤户)是整个运营的核⼼。<br>所有举动都围绕着，如何让更多的⼈有购买⾏为，让他们买的更多，买的更贵。<br>所以对⼈的洞察是⼀切⾏为的基础。<br>⽬前平台上的主⼒消费⼈群有哪些特征，他们对货品有哪些需求，他们活跃在哪些场，还有哪些有消费⼒的⼈⽬前不在平台上，对这些问题的回答指向了接下来的⾏动。</p>
+<p>  参数可以在查询控件中使用。</p>
 </blockquote>
+<h2 id="4-2-">4.2 数据表关联</h2>
+<h3 id="4-2-1-">4.2.1 数据模型</h3>
+<blockquote>
+<p>  星型模型：多维数据集的每一个维度都直接与事实表相连接</p>
+<p>  雪花模型：当有一个或多个维表没有直接连接到事实表上，而是通过其他维表连接到事实表上</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_039.jpg" alt="image"></p>
+<h3 id="4-2-2-">4.2.2 关联方式</h3>
+<blockquote>
+<p>  左关联内关联外关联</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_043.jpg" alt="image"></p>
+<h2 id="4-3-">4.3 数据字段处理</h2>
+<h3 id="4-3-1-">4.3.1 编辑维度或度量</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_045.jpg" alt="image"></p>
+<h3 id="4-3-2-">4.3.2 <strong>新增维度或度量</strong></h3>
+<ul>
+<li><p>新建字段只能使用数据集中的原始字段不能使用其他计算字段。</p>
+</li><li><p>如果是聚合型计算字段，预览数据的时候是不显示的，因为数据集预览中只显示前100条明细数据。</p>
+</li></ul>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_048.jpg" alt="image"></p>
+<h2 id="4-4-">4.4 管理数据集</h2>
+<h3 id="4-4-1-">4.4.1 权限设置</h3>
+<h3 id="4-4-2-">4.4.2 管理设置</h3>
+<h1 id="5-">5. 大屏可视化</h1>
+<blockquote>
+<p>  <strong>注意：</strong>Quick<br>  BI在2020年08月11日进行版本更新，字段系列设置操作已迁移至数据面板中，点击度量/维度字段下拉即可快捷操作，详细信息见官网：</p>
+<p>  <a href="https://help.aliyun.com/document_detail/178418.html">https://help.aliyun.com/document_detail/178418.html</a></p>
+</blockquote>
+<h2 id="5-0-">5.0 仪表板介绍</h2>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_051.jpg" alt="image"></p>
+<h2 id="5-1-">5.1 <strong>指标看板</strong></h2>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_054.jpg" alt="image"></p>
+<h2 id="5-2-">5.2 <strong>指标趋势图</strong></h2>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_056.jpg" alt="image"></p>
+<h2 id="5-3-">5.3 <strong>仪表盘</strong></h2>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_058.jpg" alt="image"></p>
+<h2 id="5-4-">5.4  <strong>水波仪表盘</strong></h2>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_060.jpg" alt="image"></p>
+<h2 id="5-5-">5.5 <strong>进度条</strong></h2>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_062.jpg" alt="image"></p>
+<h1 id="6-">6.  <strong>图表可视化</strong></h1>
+<h2 id="6-1-">6.1  <strong>线图</strong></h2>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_065.jpg" alt="image"></p>
+<h2 id="6-2-">6.2 <strong>面积图/堆积面积图/百分比堆积面积图</strong></h2>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_067.jpg" alt="image"></p>
+<h2 id="6-3-">6.3  <strong>柱形图/堆积柱形图/百分比堆积柱形图</strong></h2>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_069.jpg" alt="image"></p>
+<h2 id="6-4-">6.4 <strong>条形图/堆积条形图/百分比堆积条形图</strong></h2>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_071.jpg" alt="image"></p>
+<h2 id="6-5-">6.5  <strong>组合图</strong></h2>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_073.jpg" alt="image"></p>
+<h2 id="6-6-">6.6 <strong>饼图/圆环图</strong></h2>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_075.jpg" alt="image"></p>
+<h2 id="6-7-">6.7  <strong>交叉表</strong></h2>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_079.jpg" alt="image"></p>
+<h2 id="6-8-">6.8 <strong>分面散点图</strong></h2>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_079.jpg" alt="image"></p>
+<h2 id="6-9-">6.9 <strong>漏斗图</strong></h2>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_081.jpg" alt="image"></p>
+<h2 id="6-10-">6.10 <strong>对比漏斗图</strong></h2>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_083.jpg" alt="image"></p>
+<h2 id="6-11-">6.11 <strong>雷达图</strong></h2>
+<p>类型的指标数据对比</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_085.jpg" alt="image"></p>
+<h2 id="6-12-">6.12 极坐标图</h2>
+<blockquote>
+<p>  饼图的另一种形式</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_087.jpg" alt="image"></p>
+<h2 id="6-13-">6.13 矩阵树图</h2>
+<blockquote>
+<p>  展示结构占比</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_089.jpg" alt="image"></p>
+<h2 id="6-14-">6.14 树图</h2>
+<blockquote>
+<p>  层级指标的结构占比</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_091.jpg" alt="image"></p>
+<h2 id="6-15-">6.15 词云图</h2>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_093.jpg" alt="image"></p>
+<h2 id="6-16-sankey-">6.16 <strong>桑基图(Sankey)</strong></h2>
+<p>用于描述一组值到另一组值的流向</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_095.jpg" alt="image"></p>
+<h2 id="6-17-">6.17 来源去向图</h2>
+<blockquote>
+<p>  来源去向图通过划分来源、中间和去向页面的统计数据，展示页面流转的流量数据。来源去向图目前仅支持三级的维度，中心节点、节点类型、节点名称构成；</p>
+<p>  来源去向图的中心节点、节点名称、节点类型最多取1个维度，并且维度字段之间是有层级关系的，节点类型字段的值，必须为<strong>source</strong>、<strong>center</strong>、<strong>goal</strong>三个维值，分别对应来源部分的取值、中心节点、以及去向的趋势。节点指标最多取一个度量。</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_097.jpg" alt="image"></p>
+<blockquote>
+<p>  数据来源为：中心节点为所选维值，且节点类型为<strong>source</strong>；数据去向为：中心节点为所选维值，且节点类型为<strong>goal</strong>；占比取值为：来源取值÷中心节点的数值。</p>
+</blockquote>
+<h2 id="6-18-">6.18 色彩地图</h2>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_099.jpg" alt="image"></p>
+<h2 id="6-19-">6.19 <strong>气泡地图</strong></h2>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_101.jpg" alt="image"></p>
+<h1 id="7-">7. <strong>分析可视化</strong></h1>
+<h2 id="7-1-">7.1 <strong>细分分析-如何突出问题重点？</strong></h2>
+<h3 id="7-11-">7.11 下钻上卷</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_104.jpg" alt="image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_105.jpg" alt="image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_106.jpg" alt="image"></p>
+<h3 id="7-1-2-">7.1.2 <strong>图表联动</strong></h3>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_107.jpg" alt="image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_108.jpg" alt="image"></p>
+<h3 id="7-1-3-">7.1.3 <strong>跳转</strong></h3>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_109.jpg" alt="image"></p>
+<h2 id="7-2-">7.2 <strong>分析预警-如何增强信息增益？</strong></h2>
 <table>
 <thead>
 <tr>
-<th><strong>指标</strong></th>
-<th><strong>细化指标</strong></th>
-<th><strong>说明</strong></th>
+<th><strong>图表</strong></th>
+<th><strong>辅助线</strong></th>
+<th><strong>趋势线</strong></th>
+<th><strong>预测</strong></th>
+<th><strong>异常检测</strong></th>
+<th><strong>波动分析</strong></th>
+<th><strong>聚类分析</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>浏览</td>
-<td>PV</td>
-<td>（PageView）是⻚⾯浏览量</td>
+<td>线图</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>-</td>
 </tr>
 <tr>
-<td>/</td>
-<td>UV</td>
-<td>（Unique Visitor）是⼀定时间内访问⽹⻚的⼈数，正式名称独⽴访客数（⼀个⽹站或者⼀个⻚⾯）</td>
+<td>面积图</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>-</td>
 </tr>
 <tr>
-<td>流量质量</td>
-<td>PV/UV</td>
-<td>浏览深度</td>
+<td>堆积面积图</td>
+<td>√</td>
+<td>-</td>
+<td>-</td>
+<td>√</td>
+<td>-</td>
+<td>-</td>
 </tr>
 <tr>
-<td>/</td>
-<td>ROI</td>
-<td>投资回报率（ROI）=年利润或年均利润/投资总额×100%</td>
+<td>百分比堆叠面积图</td>
+<td>√</td>
+<td>-</td>
+<td>-</td>
+<td>√</td>
+<td>-</td>
+<td>-</td>
 </tr>
 <tr>
-<td>成交⽤户</td>
-<td>新客数</td>
-<td>（⼀般当天的算新⽤户，当⽇激活或者/新增）</td>
+<td>柱图</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>-</td>
 </tr>
 <tr>
-<td>/</td>
-<td>⽼客数</td>
-<td>/</td>
+<td>堆积柱状图</td>
+<td>√</td>
+<td>-</td>
+<td>-</td>
+<td>√</td>
+<td>-</td>
+<td>-</td>
 </tr>
 <tr>
-<td>/</td>
-<td>客单价</td>
-<td>当⽇消费总价/顾客数（新+⽼）—-客单价应该是稳的，突然多/少，购买⼒特别强的，疫情影响客单价下降</td>
+<td>百分比堆积柱状图</td>
+<td>√</td>
+<td>-</td>
+<td>-</td>
+<td>√</td>
+<td>-</td>
+<td>-</td>
 </tr>
 <tr>
-<td>/</td>
-<td>DAU</td>
-<td>⽇活跃⽤户</td>
+<td>条形图</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>-</td>
+<td>-</td>
 </tr>
 <tr>
-<td>/</td>
-<td>MAU</td>
-<td>⽉活跃⽤户</td>
+<td>堆积条形图</td>
+<td>√</td>
+<td>-</td>
+<td>-</td>
+<td>√</td>
+<td>-</td>
+<td>-</td>
 </tr>
 <tr>
-<td>…</td>
-<td>…</td>
-<td>…</td>
+<td>百分比堆积条形图</td>
+<td>√</td>
+<td>-</td>
+<td>-</td>
+<td>√</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>组合图</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>-</td>
+</tr>
+<tr>
+<td>指标趋势图</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>√</td>
+<td>-</td>
+</tr>
+<tr>
+<td>散点图</td>
+<td>√</td>
+<td>-</td>
+<td>-</td>
+<td>√</td>
+<td>-</td>
+<td>√</td>
+</tr>
+<tr>
+<td>气泡图</td>
+<td>√</td>
+<td>-</td>
+<td>-</td>
+<td>√</td>
+<td>-</td>
+<td>√</td>
 </tr>
 </tbody>
 </table>
+<h3 id="7-2-1-">7.2.1 <strong>辅助线</strong></h3>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_111.jpg" alt="image"></p>
 <blockquote>
-<p>「货」就对应供给,涉及到了货品分层，哪些是红海，哪些是蓝海，如何进⾏动态调整，是要做⾃营还是平台，以满⾜消费者的需求。<br>「场」就是消费者在什么场景下，以什么样的⽅式接触到了这个商品。早期的导购做的⽐较简单，⽬前的场就⽐较丰富，但也暴露了淘宝和京东在导购⽅⾯的⼀些问题。<br>⽐如内容营销，⽬前最好的可能是微信的KOL⽣态和⼩红书，甚⾄微博，⽽不在电商⾃⼰的场。<br>如何做⼀个全域的打通，和消费者进⾏多触点的接触，⽐如社交和电商联动，来完成销售转化，这就是腾讯和阿⾥⼀直都在讲的「全域营销」。</p>
+<p>  趋势线、预测、异常检测、波动原因分析仅适用于专业版</p>
 </blockquote>
-<h1 id="3-">3.确认问题</h1>
-<blockquote>
-<p>  本次分析的⽬的是想通过对⽤户⾏为数据进⾏分析，为以下问题提供解释和改进建议：<br>  1）基于漏⽃模型的⽤户购买流程各环节分析指标，确定各个环节的转换率，便于找到需要改进的环节；<br>  2）商品分析：找出热销商品，研究热销商品特点；<br>  3）基于RFM模型找出核⼼付费⽤户群，对这部分⽤户进⾏精准营销。</p>
-</blockquote>
-<h1 id="4-">4.准备⼯作</h1>
-<h2 id="4-1-">4.1 数据读取(⽤户⾏为数据)</h2>
-<p>表结构</p>
-<table>
-<thead>
-<tr>
-<th><strong>列名</strong></th>
-<th><strong>说明</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>user_id</td>
-<td>⽤户ID</td>
-</tr>
-<tr>
-<td>item_id</td>
-<td>商品ID</td>
-</tr>
-<tr>
-<td>behavior_type</td>
-<td>⽤户⾏为类型（1-曝光；2-购买；3-加⼊购物⻋；4-加⼊收藏夹。）</td>
-</tr>
-<tr>
-<td>user_geohash</td>
-<td>地理位置</td>
-</tr>
-<tr>
-<td>item_category</td>
-<td>品类ID</td>
-</tr>
-<tr>
-<td>time</td>
-<td>⽤户⾏为发⽣的时间</td>
-</tr>
-</tbody>
-</table>
-<pre><code class="lang-mysql">use lagou;
-create table o_retailers_trade_user (
-user_id int (9),
-item_id int (9),
-behavior_type int (1),
-user_geohash    varchar (14),
-item_category int (5),
-time    varchar (13)
-);
+<h3 id="7-2-2-">7.2.2 趋势线</h3>
+<h3 id="7-2-3-">7.2.3 <strong>预测</strong></h3>
+<h3 id="7-2-4-">7.2.4 <strong>异常检测</strong></h3>
+<h3 id="7-2-5-">7.2.5 <strong>波动原因</strong></h3>
+<h3 id="7-2-6-">7.2.6 <strong>聚类</strong></h3>
+<p>目前这只是一个概念。</p>
+<h2 id="7-3-">7.3 查询控件-如何进行信息集中？</h2>
+<h3 id="7-3-1-">7.3.1 日期查询控件</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_113.jpg" alt="image"></p>
+<h3 id="7-3-2-">7.3.2  <strong>文本查询控件</strong></h3>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_114.jpg" alt="image"></p>
+<h3 id="7-3-3-">7.3.3 <strong>数值查询控件</strong></h3>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_115.jpg" alt="image"></p>
+<h3 id="7-3-4-">7.3.4 <strong>配置条件级联</strong></h3>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_116.jpg" alt="image"></p>
+<h2 id="7-4-">7.4 <strong>其他控件-添加你的观点</strong></h2>
+<h3 id="7-4-1-">7.4.1 <strong>文本框</strong></h3>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_118.jpg" alt="image"></p>
+<h3 id="7-4-2-">7.4.2 <strong>内嵌页面</strong></h3>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_119.jpg" alt="image"></p>
+<h3 id="7-4-3-tab-">7.4.3 <strong>Tab</strong></h3>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_120.jpg" alt="image"></p>
+<h3 id="7-4-4-">7.4.4 <strong>图片</strong></h3>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_121.jpg" alt="image"></p>
+<h2 id="7-5-">7.5 <strong>新增字段-如何进行信息重构？</strong></h2>
+<h3 id="7-5-1-">7.5.1 <strong>数字函数</strong></h3>
+<pre><code class="lang-mysql">ABS(-7) = 7
+CEILING(3.1415) = 4
+FLOOR(3.1415) = 3
+ROUND(3.1415,2) = 3.14
+ROUND(324,-2) = 300
+
+EXP(2) = 7.389
 </code></pre>
-<p>注意：样例数据的时间格式如：2019-12-06 02 年-⽉-⽇ ⼩时（24进制）</p>
-<h2 id="4-2-">4.2 <strong>数据预处理</strong></h2>
-<ul>
-<li>增加新列date_time（datetime）,dates（char，年⽉⽇），便于后续时间维度分析；</li></ul>
-<pre><code class="lang-mysql">-- 增加新列date_time、dates
-alter table o_retailers_trade_user add column date_time datetime null; update o_retailers_trade_user
-set date_time =str_to_date(time,&#39;%Y-%m-%d %H&#39;) ;
+<h3 id="7-5-2-">7.5.2 <strong>文本函数</strong></h3>
+<pre><code class="lang-mysql">REPLACE(&quot;Version8.5&quot;, &quot;8.5&quot;, &quot;9.0&quot;) = &quot;Version9.0&quot;
 
--- %H可以表示0-23；⽽%h表示0-12
-alter table o_retailers_trade_user add column dates char(10) null;
-update o_retailers_trade_user set dates=date(date_time);
+LENGTH(&quot;Matador&quot;) = 7 UPPER(&quot;Calculation&quot;) = &quot;CALCULATION&quot;
+LOWER(&quot;ProductVersion&quot;) = &quot;productversion&quot;
 
-desc o_retailers_trade_user;
-select * from o_retailers_trade_user limit 5;
+TRIM(&quot; Calculation &quot;) = &quot;Calculation&quot; LTRIM(&quot; Matador &quot;) = &quot;Matador &quot;
+RTRIM(&quot; Calculation &quot;) = &quot; Calculation&quot;
+
+SPLIT_PART (‘a-b-c-d’, ‘-‘, 2) = ‘b’
+LEFT(&quot;Matador&quot;, 4) = &quot;Mata&quot; RIGHT(&quot;Calculation&quot;, 4) = &quot;tion&quot;
+
+REGEXP_MATCHES(STRING TEXT, PATTERN TEXT [, FLAGS TEXT])
+
+REGEXP_REPLACE(STRING TEXT, PATTERN TEXT, REPLACEMENT TEXT [, FLAGS TEXT])
 </code></pre>
-<ul>
-<li>重复值处理：创建新表a，并插⼊5W条⽆重复数据</li></ul>
-<pre><code class="lang-mysql">-- 创建新表a，并插⼊5W条数据。
-create table temp_trade like o_retailers_trade_user;
-insert into temp_trade select distinct * from o_retailers_trade_user limit 50000;
+<h3 id="7-5-3-">7.5.3 <strong>日期函数</strong></h3>
+<pre><code class="lang-mysql">DATE_PART(&#39;year&#39;, #2004-04-15#) = 2004
+DATE_PART(&#39;month&#39;, #2004-04-15#) = 4 
+TO_DATE()
+MAKE_INTERVAL(DAYS := 10) = 10 DAYS
 </code></pre>
-<h1 id="-5-"><strong>5.指标体系建设</strong></h1>
-<p>⼈ 货 场 体系</p>
-<h2 id="5-1-">5.1 <strong>⽤户指标体系</strong></h2>
-<p>基础指标体系（UV/PV/留存率）+  RFM模型分析</p>
-<h3 id="5-1-1-">5.1.1 <strong>基础指标</strong></h3>
-<p>uv、pv、留存率（按⽇）统计</p>
-<pre><code class="lang-mysql">/*
-需求： uv、 pv、浏览深度（按⽇）统计
-pv：统计behavior_type=1的记录数，需要按⽇统计（分组）
-uv: 统计distinct user_id 的数量，需要按⽇统计（分组）
-浏览深度： pv/uv
-*/
--- pv 进⾏cout时候，如果behavior_type=1进⾏计算，如果不是，不进⾏计算
-select
-dates,
-count( distinct user_id ) as &#39;uv&#39;,
-count( if(behavior_type=1,user_id,null)) as &#39;pv&#39;,
-count( if(behavior_type=1,user_id,null))/count( distinct user_id ) as
-&#39;pv/uv&#39;
-from
-temp_trade
-group by
-dates;
+<h3 id="7-5-4-">7.5.4 <strong>聚合函数</strong></h3>
+<pre><code class="lang-mysql">SUM()
+AVG()
+MAX()
+MIN() MEDIAN() 
+COUNT()
+
+COVAR_SAMP() 
+STDEV() 
+COVAR_POP()
+{CORR(Sales, Profit)}
 </code></pre>
-<pre><code class="lang-mysql">-- ⽤户留存
-with temp_table_trades as
-(select a.dates
-,count(distinct b.user_id) as device_v
-,count(distinct if(datediff(b.dates,a.dates)=0,b.user_id,null)) as device_v_remain0
-,count(distinct if(datediff(b.dates,a.dates)=1,b.user_id,null)) as device_v_remain1
-,count(distinct if(datediff(b.dates,a.dates)=2,b.user_id,null)) as device_v_remain2
-,count(distinct if(datediff(b.dates,a.dates)=3,b.user_id,null)) as device_v_remain3
-,count(distinct if(datediff(b.dates,a.dates)=4,b.user_id,null)) as device_v_remain4
-,count(distinct if(datediff(b.dates,a.dates)=5,b.user_id,null)) as device_v_remain5
-,count(distinct if(datediff(b.dates,a.dates)=6,b.user_id,null)) as device_v_remain6
-,count(distinct if(datediff(b.dates,a.dates)=7,b.user_id,null)) as device_v_remain7
-,count(distinct if(datediff(b.dates,a.dates)=15,b.user_id,null)) as device_v_remain15
-,count(distinct if(datediff(b.dates,a.dates)=30,b.user_id,null)) as device_v_remain30
-from
-(select
-user_id
-,dates
-from
-temp_trade
-group by
-user_id
-,dates ) a
-left join
-(
-select
-dates
-,user_id
-from temp_trade
-GROUP BY dates,user_id
-) b on a.user_id = b.user_id
-where b.dates &gt;= a.dates
-group by a.dates)
-select dates, device_v_remain0,
-concat(cast((device_v_remain1/device_v_remain0)*100 as DECIMAL(18,2)),&#39;%&#39;) as &#39;day_1%&#39;,
-concat(cast((device_v_remain2/device_v_remain0)*100 as DECIMAL(18,2)),&#39;%&#39;) as &#39;day_2%&#39;,
-concat(cast((device_v_remain3/device_v_remain0)*100 as DECIMAL(18,2)),&#39;%&#39;) as &#39;day_3%&#39;,
-concat(cast((device_v_remain4/device_v_remain0)*100 as DECIMAL(18,2)),&#39;%&#39;) as &#39;day_4%&#39;,
-concat(cast((device_v_remain5/device_v_remain0)*100 as DECIMAL(18,2)),&#39;%&#39;) as &#39;day_5%&#39;,
-concat(cast((device_v_remain6/device_v_remain0)*100 as DECIMAL(18,2)),&#39;%&#39;) as &#39;day_6%&#39;,
-concat(cast((device_v_remain7/device_v_remain0)*100 as DECIMAL(18,2)),&#39;%&#39;) as &#39;day_7%&#39;,
-concat(cast((device_v_remain15/device_v_remain0)*100 as DECIMAL(18,2)),&#39;%&#39;) as &#39;day_15%&#39;,
-concat(cast((device_v_remain30/device_v_remain0)*100 as DECIMAL(18,2)),&#39;%&#39;) as &#39;day_30%&#39;
-from temp_table_trades;
-</code></pre>
-<h3 id="5-1-2-rfm-">5.1.2 <strong>RFM模型分析</strong></h3>
-<h4 id="1-rfm-r-">1) RFM模型：R部分</h4>
-<pre><code class="lang-mysql">-- RFM模型
-
--- 1.建⽴R视图，将近期购买时间提取到R临时表中
-DROP VIEW
-IF
-    EXISTS user_recency;
-CREATE VIEW user_Recency AS SELECT
-user_id,
-max( dates ) AS rec_buy_time 
-FROM
-    temp_trade 
-WHERE
-    behavior_type = &#39;2&#39; 
-GROUP BY
-    user_id 
-ORDER BY
-    rec_buy_time DESC;
-
--- 2.建⽴R等级划分视图：将客户近期购买时间进⾏等级划分，越接近2019-12-18号R越⼤；
-DROP VIEW
-IF
-    EXISTS r_clevel;
-CREATE VIEW r_clevel AS SELECT
-user_id,
-rec_buy_time,
-datediff( &#39;2019-12-18&#39;, rec_buy_time ) AS recen_num,
-(
-    CASE
-
-            WHEN datediff( &#39;2019-12-18&#39;, rec_buy_time )&lt;= 2 THEN
-            5 
-            WHEN datediff( &#39;2019-12-18&#39;, rec_buy_time )&lt;= 4 THEN
-            4 
-            WHEN datediff( &#39;2019-12-18&#39;, rec_buy_time )&lt;= 6 THEN
-            3 
-            WHEN datediff( &#39;2019-12-18&#39;, rec_buy_time )&lt;= 8 THEN
-            2 ELSE 1 
-        END 
-        ) AS r_value 
-FROM
-    user_Recency;
-</code></pre>
-<h4 id="2-rfm-f-">2) RFM模型：F部分（⼀定时间内的消费频率）</h4>
-<pre><code class="lang-mysql">-- 1.建⽴F视图
-create view frenq_value
-as
-select user_id ,count(user_id) as buy_frenq
-from temp_trade
-where behavior_type=&#39;2&#39;
-group by user_id;
-
--- 2.建⽴F等级划分
-create view f_clevel
-as
-select user_id,buy_frenq,
-(case when buy_frenq&lt;=2 then 1
-when buy_frenq&lt;=4 then 2
-when buy_frenq&lt;=6 then 3
-when buy_frenq&lt;=8 then 4
-else 5 end) as &#39;f_values&#39;
-from frenq_value;
-select * from f_level;
-</code></pre>
-<h4 id="3-">3) 整合结果</h4>
-<p>本次数据中通过最近消费（R）和消费频率（F）建⽴RFM模型</p>
-<ul>
-<li>重要⾼价值客户：指最近⼀次消费较近⽽且消费频率较⾼的客户；</li><li>重要唤回客户：指最近⼀次消费较远且消费频率较⾼的客户；</li><li>重要深耕客户：指最近⼀次消费较近且消费频率较低的客户；</li><li>重要挽留客户：指最近⼀次消费较远且消费频率较低的客户；</li></ul>
-<p>我们按照最近⼀次消费的均值和消费频率的均值定⾼低界限。</p>
-<pre><code class="lang-mysql">-- 将⽤户整合
--- 1.R平均值
-SELECT avg(r_value) as &#39;r_avg&#39; FROM r_clevel; -- 2.7939
-
--- 2.F平均值
-select avg(f_values) as &#39;f_avg&#39; from f_clevel; -- 2.2606
-
--- 3.⽤户⼋⼤类等级划分，由于该数据没有M值，故只建⽴了4个分类
-drop view if exists RFM_inall;
-create view RFM_inall
-as
-select a.*,b.f_values,
-(case
-when a.r_value&gt;2.7939 and b.f_values&gt;2.2606 then &#39;重要⾼价值客户&#39;
-when a.r_value&lt;2.7939 and b.f_values&gt;2.2606 then &#39;重要唤回客户&#39;
-when a.r_value&gt;2.7939 and b.f_values&lt;2.2606 then &#39;重要深耕客户&#39;
-when a.r_value&lt;2.7939 and b.f_values&lt;2.2606 then &#39;重要挽留客户&#39;
+<h3 id="7-5-5-">7.5.5 <strong>逻辑函数</strong></h3>
+<pre><code class="lang-mysql">CASE
+WHEN hour([report_date]) &gt;= 0 and hour([report_date])&lt;6 THEN &#39;凌晨0-6&#39;
+WHEN hour([report_date]) &gt;= 6 and hour([report_date])&lt;12 THEN &#39;上午7-12&#39;
+WHEN hour([report_date]) &gt;= 12 and hour([report_date])&lt;18 THEN ‘下午13-18’
+ELSE ‘晚上19-23’
 END
-) as user_class
-from r_clevel a, f_clevel b
-where a.user_id=b.user_id;
-SELECT count(user_id) as user_v,user_class from RFM_inall GROUP BY user_class;
+
+LEAD()
+LAG()
+RANK() 
+PERCENT_RANK() 
+LAST_VALUE()
 </code></pre>
-<h2 id="5-2-">5.2 <strong>商品指标体系</strong></h2>
-<p>商品的点击量 收藏量 加购量 购买次数<br>购买转化（该商品的所有⽤户中有购买转化的⽤户⽐；）按照商品进⾏分组统计</p>
-<pre><code class="lang-mysql">-- 商品的点击量 收藏量 加购量 购买次数 购买转化
-select * from temp_trade;
-select item_id,
-sum(case when behavior_type=1 then 1 else 0 end) as&#39;pv&#39;,
-sum(case when behavior_type=4 then 1 else 0 end) as&#39;fav&#39;,
-sum(case when behavior_type=3 then 1 else 0 end) as&#39;cart&#39;,
-sum(case when behavior_type=2 then 1 else 0 end) as&#39;buy&#39;,
-count(distinct case when behavior_type=2 then user_id else null
-end)/count(distinct user_id) as buy_rate
-from temp_trade
-group by item_id
-order by buy desc;
-</code></pre>
-<p>对应品类的点击量 收藏量 加购量 购买次数 购买转化（该商品品类的所有⽤户中有购买转化的⽤户⽐；）</p>
-<pre><code class="lang-mysql">select item_category,
-sum(case when behavior_type=1 then 1 else 0 end) as&#39;pv&#39;,
-sum(case when behavior_type=4 then 1 else 0 end) as&#39;fav&#39;,
-sum(case when behavior_type=3 then 1 else 0 end) as&#39;cart&#39;,
-sum(case when behavior_type=2 then 1 else 0 end) as&#39;buy&#39;,
-count(distinct case when behavior_type=2 then user_id else null
-end)/count(distinct user_id) as buy_rate
-from temp_trade
-group by item_category
-order by buy desc;
-</code></pre>
-<h2 id="5-3-">5.3<strong>平台指标体系</strong></h2>
-<h3 id="1-">1) ⾏为指标：</h3>
-<p>点击次数 收藏次数 加购物⻋次数 购买次数 购买转化（该平台当⽇的所有⽤户中有购买转化的⽤户⽐）</p>
-<pre><code class="lang-mysql">-- 每⽇的分析(1-4，分别表示点击pv、购买buy、加购物⻋cart、喜欢fav)
-
-select dates,count(1) as &#39;每⽇的总数&#39;,
-sum(case when behavior_type=1 then 1 else 0 end) as&#39;pv&#39;, sum(case when behavior_type=2 then 1 else 0 end) as&#39;buy&#39;, sum(case when behavior_type=3 then 1 else 0 end) as&#39;cart&#39;, sum(case when behavior_type=4 then 1 else 0 end) as&#39;fav&#39;, count(distinct case when behavior_type=2 then user_id else null end)/count(distinct user_id) as buy_rate
-from temp_trade group by dates;
-</code></pre>
-<ul>
-<li><strong>⾏为路径分析</strong></li></ul>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/image-20200908150617909.png" alt="image-20200908150617909"></p>
-<pre><code class="lang-mysql">-- ⾏为路径分析
-
--- ⾏为路径组建基础视图
-drop view product_user_way;
-create view product_user_way as select
-a.*
-from
-(
-select
-user_id,
-item_id,
-lag ( behavior_type, 4 ) over ( partition by user_id, item_id order bydate_time ) lag_4,
-lag ( behavior_type, 3 ) over ( partition by user_id, item_id order bydate_time ) lag_3,
-lag ( behavior_type, 2 ) over ( partition by user_id, item_id order bydate_time ) lag_2,
-lag ( behavior_type, 1 ) over ( partition by user_id, item_id order bydate_time ) lag_1,
-behavior_type,
-rank ( ) over ( partition by user_id, item_id order by date_time desc ) as
-rank_dn # 倒数第⼏个⾏为
-from
-temp_trade
-) a
-where
-a.rank_dn = 1
-and behavior_type = 2
-
--- 查询该路径下有多少购买⽤户数
-select
-concat(
-ifnull( lag_4, &#39;空&#39; ),
-&quot;-&quot;,
-ifnull( lag_3, &#39;空&#39; ),
-&quot;-&quot;,
-ifnull( lag_2, &#39;空&#39; ),
-&quot;-&quot;,
-ifnull( lag_1, &#39;空&#39; ),
-&quot;-&quot;,
-behavior_type
-) as user_way,
-count( distinct user_id ) as user_count 
-
--- 该路径下购买⽤户数
-from
-product_user_way
-group by
-concat(
-ifnull( lag_4, &#39;空&#39; ),
-&quot;-&quot;,
-ifnull( lag_3, &#39;空&#39; ),
-&quot;-&quot;,
-ifnull( lag_2, &#39;空&#39; ),
-&quot;-&quot;,
-ifnull( lag_1, &#39;空&#39; ),
-&quot;-&quot;,
-behavior_type
-);
-</code></pre>
-<ul>
-<li>SQL汇总</li></ul>
-<pre><code class="lang-mysql">CREATE TABLE o_retailers_trade_user (
-    user_id INT ( 9 ),
-    item_id INT ( 9 ),
-    behavior_type INT ( 1 ),
-    user_geohash VARCHAR ( 14 ),
-    item_category INT ( 5 ),
-time VARCHAR ( 13 ) 
-);
-
-
-SELECT
-    * 
-FROM
-    o_retailers_trade_user 
-    LIMIT 5;
-
-
--- 增加新列date_time、dates
-ALTER TABLE o_retailers_trade_user ADD COLUMN date_time datetime NULL;
-
--- date_time 字段来自于基础数据中time字段
-UPDATE o_retailers_trade_user 
-SET date_time = str_to_date( time, &#39;%Y-%m-%d %H&#39; );-- 大H代表24进制，小h代表12进制
-
--- %H可以表示0-23；⽽%h表示0-12
-alter table o_retailers_trade_user add column dates char(10) null;
-
--- dates 字段来自于基础数据中time字段
-update o_retailers_trade_user set dates=date(date_time);
-
--- 查看表结构
-desc o_retailers_trade_user;
-
-
--- 去重预处理
-create table temp_trade like o_retailers_trade_user;
-
-insert into temp_trade select distinct * from o_retailers_trade_user limit 50000;
-
-/*
-需求：UV、PV、按日留存率统计
-
-pv：统计behavior_type=1的记录数，需要按日统计（分组）
-uv: 统计distinct user_id 的数量，需要按日统计（分组）
-浏览深度/浏览质量：pv/uv
-*/
--- pv 计算count的时候，如果behavior_type=1进行计算，如果不是，不进行计算
-SELECT
-    dates,
-    count( DISTINCT user_id ) AS &#39;uv&#39;,
-    count(
-    IF
-    ( behavior_type = 1, user_id, NULL )) AS &#39;pv&#39;,
-    count(
-    IF
-    ( behavior_type = 1, user_id, NULL ))  / count( DISTINCT user_id )  AS &#39;pv/uv&#39; 
-FROM
-    temp_trade 
-GROUP BY
-    dates;
-
-
-/*
-留存率（按日）统计
-活跃用户留存率（某天189个用户活跃，过了3天后剩下58个人活跃）
-日期/活跃用户/过了1天/过了2天
-2019-12-28 / 100 / 90（98%）/ 80（80%）
-1）获取到类似于上面的一个结果集
-2）基础数据中所有的日都应该进行如上的计算
-*/
--- 自关联的方式
-SELECT
-    user_id,
-    dates 
-FROM
-    temp_trade 
-GROUP BY
-    user_id,
-    dates;
-
-CREATE VIEW user_remain_view AS
-SELECT
-    a.dates,
-    count( DISTINCT b.user_id ) AS &#39;user_count&#39;,
-    count( DISTINCT IF(datediff( b.dates,a.dates )=1,b.user_id,null)) AS remain1, -- 1日留存数计算
-    count( DISTINCT IF(datediff( b.dates,a.dates )=2,b.user_id,null)) AS remain2, -- 2日留存数计算
-    count( DISTINCT IF(datediff( b.dates,a.dates )=3,b.user_id,null)) AS remain3, -- 3日留存数计算
-    count( DISTINCT IF(datediff( b.dates,a.dates )=4,b.user_id,null)) AS remain4, -- 4日留存数计算
-    count( DISTINCT IF(datediff( b.dates,a.dates )=5,b.user_id,null)) AS remain5, -- 5日留存数计算
-    count( DISTINCT IF(datediff( b.dates,a.dates )=6,b.user_id,null)) AS remain6, -- 6日留存数计算
-    count( DISTINCT IF(datediff( b.dates,a.dates )=7,b.user_id,null)) AS remain7, -- 7日留存数计算
-        count( DISTINCT IF(datediff( b.dates,a.dates )=15,b.user_id,null)) AS remain15, -- 15日留存数计算
-    count( DISTINCT IF(datediff( b.dates,a.dates )=30,b.user_id,null)) AS remain30 -- 30日留存数计算
-FROM
-    ( SELECT user_id, dates FROM temp_trade GROUP BY user_id, dates ) a
-    LEFT JOIN ( SELECT user_id, dates FROM temp_trade GROUP BY user_id, dates ) b ON a.user_id = b.user_id 
-WHERE
-    b.dates &gt;= a.dates 
-GROUP BY
-    a.dates;
-
--- cast 转换函数  CAST函数语法规则是：Cast(字段名 as 转换的类型 )，其中类型可以为：CHAR[(N)] 字符型 、DATE 日期型、DATETIME 日期和时间型、DECIMAL float型、SIGNED int、TIME 时间型
--- decimal 数据类型最多可存储 38 个数字,所有数字都能够放到小数点的右边.decimal 数据类型存储了一个准确（精确）的数字表达法；不存储值的近似值.其中10是小数点左边和右边的数字个数之和(不包括小数点),2代表小数点右边的小数位数或数字个数.decimal(10,2)可以存储8位整数2位小数的数字
-SELECT
-    dates,
-    user_count,
-    concat(cast((remain1 / user_count)*100 AS DECIMAL(10,2)),&#39;%&#39;) AS &#39;remain1_rate&#39;,  -- 1日留存率
-    concat(cast((remain2 / user_count)*100 AS DECIMAL(10,2)),&#39;%&#39;) AS &#39;remain2_rate&#39;,  -- 2日留存率
-    concat(cast((remain3 / user_count)*100 AS DECIMAL(10,2)),&#39;%&#39;) AS &#39;remain3_rate&#39;,  -- 3日留存率
-    concat(cast((remain4 / user_count)*100 AS DECIMAL(10,2)),&#39;%&#39;) AS &#39;remain4_rate&#39;,  -- 4日留存率
-    concat(cast((remain5 / user_count)*100 AS DECIMAL(10,2)),&#39;%&#39;) AS &#39;remain5_rate&#39;,  -- 5日留存率
-    concat(cast((remain6 / user_count)*100 AS DECIMAL(10,2)),&#39;%&#39;) AS &#39;remain6_rate&#39;,  -- 6日留存率
-    concat(cast((remain7 / user_count)*100 AS DECIMAL(10,2)),&#39;%&#39;) AS &#39;remain7_rate&#39;,  -- 7日留存率
-    concat(cast((remain15 / user_count)*100 AS DECIMAL(10,2)),&#39;%&#39;) AS &#39;remain15_rate&#39;,  -- 15日留存率
-    concat(cast((remain30 / user_count)*100 AS DECIMAL(10,2)),&#39;%&#39;) AS &#39;remain30_rate&#39;  -- 30日留存率
-FROM
-    user_remain_view
-
--- R 指标分析：根据每个用户最近一次购买时间，给出相应的分数
-
--- 每个用户的最近购买时间
-DROP VIEW IF EXISTS user_recency_view;
-CREATE VIEW user_recency_view AS
-SELECT 
-  user_id,
-    max(dates) AS recent_buy_time
-FROM temp_trade
-WHERE behavior_type=2
-GROUP BY user_id;
-
--- 计算每个用户的最近购买时间距离 2019-12-18相差几天，根据相差天数给予一定的分数
-CREATE VIEW r_level AS
-SELECT
-  user_id,
-    recent_buy_time,
-    DATEDIFF(&#39;2019-12-18&#39;,recent_buy_time),
-    -- &lt;=2 5分、&lt;=4 4分、&lt;=6 3分、&lt;=8 2分、其他 1分
-    (
-    CASE 
-    WHEN DATEDIFF(&#39;2019-12-18&#39;,recent_buy_time)&lt;=2 THEN 5
-    WHEN DATEDIFF(&#39;2019-12-18&#39;,recent_buy_time)&lt;=4 THEN 4
-    WHEN DATEDIFF(&#39;2019-12-18&#39;,recent_buy_time)&lt;=6 THEN 3
-    WHEN DATEDIFF(&#39;2019-12-18&#39;,recent_buy_time)&lt;=8 THEN 2
-    ELSE 1 END
-    ) AS r_value -- 判断具体某个人的分值
-FROM user_recency_view;
-
-
--- f指标计算：求出每个用户的消费次数或者购买次数，拿到消费次数对消费情况进行评分
--- 求出每个用户的消费次数或者购买次数
-CREATE VIEW user_buy_fre_view AS
-SELECT
-  user_id,
-    COUNT(user_id) AS buy_frequency -- 哥哥用户购买次数
-FROM temp_trade
-WHERE behavior_type=2
-GROUP BY user_id;
-
--- 评分：购买次数&lt;=2 1分、&lt;=4 2分、&lt;=6 3分、&lt;=8 4分、其他 5分
-CREATE VIEW f_level AS
-SELECT
-  user_id,
-    buy_frequency,
-    ( case
-    when buy_frequency&lt;=2 then 1
-    when buy_frequency&lt;=4 then 2
-    when buy_frequency&lt;=6 then 3
-    when buy_frequency&lt;=8 then 4
-    else 5 end
-    ) as &#39;f_value&#39;
-FROM user_buy_fre_view;
-
--- r均值
-SELECT
-  AVG(r_value) AS &#39;r_avg&#39;
-FROM r_level; -- 2.7939
-
-
--- f均值
-SELECT
-  AVG(f_value) AS &#39;f_avg&#39;
-FROM f_level; -- 2.2606
-
--- 重要价值客户：指最近⼀次消费较近⽽且消费频率较⾼的客户；
--- 重要唤回客户：指最近⼀次消费较远且消费频率较⾼的客户；
--- 重要深耕客户：指最近⼀次消费较近且消费频率较低的客户；
--- 重要挽留客户：指最近⼀次消费较远且消费频率较低的客户；
-
--- 拿到每个人的r值和f值(两表关联 r_level\f_level)，与均值对比
-select
-r.user_id,
-r.r_value,
-f.f_value,
-(
-case
-when r.r_value&gt;2.7939 and f.f_value&gt;2.2606 then &#39;重要价值客户&#39;
-when r.r_value&lt;2.7939 and f.f_value&gt;2.2606 then &#39;重要唤回客户&#39;
-when r.r_value&gt;2.7939 and f.f_value&lt;2.2606 then &#39;重要深耕客户&#39;
-when r.r_value&lt;2.7939 and f.f_value&lt;2.2606 then &#39;重要挽留客户&#39;
-end -- 没有其他就别else
-) AS user_type
-from r_level r,f_level f where r.user_id=f.user_id;
-
--- 商品的点击量 收藏量 加购量 购买次数 购买转化
-select 
-  item_id,
-    sum(case when behavior_type=1 then 1 else 0 end ) as &#39;pv&#39;, -- 点击量
-    sum(case when behavior_type=4 then 1 else 0 end ) as &#39;fav&#39;, -- 收藏量
-    sum(case when behavior_type=3 then 1 else 0 end ) as &#39;cart&#39;, -- 加购量
-    sum(case when behavior_type=2 then 1 else 0 end ) as &#39;buy&#39; -- 购买次数
-from temp_trade group by item_id;
-
-
--- 对应品类的点击量 收藏量 加购量 购买次数 购买转化,该商品品类的所有用户中有购买转化的用户比
-select 
-  item_category,
-    sum(case when behavior_type=1 then 1 else 0 end ) as &#39;pv&#39;, -- 点击量
-    sum(case when behavior_type=4 then 1 else 0 end ) as &#39;fav&#39;, -- 收藏量
-    sum(case when behavior_type=3 then 1 else 0 end ) as &#39;cart&#39;, -- 加购量
-    sum(case when behavior_type=2 then 1 else 0 end ) as &#39;buy&#39;, -- 购买次数
-    count( distinct case when behavior_type=2 then user_id else null end )/count( distinct user_id ) as &#39;buy_rate&#39;
-from temp_trade group by item_category;
-
--- 每日的分析(1-4，分别表示点击pv、购买buy、加购物车buy、喜欢fav)
-select 
-  dates,
-    sum(case when behavior_type=1 then 1 else 0 end ) as &#39;pv&#39;, -- 点击量
-    sum(case when behavior_type=4 then 1 else 0 end ) as &#39;fav&#39;, -- 收藏量
-    sum(case when behavior_type=3 then 1 else 0 end ) as &#39;cart&#39;, -- 加购量
-    sum(case when behavior_type=2 then 1 else 0 end ) as &#39;buy&#39;, -- 购买次数
-    count( distinct case when behavior_type=2 then user_id else null end )/count( distinct user_id ) as &#39;buy_rate&#39;
-from temp_trade
-group by dates;
-
-/*
-行为路径分析
-核心：拼接行为路径
-把多个行为并列摆放，才能使用 concat函数进行拼接
-偏移分析函数1 ag over1 ead over---窗口函数，分组（用户+商品），排序（升序）
-*/
-
--- 用户行为拼接准备
-drop view path_base_view
-create view path_base_view as 
-select a.* from 
-(
-    SELECT
-        user_id, item_id,
-        lag ( behavior_type, 4 ) over ( PARTITION BY user_id, item_id ORDER BY date_time ) lag_4,-- 1
-        lag ( behavior_type, 3 ) over ( PARTITION BY user_id, item_id ORDER BY date_time ) lag_3,-- 1
-        lag ( behavior_type, 2 ) over ( PARTITION BY user_id, item_id ORDER BY date_time ) lag_2,-- 1
-        lag ( behavior_type, 1 ) over ( PARTITION BY user_id, item_id ORDER BY date_time ) lag_1,-- 1
-        behavior_type,
-        rank () over ( PARTITION BY user_id, item_id ORDER BY date_time DESC )  rank_number
-    FROM
-        temp_trade
-) a
-where a.rank_number=1 and a.behavior_type=2;
-
-
--- 拼接行为路径
-select concat(ifnull(lag_4,&#39;空&#39;),&#39;-&#39;,ifnull(lag_3,&#39;空&#39;),&#39;-&#39;,ifnull(lag_2,&#39;空&#39;),&#39;-&#39;,ifnull(lag_1,&#39;空&#39;),&#39;-&#39;,behavior_type) path_base 
-from path_base_view;
-
-
--- 针对行为路径进行分组count统计
-select concat(ifnull(lag_4,&#39;空&#39;),&#39;-&#39;,ifnull(lag_3,&#39;空&#39;),&#39;-&#39;,ifnull(lag_2,&#39;空&#39;),&#39;-&#39;,ifnull(lag_1,&#39;空&#39;),&#39;-&#39;,behavior_type) path_base,count(distinct user_id) user_num
-from path_base_view
-group by path_base;
-</code></pre>
-<h1 id="6-">6.结论</h1>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuai35.JPG" alt=""></p>
+<h1 id="8-">8. <strong>案例现身说法</strong></h1>
+<h2 id="-"><strong>案例：公司级销售跟盯大盘</strong></h2>
 <blockquote>
-<p><strong>1.双十二活动效果预热明显</strong>：双十二前（11月18-12月8日）日均活跃用户数237人，日均周环比增长2%，用户稳定增长，说明前期活动预热效果明显；<br><strong>2.已挖掘出部分高价值用户</strong>：已经挖掘出来54个重要深耕用户、34个重要高价值用户、70个重要挽留用户。后续运营活动可以直接使用；<br><strong>3.头部商品品类基本保持正常转化率</strong>：头部商品品类基本保持正常平均转化率10.4%，部分品类’5027‘、’5399‘转化率偏低，需要后续与商品运营团队沟通方案；<br><strong>4.购物车转化率偏低</strong>：在所有的消费路径中，58%的用户有加入购物车的行为；但仅有0.6%的用户在加入购物车之后发生购买；说明加入购物车购买转化率偏低的情况，后续与产品团队协商改进建议。<br><strong>5.留存率保持稳定但没有明显的上升势头</strong>：用户留存率基本稳定在60%-70%之间，活动期间会明显上升至80%左右，因此可通过有针对性的市场营销方式来奖励那些保持每月回访的客户，或者是采用一些激励手段，使得每月访问次数少于一次的客户更频繁地回访。引导新用户快速体验核心功能或内容，提高短期留存；同时找到上瘾回路，培养用户习惯，提高长期留存。</p>
+<p>  假如，需要制作618期间跟盯销售情况的仪表盘，你可以怎么做？</p>
 </blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuai33.JPG" alt=""></p>
-<h3 id="-">指标、数据说明</h3>
+<h3 id="step-1-">Step 1，设计思路</h3>
 <blockquote>
-<p>1.<strong>统计周期：</strong>2019年11月18日至2019年12月18日。<br>2.<strong>当日UV：</strong>指当日的用户排重计数；</p>
-<p>3.<strong>重要高价值客户：</strong>指最近一次消费较近而且消费频率较高的客户；<br>4.<strong>重要唤回客户：</strong>指最近一次消费较远且消费频率较高的客户；<br>5.<strong>重要深耕客户：</strong>指最近一次消费较近且消费频率较低的客户；<br>6.<strong>重要挽留客户：</strong>指最近一次消费较远且消费频率较低的客户；<br>7.<strong>购买转化率：</strong>商品的被购买次数除以所有对商品的行为数；</p>
-<p>8.<strong>留存用户：</strong>指某个时间段的新增用户，经过一段时期，仍使用程序的用户。该指标可以用来掌握用户的粘性及忠诚度；<br>9.<strong>用户留存率：</strong>留存率=登录用户数/新增用户数*100%；留存用户和留存率体现了应用的质量和保留用户的能力；</p>
-<p>10.<strong>次日留存率：</strong>（第一天新增用户数，第2天还登录的用户数）/第一天总注册用户数；<br>11.<strong>7日留存率：</strong>（第一天新增用户数，第8天还登录的用户数）/第一天总注册用户数；<br>12.<strong>30日留存率：</strong>（第一天新增用户数，第31天还登录的用户数）/第一天总注册用户。</p>
+<p>  每日销售情况，同比去年增长情况，当月销售情况趋势，分品类构成，分地区、客户销量排行</p>
+<p>  <strong>这是我的思路，你的呢？</strong></p>
 </blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuai34.JPG" alt=""></p>
-<h2 id="6-1-">6.1 ⽤户分析</h2>
-<p>UV异常分析：每⽇UV数据中，明显异常点为双⼗⼆活动造成，该影响为已知影响。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/image-20200908150824108.png" alt="image-20200908150824108"></p>
+<h3 id="step-2-">Step 2，准备所需数据</h3>
 <blockquote>
-<p>  对于UV周环⽐的分析：⽇常周环⽐数据⼤多⼤于0，说明⽤户程⼀定上升趋势，其中如11⽉26⽇、12⽉<br>  2⽇、12⽉7⽇等的数据为下降数据，需要结合其他数据做进⼀步的下降原因分析。双⼗⼆活动后⽤户周环⽐会相应下降，为正常原因。<br>  猜测可能的问题有：<br>  内部问题：产品BUG（⽹站bug）、策略问题（周年庆活动结束了）、营销问题（代⾔⼈换了）等；<br>  外部问题：竞品活动问题（其他平台⼤酬宾），政治环境问题（进⼝商品限制），舆情⼝碑问题（平台商品爆出质量问题）等；</p>
+<p>  历年SKU级别日销售数据订单退货</p>
 </blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/image-20200908150845456.png" alt="image-20200908150845456"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuai36.JPG" alt=""></p>
-<h2 id="6-2-">6.2 <strong>用户精细化运营</strong></h2>
+<h3 id="step-3-quickbi">Step 3，上传数据到QuickBI</h3>
 <blockquote>
-<p>  通过RFM模型中的⽤户最近⼀次购买时间、⽤户消费频次分析，分拆得到以下重要⽤户。<br>  可以在后续精细化运营场景中直接使⽤细分⽤户，做差异化运营：<br>  对⾼价值客户做VIP服务设计，增加⽤户粘性同时通过设计优惠券提升客户消费；<br>  对深耕客户做⼴告、推送刺激，提升消费频次；<br>  对挽留客户做优惠券、签到送礼策略，增加挽留⽤户粘性；<br>  对唤回客户做定向⼴告、短信召回策略，尝试召回⽤户。</p>
+<p>  数据源导入；</p>
+<p>  数据建模：多个数据源之间建模数据集字段处理</p>
 </blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/image-20200908150910168.png" alt="image-20200908150910168"></p>
-<h2 id="6-3-">6.3 <strong>商品分析</strong></h2>
-<p>热销商品品类如下所示。</p>
-<p>其中’5027‘、’5399‘品类购买转化率较其余商品品类偏低，需要结合更多数据做进⼀步解读。（可能的原因：品类⾃有特性导致⽤户购买较低，⽐如⾮必需品、奢侈品等等。）</p>
-<table>
-<thead>
-<tr>
-<th><strong>item_category</strong></th>
-<th><strong>pv</strong></th>
-<th><strong>fav</strong></th>
-<th><strong>cart</strong></th>
-<th><strong>buy</strong></th>
-<th><strong>buy_rate</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>13230</td>
-<td>1481</td>
-<td>2</td>
-<td>35</td>
-<td>43</td>
-<td>12.5%</td>
-</tr>
-<tr>
-<td>5894</td>
-<td>1336</td>
-<td>2</td>
-<td>20</td>
-<td>36</td>
-<td>12.4%</td>
-</tr>
-<tr>
-<td>1863</td>
-<td>1461</td>
-<td>11</td>
-<td>41</td>
-<td>34</td>
-<td>11.4%</td>
-</tr>
-<tr>
-<td>6513</td>
-<td>1030</td>
-<td>7</td>
-<td>29</td>
-<td>31</td>
-<td>13.4%</td>
-</tr>
-<tr>
-<td>11279</td>
-<td>767</td>
-<td>4</td>
-<td>22</td>
-<td>25</td>
-<td>12.6%</td>
-</tr>
-<tr>
-<td>10894</td>
-<td>491</td>
-<td>2</td>
-<td>15</td>
-<td>20</td>
-<td>12.6%</td>
-</tr>
-<tr>
-<td>5027</td>
-<td>1498</td>
-<td>2</td>
-<td>27</td>
-<td>19</td>
-<td>7.3%</td>
-</tr>
-<tr>
-<td>2825</td>
-<td>608</td>
-<td>0</td>
-<td>11</td>
-<td>15</td>
-<td>9.3%</td>
-</tr>
-<tr>
-<td>5399</td>
-<td>1131</td>
-<td>4</td>
-<td>18</td>
-<td>15</td>
-<td>4.9%</td>
-</tr>
-<tr>
-<td>3628</td>
-<td>316</td>
-<td>6</td>
-<td>6</td>
-<td>13</td>
-<td>8.0%</td>
-</tr>
-</tbody>
-</table>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuai37.JPG" alt=""><br><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuai38.JPG" alt=""></p>
-<h2 id="6-4-">6.4 <strong>产品功能路径分析</strong></h2>
-<p>以下为主要购买路径。可以发现⽤户多以直接购买为主；添加购物⻋的购买在主要购买路径中数量较少。后续的产品加购功能和产品收藏功能还需要结合更多数据做改进⽅案。</p>
-<table>
-<thead>
-<tr>
-<th><strong>user_way</strong></th>
-<th><strong>uv</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>空-空-空-空-2</td>
-<td>146</td>
-</tr>
-<tr>
-<td>空-空-空-1-2</td>
-<td>64</td>
-</tr>
-<tr>
-<td>空-空-1-1-2</td>
-<td>10</td>
-</tr>
-<tr>
-<td>空-空-2-1-2</td>
-<td>2</td>
-</tr>
-<tr>
-<td>空-空-空-3-2</td>
-<td>2</td>
-</tr>
-<tr>
-<td>空-1-1-1-2</td>
-<td>1</td>
-</tr>
-<tr>
-<td>空-空-1-3-2</td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuai31.JPG" alt=""></p>
-<h2 id="6-5-">6.5 留存分析</h2>
-<p>以下是按日统计的留存率统计图表。<br>通过留存效果曲线可以发现用户的日留存率集中保持在60%-70%之间，用户留存效果保持较好；<br>双12活动效果明显，用户留存达到最高80%左右，活动结束后，用户留存率突降但仍保持在60%-70%之间；<br>细分发现此阶段除双12当天外用户留存量保持稳定但没有显著上升，也就是说并没有大规模拉新活动。</p>
-<table>
-<thead>
-<tr>
-<th><strong>日期</strong></th>
-<th><strong>1日留存率</strong></th>
-<th><strong>2日留存率</strong></th>
-<th><strong>3日留存率</strong></th>
-<th><strong>4日留存率</strong></th>
-<th><strong>5日留存率</strong></th>
-<th><strong>6日留存率</strong></th>
-<th><strong>7日留存率</strong></th>
-<th><strong>15日留存率</strong></th>
-<th><strong>30日留存率</strong></th>
-<th><strong>留存用户数</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2019-11-18</td>
-<td>65.04%</td>
-<td>64.60%</td>
-<td>60.18%</td>
-<td>61.95%</td>
-<td>63.27%</td>
-<td>56.19%</td>
-<td>60.18%</td>
-<td>60.18%</td>
-<td>56.64%</td>
-<td>226</td>
-</tr>
-<tr>
-<td>2019-11-19</td>
-<td>69.37%</td>
-<td>63.51%</td>
-<td>61.71%</td>
-<td>63.51%</td>
-<td>65.77%</td>
-<td>65.32%</td>
-<td>57.21%</td>
-<td>60.81%</td>
-<td>0.00%</td>
-<td>222</td>
-</tr>
-<tr>
-<td>2019-11-20</td>
-<td>63.20%</td>
-<td>59.31%</td>
-<td>61.90%</td>
-<td>64.94%</td>
-<td>62.77%</td>
-<td>56.71%</td>
-<td>57.14%</td>
-<td>61.47%</td>
-<td>0.00%</td>
-<td>231</td>
-</tr>
-<tr>
-<td>2019-11-21</td>
-<td>62.07%</td>
-<td>62.93%</td>
-<td>65.09%</td>
-<td>65.52%</td>
-<td>58.19%</td>
-<td>61.21%</td>
-<td>62.50%</td>
-<td>61.64%</td>
-<td>0.00%</td>
-<td>232</td>
-</tr>
-<tr>
-<td>2019-11-22</td>
-<td>69.47%</td>
-<td>64.16%</td>
-<td>65.49%</td>
-<td>60.18%</td>
-<td>64.60%</td>
-<td>61.95%</td>
-<td>63.27%</td>
-<td>60.18%</td>
-<td>0.00%</td>
-<td>226</td>
-</tr>
-<tr>
-<td>2019-11-23</td>
-<td>66.80%</td>
-<td>66.39%</td>
-<td>58.51%</td>
-<td>61.00%</td>
-<td>63.07%</td>
-<td>65.56%</td>
-<td>63.49%</td>
-<td>59.75%</td>
-<td>0.00%</td>
-<td>241</td>
-</tr>
-<tr>
-<td>2019-11-24</td>
-<td>69.07%</td>
-<td>63.98%</td>
-<td>66.53%</td>
-<td>65.25%</td>
-<td>66.53%</td>
-<td>68.22%</td>
-<td>65.25%</td>
-<td>63.14%</td>
-<td>0.00%</td>
-<td>236</td>
-</tr>
-<tr>
-<td>2019-11-25</td>
-<td>64.61%</td>
-<td>63.37%</td>
-<td>66.26%</td>
-<td>63.37%</td>
-<td>68.72%</td>
-<td>62.96%</td>
-<td>61.73%</td>
-<td>64.61%</td>
-<td>0.00%</td>
-<td>243</td>
-</tr>
-<tr>
-<td>2019-11-26</td>
-<td>67.87%</td>
-<td>67.42%</td>
-<td>65.16%</td>
-<td>63.80%</td>
-<td>61.54%</td>
-<td>59.73%</td>
-<td>56.56%</td>
-<td>69.23%</td>
-<td>0.00%</td>
-<td>221</td>
-</tr>
-<tr>
-<td>2019-11-27</td>
-<td>70.69%</td>
-<td>66.38%</td>
-<td>65.52%</td>
-<td>67.24%</td>
-<td>61.64%</td>
-<td>59.48%</td>
-<td>62.07%</td>
-<td>78.88%</td>
-<td>0.00%</td>
-<td>232</td>
-</tr>
-<tr>
-<td>2019-11-28</td>
-<td>67.92%</td>
-<td>63.33%</td>
-<td>64.17%</td>
-<td>59.17%</td>
-<td>61.25%</td>
-<td>58.75%</td>
-<td>57.50%</td>
-<td>62.08%</td>
-<td>0.00%</td>
-<td>240</td>
-</tr>
-<tr>
-<td>2019-11-29</td>
-<td>69.55%</td>
-<td>67.49%</td>
-<td>63.79%</td>
-<td>60.49%</td>
-<td>60.08%</td>
-<td>62.96%</td>
-<td>67.08%</td>
-<td>57.61%</td>
-<td>0.00%</td>
-<td>243</td>
-</tr>
-<tr>
-<td>2019-11-30</td>
-<td>63.52%</td>
-<td>68.03%</td>
-<td>64.75%</td>
-<td>65.98%</td>
-<td>64.34%</td>
-<td>66.39%</td>
-<td>64.75%</td>
-<td>61.07%</td>
-<td>0.00%</td>
-<td>244</td>
-</tr>
-<tr>
-<td>2019-12-1</td>
-<td>66.12%</td>
-<td>60.41%</td>
-<td>66.12%</td>
-<td>67.35%</td>
-<td>64.49%</td>
-<td>62.45%</td>
-<td>63.27%</td>
-<td>61.22%</td>
-<td>0.00%</td>
-<td>245</td>
-</tr>
-<tr>
-<td>2019-12-2</td>
-<td>67.22%</td>
-<td>66.80%</td>
-<td>67.22%</td>
-<td>66.80%</td>
-<td>65.56%</td>
-<td>64.32%</td>
-<td>64.73%</td>
-<td>62.24%</td>
-<td>0.00%</td>
-<td>241</td>
-</tr>
-<tr>
-<td>2019-12-3</td>
-<td>69.79%</td>
-<td>67.23%</td>
-<td>67.23%</td>
-<td>65.11%</td>
-<td>65.11%</td>
-<td>65.96%</td>
-<td>66.38%</td>
-<td>55.32%</td>
-<td>0.00%</td>
-<td>235</td>
-</tr>
-<tr>
-<td>2019-12-4</td>
-<td>68.02%</td>
-<td>68.42%</td>
-<td>65.99%</td>
-<td>65.99%</td>
-<td>62.75%</td>
-<td>65.59%</td>
-<td>66.80%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>247</td>
-</tr>
-<tr>
-<td>2019-12-5</td>
-<td>68.18%</td>
-<td>64.05%</td>
-<td>65.70%</td>
-<td>66.12%</td>
-<td>65.29%</td>
-<td>69.83%</td>
-<td>80.99%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>242</td>
-</tr>
-<tr>
-<td>2019-12-6</td>
-<td>65.20%</td>
-<td>64.40%</td>
-<td>64.40%</td>
-<td>64.80%</td>
-<td>70.00%</td>
-<td>82.00%</td>
-<td>61.60%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>250</td>
-</tr>
-<tr>
-<td>2019-12-7</td>
-<td>69.29%</td>
-<td>68.46%</td>
-<td>69.71%</td>
-<td>71.78%</td>
-<td>81.33%</td>
-<td>62.24%</td>
-<td>62.24%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>241</td>
-</tr>
-<tr>
-<td>2019-12-8</td>
-<td>69.23%</td>
-<td>70.04%</td>
-<td>73.28%</td>
-<td>81.38%</td>
-<td>64.37%</td>
-<td>65.99%</td>
-<td>61.94%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>247</td>
-</tr>
-<tr>
-<td>2019-12-9</td>
-<td>68.92%</td>
-<td>70.52%</td>
-<td>80.48%</td>
-<td>61.75%</td>
-<td>56.97%</td>
-<td>61.75%</td>
-<td>59.36%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>251</td>
-</tr>
-<tr>
-<td>2019-12-10</td>
-<td>74.80%</td>
-<td>81.50%</td>
-<td>65.35%</td>
-<td>57.87%</td>
-<td>62.99%</td>
-<td>61.02%</td>
-<td>64.17%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>254</td>
-</tr>
-<tr>
-<td>2019-12-11</td>
-<td>82.35%</td>
-<td>63.97%</td>
-<td>61.03%</td>
-<td>61.76%</td>
-<td>58.46%</td>
-<td>61.03%</td>
-<td>55.15%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>272</td>
-</tr>
-<tr>
-<td>2019-12-12</td>
-<td>62.65%</td>
-<td>59.57%</td>
-<td>60.19%</td>
-<td>57.72%</td>
-<td>58.64%</td>
-<td>54.94%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>324</td>
-</tr>
-<tr>
-<td>2019-12-13</td>
-<td>63.27%</td>
-<td>66.12%</td>
-<td>59.59%</td>
-<td>65.31%</td>
-<td>59.18%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>245</td>
-</tr>
-<tr>
-<td>2019-12-14</td>
-<td>68.51%</td>
-<td>64.68%</td>
-<td>64.26%</td>
-<td>59.57%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>235</td>
-</tr>
-<tr>
-<td>2019-12-15</td>
-<td>69.14%</td>
-<td>65.02%</td>
-<td>57.61%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>243</td>
-</tr>
-<tr>
-<td>2019-12-16</td>
-<td>67.76%</td>
-<td>58.37%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>245</td>
-</tr>
-<tr>
-<td>2019-12-17</td>
-<td>64.71%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>238</td>
-</tr>
-<tr>
-<td>2019-12-18</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>0.00%</td>
-<td>224</td>
-</tr>
-</tbody>
-</table>
-<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/mokuai32.JPG" alt=""></p>
-<hr>
+<h3 id="step-4-">Step 4，思路可视化</h3>
+<blockquote>
+<p>  Sheet1：今日截止目前各销售指标完成绝对值； </p>
+<p>  Sheet2：环比增长情况；</p>
+<p>  Sheet3：同比去年增长情况；</p>
+<p>  Sheet4:  分品类销售占比和绝对值；饼图</p>
+<p>  Sheet5：客户分地区销售额</p>
+<p>  Sheet6：客户购买销售额Top10展示</p>
+</blockquote>
+<h3 id="step-5-">Step 5，汇总成仪表盘</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_131.jpg" alt="image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/Module3_2_132.png" alt="image"></p>
 
 </body>
 </html>

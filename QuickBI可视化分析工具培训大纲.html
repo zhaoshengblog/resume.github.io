@@ -1844,6 +1844,7 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
 <body>
 <p><a href="index.html">返回上一页</a></p>
 <h1 id="0-quickbi-">0. QuickBI快速了解</h1>
+<p><a href="https://help.aliyun.com/product/30343.htm?spm=a2c10.workspaceschema.0.0.7bc963adApgmMm">Quick BI-阿里云</a>、<a href="https://help.aliyun.com/document_detail/101235.html?spm=5176.11065259.1996646101.searchclickresult.486111aehlyyzv">电子表格支持函数说明<em>电子表格</em>数据分析_Quick BI-阿里云</a>、<a href="https://github.com/AlibabaCloudDocs/bi/tree/master/cn.zh-CN">AlibabaCloudDocs</a></p>
 <h2 id="q1-quickbi-">Q1 QuickBI是什么？</h2>
 <blockquote>
 <p>  阿里云的产品！<br>  智能分析套件Quick BI是一个专为云上用户量身打造的新一代智能BI服务平台，也支持线下用户哟~<br>  Quick BI可以提供海量数据实时在线分析服务，支持拖拽式操作和丰富的可视化效果，帮助您轻松自如地完成数据分析、业务数据探查、报表制作等工作。<br>  Quick BI不仅是业务人员查看数据的工具，更是数据化运营的助推器。</p>
@@ -2267,6 +2268,2688 @@ LAG()
 RANK() 
 PERCENT_RANK() 
 LAST_VALUE()
+</code></pre>
+<h3 id="-https-github-com-alibabaclouddocs-bi-tree-master-cn-zh-cn-e7-94-a8-e6-88-b7-e6-8c-87-e5-8d-97-"><a href="https://github.com/AlibabaCloudDocs/bi/tree/master/cn.zh-CN/%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97">电子表格支持函数说明</a></h3>
+<p><strong>数据库函数</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>函数名称</strong></th>
+<th><strong>函数说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DAVERAGE</td>
+<td>返回所选数据库条目的平均值。</td>
+</tr>
+<tr>
+<td>DCOUNT</td>
+<td>计算数据库中包含数字的单元格个数。</td>
+</tr>
+<tr>
+<td>DCOUNTA</td>
+<td>计算数据库中非空单元格的个数。</td>
+</tr>
+<tr>
+<td>DGET</td>
+<td>从数据库提取符合指定条件的单个记录。</td>
+</tr>
+<tr>
+<td>DMAX</td>
+<td>返回所选数据库条目中的最大值。</td>
+</tr>
+<tr>
+<td>DMIN</td>
+<td>返回所选数据库条目中的最小值。</td>
+</tr>
+<tr>
+<td>DPRODUCT</td>
+<td>将数据库中符合条件的记录的特定字段中的值相乘。</td>
+</tr>
+<tr>
+<td>DSTDEV</td>
+<td>基于所选数据库条目的样本估算标准偏差。</td>
+</tr>
+<tr>
+<td>DSTDEVP</td>
+<td>基于所选数据库条目的总体计算标准偏差。</td>
+</tr>
+<tr>
+<td>DSUM</td>
+<td>将数据库中符合条件的记录的字段列中的数字相加。</td>
+</tr>
+<tr>
+<td>DVAR</td>
+<td>基于所选数据库条目的样本估算方差。</td>
+</tr>
+<tr>
+<td>DVARP</td>
+<td>基于所选数据库条目的样本总体计算方差。</td>
+</tr>
+<tr>
+<td>GETPIVOTDATA</td>
+<td>返回存储在数据透视表中的数据。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>日期与时间函数</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>函数名称</strong></th>
+<th><strong>函数说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DATE</td>
+<td>返回代表特定日期的序列号。</td>
+</tr>
+<tr>
+<td>DATEDIF</td>
+<td>计算两个日期间相差的天数、月数或年数。</td>
+</tr>
+<tr>
+<td>DATEVALUE</td>
+<td>将单元格中使用文本单元格格式的日期转换为可在日期计算中使用的序列号。</td>
+</tr>
+<tr>
+<td>DAY</td>
+<td>只返回一个月中的第几天的数字，用整数1到31表示。</td>
+</tr>
+<tr>
+<td>DAYS360</td>
+<td>按照一年360天（一年12个月，每月30天）的算法，计算两个日期间相差的天数，这在一些会计计算中会用到。如果会计系统是基于一年12个月，每月30天的，可用此函数帮助计算支付额。</td>
+</tr>
+<tr>
+<td>EDATE</td>
+<td>返回代表指定日期 (start_date) 之前或之后用于指定月份数的日期的序列号。使用EDATE可以计算与发行日处于一月中同一天的到期日的日期。</td>
+</tr>
+<tr>
+<td>EOMONTH</td>
+<td>返回start-date之前或之后用于指定月份的该月最后一天的序列号。使用EOMONTH可计算正好在一个月最后一天到期的日期。</td>
+</tr>
+<tr>
+<td>HOUR</td>
+<td>只返回时间的小时数值，是一个0（12:00 A.M.）到23（11:00 P.M.）之间的整数。</td>
+</tr>
+<tr>
+<td>MINUTE</td>
+<td>只返回时间的分钟数值，是一个0到59之间的整数。</td>
+</tr>
+<tr>
+<td>MONTH</td>
+<td>只返回以序列号表示的日期中的月份。月份是介于1（一月）到12（十二月）之间的整数。</td>
+</tr>
+<tr>
+<td>NETWORKDAYS</td>
+<td>返回start_date和end_date之间的所有工作日数。工作日不包括周末和指定的任何假期。使用NETWORKDAYS函数可以基于某时期内雇员的工作天数，计算其应计的报酬。</td>
+</tr>
+<tr>
+<td>NETWORKDAYS.INTL</td>
+<td>返回两个日期之间的所有工作日数。</td>
+</tr>
+<tr>
+<td>NOW</td>
+<td>返回当前日期和时间的序列号。如果单元格格式在输入函数前为<strong>常规</strong>，则结果会将单元格格式更改为<strong>时间</strong>。</td>
+</tr>
+<tr>
+<td>SECOND</td>
+<td>只返回时间的秒数值，它是0（零）到59之间的整数。</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>返回特定时间的小数值。如果单元格格式在输入函数前为<strong>常规</strong>，则结果会将单元格格式更改为<strong>时间</strong>。</td>
+</tr>
+<tr>
+<td>TIMEVALUE</td>
+<td>返回由文本字符串所表示的特定时间的小数值，它是0（零）到0.999999999之间的小数值，代表从0<img src="https://assets-cdn.github.com/images/icons/emoji/00.png" alt=":00:" title=":00:" class="emoji" align="absmiddle" height="20" width="20">00（12<img src="https://assets-cdn.github.com/images/icons/emoji/00.png" alt=":00:" title=":00:" class="emoji" align="absmiddle" height="20" width="20">00 A.M.）到23<img src="https://assets-cdn.github.com/images/icons/emoji/59.png" alt=":59:" title=":59:" class="emoji" align="absmiddle" height="20" width="20">59（11<img src="https://assets-cdn.github.com/images/icons/emoji/59.png" alt=":59:" title=":59:" class="emoji" align="absmiddle" height="20" width="20">59 P.M.）之间的时间。</td>
+</tr>
+<tr>
+<td>TODAY</td>
+<td>返回当前日期的序列号。如果单元格格式在输入函数前为<strong>常规</strong>，则结果会将单元格格式更改为<strong>日期</strong></td>
+</tr>
+<tr>
+<td>WEEKDAY</td>
+<td>返回日期对应的星期值。默认情况下，它是1（星期天）到7（星期六）之间的整数。</td>
+</tr>
+<tr>
+<td>WEEKNUM</td>
+<td>返回一个数字，代表该星期为一年中的第几周，是个整数。</td>
+</tr>
+<tr>
+<td>WORKDAY</td>
+<td>返回start_date之前或之后代表相隔指定工作日的某一日期的数字。工作日不包括周末和指定的任何假日。在计算发票到期日、预期交货时间或工作天数时，可以使用函数WORKDAY来排除周末或假日。</td>
+</tr>
+<tr>
+<td>WORKDAY.INTL</td>
+<td>使用自定义的周末参数返回指定个数工作日之前或之后日期的序列号。</td>
+</tr>
+<tr>
+<td>YEAR</td>
+<td>返回某日期对应的年份。返回值为1900到9999之间的整数。</td>
+</tr>
+<tr>
+<td>YEARFRAC</td>
+<td>计算start_date和end_date之间的天数占全年天数的百分比。使用YEARFRAC函数可判别某一特定条件下全年效益或债务的比例。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>工程函数</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>函数名称</strong></th>
+<th><strong>函数说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BESSELI</td>
+<td>返回修正Bessel函数In(x)。</td>
+</tr>
+<tr>
+<td>BESSELJ</td>
+<td>返回Bessel函数Jn(x)。</td>
+</tr>
+<tr>
+<td>BESSELK</td>
+<td>返回修正Bessel函数Kn(x)。</td>
+</tr>
+<tr>
+<td>BESSELY</td>
+<td>返回Bessel函数Yn(x)。</td>
+</tr>
+<tr>
+<td>BIN2DEC</td>
+<td>将二进制数转换为十进制数。</td>
+</tr>
+<tr>
+<td>BIN2HEX</td>
+<td>将二进制数转换为十六进制数。</td>
+</tr>
+<tr>
+<td>BIN2OCT</td>
+<td>将二进制数转换为八进制数。</td>
+</tr>
+<tr>
+<td>COMPLEX</td>
+<td>将实系数和虚系数转换为复数。</td>
+</tr>
+<tr>
+<td>CONVERT</td>
+<td>将数字从一个度量系统转换到另一个度量系统中。</td>
+</tr>
+<tr>
+<td>DEC2BIN</td>
+<td>将十进制数转换为二进制数。</td>
+</tr>
+<tr>
+<td>DEC2HEX</td>
+<td>将十进制数转换为十六进制数。</td>
+</tr>
+<tr>
+<td>DEC2OCT</td>
+<td>将十进制数转换为八进制数。</td>
+</tr>
+<tr>
+<td>DELTA</td>
+<td>测试两个值是否相等。</td>
+</tr>
+<tr>
+<td>ERF</td>
+<td>返回错误函数。</td>
+</tr>
+<tr>
+<td>ERF.PRECISE</td>
+<td>返回错误函数。</td>
+</tr>
+<tr>
+<td>ERFC</td>
+<td>返回补余误差函数。</td>
+</tr>
+<tr>
+<td>ERFC.PRECISE</td>
+<td>返回从x到无穷大积分的互补ERF函数。</td>
+</tr>
+<tr>
+<td>GESTEP</td>
+<td>测试数字是否大于阈值。</td>
+</tr>
+<tr>
+<td>HEX2BIN</td>
+<td>将十六进制数转换为二进制数。</td>
+</tr>
+<tr>
+<td>HEX2DEC</td>
+<td>将十六进制数转换为十进制数。</td>
+</tr>
+<tr>
+<td>HEX2OCT</td>
+<td>将十六进制数转换为八进制数。</td>
+</tr>
+<tr>
+<td>IMABS</td>
+<td>返回复数的绝对值（模）。</td>
+</tr>
+<tr>
+<td>IMAGINARY</td>
+<td>返回复数的虚系数。</td>
+</tr>
+<tr>
+<td>IMARGUMENT</td>
+<td>返回参数theta（以弧度表示的角度）。</td>
+</tr>
+<tr>
+<td>IMCONJUGATE</td>
+<td>返回复数的共轭复数。</td>
+</tr>
+<tr>
+<td>IMCOS</td>
+<td>返回复数的余弦。</td>
+</tr>
+<tr>
+<td>IMDIV</td>
+<td>返回两个复数的商。</td>
+</tr>
+<tr>
+<td>IMEXP</td>
+<td>返回复数的指数。</td>
+</tr>
+<tr>
+<td>IMLN</td>
+<td>返回复数的自然对数。</td>
+</tr>
+<tr>
+<td>IMLOG10</td>
+<td>返回复数的以10为底的对数。</td>
+</tr>
+<tr>
+<td>IMLOG2</td>
+<td>返回复数的以2为底的对数。</td>
+</tr>
+<tr>
+<td>IMPOWER</td>
+<td>返回复数的n次幂。</td>
+</tr>
+<tr>
+<td>IMPRODUCT</td>
+<td>返回多个复数的乘积。</td>
+</tr>
+<tr>
+<td>IMREAL</td>
+<td>返回复数的实系数。</td>
+</tr>
+<tr>
+<td>IMSIN</td>
+<td>返回复数的正弦。</td>
+</tr>
+<tr>
+<td>IMSQRT</td>
+<td>返回复数的平方根。</td>
+</tr>
+<tr>
+<td>IMSUB</td>
+<td>返回两个复数的差。</td>
+</tr>
+<tr>
+<td>IMSUM</td>
+<td>返回多个复数的和。</td>
+</tr>
+<tr>
+<td>OCT2BIN</td>
+<td>将八进制数转换为二进制数。</td>
+</tr>
+<tr>
+<td>OCT2DEC</td>
+<td>将八进制数转换为十进制数。</td>
+</tr>
+<tr>
+<td>OCT2HEX</td>
+<td>将八进制数转换为十六进制数。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>财务函数</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>函数名称</strong></th>
+<th><strong>函数说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACCRINT</td>
+<td>返回定期付息有价证券的应计利息。</td>
+</tr>
+<tr>
+<td>ACCRINTM</td>
+<td>返回到期一次性付息有价证券的应计利息。</td>
+</tr>
+<tr>
+<td>AMORDEGRC</td>
+<td>返回使用折旧系数的每个结算期间的折旧值。</td>
+</tr>
+<tr>
+<td>AMORLINC</td>
+<td>返回每个结算期间的折旧值。</td>
+</tr>
+<tr>
+<td>COUPDAYBS</td>
+<td>返回当前付息期内截止到成交日的天数。</td>
+</tr>
+<tr>
+<td>COUPDAYS</td>
+<td>返回包含成交日所在的付息期的天数。</td>
+</tr>
+<tr>
+<td>COUPDAYSNC</td>
+<td>返回从成交日到下一付息日之间的天数。</td>
+</tr>
+<tr>
+<td>COUPNCD</td>
+<td>返回成交日之后的下一个付息日。</td>
+</tr>
+<tr>
+<td>COUPNUM</td>
+<td>返回成交日和到期日之间的付息次数。</td>
+</tr>
+<tr>
+<td>COUPPCD</td>
+<td>返回成交日之前的前一个的付息日。</td>
+</tr>
+<tr>
+<td>CUMIPMT</td>
+<td>返回两个付款期之间累计支付的利息。</td>
+</tr>
+<tr>
+<td>CUMPRINC</td>
+<td>返回一笔贷款在两个付款期之间累计偿还的本金数额。</td>
+</tr>
+<tr>
+<td>DB</td>
+<td>使用固定余额递减法，返回一笔资产在指定期间内的折旧值。</td>
+</tr>
+<tr>
+<td>DDB</td>
+<td>使用双倍余额递减法或其他指定方法，返回一笔资产在指定期间内的折旧值。</td>
+</tr>
+<tr>
+<td>DISC</td>
+<td>返回有价证券的贴现率。</td>
+</tr>
+<tr>
+<td>DOLLARDE</td>
+<td>将以分数表示的货币值转换为以小数表示的货币值。</td>
+</tr>
+<tr>
+<td>DOLLARFR</td>
+<td>将以小数表示的货币值转换为以分数表示的货币值。</td>
+</tr>
+<tr>
+<td>DURATION</td>
+<td>返回定期付息有价证券的每年期限。</td>
+</tr>
+<tr>
+<td>EFFECT</td>
+<td>返回有效的年利率。</td>
+</tr>
+<tr>
+<td>FV</td>
+<td>返回一笔投资的未来值。</td>
+</tr>
+<tr>
+<td>FVSCHEDULE</td>
+<td>基于一系列复利返回本金的未来值。</td>
+</tr>
+<tr>
+<td>INTRATE</td>
+<td>返回一次性付息有价证券的利率。</td>
+</tr>
+<tr>
+<td>IPMT</td>
+<td>返回一笔投资在给定期间内支付的利息。</td>
+</tr>
+<tr>
+<td>IRR</td>
+<td>返回一系列现金流的内部收益率。</td>
+</tr>
+<tr>
+<td>ISPMT</td>
+<td>计算特定投资期内支付的利息。</td>
+</tr>
+<tr>
+<td>MDURATION</td>
+<td>返回假设面值\$100的有价证券的Macauley修正期限。</td>
+</tr>
+<tr>
+<td>MIRR</td>
+<td>返回正和负现金流以不同利率进行计算的内部收益率。</td>
+</tr>
+<tr>
+<td>NOMINAL</td>
+<td>返回名义年利率。</td>
+</tr>
+<tr>
+<td>NPER</td>
+<td>返回某项投资的总期数。</td>
+</tr>
+<tr>
+<td>NPV</td>
+<td>返回基于一系列定期现金流和贴现率计算的投资的净现值。</td>
+</tr>
+<tr>
+<td>ODDFPRICE</td>
+<td>返回首期付息日不固定的面值\$100的有价证券价格。</td>
+</tr>
+<tr>
+<td>ODDFYIELD</td>
+<td>返回首期付息日不固定的有价证券的收益率。</td>
+</tr>
+<tr>
+<td>ODDLPRICE</td>
+<td>返回末期付息日不固定的面值\$100的有价证券价格。</td>
+</tr>
+<tr>
+<td>ODDLYIELD</td>
+<td>返回末期付息日不固定的有价证券的收益率。</td>
+</tr>
+<tr>
+<td>PMT</td>
+<td>返回年金的定期支付金额。</td>
+</tr>
+<tr>
+<td>PPMT</td>
+<td>返回一笔投资在给定期间内偿还的本金。</td>
+</tr>
+<tr>
+<td>PRICE</td>
+<td>返回定期付息的面值\$100的有价证券的价格。</td>
+</tr>
+<tr>
+<td>PRICEDISC</td>
+<td>返回折价发行的面值\$100的有价证券的价格。</td>
+</tr>
+<tr>
+<td>PRICEMAT</td>
+<td>返回到期付息的面值\$100的有价证券的价格。</td>
+</tr>
+<tr>
+<td>PV</td>
+<td>返回投资的现值。</td>
+</tr>
+<tr>
+<td>RATE</td>
+<td>返回年金的各期利率。</td>
+</tr>
+<tr>
+<td>RECEIVED</td>
+<td>返回一次性付息的有价证券到期收回的金额。</td>
+</tr>
+<tr>
+<td>SLN</td>
+<td>返回一笔资产在某个期间内的线性折旧值。</td>
+</tr>
+<tr>
+<td>SYD</td>
+<td>返回一笔资产按年限总和折旧法计算的指定期间的折旧值。</td>
+</tr>
+<tr>
+<td>TBILLEQ</td>
+<td>返回国库券的等效收益率。</td>
+</tr>
+<tr>
+<td>TBILLPRICE</td>
+<td>返回面值\$100的国库券的价格。</td>
+</tr>
+<tr>
+<td>TBILLYIELD</td>
+<td>返回国库券的收益率。</td>
+</tr>
+<tr>
+<td>VDB</td>
+<td>使用余额递减法，返回指定期间或部分期间内的资产折旧值。</td>
+</tr>
+<tr>
+<td>XIRR</td>
+<td>返回一组不定期发生的现金流的内部收益率。</td>
+</tr>
+<tr>
+<td>XNPV</td>
+<td>返回一组不定期发生的现金流的净现值。</td>
+</tr>
+<tr>
+<td>YIELD</td>
+<td>返回定期付息有价证券的收益率。</td>
+</tr>
+<tr>
+<td>YIELDDISC</td>
+<td>返回折价发行的有价证券（如国库券）的年收益率。</td>
+</tr>
+<tr>
+<td>YIELDMAT</td>
+<td>返回到期付息的有价证券的年收益率。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>信息函数</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>函数名称</strong></th>
+<th><strong>函数说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CELL</td>
+<td>返回有关单元格的格式、位置或内容的信息。</td>
+</tr>
+<tr>
+<td>ERROR.TYPE</td>
+<td>返回对应于错误值的数字。</td>
+</tr>
+<tr>
+<td>INFO</td>
+<td>返回有关当前操作环境的信息。</td>
+</tr>
+<tr>
+<td>ISBLANK</td>
+<td>如果值为空，返回TRUE。</td>
+</tr>
+<tr>
+<td>ISERR</td>
+<td>如果值为除#N/A以外的任何错误值，返回TRUE。</td>
+</tr>
+<tr>
+<td>ISERROR</td>
+<td>如果值为任何错误值，返回TRUE。</td>
+</tr>
+<tr>
+<td>ISEVEN</td>
+<td>如果数字为偶数，返回TRUE。</td>
+</tr>
+<tr>
+<td>ISLOGICAL</td>
+<td>如果值为逻辑值，返回TRUE。</td>
+</tr>
+<tr>
+<td>ISNA</td>
+<td>如果值为#N/A错误值，返回TRUE。</td>
+</tr>
+<tr>
+<td>ISNONTEXT</td>
+<td>如果值不为文本，返回TRUE。</td>
+</tr>
+<tr>
+<td>ISNUMBER</td>
+<td>如果值为数字，返回TRUE。</td>
+</tr>
+<tr>
+<td>ISODD</td>
+<td>如果数字为奇数，返回TRUE。</td>
+</tr>
+<tr>
+<td>ISREF</td>
+<td>如果值为引用值，返回TRUE。</td>
+</tr>
+<tr>
+<td>ISTEXT</td>
+<td>如果值为文本，返回TRUE。</td>
+</tr>
+<tr>
+<td>N</td>
+<td>返回转换为数字的值。</td>
+</tr>
+<tr>
+<td>NA</td>
+<td>返回错误值#N/A。</td>
+</tr>
+<tr>
+<td>TYPE</td>
+<td>返回表示数值类型的数字。</td>
+</tr>
+<tr>
+<td>FORMULATEXT</td>
+<td>返回单元格公式。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>逻辑函数</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>函数名称</strong></th>
+<th><strong>函数说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AND</td>
+<td>如果其所有参数为TRUE，返回TRUE。</td>
+</tr>
+<tr>
+<td>FALSE</td>
+<td>返回逻辑值FALSE。</td>
+</tr>
+<tr>
+<td>IF</td>
+<td>指定要执行的逻辑测试。</td>
+</tr>
+<tr>
+<td>IFERROR</td>
+<td>如果公式的计算结果为错误，返回您指定的值。</td>
+</tr>
+<tr>
+<td>NOT</td>
+<td>对其参数的逻辑求反。</td>
+</tr>
+<tr>
+<td>OR</td>
+<td>如果所有参数为TRUE，返回TRUE。</td>
+</tr>
+<tr>
+<td>TRUE</td>
+<td>返回逻辑值TRUE。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>查找和引用函数</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>函数名称</strong></th>
+<th><strong>函数说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADDRESS</td>
+<td>以文本形式将引用返回到工作表的单个单元格。</td>
+</tr>
+<tr>
+<td>AREAS</td>
+<td>返回引用中包含的区域个数。</td>
+</tr>
+<tr>
+<td>CHOOSE</td>
+<td>从一列值中选择值。</td>
+</tr>
+<tr>
+<td>AGGREGATE</td>
+<td>返回列表或数据库中的合计。</td>
+</tr>
+<tr>
+<td>COLUMN</td>
+<td>返回引用的列数。</td>
+</tr>
+<tr>
+<td>COLUMNS</td>
+<td>返回引用的列数。</td>
+</tr>
+<tr>
+<td>HLOOKUP</td>
+<td>查找数组的首行，并返回特定单元格的值。</td>
+</tr>
+<tr>
+<td>HYPERLINK</td>
+<td>创建一个超链接，用以打开存储在网络服务器、Intranet或Internet中的文档。</td>
+</tr>
+<tr>
+<td>INDEX</td>
+<td>数组函数。使用索引从数组中选择值。</td>
+</tr>
+<tr>
+<td>INDEX</td>
+<td>引用函数。使用索引从引用中选择值。</td>
+</tr>
+<tr>
+<td>INDIRECT</td>
+<td>返回由文本值指定的引用。</td>
+</tr>
+<tr>
+<td>LOOKUP</td>
+<td>数组函数。在数组中查找值。</td>
+</tr>
+<tr>
+<td>LOOKUP</td>
+<td>向量函数。在向量中查找值。</td>
+</tr>
+<tr>
+<td>MATCH</td>
+<td>在引用或数组中查找值。</td>
+</tr>
+<tr>
+<td>OFFSET</td>
+<td>从给定引用返回引用偏移量。</td>
+</tr>
+<tr>
+<td>ROW</td>
+<td>返回引用的行号。</td>
+</tr>
+<tr>
+<td>ROWS</td>
+<td>返回引用的行数。</td>
+</tr>
+<tr>
+<td>TRANSPOSE</td>
+<td>返回转置数组。</td>
+</tr>
+<tr>
+<td>VLOOKUP</td>
+<td>查找数组的首列，返回该数组相同行上单元格中的值。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>数学与三角函数</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>函数名称</strong></th>
+<th><strong>函数说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ABS</td>
+<td>返回数字的绝对值。</td>
+</tr>
+<tr>
+<td>ACOS</td>
+<td>返回数字的反余弦值。</td>
+</tr>
+<tr>
+<td>ACOSH</td>
+<td>返回数字的反双曲余弦值。</td>
+</tr>
+<tr>
+<td>AGGREGATE</td>
+<td>返回列表或数据库中的合计。</td>
+</tr>
+<tr>
+<td>ASIN</td>
+<td>返回数字的反正弦值。</td>
+</tr>
+<tr>
+<td>ASINH</td>
+<td>返回数字的反双曲正弦值。</td>
+</tr>
+<tr>
+<td>ATAN</td>
+<td>返回数字的反正切值。</td>
+</tr>
+<tr>
+<td>ATAN2</td>
+<td>返回X和Y坐标值的反正切值。</td>
+</tr>
+<tr>
+<td>ATANH</td>
+<td>返回数字的反双曲正切值。</td>
+</tr>
+<tr>
+<td>CEILING</td>
+<td>将数字四舍五入为最接近的整数或最接近的指定基数的倍数。</td>
+</tr>
+<tr>
+<td>CEILING.PRECISE</td>
+<td>返回向上舍入为最接近的整数或最接近的指定基数的倍数的数字。</td>
+</tr>
+<tr>
+<td>COMBIN</td>
+<td>返回从给定数目的对象集合中提取若干对象的组合数。</td>
+</tr>
+<tr>
+<td>COS</td>
+<td>返回数字的余弦值。</td>
+</tr>
+<tr>
+<td>COSH</td>
+<td>返回数字的双曲余弦值。</td>
+</tr>
+<tr>
+<td>DEGREES</td>
+<td>将弧度转换为度。</td>
+</tr>
+<tr>
+<td>EVEN</td>
+<td>将数字向上舍入为最接近的偶数。</td>
+</tr>
+<tr>
+<td>EXP</td>
+<td>返回e的给定次幂。</td>
+</tr>
+<tr>
+<td>FACT</td>
+<td>返回数字的阶乘。</td>
+</tr>
+<tr>
+<td>FACTDOUBLE</td>
+<td>返回数字的双倍阶乘。</td>
+</tr>
+<tr>
+<td>FLOOR</td>
+<td>向绝对值减小的方向舍入数字。</td>
+</tr>
+<tr>
+<td>FLOOR.PRECISE</td>
+<td>返回向下舍入为最接近的整数或最接近指定基数的倍数的数字。</td>
+</tr>
+<tr>
+<td>GCD</td>
+<td>返回最大公约数。</td>
+</tr>
+<tr>
+<td>INT</td>
+<td>将数字向下舍入为最接近的整数。</td>
+</tr>
+<tr>
+<td>ISO.CEILING</td>
+<td>返回向上舍入为最接近的整数或最接近指定基数的倍数的数字。</td>
+</tr>
+<tr>
+<td>LCM</td>
+<td>返回最小公倍数。</td>
+</tr>
+<tr>
+<td>LN</td>
+<td>返回数字的自然对数。</td>
+</tr>
+<tr>
+<td>LOG</td>
+<td>按所指定的底数，返回一个数的对数。</td>
+</tr>
+<tr>
+<td>LOG10</td>
+<td>返回数字的以10为底的对数。</td>
+</tr>
+<tr>
+<td>MDETERM</td>
+<td>返回数组的矩阵行列式的值。</td>
+</tr>
+<tr>
+<td>MINVERSE</td>
+<td>返回数组的逆矩阵。</td>
+</tr>
+<tr>
+<td>MMULT</td>
+<td>返回两个数组的矩阵乘积。</td>
+</tr>
+<tr>
+<td>MOD</td>
+<td>返回除法的余数。</td>
+</tr>
+<tr>
+<td>MROUND</td>
+<td>返回舍入到指定倍数的数值。</td>
+</tr>
+<tr>
+<td>MULTINOMIAL</td>
+<td>返回一组数字的多项式。</td>
+</tr>
+<tr>
+<td>ODD</td>
+<td>将数字向上舍入到最接近的奇数。</td>
+</tr>
+<tr>
+<td>PI</td>
+<td>返回pi的值。</td>
+</tr>
+<tr>
+<td>POWER</td>
+<td>返回给定次幂的结果。</td>
+</tr>
+<tr>
+<td>PRODUCT</td>
+<td>将其参数相乘。</td>
+</tr>
+<tr>
+<td>QUOTIENT</td>
+<td>返回除法的整数部分。</td>
+</tr>
+<tr>
+<td>RADIANS</td>
+<td>将角度转换为弧度。</td>
+</tr>
+<tr>
+<td>RAND</td>
+<td>返回0和1之间的一个随机数。</td>
+</tr>
+<tr>
+<td>RANDBETWEEN</td>
+<td>返回指定数字间的随机数。</td>
+</tr>
+<tr>
+<td>ROMAN</td>
+<td>将阿拉伯数字转换为文本形式的罗马数字。</td>
+</tr>
+<tr>
+<td>ROUND</td>
+<td>将数字按指定位数舍入。</td>
+</tr>
+<tr>
+<td>ROUNDDOWN</td>
+<td>向绝对值减小的方向舍入数字。</td>
+</tr>
+<tr>
+<td>ROUNDUP</td>
+<td>向绝对值增大的方向舍入数字。</td>
+</tr>
+<tr>
+<td>SERIESSUM</td>
+<td>返回基于公式的幂级数的和。</td>
+</tr>
+<tr>
+<td>SIGN</td>
+<td>返回数字的符号。</td>
+</tr>
+<tr>
+<td>SIN</td>
+<td>返回给定角度的正弦值。</td>
+</tr>
+<tr>
+<td>SINH</td>
+<td>返回数字的双曲正弦值。</td>
+</tr>
+<tr>
+<td>SQRT</td>
+<td>返回正平方根。</td>
+</tr>
+<tr>
+<td>SQRTPI</td>
+<td>返回某数与pi的乘积的平方根。</td>
+</tr>
+<tr>
+<td>SUBTOTAL</td>
+<td>返回列表或数据库中的分类汇总。</td>
+</tr>
+<tr>
+<td>SUM</td>
+<td>将其参数相加。</td>
+</tr>
+<tr>
+<td>SUMIF</td>
+<td>按给定条件对若干单元格求和。</td>
+</tr>
+<tr>
+<td>SUMIFS</td>
+<td>对区域中符合多个条件的单元格求和。</td>
+</tr>
+<tr>
+<td>SUMPRODUCT</td>
+<td>返回对应的数组元素的乘积和。</td>
+</tr>
+<tr>
+<td>SUMSQ</td>
+<td>返回参数的平方和。</td>
+</tr>
+<tr>
+<td>SUMX2MY2</td>
+<td>返回两个数组中对应值的平方差之和。</td>
+</tr>
+<tr>
+<td>SUMX2PY2</td>
+<td>返回两个数组中对应值的平方和之和。</td>
+</tr>
+<tr>
+<td>SUMXMY2</td>
+<td>返回两个数组中对应值的差的平方之和。</td>
+</tr>
+<tr>
+<td>TAN</td>
+<td>返回数字的正切值。</td>
+</tr>
+<tr>
+<td>TANH</td>
+<td>返回数字的双曲正切值。</td>
+</tr>
+<tr>
+<td>TRUNC</td>
+<td>将数字截尾取整。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>统计函数</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>函数名称</strong></th>
+<th><strong>函数说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AVEDEV</td>
+<td>返回一组数据与其均值的绝对偏差的平均值。</td>
+</tr>
+<tr>
+<td>AVERAGE</td>
+<td>返回其参数的平均值。</td>
+</tr>
+<tr>
+<td>AVERAGEA</td>
+<td>返回其参数的平均值，包括数字、文本和逻辑值。</td>
+</tr>
+<tr>
+<td>AVERAGEIF</td>
+<td>返回区域中符合指定条件的所有单元格的平均值（算术平均值）。</td>
+</tr>
+<tr>
+<td>AVERAGEIFS</td>
+<td>返回符合指定条件的所有单元格的平均值（算术平均值）。</td>
+</tr>
+<tr>
+<td>BETA.DIST</td>
+<td>返回beta累积分布函数。</td>
+</tr>
+<tr>
+<td>BETA.INV</td>
+<td>返回指定beta分布的累积分布函数的反函数。</td>
+</tr>
+<tr>
+<td>BETADIST</td>
+<td>返回beta累积分布函数。</td>
+</tr>
+<tr>
+<td>BETAINV</td>
+<td>返回指定beta分布的累积函数的反函数。</td>
+</tr>
+<tr>
+<td>BINOM.DIST</td>
+<td>返回一元二项式分布的概率。</td>
+</tr>
+<tr>
+<td>BINOM.INV</td>
+<td>返回一个值，它是使累积二项式分布的函数值小于或等于某个标准值的最小整数。</td>
+</tr>
+<tr>
+<td>BINOMDIST</td>
+<td>返回一元二项式分布的概率。</td>
+</tr>
+<tr>
+<td>CHIDIST</td>
+<td>返回χ2分布的单尾概率。</td>
+</tr>
+<tr>
+<td>CHIINV</td>
+<td>返回χ2分布的单尾概率的反函数。</td>
+</tr>
+<tr>
+<td>CHISQ.DIST</td>
+<td>返回χ2分布。</td>
+</tr>
+<tr>
+<td>CHISQ.DIST.RT</td>
+<td>返回χ2分布的右尾概率。</td>
+</tr>
+<tr>
+<td>CHISQ.INV</td>
+<td>返回χ2分布的左尾概率的反函数。</td>
+</tr>
+<tr>
+<td>CHISQ.INV.RT</td>
+<td>返回χ2分布的单尾概率的反函数。</td>
+</tr>
+<tr>
+<td>CHISQ.TEST</td>
+<td>返回独立性测试的结果。</td>
+</tr>
+<tr>
+<td>CHITEST</td>
+<td>返回独立性测试的结果。</td>
+</tr>
+<tr>
+<td>CONFIDENCE</td>
+<td>返回总体平均值的置信区间。</td>
+</tr>
+<tr>
+<td>CONFIDENCE.NORM</td>
+<td>使用正态分布，返回总体平均值的置信区间。</td>
+</tr>
+<tr>
+<td>CONFIDENCE.T</td>
+<td>使用学生T分布，返回总体平均值的置信区间。</td>
+</tr>
+<tr>
+<td>CORREL</td>
+<td>返回两个数据集之间的相关系数。</td>
+</tr>
+<tr>
+<td>COUNT</td>
+<td>计算参数列表中的数字个数。</td>
+</tr>
+<tr>
+<td>COUNTA</td>
+<td>计算参数列表中的数值个数。</td>
+</tr>
+<tr>
+<td>COUNTBLANK</td>
+<td>计算区域内的空白单元格个数。</td>
+</tr>
+<tr>
+<td>COUNTIF</td>
+<td>计算区域内符合指定条件的非空单元格个数。</td>
+</tr>
+<tr>
+<td>COUNTIFS</td>
+<td>计算区域内符合多个条件的单元格个数。</td>
+</tr>
+<tr>
+<td>COVAR</td>
+<td>返回协方差，成对偏差乘积的平均值。</td>
+</tr>
+<tr>
+<td>COVARIANCE.P</td>
+<td>返回总体协方差，即两个数据集中每对变量的偏差乘积的平均值。</td>
+</tr>
+<tr>
+<td>COVARIANCE.S</td>
+<td>返回样本协方差，即两个数据集中每对变量的偏差乘积的平均值。</td>
+</tr>
+<tr>
+<td>CRITBINOM</td>
+<td>返回一个值，它是使累积二项式分布的函数值小于或等于某个标准值的最小整数。</td>
+</tr>
+<tr>
+<td>DEVSQ</td>
+<td>返回偏差的平方和。</td>
+</tr>
+<tr>
+<td>EXPON.DIST</td>
+<td>返回指数分布。</td>
+</tr>
+<tr>
+<td>EXPONDIST</td>
+<td>返回指数分布。</td>
+</tr>
+<tr>
+<td>F.DIST</td>
+<td>返回F概率分布。</td>
+</tr>
+<tr>
+<td>F.DIST.RT</td>
+<td>返回F概率分布。</td>
+</tr>
+<tr>
+<td>F.INV</td>
+<td>返回F概率分布的反函数。</td>
+</tr>
+<tr>
+<td>F.INV.RT</td>
+<td>返回F概率分布的反函数。</td>
+</tr>
+<tr>
+<td>F.TEST</td>
+<td>返回F检验的结果。</td>
+</tr>
+<tr>
+<td>FDIST</td>
+<td>返回F概率分布。</td>
+</tr>
+<tr>
+<td>FINV</td>
+<td>返回F概率分布的反函数。</td>
+</tr>
+<tr>
+<td>FISHER</td>
+<td>返回Fisher变换。</td>
+</tr>
+<tr>
+<td>FISHERINV</td>
+<td>返回Fisher变换的反函数。</td>
+</tr>
+<tr>
+<td>FORECAST</td>
+<td>通过一条线性回归拟合线返回一个值。</td>
+</tr>
+<tr>
+<td>FREQUENCY</td>
+<td>以垂直数组的形式返回频率分布。</td>
+</tr>
+<tr>
+<td>FTEST</td>
+<td>返回F检验的结果。</td>
+</tr>
+<tr>
+<td>GAMMA.DIST</td>
+<td>返回γ分布。</td>
+</tr>
+<tr>
+<td>GAMMA.INV</td>
+<td>返回γ累积分布的反函数。</td>
+</tr>
+<tr>
+<td>GAMMADIST</td>
+<td>返回γ分布。</td>
+</tr>
+<tr>
+<td>GAMMAINV</td>
+<td>返回γ累积分布的反函数。</td>
+</tr>
+<tr>
+<td>GAMMALN</td>
+<td>返回γ函数的自然对数，Γ(x)。</td>
+</tr>
+<tr>
+<td>GAMMALN.PRECISE</td>
+<td>返回 γ 函数的自然对数，Γ(x)。</td>
+</tr>
+<tr>
+<td>GEOMEAN</td>
+<td>返回几何平均值。</td>
+</tr>
+<tr>
+<td>GROWTH</td>
+<td>通过一条指数回归拟合线返回一个值。</td>
+</tr>
+<tr>
+<td>HARMEAN</td>
+<td>返回调和平均值。</td>
+</tr>
+<tr>
+<td>HYPGEOM.DIST</td>
+<td>返回超几何分布。</td>
+</tr>
+<tr>
+<td>HYPGEOMDIST</td>
+<td>返回超几何分布。</td>
+</tr>
+<tr>
+<td>INTERCEPT</td>
+<td>返回线性回归拟合线的截距。</td>
+</tr>
+<tr>
+<td>KURT</td>
+<td>返回数据集的峰值。</td>
+</tr>
+<tr>
+<td>LARGE</td>
+<td>返回数据集中第k个最大值。</td>
+</tr>
+<tr>
+<td>LINEST</td>
+<td>返回线性回归拟合线的参数。</td>
+</tr>
+<tr>
+<td>LOGEST</td>
+<td>返回指数回归拟合线的参数。</td>
+</tr>
+<tr>
+<td>LOGINV</td>
+<td>返回对数分布的反函数。</td>
+</tr>
+<tr>
+<td>LOGNORM.DIST</td>
+<td>返回以下函数的对数正态分布：x。</td>
+</tr>
+<tr>
+<td>LOGNORM.INV</td>
+<td>返回以下函数的对数正态累积分布函数的区间点：x。</td>
+</tr>
+<tr>
+<td>LOGNORMDIST</td>
+<td>返回累积对数正态分布。</td>
+</tr>
+<tr>
+<td>MAX</td>
+<td>返回参数列表中的最大值。</td>
+</tr>
+<tr>
+<td>MAXA</td>
+<td>返回参数列表中的最大值，包括数字、文本和逻辑值。</td>
+</tr>
+<tr>
+<td>MEDIAN</td>
+<td>返回给定数字的中值。</td>
+</tr>
+<tr>
+<td>MIN</td>
+<td>返回参数列表中的最小值。</td>
+</tr>
+<tr>
+<td>MINA</td>
+<td>回参数列表中的最小值，包括数字、文本和逻辑值。</td>
+</tr>
+<tr>
+<td>MODE</td>
+<td>返回在数据集中出现次数最多的值。</td>
+</tr>
+<tr>
+<td>MODE.MULT</td>
+<td>返回数组或数据区域中出现频率最高或重复出现的数值的垂直数组。</td>
+</tr>
+<tr>
+<td>MODE.SNGL</td>
+<td>返回数组或数据区域中出现频率最高或重复出现的数值。</td>
+</tr>
+<tr>
+<td>NEGBINOM.DIST</td>
+<td>返回负二项式分布。</td>
+</tr>
+<tr>
+<td>NEGBINOMDIST</td>
+<td>返回负二项式分布。</td>
+</tr>
+<tr>
+<td>NORM.DIST</td>
+<td>返回指定平均值和标准方差的正态分布。</td>
+</tr>
+<tr>
+<td>NORM.INV</td>
+<td>返回指定平均值和标准偏差的正态累积分布的反函数。</td>
+</tr>
+<tr>
+<td>NORM.S.DIST</td>
+<td>返回标准正态分布。</td>
+</tr>
+<tr>
+<td>NORM.S.INV</td>
+<td>返回标准正态累积分布的反函数。</td>
+</tr>
+<tr>
+<td>NORMDIST</td>
+<td>返回正态累积分布。</td>
+</tr>
+<tr>
+<td>NORMINV</td>
+<td>返回正态累积分布的反函数。</td>
+</tr>
+<tr>
+<td>NORMSDIST</td>
+<td>返回标准正态累积分布。</td>
+</tr>
+<tr>
+<td>NORMSINV</td>
+<td>返回标准正态累积分布的反函数。</td>
+</tr>
+<tr>
+<td>PEARSON</td>
+<td>返回Pearson积矩法相关系数。</td>
+</tr>
+<tr>
+<td>PERCENTILE</td>
+<td>返回数组的第K个百分点值。</td>
+</tr>
+<tr>
+<td>PERCENTILE.EXC</td>
+<td>返回数组的第K个百分点值，K介于0与1之间，不含0与1。</td>
+</tr>
+<tr>
+<td>PERCENTILE.INC</td>
+<td>返回区域中数值的第K个百分点的值。</td>
+</tr>
+<tr>
+<td>PERCENTRANK</td>
+<td>返回数据集中的值的百分比排位。</td>
+</tr>
+<tr>
+<td>PERCENTRANK.EXC</td>
+<td>返回特定数值在一组数中的百分比排名（介于0与1之间，不含0与1）。</td>
+</tr>
+<tr>
+<td>PERCENTRANK.INC</td>
+<td>返回特定数值在数据集中的百分比排名（介于0与1之间，不含0与1）。</td>
+</tr>
+<tr>
+<td>PERMUT</td>
+<td>返回指定数目的对象的排列数。</td>
+</tr>
+<tr>
+<td>POISSON</td>
+<td>返回泊松（POISSON）分布。</td>
+</tr>
+<tr>
+<td>POISSON.DIST</td>
+<td>返回泊松（POISSON）分布。</td>
+</tr>
+<tr>
+<td>PROB</td>
+<td>返回区域中的数值落在指定区间内的概率。</td>
+</tr>
+<tr>
+<td>QUARTILE</td>
+<td>返回数据集的四分位数。</td>
+</tr>
+<tr>
+<td>QUARTILE.EXC</td>
+<td>基于0到1之间（不含0与1）的百分点值，返回一组数据的四分位点。</td>
+</tr>
+<tr>
+<td>QUARTILE.INC</td>
+<td>基于0到1之间（含0与1）的百分点值，返回一组数据的四分位点。</td>
+</tr>
+<tr>
+<td>RANK</td>
+<td>返回某数字在一列数字中相对于其他数值的大小排名。</td>
+</tr>
+<tr>
+<td>RANK.AVG</td>
+<td>返回某数字在一列数字中相对于其他数值的大小排名。</td>
+</tr>
+<tr>
+<td>RANK.EQ</td>
+<td>返回某数字在一列数字中相对于其他数值的大小排名。</td>
+</tr>
+<tr>
+<td>RSQ</td>
+<td>返回Pearson积矩法相关系数的平方。</td>
+</tr>
+<tr>
+<td>SKEW</td>
+<td>返回分布的偏斜度。</td>
+</tr>
+<tr>
+<td>SLOPE</td>
+<td>返回线性回归拟合线的斜率。</td>
+</tr>
+<tr>
+<td>SMALL</td>
+<td>返回数据集中第K个最小值。</td>
+</tr>
+<tr>
+<td>STANDARDIZE</td>
+<td>返回正态化值。</td>
+</tr>
+<tr>
+<td>STDEV</td>
+<td>估算基于给定样本的标准偏差。</td>
+</tr>
+<tr>
+<td>STDEV.P</td>
+<td>计算基于给定的样本总体的标准偏差。</td>
+</tr>
+<tr>
+<td>STDEV.S</td>
+<td>估算基于给定样本的标准偏差。</td>
+</tr>
+<tr>
+<td>STDEVA</td>
+<td>估算基于给定样本（包括数字、文本和逻辑值）的标准偏差。</td>
+</tr>
+<tr>
+<td>STDEVP</td>
+<td>计算基于给定的样本总体的标准偏差。</td>
+</tr>
+<tr>
+<td>STDEVPA</td>
+<td>计算基于总体（包括数字、文本和逻辑值）的标准偏差。</td>
+</tr>
+<tr>
+<td>STEYX</td>
+<td>返回通过线性回归法计算每个x的y预测值时所产生的标准误差。</td>
+</tr>
+<tr>
+<td>T.DIST</td>
+<td>返回学生t分布。</td>
+</tr>
+<tr>
+<td>T.DIST.2T</td>
+<td>返回双尾学生t分布。</td>
+</tr>
+<tr>
+<td>T.DIST.RT</td>
+<td>返回右尾学生t分布。</td>
+</tr>
+<tr>
+<td>T.INV</td>
+<td>返回学生t分布的左尾反函数。</td>
+</tr>
+<tr>
+<td>T.INV.2T</td>
+<td>返回学生t分布的双尾反函数。</td>
+</tr>
+<tr>
+<td>T.TEST</td>
+<td>返回与学生的t检验相关联的概率。</td>
+</tr>
+<tr>
+<td>TDIST</td>
+<td>返回学生t分布。</td>
+</tr>
+<tr>
+<td>TINV</td>
+<td>返回学生t分布的反函数。</td>
+</tr>
+<tr>
+<td>TREND</td>
+<td>通过一条线性回归拟合线返回一个值。</td>
+</tr>
+<tr>
+<td>TRIMMEAN</td>
+<td>返回数据集的内部平均值。</td>
+</tr>
+<tr>
+<td>TTEST</td>
+<td>返回与学生的t检验相关联的概率。</td>
+</tr>
+<tr>
+<td>VAR</td>
+<td>估算基于给定样本的方差。</td>
+</tr>
+<tr>
+<td>VAR.P</td>
+<td>计算基于给定的样本总体的方差。</td>
+</tr>
+<tr>
+<td>VAR.S</td>
+<td>估算基于给定样本的方差。</td>
+</tr>
+<tr>
+<td>VARA</td>
+<td>估算基于样本（包括数字、文本和逻辑值）的方差。</td>
+</tr>
+<tr>
+<td>VARP</td>
+<td>计算基于样本总体的方差。</td>
+</tr>
+<tr>
+<td>VARPA</td>
+<td>计算基于样本总体（包括数字、文本和逻辑值）的方差。</td>
+</tr>
+<tr>
+<td>WEIBULL</td>
+<td>返回Weibull分布。</td>
+</tr>
+<tr>
+<td>WEIBULL.DIST</td>
+<td>返回Weibull分布。</td>
+</tr>
+<tr>
+<td>Z.TEST</td>
+<td>返回z检验的单尾概率值。</td>
+</tr>
+<tr>
+<td>ZTEST</td>
+<td>返回z检验的单尾概率值。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>文本函数</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>函数名称</strong></th>
+<th><strong>函数说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CHAR</td>
+<td>返回由代码数字指定的字符。</td>
+</tr>
+<tr>
+<td>CLEAN</td>
+<td>从文本中删除不可打印的字符。</td>
+</tr>
+<tr>
+<td>CODE</td>
+<td>返回文本字符串中第一个字符的数字代码。</td>
+</tr>
+<tr>
+<td>CONCATENATE</td>
+<td>将几个文本项合并为一个文本项。</td>
+</tr>
+<tr>
+<td>DOLLAR</td>
+<td>使用\$（美元）货币格式将数字转换成文本。</td>
+</tr>
+<tr>
+<td>EXACT</td>
+<td>检查两个文本值是否相同。</td>
+</tr>
+<tr>
+<td>FIND</td>
+<td>在一个文本值中查找另一个文本值（区分大小写）。</td>
+</tr>
+<tr>
+<td>FIXED</td>
+<td>将数字格式设置为具有固定小数位数。</td>
+</tr>
+<tr>
+<td>LEFT</td>
+<td>返回文本值中最左边的字符。</td>
+</tr>
+<tr>
+<td>LEN</td>
+<td>返回文本字符串中的字符数。</td>
+</tr>
+<tr>
+<td>LOWER</td>
+<td>将文本转换为小写。</td>
+</tr>
+<tr>
+<td>MID</td>
+<td>在文本字符串中，从您所指定的位置开始返回特定数量的字符。</td>
+</tr>
+<tr>
+<td>PROPER</td>
+<td>将文本值的每个词的首字母大写。</td>
+</tr>
+<tr>
+<td>REPLACE</td>
+<td>替换文本中的字符。</td>
+</tr>
+<tr>
+<td>REPT</td>
+<td>根据指定次数重复文本。</td>
+</tr>
+<tr>
+<td>RIGHT</td>
+<td>返回文本值中最右边的字符。</td>
+</tr>
+<tr>
+<td>SEARCH</td>
+<td>在一个文本值中查找另一个文本值（不区分大小写）。</td>
+</tr>
+<tr>
+<td>SUBSTITUTE</td>
+<td>在文本字符串中用新文本替换旧文本。</td>
+</tr>
+<tr>
+<td>T</td>
+<td>将其参数转换为文本。</td>
+</tr>
+<tr>
+<td>TEXT</td>
+<td>设置数字格式并将其转换为文本。</td>
+</tr>
+<tr>
+<td>TRIM</td>
+<td>从文本中删除空格。</td>
+</tr>
+<tr>
+<td>UPPER</td>
+<td>将文本转换成大写形式。</td>
+</tr>
+<tr>
+<td>VALUE</td>
+<td>将文本参数转换为数字。</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-mysql">ABS
+用法: ABS(X)
+说明: 绝对值
+实例: ABS(-17.4) = 17.4
+
+CBRT
+用法: CBRT(DP)
+说明: 立方根
+实例: CBRT(27.0) = 3
+
+CEIL
+用法: CEIL(DP 或 NUMERIC)
+说明: 不小于参数的最小的整数
+实例: CEIL(-42.8) = -42
+
+CEILING
+用法: CEILING(DP 或 NUMERIC)
+说明: 不小于参数的最小整数(ceil的别名)
+实例: CEILING(-95.3) = -95
+
+DEGREES
+用法: DEGREES(DP)
+说明: 把弧度转为角度
+实例: DEGREES(0.5) = 28.6478897565412
+
+DIV
+用法: DIV(Y NUMERIC, X NUMERIC)
+说明: integer quotient of y/x
+实例: DIV(9,4) = 2
+
+EXP
+用法: EXP(DP 或 NUMERIC)
+说明: 自然指数
+实例: EXP(1.0) = 2.71828182845905
+
+FLOOR
+用法: FLOOR(DP 或 NUMERIC)
+说明: 不大于参数的最大整数
+实例: FLOOR(-42.8) = -43
+
+LN
+用法: LN(DP 或 NUMERIC)
+说明: 自然对数
+实例: LN(2.0) = 0.693147180559945
+
+LOG
+用法: LOG(DP 或 NUMERIC)
+说明: 以 10 为底的对数
+实例: LOG(100.0) = 2
+
+LOG
+用法: LOG(B NUMERIC, X NUMERIC)
+说明: 以b为底数的对数
+实例: LOG(2.0, 64.0) = 6.0000000000
+
+MOD
+用法: MOD(Y, X)
+说明: y/x的余数(模)
+实例: MOD(9,4) = 1
+
+PI
+用法: PI()
+说明: &quot;π&quot; 常量
+实例: PI() = 3.14159265358979
+
+POWER
+用法: POWER(A DP, B DP)
+说明: a的b次幂
+实例: POWER(9.0, 3.0) = 729
+
+POWER
+用法: POWER(A NUMERIC, B NUMERIC)
+说明: a的b次幂
+实例: POWER(9.0, 3.0) = 729
+
+RADIANS
+用法: RADIANS(DP)
+说明: 把角度转为弧度
+实例: RADIANS(45.0) = 0.785398163397448
+
+ROUND
+用法: ROUND(DP 或 NUMERIC)
+说明: 圆整为最接近的整数
+实例: ROUND(42.4) = 42
+
+ROUND
+用法: ROUND(V NUMERIC, S INT)
+说明: 圆整为s 位小数
+实例: ROUND(42.4382, 2) = 42.44
+
+SIGN
+用法: SIGN(DP 或 NUMERIC)
+说明: 参数的符号(-1, 0, +1)
+实例: SIGN(-8.4) = -1
+
+SQRT
+用法: SQRT(DP 或 NUMERIC)
+说明: 平方根
+实例: SQRT(2.0) = 1.4142135623731
+
+TRUNC
+用法: TRUNC(DP 或 NUMERIC)
+说明: 截断(向零靠近)
+实例: TRUNC(42.8) = 42
+
+TRUNC
+用法: TRUNC(V NUMERIC, S INT)
+说明: 截断为s位小数
+实例: TRUNC(42.4382, 2) = 42.43
+
+WIDTH_BUCKET
+用法: WIDTH_BUCKET(OP NUMERIC, B1 NUMERIC, B2 NUMERIC, COUNT INT)
+说明: 返回一个桶，这个桶是在一个有count个桶， 上界为b1下界为b2的等深柱图中 operand将被赋予的那个桶。
+实例: WIDTH_BUCKET(5.35, 0.024, 10.06, 5) = 3
+
+WIDTH_BUCKET
+用法: WIDTH_BUCKET(OP DP, B1 DP, B2 DP, COUNT INT)
+说明: 返回一个桶，这个桶是在一个有count个桶， 上界为b1下界为b2的等深柱图中 operand将被赋予的那个桶。
+实例: WIDTH_BUCKET(5.35, 0.024, 10.06, 5) = 3
+
+RANDOM
+用法: RANDOM()
+说明: 0.0 到 1.0 之间的随机数
+实例:
+
+SETSEED
+用法: SETSEED(DP)
+说明: 为随后的random()调用设置种子( -1.0 到 1.0 之间，包含)
+实例:
+
+STRING || STRING
+用法: STRING || STRING
+说明: 字符串连接
+实例: &#39;POST&#39; || &#39;GRESQL&#39; = GREENPLUM
+
+BIT_LENGTH
+用法: BIT_LENGTH(STRING)
+说明: 字符串的位
+实例: BIT_LENGTH(&#39;JOSE&#39;) = 32
+
+CHAR_LENGTH
+用法: CHAR_LENGTH(STRING) 或 CHARACTER_LENGTH(STRING)
+说明: 字符串中的字符个数
+实例: CHAR_LENGTH(&#39;JOSE&#39;) = 4
+
+LOWER
+用法: LOWER(STRING)
+说明: 把字符串转化为小写
+实例: LOWER(&#39;TOM&#39;) = TOM
+
+OCTET_LENGTH
+用法: OCTET_LENGTH(STRING)
+说明: 字符串中的字节数
+实例: OCTET_LENGTH(&#39;JOSE&#39;) = 4
+
+OVERLAY
+用法: OVERLAY(STRING PLACING STRING FROM INT [FOR INT])
+说明: 替换子字符串
+实例: OVERLAY(&#39;TXXXXAS&#39; PLACING &#39;HOM&#39; FROM 2 FOR 4) = THOMAS
+
+POSITION
+用法: POSITION(SUBSTRING IN STRING)
+说明: 指定子字符串的位置
+实例: POSITION(&#39;OM&#39; IN &#39;THOMAS&#39;) = 3
+
+SUBSTRING
+用法: SUBSTRING(STRING [FROM INT] [FOR INT])
+说明: 截取子字符串
+实例: SUBSTRING(&#39;THOMAS&#39; FROM 2 FOR 3) = HOM
+
+SUBSTRING
+用法: SUBSTRING(STRING FROM PATTERN)
+说明: 截取匹配POSIX正则表达式的子字符串。参阅第 9.7 节 获取更多关于模式匹配的信息。
+实例: SUBSTRING(&#39;THOMAS&#39; FROM &#39;...$&#39;) = MAS
+
+SUBSTRING
+用法: SUBSTRING(STRING FROM PATTERN FOR ESCAPE)
+说明: 截取匹配SQL正则表达式的子字符串。 参阅第 9.7 节获取更多关于模式匹配的信息。
+实例: SUBSTRING(&#39;THOMAS&#39; FROM &#39;%#&quot;O_A#&quot;_&#39; FOR &#39;#&#39;) = OMA
+
+TRIM
+用法: TRIM([LEADING | TRAILING | BOTH] [CHARACTERS] FROM STRING)
+说明: 从字符串string的开头/结尾/两边删除只包含 characters中字符 (缺省是空白)的最长的字符串
+实例: TRIM(BOTH &#39;X&#39; FROM &#39;XTOMXX&#39;) = TOM
+
+TRIM
+用法: TRIM([LEADING | TRAILING | BOTH] [FROM] STRING [, CHARACTERS] )
+说明: trim()的非标准版本
+实例: TRIM(BOTH FROM &#39;XTOMXX&#39;, &#39;X&#39;) = TOM
+
+UPPER
+用法: UPPER(STRING)
+说明: 把字符串转化为大写
+实例: UPPER(&#39;TOM&#39;) = TOM
+
+ASCII
+用法: ASCII(STRING)
+说明: 参数中第一个字符的ASCII编码值。 对于UTF8返回字符的宽字节编码值。 对于其它的多字节编码，参数必须是一个ASCII字符。
+实例: ASCII(&#39;X&#39;) = 120
+
+BTRIM
+用法: BTRIM(STRING TEXT [, CHARACTERS TEXT])
+说明: 从string开头和结尾删除只包含 characters中字符(缺省是空白)的最长字符串。
+实例: BTRIM(&#39;XYXTRIMYYX&#39;, &#39;XY&#39;) = TRIM
+
+CHR
+用法: CHR(INT)
+说明: 给定编码的字符。对于UTF8这个参数作为宽字节代码处理。 对于其它的多字节编码，这个参数必须指定一个ASCII字符， 因为text数据类型无法存储NULL数据字节，不能将NULL(0)作为字符参数。
+实例: CHR(65) = A
+
+CONCAT
+用法: STR || STR
+说明: 连接所有参数的文本表示。NULL 参数被忽略。
+实例: &#39;ABCDE&#39; || 22 = ABCDE22
+
+CONCAT_WS
+用法: CONCAT_WS(SEP TEXT, STR &quot;ANY&quot; [, STR &quot;ANY&quot; [, ...] ])
+说明: 连接所有参数，但是第一个参数是分隔符，用于将所有参数分隔。NULL 参数被忽略。
+实例: CONCAT_WS(&#39;,&#39;, &#39;ABCDE&#39;, 2, NULL, 22) = ABCDE,2,22
+
+LEFT
+用法: LEFT(STR TEXT, N INT)
+说明: 返回字符串的前n个字符。当n是负数时， 返回除最后|n|个字符以外的所有字符。
+实例: LEFT(&#39;ABCDE&#39;, 2) = AB
+
+LENGTH
+用法: LENGTH(STRING)
+说明: string中字符的数目
+实例: LENGTH(&#39;JOSE&#39;) = 4
+
+LENGTH
+用法: LENGTH(STRING BYTEA, ENCODING NAME )
+说明: 指定encoding编码格式的string的字符数。 在这个编码格式中，string必须是有效的。
+实例: LENGTH(&#39;JOSE&#39;, &#39;UTF8&#39;) = 4
+
+LPAD
+用法: LPAD(STRING TEXT, LENGTH INT [, FILL TEXT])
+说明: 通过填充字符fill(缺省时为空白)， 把string填充为length长度。 如果string已经比length长则将其尾部截断。
+实例: LPAD(&#39;HI&#39;, 5, &#39;XY&#39;) = XYXHI
+
+LTRIM
+用法: LTRIM(STRING TEXT [, CHARACTERS TEXT])
+说明: 从字符串string的开头删除只包含characters 中字符(缺省是一个空白)的最长的字符串。
+实例: LTRIM(&#39;ZZZYTRIM&#39;, &#39;XYZ&#39;) = TRIM
+
+MD5
+用法: MD5(STRING)
+说明: 计算string的MD5散列，以十六进制返回结果。
+实例: MD5(&#39;ABC&#39;) = 900150983CD24FB0 D6963F7D28E17F72
+
+REPEAT
+用法: REPEAT(STRING TEXT, NUMBER INT)
+说明: 将string重复number次
+实例: REPEAT(&#39;PG&#39;, 4) = PGPGPGPG
+
+REPLACE
+用法: REPLACE(STRING TEXT, FROM TEXT, TO TEXT)
+说明: 把字符串string里出现地所有子字符串from 替换成子字符串to
+实例: REPLACE(&#39;ABCDEFABCDEF&#39;, &#39;CD&#39;, &#39;XX&#39;) = ABXXEFABXXEF
+
+REVERSE
+用法: REVERSE(STR)
+说明: 返回颠倒的字符串
+实例: REVERSE(&#39;ABCDE&#39;) = EDCBA
+
+RIGHT
+用法: RIGHT(STR TEXT, N INT)
+说明: 返回字符串中的后n个字符。当n是负值时， 返回除前|n|个字符以外的所有字符。
+实例: RIGHT(&#39;ABCDE&#39;, 2) = DE
+
+RPAD
+用法: RPAD(STRING TEXT, LENGTH INT [, FILL TEXT])
+说明: 使用填充字符fill(缺省时为空白)， 把string填充到length长度。 如果string已经比length长则将其从尾部截断。
+实例: RPAD(&#39;HI&#39;, 5, &#39;XY&#39;) = HIXYX
+
+RTRIM
+用法: RTRIM(STRING TEXT [, CHARACTERS TEXT])
+说明: 从字符串string的结尾删除只包含 characters中字符(缺省是个空白)的最长的字符串。
+实例: RTRIM(&#39;TRIMXXXX&#39;, &#39;X&#39;) = TRIM
+
+SPLIT_PART
+用法: SPLIT_PART(STRING TEXT, DELIMITER TEXT, FIELD INT)
+说明: 根据delimiter分隔string 返回生成的第 field 个子字符串(1为基)。
+实例: SPLIT_PART(&#39;ABC~@~DEF~@~GHI&#39;, &#39;~@~&#39;, 2) = DEF
+
+STRPOS
+用法: STRPOS(STRING, SUBSTRING)
+说明: 指定的子字符串的位置。和position(substring in string)一样，不过参数顺序相反。
+实例: STRPOS(&#39;HIGH&#39;, &#39;IG&#39;) = 2
+
+SUBSTR
+用法: SUBSTR(STRING, FROM [, COUNT])
+说明: 抽取子字符串。和substring(string from from for count))一样
+实例: SUBSTR(&#39;ALPHABET&#39;, 3, 2) = PH
+
+TO_ASCII
+用法: TO_ASCII(STRING TEXT [, ENCODING TEXT])
+说明: 把string从其它编码转换为ASCII (仅支持LATIN1, LATIN2, LATIN9, WIN1250编码)。
+实例: TO_ASCII(&#39;KAREL&#39;) = KAREL
+
+TO_HEX
+用法: TO_HEX(NUMBER INT OR BIGINT)
+说明: 把number转换成十六进制表现形式
+实例: TO_HEX(2147483647) = 7FFFFFFF
+
+TRANSLATE
+用法: TRANSLATE(STRING TEXT, FROM TEXT, TO TEXT)
+说明: 把在string中包含的任何匹配from 中字符的字符转化为对应的在to中的字符。 如果from比to长， 删掉在from中出现的额外的字符。
+实例: TRANSLATE(&#39;12345&#39;, &#39;143&#39;, &#39;AX&#39;) = A2X5
+
+TO_CHAR
+用法: TO_CHAR(TIMESTAMP, TEXT)
+说明: 把时间戳转换成字符串
+实例:
+
+TO_CHAR
+用法: TO_CHAR(INTERVAL, TEXT)
+说明: 把时间间隔转为字符串
+实例:
+
+TO_CHAR
+用法: TO_CHAR(INT, TEXT)
+说明: 把整数转换成字符串
+实例:
+
+TO_CHAR
+用法: TO_CHAR(DOUBLE PRECISION, TEXT)
+说明: 把实数/双精度数转换成字符串
+实例:
+
+TO_CHAR
+用法: TO_CHAR(NUMERIC, TEXT)
+说明: 把数字转换成字符串
+实例:
+
+TO_DATE
+用法: TO_DATE(TEXT, TEXT)
+说明: 把字符串转换成日期
+实例:
+
+TO_NUMBER
+用法: TO_NUMBER(TEXT, TEXT)
+说明: 把字符串转换成数字
+实例:
+
+TO_TIMESTAMP
+用法: TO_TIMESTAMP(TEXT, TEXT)
+说明: 把字符串转换成时间戳
+实例:
+
+TO_TIMESTAMP
+用法: TO_TIMESTAMP(DOUBLE PRECISION)
+说明: 把 Unix 纪元转换成时间戳
+实例:
+
+ARRAY_AGG
+用法: ARRAY_AGG(EXPRESSION)
+说明: 参数类型的数组
+实例:
+
+AVG
+用法: AVG(EXPRESSION)
+说明: 对于任何整数类型输入，结果都是numeric类型。 对于任何浮点输入，结果都是double precision类型。 否则和输入数据类型相同。
+实例:
+
+BIT_AND
+用法: BIT_AND(EXPRESSION)
+说明: 和参数数据类型相同
+实例:
+BIT_OR
+用法: BIT_OR(EXPRESSION)
+说明: 和参数数据类型相同
+实例:
+
+BOOL_AND
+用法: BOOL_AND(EXPRESSION)
+说明: bool
+实例:
+
+BOOL_OR
+用法: BOOL_OR(EXPRESSION)
+说明: bool
+实例:
+
+COUNT
+用法: COUNT(*)
+说明: bigint
+实例:
+
+COUNT
+用法: COUNT(EXPRESSION)
+说明: bigint
+实例:
+
+EVERY
+用法: EVERY(EXPRESSION)
+说明: bool
+实例:
+
+JSON_AGG
+用法: JSON_AGG(EXPRESSION)
+说明: json
+实例:
+
+JSON_OBJECT_AGG
+用法: JSON_OBJECT_AGG(NAME, VALUE)
+说明: json
+实例:
+
+MAX
+用法: MAX(EXPRESSION)
+说明: 和参数数据类型相同
+实例:
+
+MIN
+用法: MIN(EXPRESSION)
+说明: 和参数数据类型相同
+实例:
+
+STRING_AGG
+用法: STRING_AGG(EXPRESSION, DELIMITER)
+说明: 和参数数据类型相同
+实例:
+
+SUM
+用法: SUM(EXPRESSION)
+说明: 对于smallint或int参数，输出类型为bigint。 对于bigint参数，输出类型为numeric，否则和参数数据类型相同。
+实例:
+
+ROW_NUMBER
+用法: ROW_NUMBER()
+说明: 在其分区中的当前行号，从1计
+实例:
+
+RANK
+用法: RANK()
+说明: 有间隔的当前行排名；与它的第一个相同行的row_number相同
+实例:
+
+DENSE_RANK
+用法: DENSE_RANK()
+说明: 没有间隔的当前行排名；这个函数计数对等组。
+实例:
+
+PERCENT_RANK
+用法: PERCENT_RANK()
+说明: 当前行的相对排名: (rank - 1) / (总行数 - 1)
+实例:
+
+CUME_DIST
+用法: CUME_DIST()
+说明: 当前行的相对排名：(前面的行数或与当前行相同的行数)/(总行数)
+实例:
+
+NTILE
+用法: NTILE(NUM_BUCKETS INTEGER)
+说明: 从1到参数值的整数范围，尽可能相等的划分分区。
+实例:
+
+LAG
+用法: LAG(VALUE ANY [, OFFSET INTEGER [, DEFAULT ANY ]])
+说明: 计算分区当前行的前offset 行，返回value 。如果没有这样的行， 返回default替代。 offset和default 都是当前行计算的结果。如果忽略了，则offset 默认是1，default默认是 null。
+实例:
+
+LEAD
+用法: LEAD(VALUE ANY [, OFFSET INTEGER [, DEFAULT ANY ]])
+说明: 计算分区当前行的后offset行， 返回value。如果没有这样的行， 返回default替代。 offset和default 都是当前行计算的结果。如果忽略了，则offset 默认是1，default默认是 null。
+实例:
+
+FIRST_VALUE
+用法: FIRST_VALUE(VALUE ANY)
+说明: 返回窗口第一行的计算value值。
+实例:
+
+LAST_VALUE
+用法: LAST_VALUE(VALUE ANY)
+说明: 返回窗口最后一行的计算value值。
+实例:
+
+NTH_VALUE
+用法: NTH_VALUE(VALUE ANY, NTH INTEGER)
+说明: 返回窗口第nth行的计算 value值（行从1计数）；没有这样的行则返回 null。
+实例:
+
+CONVERT
+用法: CONVERT(STRING BYTEA, SRC_ENCODING NAME, DEST_ENCODING NAME)
+说明: 把原来编码为src_encoding的字符串转换为 dest_encoding编码。 在这种编码格式中string必须是有效的。 用CREATE CONVERSION定义转换。 这也有些预定义的转换。 参阅表 9-8显示可用的转换。
+实例: CONVERT(&#39;TEXT_IN_UTF8&#39;, &#39;UTF8&#39;, &#39;LATIN1&#39;) = TEXT_IN_UTF8 用 LATIN-1 编码表示 (ISO 8859-1)
+
+CONVERT_FROM
+用法: CONVERT_FROM(STRING BYTEA, SRC_ENCODING NAME)
+说明: 把原来编码为src_encoding的字符串转换为数据库编码格式。 这种编码格式中，string必须是有效的。
+实例: CONVERT_FROM(&#39;TEXT_IN_UTF8&#39;, &#39;UTF8&#39;) = TEXT_IN_UTF8 用当前数据库编码表示
+
+CONVERT_TO
+用法: CONVERT_TO(STRING TEXT, DEST_ENCODING NAME)
+说明: 将字符串转化为dest_encoding编码格式。
+实例: CONVERT_TO(&#39;SOME TEXT&#39;, &#39;UTF8&#39;) = SOME TEXT 用 UTF8 编码表示
+
+DECODE
+用法: DECODE(STRING TEXT, FORMAT TEXT)
+说明: 把用string表示的文本里面的二进制数据解码。 format选项和encode相同。
+实例: DECODE(&#39;MTIZAAE=&#39;, &#39;BASE64&#39;) = \X3132330001
+
+ENCODE
+用法: ENCODE(DATA BYTEA, FORMAT TEXT)
+说明: 把二进制数据编码为文本表示。支持的格式有：base64, hex, escape。escape 转换零字节和高位设置字节为八进制序列( nn) 和双反斜杠。
+实例: ENCODE(E&#39;123\000\001&#39;, &#39;BASE64&#39;) = MTIZAAE=
+
+FORMAT
+用法: FORMAT(FORMATSTR TEXT [, FORMATARG &quot;ANY&quot; [, ...] ])
+说明: 根据格式字符串格式参数。这个函数类似C函数sprintf。 参阅第 9.4.1 节。
+实例: FORMAT(&#39;HELLO %S, %1$S&#39;, &#39;WORLD&#39;) = HELLO WORLD, WORLD
+
+INITCAP
+用法: INITCAP(STRING)
+说明: 把每个单词的第一个字母转为大写，其它的保留小写。 单词是一系列字母数字组成的字符，用非字母数字分隔。
+实例: INITCAP(&#39;HI THOMAS&#39;) = HI THOMAS
+
+PG_CLIENT_ENCODING
+用法: PG_CLIENT_ENCODING()
+说明: 当前客户端编码名称
+实例: PG_CLIENT_ENCODING() = SQL_ASCII
+
+QUOTE_IDENT
+用法: QUOTE_IDENT(STRING TEXT)
+说明: 返回适用于SQL语句的标识符形式(使用适当的引号进行界定)。 只有在必要的时候才会添加引号(字符串包含非标识符字符或者会转换大小写的字符)。 嵌入的引号被恰当地写了双份。又见例 40-1。
+实例: QUOTE_IDENT(&#39;FOO BAR&#39;) = &quot;FOO BAR&quot;
+
+QUOTE_LITERAL
+用法: QUOTE_LITERAL(STRING TEXT)
+说明: 返回适用于在SQL语句里当作文本使用的形式(使用适当的引号进行界定)。 嵌入的引号和反斜杠被恰当地写了双份。请注意，当输入是null时， quote_literal返回null；如果参数可能为null， 通常quote_nullable更适用。 又见例 40-1。
+实例: QUOTE_LITERAL(E&#39;O&#39;REILLY&#39;) = &#39;O&#39;&#39;REILLY&#39;
+
+QUOTE_LITERAL
+用法: QUOTE_LITERAL(VALUE ANYELEMENT)
+说明: 将给定的值强制转换为text，加上引号作为文本。嵌入的引号和反斜杠被恰当地写了双份。
+实例: QUOTE_LITERAL(42.5) = &#39;42.5&#39;
+
+QUOTE_NULLABLE
+用法: QUOTE_NULLABLE(STRING TEXT)
+说明: 返回适用于在SQL语句里当作字符串使用的形式(使用适当的引号进行界定)。 或者，如果参数为空，返回NULL。嵌入的引号和反斜杠被恰当地写了双份。 又见例 40-1。
+实例: QUOTE_NULLABLE(NULL) = NULL
+
+QUOTE_NULLABLE
+用法: QUOTE_NULLABLE(VALUE ANYELEMENT)
+说明: 将给定的参数值转化为text，加上引号作为文本；或者，如果参数为空， 返回NULL。嵌入的引号和反斜杠被恰当地写了双份。
+实例: QUOTE_NULLABLE(42.5) = &#39;42.5&#39;
+
+REGEXP_MATCHES
+用法: REGEXP_MATCHES(STRING TEXT, PATTERN TEXT [, FLAGS TEXT])
+说明: 返回string中所有匹配POSIX正则表达式的子字符串。 参阅第 9.7.3 节获得更多信息。
+实例: REGEXP_MATCHES(&#39;FOOBARBEQUEBAZ&#39;, &#39;(BAR)(BEQUE)&#39;) = {BAR,BEQUE}
+
+REGEXP_REPLACE
+用法: REGEXP_REPLACE(STRING TEXT, PATTERN TEXT, REPLACEMENT TEXT [, FLAGS TEXT])
+说明: 替换匹配 POSIX 正则表达式的子字符串。参见第 9.7.3 节 以获取更多模式匹配的信息。
+实例: REGEXP_REPLACE(&#39;THOMAS&#39;, &#39;.[MN]A.&#39;, &#39;M&#39;) = THM
+
+REGEXP_SPLIT_TO_ARRAY
+用法: REGEXP_SPLIT_TO_ARRAY(STRING TEXT, PATTERN TEXT [, FLAGS TEXT ])
+说明: 用POSIX正则表达式作为分隔符，分隔string。 参阅第 9.7.3 节以获取更多模式匹配的信息。
+实例: REGEXP_SPLIT_TO_ARRAY(&#39;HELLO WORLD&#39;, E&#39;\S+&#39;) = {HELLO,WORLD}
+
+REGEXP_SPLIT_TO_TABLE
+用法: REGEXP_SPLIT_TO_TABLE(STRING TEXT, PATTERN TEXT [, FLAGS TEXT])
+说明: 用POSIX正则表达式作为分隔符，分隔string。 参阅第 9.7.3 节以获取更多模式匹配的信息。
+实例: REGEXP_SPLIT_TO_TABLE(&#39;HELLO WORLD&#39;, E&#39;\S+&#39;) = HELLO
+
+AGE
+用法: AGE(TIMESTAMP, TIMESTAMP)
+说明: 减去参数后的&quot;符号化&quot;结果，使用年和月，不只是使用天
+实例: AGE(TIMESTAMP &#39;2001-04-10&#39;, TIMESTAMP &#39;1957-06-13&#39;) = 43 YEARS 9 MONS 27 DAYS
+
+AGE
+用法: AGE(TIMESTAMP)
+说明: 从current_date减去参数后的结果（在午夜）
+实例: AGE(TIMESTAMP &#39;1957-06-13&#39;) = 43 YEARS 8 MONS 3 DAYS
+
+CLOCK_TIMESTAMP
+用法: CLOCK_TIMESTAMP()
+说明: 实时时钟的当前时间戳（在语句执行时变化）；见第 9.9.4 节
+实例: =
+
+CURRENT_DATE
+用法: CURRENT_DATE
+说明: 当前的日期；见第 9.9.4 节
+实例: =
+
+CURRENT_TIME
+用法: CURRENT_TIME
+说明: 当日时间；见第 9.9.4 节
+实例: =
+
+CURRENT_TIMESTAMP
+用法: CURRENT_TIMESTAMP
+说明: 当前事务开始时的时间戳；见第 9.9.4 节
+实例: =
+
+DATE_PART
+用法: DATE_PART(TEXT, TIMESTAMP)
+说明: 获取子域(等效于extract)；又见第 9.9.1 节
+实例: DATE_PART(&#39;HOUR&#39;, TIMESTAMP &#39;2001-02-16 20:38:40&#39;) = 20
+
+DATE_PART
+用法: DATE_PART(TEXT, INTERVAL)
+说明: 获取子域(等效于extract)；又见第 9.9.1 节
+实例: DATE_PART(&#39;MONTH&#39;, INTERVAL &#39;2 YEARS 3 MONTHS&#39;) = 3
+
+DATE_TRUNC
+用法: DATE_TRUNC(TEXT, TIMESTAMP)
+说明: 截断成指定的精度；又见第 9.9.2 节
+实例: DATE_TRUNC(&#39;HOUR&#39;, TIMESTAMP &#39;2001-02-16 20:38:40&#39;) = 2001-02-16 20:00:00
+
+DATE_TRUNC
+用法: DATE_TRUNC(TEXT, INTERVAL)
+说明: 截取指定的精度，又见第 9.9.2 节
+实例: DATE_TRUNC(&#39;HOUR&#39;, INTERVAL &#39;2 DAYS 3 HOURS 40 MINUTES&#39;) = 2 DAYS 03:00:00
+
+EXTRACT
+用法: EXTRACT(FIELD FROM TIMESTAMP)
+说明: 获取子域；又见第 9.9.1 节
+实例: EXTRACT(HOUR FROM TIMESTAMP &#39;2001-02-16 20:38:40&#39;) = 20
+
+EXTRACT
+用法: EXTRACT(FIELD FROM INTERVAL)
+说明: 获取子域；又见第 9.9.1 节
+实例: EXTRACT(MONTH FROM INTERVAL &#39;2 YEARS 3 MONTHS&#39;) = 3
+
+ISFINITE
+用法: ISFINITE(DATE)
+说明: 测试是否为有穷日期(不是 +/-无穷)
+实例: ISFINITE(DATE &#39;2001-02-16&#39;) = TRUE
+
+ISFINITE
+用法: ISFINITE(TIMESTAMP)
+说明: 测试是否为有穷时间戳(不是 +/-无穷)
+实例: ISFINITE(TIMESTAMP &#39;2001-02-16 21:28:30&#39;) = TRUE
+
+ISFINITE
+用法: ISFINITE(INTERVAL)
+说明: 测试是否为有穷时间间隔
+实例: ISFINITE(INTERVAL &#39;4 HOURS&#39;) = TRUE
+
+JUSTIFY_DAYS
+用法: JUSTIFY_DAYS(INTERVAL)
+说明: 按照每月 30 天调整时间间隔
+实例: JUSTIFY_DAYS(INTERVAL &#39;35 DAYS&#39;) = 1 MON 5 DAYS
+
+JUSTIFY_HOURS
+用法: JUSTIFY_HOURS(INTERVAL)
+说明: 按照每天 24 小时调整时间间隔
+实例: JUSTIFY_HOURS(INTERVAL &#39;27 HOURS&#39;) = 1 DAY 03:00:00
+
+JUSTIFY_INTERVAL
+用法: JUSTIFY_INTERVAL(INTERVAL)
+说明: 使用justify_days和justify_hours调整时间间隔的同时进行正负号调整
+实例: JUSTIFY_INTERVAL(INTERVAL &#39;1 MON -1 HOUR&#39;) = 29 DAYS 23:00:00
+
+LOCALTIME
+用法: LOCALTIME
+说明: 当日时间；见第 9.9.4 节
+实例: =
+
+LOCALTIMESTAMP
+用法: LOCALTIMESTAMP
+说明: 当前事务开始时的时间戳；见第 9.9.4 节
+实例: =
+
+MAKE_DATE
+用法: MAKE_DATE(YEAR INT, MONTH INT, DAY INT)
+说明: 为年、月和日字段创建日期
+实例: MAKE_DATE(2013, 7, 15) = 2013-07-15
+
+MAKE_INTERVAL
+用法: MAKE_INTERVAL(YEARS INT DEFAULT 0, MONTHS INT DEFAULT 0, WEEKS INT DEFAULT 0, DAYS INT DEFAULT 0, HOURS INT DEFAULT 0, MINS INT DEFAULT 0, SECS DOUBLE PRECISION DEFAULT 0.0)
+说明: 从年、月、周、天、小时、分钟和秒字段中创建间隔
+实例: MAKE_INTERVAL(DAYS := 10) = 10 DAYS
+
+MAKE_TIME
+用法: MAKE_TIME(HOUR INT, MIN INT, SEC DOUBLE PRECISION)
+说明: 从小时、分钟和秒字段中创建时间
+实例: MAKE_TIME(8, 15, 23.5) = 08:15:23.5
+
+MAKE_TIMESTAMP
+用法: MAKE_TIMESTAMP(YEAR INT, MONTH INT, DAY INT, HOUR INT, MIN INT, SEC DOUBLE PRECISION)
+说明: 从年、月、日、小时、分钟和秒字段中创建时间戳
+实例: MAKE_TIMESTAMP(2013, 7, 15, 8, 15, 23.5) = 2013-07-15 08:15:23.5
+
+MAKE_TIMESTAMPTZ
+用法: MAKE_TIMESTAMPTZ(YEAR INT, MONTH INT, DAY INT, HOUR INT, MIN INT, SEC DOUBLE PRECISION, [ TIMEZONE TEXT ])
+说明: 从年、月、日、小时、分钟和秒字段中创建带有时区的时间戳。 没有指定timezone时，使用当前的时区。
+实例: MAKE_TIMESTAMPTZ(2013, 7, 15, 8, 15, 23.5) = 2013-07-15 08:15:23.5+01
+
+NOW
+用法: NOW()
+说明: 当前事务开始时的时间戳；见第 9.9.4 节
+实例: =
+
+STATEMENT_TIMESTAMP
+用法: STATEMENT_TIMESTAMP()
+说明: 实时时钟的当前时间戳；见第 9.9.4 节
+实例: =
+
+TIMEOFDAY
+用法: TIMEOFDAY()
+说明: 与clock_timestamp相同，但结果是一个text 字符串；见第 9.9.4 节
+实例: =
+
+TRANSACTION_TIMESTAMP
+用法: TRANSACTION_TIMESTAMP()
+说明: 当前事务开始时的时间戳；见第 9.9.4 节
+实例: =
+
+TIMESTAMP WITHOUT TIME ZONE AT TIME ZONE ZONE
+用法: TIMESTAMP WITHOUT TIME ZONE AT TIME ZONE ZONE
+说明: 把给出的不带时区的时间戳转换成给定时区的时间戳
+实例:
+
+TIMESTAMP WITH TIME ZONE AT TIME ZONE ZONE
+用法: TIMESTAMP WITH TIME ZONE AT TIME ZONE ZONE
+说明: 把给出的带时区的时间戳转换成未指定时区的时间戳
+实例:
+
+TIME WITH TIME ZONE AT TIME ZONE ZONE
+用法: TIME WITH TIME ZONE AT TIME ZONE ZONE
+说明: 把给出的带时区的时间转换成给定时区的时间
+实例:
+
+ARRAY_APPEND
+用法: ARRAY_APPEND(ANYARRAY, ANYELEMENT)
+说明: 向数组末尾添加元素
+实例: ARRAY_APPEND(ARRAY[1,2], 3) = {1,2,3}
+
+ARRAY_CAT
+用法: ARRAY_CAT(ANYARRAY, ANYARRAY)
+说明: 连接两个数组
+实例: ARRAY_CAT(ARRAY[1,2,3], ARRAY[4,5]) = {1,2,3,4,5}
+
+ARRAY_NDIMS
+用法: ARRAY_NDIMS(ANYARRAY)
+说明: 返回数组的维数
+实例: ARRAY_NDIMS(ARRAY[[1,2,3], [4,5,6]]) = 2
+
+ARRAY_DIMS
+用法: ARRAY_DIMS(ANYARRAY)
+说明: 返回数组维数的文本表示
+实例: ARRAY_DIMS(ARRAY[[1,2,3], [4,5,6]]) = [1:2][1:3]
+
+ARRAY_FILL
+用法: ARRAY_FILL(ANYELEMENT, INT[], [, INT[]])
+说明: 返回数组初始化提供的值和维度，可选下界不是1
+实例: ARRAY_FILL(7, ARRAY[3], ARRAY[2]) = [2:4]={7,7,7}
+
+ARRAY_LENGTH
+用法: ARRAY_LENGTH(ANYARRAY, INT)
+说明: 返回数组维度的长度
+实例: ARRAY_LENGTH(ARRAY[1,2,3], 1) = 3
+
+ARRAY_LOWER
+用法: ARRAY_LOWER(ANYARRAY, INT)
+说明: 返回数组维数的下界
+实例: ARRAY_LOWER(&#39;[0:2]={1,2,3}&#39;::INT[], 1) = 0
+
+ARRAY_PREPEND
+用法: ARRAY_PREPEND(ANYELEMENT, ANYARRAY)
+说明: 向数组开头添加元素
+实例: ARRAY_PREPEND(1, ARRAY[2,3]) = {1,2,3}
+
+ARRAY_REMOVE
+用法: ARRAY_REMOVE(ANYARRAY, ANYELEMENT)
+说明: 从数组中删除所有等于给定值的元素（数组必须是一维的）
+实例: ARRAY_REMOVE(ARRAY[1,2,3,2], 2) = {1,3}
+
+ARRAY_REPLACE
+用法: ARRAY_REPLACE(ANYARRAY, ANYELEMENT, ANYELEMENT)
+说明: 用新值替换每个等于给定值的数组元素
+实例: ARRAY_REPLACE(ARRAY[1,2,5,4], 5, 3) = {1,2,3,4}
+
+ARRAY_TO_STRING
+用法: ARRAY_TO_STRING(ANYARRAY, TEXT [, TEXT])
+说明: 使用分隔符和null字符串连接数组元素
+实例: ARRAY_TO_STRING(ARRAY[1, 2, 3, NULL, 5], &#39;,&#39;, &#39;*&#39;) = 1,2,3,*,5
+
+ARRAY_UPPER
+用法: ARRAY_UPPER(ANYARRAY, INT)
+说明: 返回数组维数的上界
+实例: ARRAY_UPPER(ARRAY[1,8,3,7], 1) = 4
+
+CARDINALITY
+用法: CARDINALITY(ANYARRAY)
+说明: 返回数组中的总元素数量，或者如果数组是空的则为0
+实例: CARDINALITY(ARRAY[[1,2],[3,4]]) = 4
+
+STRING_TO_ARRAY
+用法: STRING_TO_ARRAY(TEXT, TEXT [, TEXT])
+说明: 使用指定的分隔符和null字符串把字符串分裂成数组元素
+实例: STRING_TO_ARRAY(&#39;XX~^~YY~^~ZZ&#39;, &#39;~^~&#39;, &#39;YY&#39;) = {XX,NULL,ZZ}
+
+UNNEST
+用法: UNNEST(ANYARRAY)
+说明: 扩大一个数组为一组行
+实例: UNNEST(ARRAY[1,2]) =
+
+UNNEST
+用法: UNNEST(ANYARRAY, ANYARRAY [, ...])
+说明: 扩展多个数组（可能是不同的类型）到一组行。 仅在FROM子句中允许这样做；参阅 第 7.2.1.4 节
+实例: UNNEST(ARRAY[1,2],ARRAY[&#39;FOO&#39;,&#39;BAR&#39;,&#39;BAZ&#39;]) =
+LOWER
+用法: LOWER(ANYRANGE)
+说明: 范围的下界
+实例: LOWER(NUMRANGE(1.1,2.2)) = 1.1
+
+UPPER
+用法: UPPER(ANYRANGE)
+说明: 范围的上界
+实例: UPPER(NUMRANGE(1.1,2.2)) = 2.2
+
+ISEMPTY
+用法: ISEMPTY(ANYRANGE)
+说明: 范围是空的?
+实例: ISEMPTY(NUMRANGE(1.1,2.2)) = FALSE
+
+LOWER_INC
+用法: LOWER_INC(ANYRANGE)
+说明: 包涵下界?
+实例: LOWER_INC(NUMRANGE(1.1,2.2)) = TRUE
+
+UPPER_INC
+用法: UPPER_INC(ANYRANGE)
+说明: 包含上界?
+实例: UPPER_INC(NUMRANGE(1.1,2.2)) = FALSE
+
+LOWER_INF
+用法: LOWER_INF(ANYRANGE)
+说明: 下界无穷?
+实例: LOWER_INF(&#39;(,)&#39;::DATERANGE) = TRUE
+
+UPPER_INF
+用法: UPPER_INF(ANYRANGE)
+说明: 上界无穷?
+实例: UPPER_INF(&#39;(,)&#39;::DATERANGE) = TRUE
+
+XMLAGG
+用法: XMLAGG(EXPRESSION)
+说明: xml
+实例:
+
+CORR
+用法: CORR(Y, X)
+说明: double precision
+实例:
+
+COVAR_POP
+用法: COVAR_POP(Y, X)
+说明: double precision
+实例:
+
+COVAR_SAMP
+用法: COVAR_SAMP(Y, X)
+说明: double precision
+实例:
+
+REGR_AVGX
+用法: REGR_AVGX(Y, X)
+说明: double precision
+实例:
+
+REGR_AVGY
+用法: REGR_AVGY(Y, X)
+说明: double precision
+实例:
+
+REGR_COUNT
+用法: REGR_COUNT(Y, X)
+说明: bigint
+实例:
+
+REGR_INTERCEPT
+用法: REGR_INTERCEPT(Y, X)
+说明: double precision
+实例:
+
+REGR_R2
+用法: REGR_R2(Y, X)
+说明: double precision
+实例:
+
+REGR_SLOPE
+用法: REGR_SLOPE(Y, X)
+说明: double precision
+实例:
+
+REGR_SXX
+用法: REGR_SXX(Y, X)
+说明: double precision
+实例:
+
+REGR_SXY
+用法: REGR_SXY(Y, X)
+说明: double precision
+实例:
+
+REGR_SYY
+用法: REGR_SYY(Y, X)
+说明: double precision
+实例:
+
+STDDEV
+用法: STDDEV(EXPRESSION)
+说明: 对于浮点类型的输入返回double precision，其他输入返回numeric
+实例:
+
+STDDEV_POP
+用法: STDDEV_POP(EXPRESSION)
+说明: 对于浮点类型的输入返回double precision，其他输入返回numeric
+实例:
+
+STDDEV_SAMP
+用法: STDDEV_SAMP(EXPRESSION)
+说明: 对于浮点类型的输入返回double precision，其他输入返回numeric
+实例:
+
+VARIANCE
+用法: VARIANCE(EXPRESSION)
+说明: 对于浮点类型的输入返回double precision，其他输入返回numeric
+实例:
+
+VAR_POP
+用法: VAR_POP(EXPRESSION)
+说明: 对于浮点类型的输入返回double precision，其他输入返回numeric
+实例:
+
+VAR_SAMP
+用法: VAR_SAMP(EXPRESSION)
+说明: 对于浮点类型的输入返回double precision，其他输入返回numeric
+实例:
+
+MODE
+用法: MODE() WITHIN GROUP (ORDER BY SORT_EXPRESSION)
+说明: 任意可排序类型
+实例: 和排序表达式相同 = 返回最频繁的输入值（如果有多个相同频繁的结果，则返回第一个）
+
+PERCENTILE_CONT
+用法: PERCENTILE_CONT(FRACTION) WITHIN GROUP (ORDER BY SORT_EXPRESSION)
+说明: double precision 或 interval
+实例: 和排序表达式相同 = 连续的百分位：返回一个值对应于排序中指定的分数， 如果需要，插入到临近的输入项之间。
+
+PERCENTILE_CONT
+用法: PERCENTILE_CONT(FRACTIONS) WITHIN GROUP (ORDER BY SORT_EXPRESSION)
+说明: double precision 或 interval
+实例: 排序表达式的数组的类型 = 多个连续的百分位：返回结果的数组，匹配FRACTIONS 参数的模型，每个非空元素被对应于该百分位的值替代
+
+PERCENTILE_DISC
+用法: PERCENTILE_DISC(FRACTION) WITHIN GROUP (ORDER BY SORT_EXPRESSION)
+说明: 任意可排序类型
+实例: 和排序表达式相同 = 不连续的百分位：返回第一个在排序位置中等于或超过指定分数的输入值
+
+PERCENTILE_DISC
+用法: PERCENTILE_DISC(FRACTIONS) WITHIN GROUP (ORDER BY SORT_EXPRESSION)
+说明: 任意可排序类型
+实例: 排序表达式数组的类型 = 多个不连续的百分位：返回一个结果数组，匹配FRACTIONS 参数的模型，每个非空元素被对应于该分数的输入值替代
+
+RANK
+用法: RANK(ARGS) WITHIN GROUP (ORDER BY SORTED_ARGS)
+说明: VARIADIC &quot;any&quot;
+实例: BIGINT = 假设行的排列，重复的行为空白
+
+DENSE_RANK
+用法: DENSE_RANK(ARGS) WITHIN GROUP (ORDER BY SORTED_ARGS)
+说明: VARIADIC &quot;any&quot;
+实例: BIGINT = 假设行的排列，没有空白
+
+PERCENT_RANK
+用法: PERCENT_RANK(ARGS) WITHIN GROUP (ORDER BY SORTED_ARGS)
+说明: VARIADIC &quot;any&quot;
+实例: DOUBLE PRECISION = 假设行的相对排列，从0到1
+
+CUME_DIST
+用法: CUME_DIST(ARGS) WITHIN GROUP (ORDER BY SORTED_ARGS)
+说明: VARIADIC &quot;any&quot;
+实例: DOUBLE PRECISION = 假设行的相对排列，从1/N到1
 </code></pre>
 <h1 id="8-">8. <strong>案例现身说法</strong></h1>
 <h2 id="-"><strong>案例：公司级销售跟盯大盘</strong></h2>

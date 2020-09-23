@@ -136,7 +136,7 @@
 /****** Global Style ******/
 body {
   margin: 0;
-  font-family: "Glow Sans SC", "SF UI Display", ".PingFang SC", "Neue Haas Grotesk Text Pro", "Arial Nova", "Segoe UI", "Microsoft YaHei", "Microsoft JhengHei", "Helvetica Neue", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "Hiragino Sans GB", -apple-system, 'PingFang SC', sans-serif;
+  font-family: "Glow Sans SC",'PingFang SC', -apple-system, "SF UI Display", ".PingFang SC", "Neue Haas Grotesk Text Pro", "Arial Nova", "Segoe UI", "Microsoft YaHei", "Microsoft JhengHei", "Helvetica Neue", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "Hiragino Sans GB", sans-serif
   font-weight: 500;
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
@@ -976,7 +976,7 @@ for (var i = 0; i < _tag.length; i++) {
 <script type="text/javascript">
     function wrapOldContentByDiv() {
         var oldContentDiv = document.createElement("div");
-        oldContentDiv.style.cssText = "float:right; width:72%; padding-left: 3%; padding-right:3%;border: 2px solid #CACACA;";
+        oldContentDiv.style.cssText = "float:right; width:78%; padding-left: 3%; padding-right:3%;border: 2px solid #CACACA;";
         oldContentDiv.innerHTML = document.body.innerHTML;
         document.body.style["max-width"] = "100%";
         document.body.style["margin"] = "20px";
@@ -1230,7 +1230,7 @@ for (var i = 0; i < _tag.length; i++) {
 
         // 4, 创建目录列表
         var directoryOl = document.createElement("ol");
-        directoryOl.style.cssText = "padding-left:14px;line-height:180%;list-style-type:none;height: 85%;padding-bottom: 30px; overflow: auto;";
+        directoryOl.style.cssText = "padding-left:14px;line-height:180%;list-style-type:none;height: 92%;padding-bottom: 0px; overflow: auto;";
         directoryOl.setAttribute("id", "outline_ol");
         directoryDiv.appendChild(directoryOl);
         var div1 = document.createElement("div");
@@ -1288,8 +1288,10 @@ $(window).scroll(function() {
 
 
 <style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
-html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Glow Sans SC",'PingFang SC', -apple-system, "SF UI Display", ".PingFang SC", "Neue Haas Grotesk Text Pro", "Arial Nova", "Segoe UI", "Microsoft YaHei", "Microsoft JhengHei", "Helvetica Neue", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "Hiragino Sans GB", sans-serif
+  font-weight: 500; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 15px; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; font-family: "Glow Sans SC",'PingFang SC', -apple-system, "SF UI Display", ".PingFang SC", "Neue Haas Grotesk Text Pro", "Arial Nova", "Segoe UI", "Microsoft YaHei", "Microsoft JhengHei", "Helvetica Neue", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "Hiragino Sans GB", sans-serif
+  font-weight: 500; }
 iframe { margin: auto; }
 a.url { word-break: break-all; }
 a:active, a:hover { outline: 0px; }
@@ -2358,7 +2360,603 @@ $wifi： 是否 WIFI，BOOL类型，如true
 <blockquote>
 <p>用户裂变<br>用户防流失<br>价值二次挖掘<br>one-on-one关怀</p>
 </blockquote>
-<hr>
+<h1 id="-">扩展阅读</h1>
+<h2 id="-">场景库</h2>
+<p>场景库中汇集了神策分析师根据服务的近千家客户，积累和沉淀的专业分析方法；让您掌握场景分析方法的同时，一键创建概览，持续观测数据变化</p>
+<h3 id="-">使用方法</h3>
+<p>1下载《事件设计》进行埋点→2点击「添加概览场景」→3自动创建场景概览</p>
+<h3 id="-">基础数据</h3>
+<h4 id="-"><strong>基础数据概览</strong></h4>
+<p>在系统搭建之初，所有数据处于原始明细状态，想要知道用户数据，需要开始搭建一系列的指标。而对于初接触系统的您来说，从头开始搭建实在倍感麻烦。为了减轻您在重复创建指标的工作负担，我们准备了一套标准的基础概览，让您在系统就绪时就拥有整套完善的数据监控体系，将更多时间投入到实现数据驱动的工作中。基础概览将向您综合展示整体的规模和趋势、活跃用户留存和参与度、设备终端分布三大方面的常用指标，便于您快速获取大盘数据动向，90% 的神策用户配置了当前场景。</p>
+<h5 id="-"><strong>场景应用</strong></h5>
+<blockquote>
+<p><strong>数据概览：</strong>即数据可视化看板，用来展示企业的核心业务指标。神策分析的数据概览集合了多种分析模型，支持多尺寸图表，多指标表格的灵活展示方式，便于您实时查询业务数据。</p>
+<p>神策分析上线之初，所有数据概览都处于原始状态，想要壹看用户行为数据，需要您手动添加相应的数据指标，生成一份完整的数据概览。</p>
+<p><strong>帮助您快速生成各平台的基础数据概览</strong><br>为了帮助您快速接入，減轻您在创建指标的工作负担，提髙利用数据的效率，我们准备了一套标准的预置概览，自动生成一系列常见指标，让您在系统就绪时即可拥有整套完善的数据监控体系，将更多时间投入到数据探索与分析的工作中。</p>
+<p>其中包括<strong>常见的三个平台：App，web，小程序</strong>，向您综合展示时效、规模、趋势、分布相关的常用指标，便于您快速获取大盘数据动向，90%的神策用户配置了当前场景。</p>
+</blockquote>
+<p><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=preset_dashboard&amp;version=1&amp;image=application_value1.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=preset_dashboard&amp;version=1&amp;image=application_value2.png" alt="image"></p>
+<h5 id="-"><strong>价值如何分析</strong></h5>
+<p><strong>分析要点</strong><br>基础数据概览准备了下列数据报表</p>
+<table>
+<thead>
+<tr>
+<th><strong>概览分组</strong></th>
+<th><strong>概览名称</strong></th>
+<th><strong>如何分析</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>整体概览</td>
+<td>实时统计</td>
+<td>实时数据分析，观察指标每个小时的变动</td>
+</tr>
+<tr>
+<td>-</td>
+<td>整体趋势</td>
+<td>掌握鍳体数据规模与发展趋势</td>
+</tr>
+<tr>
+<td>-</td>
+<td>用户生命周期</td>
+<td>活跃用户成分分析，用户流失预警，评估用户增长健康度</td>
+</tr>
+<tr>
+<td>用户分析</td>
+<td>新增用户</td>
+<td>展示新增用户趋势、评估新用户质量、有效期</td>
+</tr>
+<tr>
+<td>-</td>
+<td>活跃用户</td>
+<td>展示活跃用户趋势、分布、浏览质量，评估活跃用户的活跃度</td>
+</tr>
+<tr>
+<td>-</td>
+<td>用户留存</td>
+<td>展示新增用户、整体用户的留存率变化与趋势</td>
+</tr>
+<tr>
+<td>-</td>
+<td>用户参与度</td>
+<td>展示用户对产品的使用的次数、时长、深度、频率</td>
+</tr>
+<tr>
+<td>终端数据</td>
+<td>设备数据</td>
+<td>展示设备系统、品牌型号等维度的活跃分布，监控版本迭代效果，优化设备兼容性</td>
+</tr>
+<tr>
+<td>-</td>
+<td>地域分布</td>
+<td>展示各省、市的用户分布，分析用户地域结构，发现地缘性机会</td>
+</tr>
+<tr>
+<td>-</td>
+<td>App崩溃分析</td>
+<td>监控设备异常数据（App独有）</td>
+</tr>
+<tr>
+<td>关键事件</td>
+<td>自定义事件名称</td>
+<td>为每个选中事件单独创建一个报表，展示关键事件数据的趋势、分布、渗透率，可添加数值属性指标监控</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<ul>
+<li><p><strong>A.实时统计</strong></p>
+<ul>
+<li>实时统计可以精确到过去1小时的活跃用户数，同时显示环比、同比数据，让您清楚掌握用户的活跃变化趋势</li><li>观察用户全天活跃曲线的高峰期和低谷期的时段分布，让您更直观地了解用户使用习惯</li></ul>
+</li><li><p><strong>B.整体规模与趋势</strong></p>
+<ul>
+<li>考察产品在过去一段时间的用户总量和新增总量，反映岀目前产品的运营能力和用户增长速度。</li><li>查看用户在过去一段时间的活跃趋势和新增趋势，让您得悉用户基数在近期是在增长还是下降。</li></ul>
+</li><li><p><strong>C.用户生命周期分析</strong></p>
+<ul>
+<li>用户生命周期根据用户的活跃行为，分为新用户、连续活跃用户、回流用户、沉默用户与流失用户，可以通过分群功能给运营提供各阶段的目标群体</li><li>新用户反映近期用户活跃中新增的占比，可以看出新用户在活跃用户中的比例，如果比例过高，可能存在虚假繁荣；</li><li>连续活跃用户是产品的忠诚用户，是产品持续活跃的奠基者，需要维护好这部分用户的活跃度</li><li>回流用户可以看出流失用户返回产品的情况，评估召回老用户的效果</li><li>流失用户是我们重点关注的部分，需要及时通过运营手段来减少用户流失；</li></ul>
+</li><li><p><strong>D.用户设备分析</strong></p>
+<ul>
+<li>通过对活跃设备的分析，可以考察用户的设备使用偏好，有针对性的优化产品体验</li></ul>
+</li><li><p><strong>E.版本迭代分析</strong></p>
+<ul>
+<li>通过对活跃设备的应用版本分析，可以了解到产品在用户端的运行情况，监控产品迭代效果。</li></ul>
+</li><li><p><strong>F App Crash分析</strong></p>
+<ul>
+<li>开启采集 App Crashed事件可以收集App在发生崩溃时的报错信息，满足日常监控和问题排查的需求</li></ul>
+</li><li><p><strong>G.关键事件分析</strong></p>
+<ul>
+<li>除了通用类的日常指标，还可以自定义指定关键事件进行分析。让您在简单配置后，即可快速了解不同分析维度下，关键指标的数据变化。比如选择「支付成功」事件作为关键事件，会自动生成该事件相关的指标，如实时的事件发生次数、新老用户占比、属性值分布等数据图表</li></ul>
+</li></ul>
+</blockquote>
+<p><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=preset_dashboard&amp;version=1&amp;image=how_to_analyze1.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=preset_dashboard&amp;version=1&amp;image=how_to_analyze2.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=preset_dashboard&amp;version=1&amp;image=how_to_analyze3.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=preset_dashboard&amp;version=1&amp;image=how_to_analyze4.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=preset_dashboard&amp;version=1&amp;image=how_to_analyze5.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=preset_dashboard&amp;version=1&amp;image=how_to_analyze6.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=preset_dashboard&amp;version=1&amp;image=how_to_analyze7.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=preset_dashboard&amp;version=1&amp;image=how_to_analyze8.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=preset_dashboard&amp;version=1&amp;image=how_to_analyze9.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=preset_dashboard&amp;version=1&amp;image=how_to_analyze10.png" alt="image"></p>
+<h5 id="-"><strong>如何配置</strong></h5>
+<p><strong>1为了实现分析思路方法里提到的指标体系，还请参考以下埋点方案的设计。</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>配置项</strong></th>
+<th><strong>App端</strong></th>
+<th><strong>Web端</strong></th>
+<th><strong>小程序</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>用户活跃</td>
+<td>App启动</td>
+<td>Web页面浏览</td>
+<td>小程序启动</td>
+</tr>
+<tr>
+<td>使用时长</td>
+<td>App退出</td>
+<td>使用Web页面浏览配置 session</td>
+<td>小程序进入后台的耗时</td>
+</tr>
+<tr>
+<td>浏览</td>
+<td>App页面浏览</td>
+<td>Web页面浏览</td>
+<td>小程序页面浏览</td>
+</tr>
+<tr>
+<td>点击</td>
+<td>App元素点击</td>
+<td>Web元素点击</td>
+<td>无此项</td>
+</tr>
+<tr>
+<td>浏览深度</td>
+<td>使用App页面浏览配置 session</td>
+<td>使用Web页面浏览配置 session</td>
+<td>使用小程序页面浏览配置 session</td>
+</tr>
+<tr>
+<td>崩溃</td>
+<td>App Crashed</td>
+<td>无此项</td>
+<td>无此项</td>
+</tr>
+<tr>
+<td>页面视区停留时长</td>
+<td>无此项</td>
+<td>Web视区停留</td>
+<td>无此项</td>
+</tr>
+<tr>
+<td>分享</td>
+<td>无此项</td>
+<td>无此项</td>
+<td>小程序分享</td>
+</tr>
+<tr>
+<td>用户生命周期-用户活跃</td>
+<td>App启动</td>
+<td>Web页面浏览</td>
+<td>小程序启动</td>
+</tr>
+<tr>
+<td>用户生命周期-新用户标识</td>
+<td>是否首日</td>
+<td>是否首日</td>
+<td>是否首日</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2基础数据概览配置</strong></p>
+<blockquote>
+<p>第一步：根据我们实际的埋点，选择需要分析的客户端。</p>
+<p>第二步：基础数据概览默认配置全埋点对应的事件，但也可以替换成更具业务含乂的事件，如在Aφ端，「用户活跃」默认使用「Aρ启动」事件，也可以替換为「浏览产品详情页」、「阅读资讯」、「浏览视频」、「浏览行情」等更具业务属性的事件；浏览深度等需要使用到 session，需要在元数据管理处创建好对应端的 session后再进行选择。</p>
+<p>第三步：根据实际需求配置关键事件；</p>
+<p>第四步：点击「确定」创建穊览</p>
+</blockquote>
+<p><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=preset_dashboard&amp;version=1&amp;image=how_to_config1.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=preset_dashboard&amp;version=1&amp;image=how_to_config2.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=preset_dashboard&amp;version=1&amp;image=how_to_config3.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=preset_dashboard&amp;version=1&amp;image=how_to_config4.png" alt="image"></p>
+<h3 id="-">产品类</h3>
+<h4 id="-">电商搜索模块数据运营策略</h4>
+<p>在电商产品中，用户往往通过搜索功能直接表达购物意愿。相比推荐位和分类导航，搜索功能更能体现用户的主观购物意愿。在大多数场景中，搜索功能也是最主要的购物流量入口。因此本文档从用户搜索关键词、点击、购买切入，评估用户对于不同商品的需求情况，不同关键词当前的运营状况是否健康，是否有用户还未满足的商品需求等。</p>
+<h5 id="-">场景应用</h5>
+<blockquote>
+<p>在大多数产品中都有搜索功能，用户往往通过搜索功能直接表达自己在产品內的诉求，起到了引导用户走向的重要作用，搜索的结果是否合理直接影响用户的体验。比如电商产品，相比推荐位和分类导航，搜索功能更能体现用户的主观购买意愿，在大多数场景中，搜索功能也是主要的流量入口。</p>
+<p>本方案从用户在此流程中最重要的三个触点（搜索关键词、点击、关键转化）切入，评估：<br>1、用户对于不同商品的需求情况<br>2、不同关键词当前的运营状况是否健康<br>3、是否有用户还未满足的商品需求</p>
+</blockquote>
+<p><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=ebiz&amp;version=1&amp;image=application_value.png" alt="image"></p>
+<h5 id="-">价值如何分析</h5>
+<blockquote>
+<p>1.指标体系∶为了更深一步的了解数据背后的本质，进行有效的分析，我们需要准备以下相关指标</p>
+<p>2.分析要点：多维度细分及下钻是探究本质的重要方法。<br>以下分析将会运用到「事件分析」、「漏斗分析」、「分布分析」三大分析模型。</p>
+<p><u><strong>A.评估用户对于不同商品的需求情况</strong></u></p>
+<p><strong>1）搜索结果页「触发人数」&amp;「次数」</strong><br><strong>目的：</strong>了解用户对于不同商品的需求强度<br><strong>分析方法：</strong>在「事件分析」模型中査看毎日使用搜索功能的用户数和次效，了解搜索这个功能的基本使用情况。按关键词进行分组查看，通过各个关键词搜索结果页展示次数的排序，可以判断出用户对于不同商品及品类的需求强度。同时根据当前热门的搜索关键词了解当下的热点，可以及时针对热门商品做活动或者是参考搜索次数较高的品类词调整商品分类或者现有分类导航</p>
+<p><strong>2）关键词搜索「频次」</strong><br><strong>目的：</strong>通过搜索频次较高的关键词了解近期用户的关注点是什么。<br><strong>分析方法：</strong>在「分布分析」模型中选择某个时间段，然后按搜索关键词进行分组，观察不同关键词被单个用户重复搜索的次数，从而发现那些「周期性」需求词，或者品类词，从而给到运营上一些参考，比如周期性的针对需求商品做活动可以参考用户的搜索关键词。</p>
+<p><u><strong>B.评估不同关键词当前的健康状况</strong></u></p>
+<p><strong>1）搜索结果点击「人数」&amp;「次数」</strong><br><strong>目的：</strong>了解搜索结果是否符合用户的需求。<br><strong>分析方法：</strong>查看点击了搜索结果的人数和次数，可根据搜索关键词、点击排序位置等维度分别观察搜索结果点击情况</p>
+<p><strong>2）搜索结果「点击率」</strong><br><strong>目的：</strong>了解用户对搜索结果的满意度。<br><strong>分析方法：</strong>搜索结果点击率=搜索结果点击次数/搜索结果页次数，在事件分析中使用自定义指标进行计算，然后按关键词进行分组，查看不同关键词的点击率，可得知当前用户需求强烈的商品或品类目前的满足情况。点击率越高，说明用户对搜索结果越满意，越有兴趣去查看商品的详情。</p>
+<p><strong>3）关键词搜索「结果数量」</strong><br><strong>目的：</strong>分析搜索关键词是否有精准、足够的搜索结果<br><strong>分析方法：</strong>在事件分析中查看搜索结果数量总和，按关键词进行分组，观察关键词的搜索页结果数量，可得知对于目前的搜索需求，是否有足够多的商品供应去满足用户需求。理论上商品供应越多，用户越有可能找到自己所需要的商品。</p>
+<p><strong>4）搜索结果点击「位置均值」</strong><br><strong>目的：</strong>评估搜索结果的排序是否合理。<br><strong>分析方法：</strong>查看搜索结果点击位置的均值，搜索结果点击的位置反应了搜索结果的排序是否合理，正常情况下搜索结果点击位置均值应该尽可能等于1，如果该值越大，说眀此关键词下面的结果排序越不符合用户需求，需要及时与研发沟通排序规则。（分析的时候需要结合位置均值和关键词一起来看，假如用户搜索的是品类词，那么点击的位置均值肯定不可能接近于1，通常用户在这种情况下都会点击查看比较多的商品，所以位置均值这个指标要贴合具体的场景去做参考。</p>
+<p><u><strong>C.评估是否有未被满足的商品需求</strong></u></p>
+<p><strong>1）关键词搜索「结果数量</strong><br><strong>目的：</strong>了解哪些关键词没有充足的搜索结果<br><strong>分析方法：</strong>在事件分析中查看搜索结果数量总和，按关键词进行分组，观察τoP50关键词的搜索页结果数量，如果在这些头部关键词中岀现了搜索结果数量很少，甚至为零时，应该及时分析原因。如不是因为关键词太过精准，只能匹配一件商品，那此关键词对应的商品及品类需要及时通过运营手段进行补充，比如关键词对应具体商品，则从供货端应该立即补充该类商品；如果关键词对应品类或者某种描述性话语，则可以考虑对现有商品库中的商品元信息进行修改，使得某一批商品可以与此关键词产生关联</p>
+<p><strong>2）关键词「点击-购买转化率」</strong><br><strong>目的：</strong>根据转化率判断用户的需求是否被真正的满足。<br><strong>分析方法：</strong>在漏斗分析中按关键词进行分组，观察用户从搜索结果点击到购买的转化率，如果某关键词的点击-购买转化率岀现问题，说明即使现有的搜索结果足够吸引用户点击，但在进入详情页后，并不能真正促成下单，可能的原因是商品实际描述或者用途与用户搜索的意愿并不相关。那么在这种情况下，即使该关键词点击率很高，也需要运营及时干预，优化该关键词下面的商品供应或排序</p>
+</blockquote>
+<p><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=ebiz&amp;version=1&amp;image=how_to_analyze1.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=ebiz&amp;version=1&amp;image=how_to_analyze2.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=ebiz&amp;version=1&amp;image=how_to_analyze5.png" alt="image"></p>
+<h5 id="-">如何配置</h5>
+<p>为了实现分析思路方法里提到的指标体系还请参考以下埋点方案。</p>
+<table>
+<thead>
+<tr>
+<th><strong>事件</strong></th>
+<th><strong>事件属性</strong></th>
+<th><strong>属性值举例</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>搜索结果页</td>
+<td>搜索关键词、搜索结果数量</td>
+<td>-</td>
+</tr>
+<tr>
+<td>搜索结果点击</td>
+<td>搜索关键词、点击排序位置、商品ID</td>
+<td>-</td>
+</tr>
+<tr>
+<td>浏览商品详情页</td>
+<td>商品ID</td>
+<td>-</td>
+</tr>
+<tr>
+<td>加入购物车</td>
+<td>商品ID</td>
+<td>-</td>
+</tr>
+<tr>
+<td>提交订单详情</td>
+<td>商品ID</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=ebiz&amp;version=1&amp;image=how_to_config.png" alt="image"></p>
+<h3 id="-">市场类</h3>
+<h4 id="-">小程序裂变</h4>
+<p>由于人以类聚，利用口碑传播在大多推广场景里是效果很好的拉新渠道，体现在拉新 ROI 及新客转化质量指标上表现较好。微信作为国内最大社交网络，利用其生态进行社交裂变是当前的推广运营业务热点之一，特别是小程序出现后，更是降低了变现微信社交流量的门槛。因此，本方案重点介绍在微信生态内，借助小程序形态，如何进行社交裂变的场景埋点和数据分析，从而提升社交裂变拉新数量与效果</p>
+<h5 id="-">场景应用</h5>
+<blockquote>
+<p><strong>社交裂变场景拆解</strong></p>
+<p>不管是一对一还是一对多的传播场景，都存在两类角色：传播者、接受者。社交裂变就是希望利用传播者的影响力，高效地对接受者完成特定目标转化（拉新、购买、品牌曝光等等）</p>
+<p><strong>社交裂变目标</strong></p>
+<p>根据上述的场景描述，社交裂变的业务提升目标可以分解为以下四个部分</p>
+<p>传播者产生→如何产生更多（优质）传播者<br>信息传播→如何提高传播信息的打开率<br>接受者转化→如何提升接受者的转化效率<br>裂变传播→如何提高接受者的裂变传播行为</p>
+</blockquote>
+<p><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=mima_fission&amp;version=1&amp;image=application_value1.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=mima_fission&amp;version=1&amp;image=application_value2.png" alt="image"></p>
+<h5 id="-">价值如何分析</h5>
+<p><strong>如何分析？</strong><br>下面将分别对四个目标的指标体系以及分析思路作介绍</p>
+<p><strong>A.传播者产生</strong><br>小程序的分享传播主要有两大场景，一类是在任意页面，用户都可以利用小程序自带的分享功能传播出去；另一类是产品的裂变产品，比如 Luckin cofe的邀请好友页、拼多多的砍价分享等等。从技术角度来看，两个场景的实现方式是一致的，但从分析角度来看，两者的在分析指标选取上有所差异</p>
+<ul>
+<li><p>整体小程序分享情况</p>
+<ul>
+<li>小程序分享触发次数、人数、人均次数</li><li>分享渗透率=小程序分享人数/小程序启动人数</li><li>不同页面路径下的分享渗透率</li></ul>
+</li><li><p>传播产品分享情况</p>
+<ul>
+<li>传播页面访问次数、人数、人均次数</li><li>传播页面渗透率=传播页面浏览人数/小程序启动人数</li><li>产品分享率=传播页面分享人数/传播页面浏览人数</li></ul>
+</li></ul>
+<p>注：由于微信限制，微信接口已取消分享成功结果回调，无法通过埋点获取¨分享成功”事件，仅能获取分享触发事件</p>
+<p><strong>B.传播带量</strong><br>由于信息传播过程是在微信侧发生，无法通过埋点获取（如分享曝光次数等），但当接受者点击分享内容唤起小程序后，即可通过埋点采集到后续行为以及传播信息（分享者是谁、分享的页面是什么、分享层级第几层），这些传播信息会带在神策小程序SDK预置采集的小程序启动、小程序显示事件中，传搔带量的指标体系如下：</p>
+<ul>
+<li>分享带来的小程序显示次数、人数、总体占比</li><li>按启动场景、分享页面、分享层级、分享文案等维度下钻</li><li>传播者人均带来流量K=分享带来的小程序显示总人数/传播者人数</li><li>按启动场景、分享页面、分享层级、分享者id、分享文案等维度下钻</li></ul>
+<p><strong>C.接受者转化</strong><br>接受者转化的定义在不同行业、不同产品、产品不同阶段可能都会有所差异，需要根据企业现阶段的目标进行定义。比如工具型产品的转化可能会定义为用户微信授权并使用，而电商可能会定义为注册并首次下单成功。接受者转化的指标体系如下：<br>分享带来的核心转化行为触发人数、总体占比</p>
+<ul>
+<li>分享新增-核心行为转化漏斗</li><li>按启动场景、分享页面、分享层级、分享文案等维度下钻</li><li>传播者人均带来转化用户数K=分享带来的核心转化行为总人数/传播者人数</li><li>按启动场景、分享页面、分享层级、分享者id、分享文案等维度下钻</li></ul>
+<p><strong>D.裂变传播产生</strong><br>所谓的裂变传播就是原接受者变为新的传播者，传播带来新的用户，像核裂变一样不断裂变出新的种子。因此，裂变传播产生的本质也是传播者的产生，只是这个传播者是由分享带来的，所以指标体系可以沿用上述传播者产生的指标，只需在查询时限定用户是通过分享转化而来的（比如用户表中邀请人id属性不为空），从而分析接受者向传播者转化的情况</p>
+<ul>
+<li><p>数据解读思路</p>
+<ul>
+<li>在社交裂变场景中，用户与产品分析是核心，用户本身的特点决定了他的传播范围（认识多少人）、传播效果（影响力如何）和带量效果（认识的人消费力如何）的上限，而传播产品设计（包括奖励设计）决定了用户的传播效果能达到个人上限的几成水平</li></ul>
+</li><li><p>产品运营分析</p>
+<ul>
+<li>产品维度分析可以从社交传播量角度进行指标拆解，分析思路如下图。</li><li>社交传播量=小程序启动人数x传播产品渗透率x产品分享率x人均分享次数</li></ul>
+</li></ul>
+<table>
+<thead>
+<tr>
+<th><strong>传播产品渗透率「分析思路」</strong></th>
+<th><strong>产品分享率「分析思路」</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传播产品页面的流量入口主要是哪些？</td>
+<td>其他页面分享率如何？与传播产品分享率相比如何？</td>
+</tr>
+<tr>
+<td>条件接近情况下，传播产品入口的流量是高还低？</td>
+<td>从分享页面路径来看，页面分享的主要场景是什么？</td>
+</tr>
+<tr>
+<td>老客的传播产品渗透率如何？按客户价值、注册时长、人口特征等维度细分如何？</td>
+<td>传播产品页面的点击量分布如何？是否聚焦？</td>
+</tr>
+<tr>
+<td>新客传播产品渗透率如何？裂变新客渗透率是否会更高？</td>
+<td>传播产品分享用户的前向行为路径如何？传播后反馈如何？主要场景是什么？</td>
+</tr>
+<tr>
+<td>新老客传播产品留存如何？按维度细分的留存如何？</td>
+<td>新老用户分享率差异如何？普通新客、裂变新客分享率差异如何？</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>传播用户分析<ul>
+<li>在社交网络中，存在不同类型的用户，比如「泛KoL」型用户（除了一般的网红，还包括小领域或圈子里的领袖人群），比如羊毛用户。从精细化运营的角度来看，针对不用类型的社交用户，社交裂变的运营策略也要做到差异化。从提升传播数据和质量岀发，我们提供一个分析思路：应用矩阵分析法。</li><li>如上图所示，我们以每个用户的裂变数量相关指标作为橫轴，以裂变质量相关指标作为纵轴，将所有传播用户画在上述二维坐标内，可得划分为五类社交传播用户，其特征描述如下</li></ul>
+</li></ul>
+<table>
+<thead>
+<tr>
+<th><strong>1KOL用户</strong></th>
+<th><strong>2种子用户</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传播数量、质量都较好。可考虑将传播奖励与传播量挂钩，如奖励随邀请人数递进、邀请抽佣等模式，多劳多得，KOL将会是平台裂变的主要贡献力量。</td>
+<td>裂变数量中等，但拉来质量较佳，这类用户有向KOL转变的潜质，但要考量数量较少是因为用户社交网络较小还是由于其他原因导致不愿意分享；可以通过调研方式了解或通过运营手段激励本类用户分享，试探他们的传播广度上限。</td>
+</tr>
+<tr>
+<td><strong>3利益用户</strong></td>
+<td><strong>4羊毛用户</strong></td>
+</tr>
+<tr>
+<td>裂变数量很大，但是裂变质量较差，大多场合下该类用户是利益强驱动，为了获取奖励进行无差别传播，但是收效甚微，如果本类用户较多，可考虑加大奖励梯度差异，低有效邀请时奖励较弱，減少这类用户造成的品牌形象折损</td>
+<td>短期质量指标很好，长期质量指标很差，裂变数量较少，常见的羊毛用户群，比如一人多号、家庭号等。</td>
+</tr>
+<tr>
+<td><strong>5普通用户</strong></td>
+<td><strong>-</strong></td>
+</tr>
+<tr>
+<td>数量和质量都较差，大部分用户的表现都在本区域内。</td>
+<td><strong>-</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>社交典型用户挖掘<ul>
+<li>上述部分的用户分析，我们用过裂变数据和裂变质量指标可以人为地将社交传播用户进行分类，但实际用户表现和分类是否就真如我们经验划分那样呢？我们可以借助机器学习的方法，帮助探索社交传播用户在统计上的分类特点。</li><li>在这里我们应用κ-means的用户聚类算法，将社交传播用户的人均传播量、平均传播深度、带量注册转化率、人均裂变人数均、带量裂变转化率等指标作为聚类特征，进行传播用户类型挖掘，结果如下</li></ul>
+</li></ul>
+<table>
+<thead>
+<tr>
+<th><strong>用户群</strong></th>
+<th><strong>占比</strong></th>
+<th><strong>带量人数</strong></th>
+<th><strong>注册转化率</strong></th>
+<th><strong>带量下单转化</strong></th>
+<th><strong>裂变人数</strong></th>
+<th><strong>带量裂变率</strong></th>
+<th><strong>裂变传播次数</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>超级KOL</td>
+<td>0.04%</td>
+<td>91.6</td>
+<td>65%</td>
+<td>7%</td>
+<td>14</td>
+<td>15%</td>
+<td>22.8</td>
+</tr>
+<tr>
+<td>A KOL</td>
+<td>0.50%</td>
+<td>18.1</td>
+<td>27%</td>
+<td>6%</td>
+<td>1.4</td>
+<td>8%</td>
+<td>1.9</td>
+</tr>
+<tr>
+<td>裂变种子</td>
+<td>5.90%</td>
+<td>1.5</td>
+<td>48%</td>
+<td>10%</td>
+<td>1</td>
+<td>82%</td>
+<td>1.7</td>
+</tr>
+<tr>
+<td>熱人传播</td>
+<td>20.90%</td>
+<td>13</td>
+<td>90%</td>
+<td>13%</td>
+<td>0</td>
+<td>0%</td>
+<td>0</td>
+</tr>
+<tr>
+<td>普通用户</td>
+<td>72.70%</td>
+<td>1.3</td>
+<td>1%</td>
+<td>1%</td>
+<td>0</td>
+<td>0%</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>从行为特征描述，可以看到几类用户的明显特点：<br>1、超级KoL_：个人传播量指标非常突岀，远高于其他人群，而且注册转化、裂变率也不差，但是人数占比很<br>2、小KoL：个人传播量仍远高于其他人群，但是裂变质量比超级KOL要差，影响力不如超级KOL<br>3、裂变种子用户：个人传播量不突出，但是在裂变率上转化率很高，注册转化也不差，有潜力发展为KOL<br>4、熟人传播用户：个人传播量不突岀，但是在注册转化和购买转化上表现很好，大多是属于家庭、伴侣、闺蜜等熟人传播类型5、普通用户：各方面表现都不突出，人数占比最高；</p>
+<p><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=mima_fission&amp;version=1&amp;image=how_to_analyze1.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=mima_fission&amp;version=1&amp;image=how_to_analyze2.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=mima_fission&amp;version=1&amp;image=how_to_analyze3.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=mima_fission&amp;version=1&amp;image=how_to_analyze4.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=mima_fission&amp;version=1&amp;image=how_to_analyze5.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=mima_fission&amp;version=1&amp;image=how_to_analyze6.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=mima_fission&amp;version=1&amp;image=how_to_analyze7.png" alt="image"></p>
+<h5 id="-">如何配置</h5>
+<p><strong>埋点方案</strong><br>要实现以上的小程序裂变场景分析，只需要在神策小程序SDK全埋点采集的基础上，增加部分代码埋点即可，具体埋点方案如下</p>
+<table>
+<thead>
+<tr>
+<th><strong>事件</strong></th>
+<th><strong>事件属性</strong></th>
+<th><strong>属性值举例</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>小程序启动（\$ MPLaunch）</td>
+<td>预置釆集属性</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>分享者id</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>分享页面</td>
+<td>/page/index</td>
+</tr>
+<tr>
+<td>-</td>
+<td>分享层级</td>
+<td>1，2，3</td>
+</tr>
+<tr>
+<td>小程序页面浏览（\$ MPViewScreen）</td>
+<td>预置采集属性</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>分享者id</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>分享页面</td>
+<td>/page/index</td>
+</tr>
+<tr>
+<td>-</td>
+<td>分享层级</td>
+<td>1，2，3</td>
+</tr>
+<tr>
+<td>小程序分享（\$ MPShare）</td>
+<td>预置采集属性</td>
+<td>-</td>
+</tr>
+<tr>
+<td>核心转化行为（如注册、购买）</td>
+<td>预置采集属性</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>分享者id</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>分享页面</td>
+<td>/page/index</td>
+</tr>
+<tr>
+<td>-</td>
+<td>分享层级</td>
+<td>1，2，3</td>
+</tr>
+<tr>
+<td><strong>用户属性</strong></td>
+<td><strong>触发时机</strong></td>
+<td><strong>属性值举例</strong></td>
+</tr>
+<tr>
+<td>邀请人id</td>
+<td>首次授权/注册成功时调用 profile_set_once传入分享者id</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=mima_fission&amp;version=1&amp;image=how_to_config.png" alt="image"></p>
+<h3 id="-">运营类</h3>
+<h4 id="-push-">个性化 Push 实现与效果分析</h4>
+<p>App Push 对于每一位应用开发者而言，都是不可忽视的核心运营手段之一。从产品基础服务通知到营销内容触达，Push 通知被应用于产品生态中的方方面面。但是在实际的 Push 通知效果数据监测于评估时，Push 通知的送达及点击行为往往不能与 App 内的操作行为串联，出现数据链条断裂的情况。该场景解决方案旨在将 Push 通知从送达到后续用户所产生的操作进行串联，从而实现针对 Push 效果的全面诊断与优化。</p>
+<h5 id="-">场景应用</h5>
+<p><strong>Push作为App端运营的最常用渠道，是在用户未使用App状态下，主动推送内容或信息</strong></p>
+<ul>
+<li>通知某件事发生：如支付成功的扣款提醒、发货提醒、订单超时取消提醒等</li><li>通知平台动态：促进用户进入查看或参与，提升平台活跃、转化和留存，如某条资讯，某个打折活动等</li></ul>
+<p><strong>本方案目的在于通过对 App Push的数据指标体系的构建和分析，帮助业务实现以下三个方面的提升</strong></p>
+<ul>
+<li>提高点击率及转化效果：精准、多样、高效</li><li>提高通道利用效率：合理利用通道名额，提高推送覆盖</li><li>提升用户体验：降低关闭通知渠道、卸载App风险</li></ul>
+<p><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=app_push&amp;version=1&amp;image=application_value.png" alt="image"></p>
+<h5 id="-">价值如何分析</h5>
+<p><strong>1.指标体系：为了更深一步的了解数据背后的本质，进行有效的分析，我们需要准备以下三大分类指标</strong><br>关键维度：操作系统、消息内容、是否营销、Push目的。<br>注∶因各 Android厂商Push通道接口标准与送达规则不同，难以统一釆集，故送达相关指标只涉及ioS。</p>
+<blockquote>
+<p>Push概览指标体系</p>
+<p>A Push触达与转化</p>
+<ul>
+<li>1Push通知送达人数&amp;次数（仅IOS）</li><li>2Push通知点击人数&amp;次数</li><li>3Push点击率（仅IOS）</li><li>4Push目标事件转化率（漏斗）</li></ul>
+<p>B Push效率</p>
+<ul>
+<li>1Push通知授权率</li><li>2Push通知覆盖率（天，仅IOS）</li><li>3Push通知盖率（周，仅IOS）</li></ul>
+<p>C Push体验</p>
+<ul>
+<li>1Push通知触达次数分布（仅IOS）</li><li>2Push通知触达天数分布（仅IOS）</li></ul>
+</blockquote>
+<p><strong>2.分析要点：多维度细分及下钻是探究本质的重要方法</strong><br>以下分析将会运用到「事件分析」、「漏斗分析」、「分布分析」三大分析模型。</p>
+<blockquote>
+<p><strong>A.Push到达与点击概况</strong><br>1.Push通知「送达人数」&amp;「次数」（仅IOS）<br>目的：了解Push每日实际触达到多少用户数多少次数，反应渠道在触达层面发挥的实际价值。<br>分析方法：根据Push消息內容、是否营销类、Push目的、操作系统等维度分别观察数据差异。</p>
+<p>2.Push通知「点击人数」&amp;「次数」<br>目的：了解Push每日实际带动了多少用户、多少次的访问，从而了解渠道实际对App活跃的贡献。<br>分析方法：根据Push消息內容、是否营销类、Push目的、操作系统等维度分别观察数据差异。</p>
+<p>3Push通知「点击率」（仅IOS）<br>目的：整体评估Pvsh触达本身的转化效率，点击率受人群选择精细化和发送内容影响较大。<br>分析方法：一般全局的点击转化在5个点之上，过低要引起重视，及时诊断问题。</p>
+<p><strong>B.Push渠道利用效率</strong><br>1.Push通知「授权率」<br>目的：Push通知授权率是评估用户通过Push保持与App接触的意愿，也是通知到达的基本保障。<br>分析方法：整体Push授权打开率低的话，需要分析Push策略是否对用户产生了打扰需要调整，以及在产品适当的位置和时机去提醒用户开启Push授权</p>
+<p>2.Push通知「覆盖率」（天，仅iOS目的：Push通知翟盖率是评估Push渠道是否被有效利用的指标，每天的日活中有多少用户被触达，同时也是侧面反馈Push为日活做贡献的价值<br>分析方法：覆盖率低的话，需要进一步查看，是Push本身使用的太少，还是Push的触达比例低，并针对性去找解决方案</p>
+<p>3.Push通知「覆盖率」（周，仅iOs）<br>目的：从周的角度来看，Push对周活跃用户的覆盖，能进一步观察Push渠道覆盖用户的广度。<br>分析方法：同2，覆盖率低的话，需要进一步查看，是Push本身使用的太少，还是Push的触达比例低，并针对性去找解决方案</p>
+<p><strong>C.Push渠道体验评估</strong><br>1.Push通知「触达次数分布」（仅ioS）<br>目的：Push通知的次数分布上，可以看到收到Push的人群中，每个人一天收到了多少次，太多次的Push对用户来说意味着打扰<br>分析方法：一般建议，一个用户每天至多收到的营销运营类消息不超过3~5条，具体的数量边界，会跟产品的类型有关系，服务工具类的产品建议少一些，资讯内容类的可以多一些。</p>
+<p>2.Push通知「触达天数分布」（仅os）<br>目的：Push通知的天数分布，可以看到收到Push的人群中，一周内会收到消息的天数。<br>分析方法：一般建议，一个用户每周至多收到的营销运营类消息的天数在2~3天，具体的边界会跟产品的类型有关系，服务工具类的产品建议尽量少一些，资讯内容类的可以多一些</p>
+</blockquote>
+<p><strong>综合用例：分类或特定Push触达-转化效果诊断思路</strong></p>
+<blockquote>
+<p><strong>1.Push推送「点击转化」</strong><br>根据「Push点击率」判断推送后的唤起效果，一般全局推送点击率在5~10%左右，不同类型的会有差异，点击率较低的主要原因会有<br><strong>人群精准性</strong><br>推送的人群是否可以进一步细分，查看不同属性人群的点击率是否有比较明显的差异，若差异较大，可考虑仅推送转化率高的人群，对较低的人群考虑其它方案<br><strong>推送内容的吸引力</strong><br>如果整体点击量都偏低，内容吸引力的因素可能比较大，包括文案、刺激性信息等，可參考历史表现较好的push内容的特点，迭代后持绠测试优<br><strong>推送时间段</strong><br>可以查看下推送人群相对活跃的时间分别是什么时候，多找几个时间点进行测试，找到最优的推送时机</p>
+<p><strong>2关键业务「各个环节的转化率」</strong><br>通过观察业务转化漏斗，了解用户点击Push后各个业务关键环节的转化效果，以及转化率低的主要原因。建议的排查、解决方案如下<br><strong>推送是否定向跳转相应功能页面</strong><br>Pυsh推送时设定承接页面，可有效提高用户进入App后的体验，显著提高相应的转化率。若转化率较低，可能是没有做精准跳转，或者跳转功能异常，可查看Push推送增加设置，或做技术排查<br><strong>承接页面和内容是否有吸引力</strong><br>比如推送一个活动、推送一个视频、推送优惠券等，这些功能服务是否有吸引力，决定了业务转化的关键点，承接页面到下一步的转化率低的话可查看承接页面的跳出率、主流程点击等交互转化，从而定向优化<br><strong>功能体验是否流畅</strong><br>用户有意愿做下一步交互后，相应的功能服务是否能让客户顺利的完成转化，与功能本身的设计体验有关，可详细查看功能流程的转化，以及具体页面的点击交互，找到阻塞点并定向优化</p>
+</blockquote>
+<p><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=app_push&amp;version=1&amp;image=how_to_analyze1.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=app_push&amp;version=1&amp;image=how_to_analyze2.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=app_push&amp;version=1&amp;image=how_to_analyze3.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=app_push&amp;version=1&amp;image=how_to_analyze4.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=app_push&amp;version=1&amp;image=how_to_analyze5.png" alt="image"><br><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=app_push&amp;version=1&amp;image=how_to_analyze6.png" alt="image"></p>
+<h5 id="-">如何配置</h5>
+<p>为了实现分析思路方法里提到的指标体系还请补充以下埋点方案的设计。</p>
+<table>
+<thead>
+<tr>
+<th><strong>Push相关事件</strong></th>
+<th><strong>事件属性</strong></th>
+<th><strong>属性值举例</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Push通知送达</td>
+<td>推送计划，推送内容，定向跳转页面，运营计划ID，受众ID，运营策略ID</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Push通知点击</td>
+<td>推送计划，推送内容，定向跳转页面，运营计划ID，受众ID，运营策略ID</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Push相关用户属性</strong></td>
+<td><strong>属性值类型</strong></td>
+<td><strong>属性值举例</strong></td>
+</tr>
+<tr>
+<td>Push授权通知是否开启</td>
+<td>BOOL</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://family.demo.sensorsdata.cn/api/v2/scenes/image?name=app_push&amp;version=1&amp;image=how_to_config.png" alt="image"></p>
 
 </body>
 </html>

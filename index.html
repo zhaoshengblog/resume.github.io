@@ -136,7 +136,7 @@
 /****** Global Style ******/
 body {
   margin: 0;
-  font-family: "Glow Sans SC", "SF UI Display", ".PingFang SC", "Neue Haas Grotesk Text Pro", "Arial Nova", "Segoe UI", "Microsoft YaHei", "Microsoft JhengHei", "Helvetica Neue", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "Hiragino Sans GB", -apple-system, 'PingFang SC', sans-serif;
+  font-family: "Glow Sans SC",'PingFang SC', -apple-system, "SF UI Display", ".PingFang SC", "Neue Haas Grotesk Text Pro", "Arial Nova", "Segoe UI", "Microsoft YaHei", "Microsoft JhengHei", "Helvetica Neue", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "Hiragino Sans GB", sans-serif
   font-weight: 500;
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
@@ -976,7 +976,7 @@ for (var i = 0; i < _tag.length; i++) {
 <script type="text/javascript">
     function wrapOldContentByDiv() {
         var oldContentDiv = document.createElement("div");
-        oldContentDiv.style.cssText = "float:right; width:72%; padding-left: 3%; padding-right:3%;border: 2px solid #CACACA;";
+        oldContentDiv.style.cssText = "float:right; width:78%; padding-left: 3%; padding-right:3%;border: 2px solid #CACACA;";
         oldContentDiv.innerHTML = document.body.innerHTML;
         document.body.style["max-width"] = "100%";
         document.body.style["margin"] = "20px";
@@ -1230,7 +1230,7 @@ for (var i = 0; i < _tag.length; i++) {
 
         // 4, 创建目录列表
         var directoryOl = document.createElement("ol");
-        directoryOl.style.cssText = "padding-left:14px;line-height:180%;list-style-type:none;height: 85%;padding-bottom: 30px; overflow: auto;";
+        directoryOl.style.cssText = "padding-left:14px;line-height:180%;list-style-type:none;height: 92%;padding-bottom: 0px; overflow: auto;";
         directoryOl.setAttribute("id", "outline_ol");
         directoryDiv.appendChild(directoryOl);
         var div1 = document.createElement("div");
@@ -1288,8 +1288,10 @@ $(window).scroll(function() {
 
 
 <style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
-html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Glow Sans SC",'PingFang SC', -apple-system, "SF UI Display", ".PingFang SC", "Neue Haas Grotesk Text Pro", "Arial Nova", "Segoe UI", "Microsoft YaHei", "Microsoft JhengHei", "Helvetica Neue", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "Hiragino Sans GB", sans-serif
+  font-weight: 500; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 15px; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; font-family: "Glow Sans SC",'PingFang SC', -apple-system, "SF UI Display", ".PingFang SC", "Neue Haas Grotesk Text Pro", "Arial Nova", "Segoe UI", "Microsoft YaHei", "Microsoft JhengHei", "Helvetica Neue", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "Hiragino Sans GB", sans-serif
+  font-weight: 500; }
 iframe { margin: auto; }
 a.url { word-break: break-all; }
 a:active, a:hover { outline: 0px; }
@@ -1847,12 +1849,12 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
 <thead>
 <tr>
 <th><a href="https://resume.zhaoshengblog.cn/" title="数据分析实战训练营"><strong>数据分析实战训练营</strong></a></th>
-<th><a href="https://kaiwu.lagou.com/">课程主页</a> / <a href="https://docs.qq.com/sheet/DS2hoVXJzS1BDWFVQ">数据分析实战训练营【简版大纲】</a> / <a href="https://www.yuque.com/docs/share/93e5efe2-f2f7-4f3c-a001-d6293a076e9d?# 《数据分析规范总结》">数据分析规范总结</a></th>
+<th><a href="https://kaiwu.lagou.com/">课程主页</a> / <a href="https://docs.qq.com/sheet/DS2hoVXJzS1BDWFVQ">数据分析实战训练营【简版大纲】</a> / <a href="https://www.yuque.com/docs/share/93e5efe2-f2f7-4f3c-a001-d6293a076e9d?# 《数据分析规范总结》">数据分析规范总结</a> 5个月周期10个阶段，课程内容有分析方法论、分析方法、Excel、Mysql、Tableau、Quick BI、神策平台、Hive、统计学、Python、挖掘算法、Spss等，技术点一到九阶段，从现状统计到预测分析、从业务数据到编程工具处理复杂业务逻辑数据，实现用数据驱动业务，辅助决策，提升公司业绩。</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong><em>第一阶段 数据分析思维/方法与行业案例实战</em></strong></td>
+<td><strong>第一阶段 数据分析思维/方法与行业案例实战</strong></td>
 <td>讲解数据分析发展趋势，掌握数据分析的流程和方法论，快速搭建数据分析结构和业务指标</td>
 </tr>
 <tr>
@@ -1872,7 +1874,7 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
 <td><a href="https://docs.qq.com/sheet/DS1JPcHVmWmREWXVP">Excel函数集</a> / <a href="https://docs.qq.com/sheet/DS2tibHlGZ2JRYkd0">Excel快捷键</a> 通过该模块的学习，快速掌握常用Excel技能，并熟练操作Excel解决工作中出现的问题。</td>
 </tr>
 <tr>
-<td><strong><em>第二阶段 MySQL数据分析实战</em></strong></td>
+<td><strong>第二阶段 MySQL数据分析实战</strong></td>
 <td><a href="MySql要点.html">MySql要点</a> / <a href="销售部门数据分析_拓展作业.html">销售部门数据分析_拓展作业</a></td>
 </tr>
 <tr>
@@ -1888,7 +1890,7 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
 <td>利用所学理论知识，解决电商行业实际项目中的问题，如探索用户行为规律，寻找高价值用户；分析商品特征，寻找高贡献商品；分析产品功能，优化产品路径等，深入理解电商行业的相关业务场景。</td>
 </tr>
 <tr>
-<td><strong><em>第三阶段 互联网公司必备-BI可视化工具</em></strong></td>
+<td><strong>第三阶段 互联网公司必备-BI可视化工具</strong></td>
 <td><a href="https://www.yuque.com/docs/share/51f89f62-d047-433d-bf28-cdc5086835b1?# 《BI与数据可视化》">BI与数据可视化</a> / <a href="大数据工具导航.html">大数据工具导航</a> / <a href="rgb色表.html">rgb色表</a></td>
 </tr>
 <tr>
@@ -1897,14 +1899,14 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
 </tr>
 <tr>
 <td>· <code>模块二</code><a href="QuickBI可视化分析工具培训大纲.html">Quick BI 数据可视化</a></td>
-<td>通过学习Quick BI智能服务平台，快速掌握海量数据实时在线分析服务，通过拖拽式操作和丰富的可视化效果，轻松完成数据分析、业务数据探查、报表制作等工作</td>
+<td><a href="https://help.aliyun.com/product/30343.html">Quick BI-阿里云</a> 通过学习Quick BI智能服务平台，快速掌握海量数据实时在线分析服务，通过拖拽式操作和丰富的可视化效果，轻松完成数据分析、业务数据探查、报表制作等工作</td>
 </tr>
 <tr>
 <td>· <code>模块三</code><a href="神策数据分析平台讲义.html">神策数据平台</a></td>
-<td>通过学习神策分析平台，快速了解私有化部署，客户端、服务器、业务数据、第三方数据的全端采集和建模，以及用户精细化运营改进、产品功能及用户体验优化等应用场景。并通过 BI、大数据平台 等内部 IT 系统，构建用户数据体系，让用户行为数据发挥深远的价值。</td>
+<td><a href="https://docs.qq.com/sheet/DS2NzRkx5dVdPUHlE">神策数据_事件设计模版以电商为例</a> / <a href="https://docs.qq.com/sheet/DS1RwU2tPQmNoSVBy">神策分析预置事件与预置属性</a> / <a href="https://docs.qq.com/slide/DS25TUU15R0hMUFBq">神策数据_构建用户标签体系助力企业精细化运营</a> 通过学习神策分析平台，快速了解私有化部署，客户端、服务器、业务数据、第三方数据的全端采集和建模，以及用户精细化运营改进、产品功能及用户体验优化等应用场景。并通过 BI、大数据平台 等内部 IT 系统，构建用户数据体系，让用户行为数据发挥深远的价值。</td>
 </tr>
 <tr>
-<td><strong><em>第四阶段 大数据查询利器Hive</em></strong></td>
+<td><strong>第四阶段 大数据查询利器Hive</strong></td>
 <td>未开始</td>
 </tr>
 <tr>
@@ -1920,7 +1922,7 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
 <td>通过电商、在线教育两个实战案例实操，检验前面所学Hive理论知识，真正做到学以致用</td>
 </tr>
 <tr>
-<td><strong><em>第五阶段 数据分析必备理论基础-统计学知识</em></strong></td>
+<td><strong>第五阶段 数据分析必备理论基础-统计学知识</strong></td>
 <td>未开始</td>
 </tr>
 <tr>
@@ -1936,7 +1938,7 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
 <td>对在线教育，电商系统的不同需求进行统计分析，夯实所学内容。</td>
 </tr>
 <tr>
-<td><strong><em>第六阶段 数据分析必学编程语言-Python</em></strong></td>
+<td><strong>第六阶段 数据分析必学编程语言-Python</strong></td>
 <td>未开始</td>
 </tr>
 <tr>
@@ -1964,7 +1966,7 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
 <td>综合运用前五个模块的知识，使用Python从互联网公开数据中抓取数据，并使用Numpy, Pandas进行分析，最后用Matplotlib展示丰富的报表。</td>
 </tr>
 <tr>
-<td><strong><em>第七阶段 数据分析项目与实战</em></strong></td>
+<td><strong>第七阶段 数据分析项目与实战</strong></td>
 <td>未开始</td>
 </tr>
 <tr>
@@ -1980,7 +1982,7 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
 <td>以社交零售行业真实案例项目为切入点，运用零售行业业务模型和分析方法真正解决社交零售行业复杂问题</td>
 </tr>
 <tr>
-<td><strong><em>第八阶段 数据挖掘算法与实战</em></strong></td>
+<td><strong>第八阶段 数据挖掘算法与实战</strong></td>
 <td>未开始</td>
 </tr>
 <tr>
@@ -1996,7 +1998,7 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
 <td>本模块解决企业生产环境中数据挖掘实战项目的问题，以及如何将数据挖掘技术做到学以致用，实现技术的深度赋能</td>
 </tr>
 <tr>
-<td><strong><em>第九阶段 SPSS数据建模方法与业务实现</em></strong></td>
+<td><strong>第九阶段 SPSS数据建模方法与业务实现</strong></td>
 <td>未开始</td>
 </tr>
 <tr>
@@ -2012,7 +2014,7 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
 <td>模型原理的基础上，通过对话框进行参数设置建立模型及模型调优，减少代码编写和Debug时间并提高模型质量。</td>
 </tr>
 <tr>
-<td><strong><em>第十阶段 就业指导 + 简历指导</em></strong></td>
+<td><strong>第十阶段 就业指导 + 简历指导</strong></td>
 <td>未开始</td>
 </tr>
 <tr>
@@ -2758,15 +2760,6 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
 <p align="center"><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98%E8%AE%AD%E7%BB%83%E8%90%A5%E8%AF%BE%E7%A8%8B%E5%A4%A7%E7%BA%B20904%E6%96%B0.png" alt="总体大纲（新）" width="1200" /></p>
 
 <p align="center"><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/1596442246485-52a81fc9-3666-443b-b46f-87172540fad3.png" alt="公众号'Assistants'" width="1200" /></p>
-
-
-
-
-
-
-
-
-
 
 </body>
 </html>

@@ -136,7 +136,7 @@
 /****** Global Style ******/
 body {
   margin: 0;
-  font-family: "Glow Sans SC", "SF UI Display", ".PingFang SC", "Neue Haas Grotesk Text Pro", "Arial Nova", "Segoe UI", "Microsoft YaHei", "Microsoft JhengHei", "Helvetica Neue", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "Hiragino Sans GB", -apple-system, 'PingFang SC', sans-serif;
+  font-family: "Glow Sans SC",'PingFang SC', -apple-system, "SF UI Display", ".PingFang SC", "Neue Haas Grotesk Text Pro", "Arial Nova", "Segoe UI", "Microsoft YaHei", "Microsoft JhengHei", "Helvetica Neue", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "Hiragino Sans GB", sans-serif
   font-weight: 500;
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
@@ -887,7 +887,6 @@ vertical-align:1px;
 <script src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/highlight.min.js"></script>  
 <script >hljs.initHighlightingOnLoad();</script> 
 
-
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/96x96.ico" type="image/x-icon">
 <script src="https://hm.baidu.com/hm.js?44b6fcd69c6e2f3250c2ade16f5b4622"></script>
 <script>
@@ -977,7 +976,7 @@ for (var i = 0; i < _tag.length; i++) {
 <script type="text/javascript">
     function wrapOldContentByDiv() {
         var oldContentDiv = document.createElement("div");
-        oldContentDiv.style.cssText = "float:right; width:72%; padding-left: 3%; padding-right:3%;border: 2px solid #CACACA;";
+        oldContentDiv.style.cssText = "float:right; width:78%; padding-left: 3%; padding-right:3%;border: 2px solid #CACACA;";
         oldContentDiv.innerHTML = document.body.innerHTML;
         document.body.style["max-width"] = "100%";
         document.body.style["margin"] = "20px";
@@ -1231,7 +1230,7 @@ for (var i = 0; i < _tag.length; i++) {
 
         // 4, 创建目录列表
         var directoryOl = document.createElement("ol");
-        directoryOl.style.cssText = "padding-left:14px;line-height:180%;list-style-type:none;height: 85%;padding-bottom: 30px; overflow: auto;";
+        directoryOl.style.cssText = "padding-left:14px;line-height:180%;list-style-type:none;height: 92%;padding-bottom: 0px; overflow: auto;";
         directoryOl.setAttribute("id", "outline_ol");
         directoryDiv.appendChild(directoryOl);
         var div1 = document.createElement("div");
@@ -1288,109 +1287,11 @@ $(window).scroll(function() {
 </script>
 
 
-<script>
-(function(){window.onload = function(){
-    console.log('DOM already loaded.');
-    if(window.top == window.self){ 
-        var aNode = document.createElement('a');
-        aNode.href = 'javascript:;';
-        aNode.id = 'click-to-top';
-        aNode.title = 'Click it to go to the top';
-        var availHeight = window.screen.availHeight; // 获取可用高度
-        var css = '#click-to-top{ display:none; position: fixed; right: 5%; bottom: 20%; opacity: 0.2; z-index: 9999; } #click-to-top:hover{ position: fixed; right: 5%; bottom: 20%; opacity: 1; z-index: 9999; }';
-        //滚出一屏以后才显示返回顶部按钮
-        window.onscroll = function(){
-            var curPos = (document.documentElement.scrollTop == 0) ? document.body.scrollTop : document.documentElement.scrollTop; //document.documentElement.scrollTop; //preparation for hack (document.documentElement.scrollTop == 0) ? document.body.scrollTop : document.documentElement.scrollTop; 
-            if(curPos > availHeight){
-                aNode.style.display = 'block';
-            }else {
-                aNode.style.display = 'none';
-            }
-        };
-        //图片相关
-        var img = document.createElement('img');
-        img.src = 'https://ooo.0o0.ooo/2017/05/23/59245c636b321.png';
-        img.style = 'width: 30px; height: 30px;';
-        //样式相关
-        var style = document.createElement('style');
-        if (style.styleSheet) {
-            style.styleSheet.cssText = css;
-        } else {
-            style.appendChild(document.createTextNode(css));
-        }
-        document.getElementsByTagName('head')[0].appendChild(style);
-        aNode.append(img);
-        aNode.addEventListener('click', function(){
-            document.body.scrollIntoView();
-            /*var timer = setInterval(function(){
-            document.documentElement.scrollTop -= 500;
-                if(document.documentElement.scrollTop < 100){
-                    clearInterval(timer);
-                }
-            }, 50);
-        }, true);*/
-        });
-        var eBody = document.querySelector('body');
-        eBody.append(aNode);
-    }
-};})();
-</script>
-
-<script>
-	!function(e, t, a) {
-		function r() {
-			for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
-			requestAnimationFrame(r)
-		}
-		function n() {
-			var t = "function" == typeof e.onclick && e.onclick;
-			e.onclick = function(e) {
-				t && t(),
-					o(e)
-			}
-		}
-		function o(e) {
-			var a = t.createElement("div");
-			a.className = "heart",
-				s.push({
-					el: a,
-					x: e.clientX - 5,
-					y: e.clientY - 5,
-					scale: 1,
-					alpha: 1,
-					color: c()
-				}),
-				t.body.appendChild(a)
-		}
-		function i(e) {
-			var a = t.createElement("style");
-			a.type = "text/css";
-			try {
-				a.appendChild(t.createTextNode(e))
-			} catch(t) {
-				a.styleSheet.cssText = e
-			}
-			t.getElementsByTagName("head")[0].appendChild(a)
-		}
-		function c() {
-			return "rgb(" + ~~ (255 * Math.random()) + "," + ~~ (255 * Math.random()) + "," + ~~ (255 * Math.random()) + ")"
-		}
-		var s = [];
-		e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame ||
-			function(e) {
-				setTimeout(e, 1e3 / 60)
-			},
-			i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),
-			n(),
-			r()
-	} (window, document);
-</script>
-
-<style type='text/css'>
-html {overflow-x: initial !important;}
-:root { /*--bg-color:#ffffff; --text-color:#333333;*/ --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
-html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Glow Sans SC",'PingFang SC', -apple-system, "SF UI Display", ".PingFang SC", "Neue Haas Grotesk Text Pro", "Arial Nova", "Segoe UI", "Microsoft YaHei", "Microsoft JhengHei", "Helvetica Neue", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "Hiragino Sans GB", sans-serif
+  font-weight: 500; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 15px; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; font-family: "Glow Sans SC",'PingFang SC', -apple-system, "SF UI Display", ".PingFang SC", "Neue Haas Grotesk Text Pro", "Arial Nova", "Segoe UI", "Microsoft YaHei", "Microsoft JhengHei", "Helvetica Neue", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "Hiragino Sans GB", sans-serif
+  font-weight: 500; }
 iframe { margin: auto; }
 a.url { word-break: break-all; }
 a:active, a:hover { outline: 0px; }
@@ -1841,8 +1742,106 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
   border-left: 1px solid rgb(239, 112, 96);
   z-index: 3;
 }
+
 </style>
 
+<script>
+(function(){window.onload = function(){
+    console.log('DOM already loaded.');
+    if(window.top == window.self){ 
+        var aNode = document.createElement('a');
+        aNode.href = 'javascript:;';
+        aNode.id = 'click-to-top';
+        aNode.title = 'Click it to go to the top';
+        var availHeight = window.screen.availHeight; // 获取可用高度
+        var css = '#click-to-top{ display:none; position: fixed; right: 5%; bottom: 20%; opacity: 0.2; z-index: 9999; } #click-to-top:hover{ position: fixed; right: 5%; bottom: 20%; opacity: 1; z-index: 9999; }';
+        //滚出一屏以后才显示返回顶部按钮
+        window.onscroll = function(){
+            var curPos = (document.documentElement.scrollTop == 0) ? document.body.scrollTop : document.documentElement.scrollTop; //document.documentElement.scrollTop; //preparation for hack (document.documentElement.scrollTop == 0) ? document.body.scrollTop : document.documentElement.scrollTop; 
+            if(curPos > availHeight){
+                aNode.style.display = 'block';
+            }else {
+                aNode.style.display = 'none';
+            }
+        };
+        //图片相关
+        var img = document.createElement('img');
+        img.src = 'https://ooo.0o0.ooo/2017/05/23/59245c636b321.png';
+        img.style = 'width: 30px; height: 30px;';
+        //样式相关
+        var style = document.createElement('style');
+        if (style.styleSheet) {
+            style.styleSheet.cssText = css;
+        } else {
+            style.appendChild(document.createTextNode(css));
+        }
+        document.getElementsByTagName('head')[0].appendChild(style);
+        aNode.append(img);
+        aNode.addEventListener('click', function(){
+            document.body.scrollIntoView();
+            /*var timer = setInterval(function(){
+            document.documentElement.scrollTop -= 500;
+                if(document.documentElement.scrollTop < 100){
+                    clearInterval(timer);
+                }
+            }, 50);
+        }, true);*/
+        });
+        var eBody = document.querySelector('body');
+        eBody.append(aNode);
+    }
+};})();
+</script>
+
+<script>
+	!function(e, t, a) {
+		function r() {
+			for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+			requestAnimationFrame(r)
+		}
+		function n() {
+			var t = "function" == typeof e.onclick && e.onclick;
+			e.onclick = function(e) {
+				t && t(),
+					o(e)
+			}
+		}
+		function o(e) {
+			var a = t.createElement("div");
+			a.className = "heart",
+				s.push({
+					el: a,
+					x: e.clientX - 5,
+					y: e.clientY - 5,
+					scale: 1,
+					alpha: 1,
+					color: c()
+				}),
+				t.body.appendChild(a)
+		}
+		function i(e) {
+			var a = t.createElement("style");
+			a.type = "text/css";
+			try {
+				a.appendChild(t.createTextNode(e))
+			} catch(t) {
+				a.styleSheet.cssText = e
+			}
+			t.getElementsByTagName("head")[0].appendChild(a)
+		}
+		function c() {
+			return "rgb(" + ~~ (255 * Math.random()) + "," + ~~ (255 * Math.random()) + "," + ~~ (255 * Math.random()) + ")"
+		}
+		var s = [];
+		e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame ||
+			function(e) {
+				setTimeout(e, 1e3 / 60)
+			},
+			i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),
+			n(),
+			r()
+	} (window, document);
+</script>
 </head>
 <body>
 <p><a href="index.html">返回上一页</a></p>
@@ -2145,10 +2144,10 @@ mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
 <p>如：历年世界各国GDP排名变化情况</p>
 <p>尝试制作你的类别排名动态图吧~</p>
 <h3 id="3-3-6-">3.3.6 智能显示，让它帮你做选择</h3>
-<ol>
-<li><h3 id="3-3-7-">3.3.7 分析窗口，简单好用的统计曲线</h3>
-</li><li><h3 id="3-3-8-">3.3.8 格式设置，从凌乱到整齐</h3>
-</li></ol>
+<p>智能推荐合适的展现图表<br>具体内容参考视频讲解</p>
+<h3 id="3-3-7-">3.3.7 分析窗口，简单好用的统计曲线</h3>
+<p>快速便捷实现你的分析需求<br>具体内容参考视频讲解</p>
+<h3 id="3-3-8-">3.3.8 格式设置，从凌乱到整齐</h3>
 <p><strong>整体工作簿的设置：</strong>建议在连接完数据后，优先进行设置</p>
 <p><strong>单个工作表的设置</strong></p>
 <p>行列名：</p>
@@ -2267,14 +2266,26 @@ Y: [数值] sin([弧度])
 <li>新建布局</li><li>添加工作表</li><li>调整排版</li><li>添加交互操作</li></ul>
 <p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/ModuleOneTableau123.jpg" alt="image"></p>
 <h3 id="3-5-2-">3.5.2 组织成故事板</h3>
+<p>将工作表和仪表盘整合到故事版</p>
 <h2 id="3-6-">3.6 结果导出、保存和共享</h2>
 <h3 id="3-6-1-">3.6.1 数据源导出</h3>
+<p>导出所有数据；<br>只能导出csv格式；<br>csv格式打开方式：打开一个空白Excel，数据菜单下选择”从文本“，如果视图显示是乱码的话，可以选择编码，一般是选择UTF-8。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/ModuleOneTableau170.jpg" alt="image"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/ModuleOneTableau171.jpg" alt="image"></p>
 <h3 id="3-6-2-">3.6.2 工作表中数据导出</h3>
+<p>ctr+A，全选工作表中的数据；或框选，选中部分工作表数据；<br>ctr+V，粘贴到空白Excel表格中</p>
 <h3 id="3-6-3-">3.6.3 工作表导出</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/ModuleOneTableau172.jpg" alt="image"></p>
 <h3 id="3-6-4-">3.6.4 仪表盘导出</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/ModuleOneTableau173.jpg" alt="image"></p>
 <h3 id="3-6-5-">3.6.5 故事导出</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/ModuleOneTableau174.jpg" alt="image"></p>
 <h3 id="3-6-6-twb-twbx-">3.6.6 保存的两种格式：twb和twbx的格式</h3>
+<p>twb：只保存可视化界面；<br>twbx：保存数据源和可视化界面</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/ModuleOneTableau175.jpg" alt="image"></p>
 <h3 id="3-6-7-">3.6.7 共享到服务器</h3>
+<p>操作方法：文件—共享<br>需要Tableau Server 或Tableau Online协作</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/ModuleOneTableau176.jpg" alt="image"></p>
 <h1 id="4-">4.高阶可视化，满足你一切想象力</h1>
 <h2 id="4-1-">4.1 如何增强图表可读性？</h2>
 <h3 id="4-1-1-">4.1.1 排序，表达图表规律</h3>
@@ -2542,7 +2553,7 @@ else null end
 <p>注意，图中所有计算变量都要将计算依据改为“产品名称”</p>
 <h3 id="4-3-10-">4.3.10 桑基图</h3>
 <p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/ModuleOneTableau154.png" alt="image"></p>
-<p>需要计算3个维度、16个度量、2个参数，多达十余个步骤！</p>
+<p>具体请参考：<a href="https://towardsdatascience.com/how-to-make-sankey-diagram-in-tableau-f5f8730e5962" title="点击查看">https://towardsdatascience.com/how-to-make-sankey-diagram-in-tableau-f5f8730e5962</a><br>需要计算3个维度、16个度量、2个参数，多达十余个步骤！</p>
 <h3 id="4-3-11-">4.3.11 留存图表</h3>
 <p><img src="https://cdn.jsdelivr.net/gh/zhaoshengblog/Picbed/img/ModuleOneTableau155.jpg" alt="image"></p>
 <h1 id="5-">5. 实战打磨</h1>
